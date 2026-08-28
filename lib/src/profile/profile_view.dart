@@ -35,6 +35,12 @@ class ProfileView extends StatelessWidget {
         trailing: const Icon(Icons.open_in_new),
         onTap: () => launchUrl(Uri.parse('https://donate.stripe.com/5kQ6oH5y5bHf58r2VFdMI02')),
       ),
+      ListTile(
+        title: const Text('Politique de confidentialité'),
+        subtitle: const Text('Cliquez pour voir les détails de la politique de confidentialité'),
+        trailing: const Icon(Icons.open_in_new),
+        onTap: () => launchUrl(Uri.parse('https://learn-parlami.netlify.app/privacy/')),
+      ),
     ]);
   }
 }
