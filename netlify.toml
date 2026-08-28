@@ -1,5 +1,5 @@
 [build]
-  command = "flutter build web --release && mkdir -p build/web/privacy && cp privacy/index.html build/web/privacy/index.html"
+  command = "bash scripts/install_flutter.sh && export PATH=\"$HOME/flutter/bin:$PATH\" && flutter build web --release && mkdir -p build/web/privacy && cp privacy/index.html build/web/privacy/index.html"
   publish = "build/web"
 
 [[redirects]]
