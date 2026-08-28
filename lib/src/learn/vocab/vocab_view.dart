@@ -425,7 +425,7 @@ class _VocabViewState extends State<VocabView> {
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabLanguage>(
-          value: _baseLanguage,
+          initialValue: _baseLanguage,
           decoration: const InputDecoration(labelText: 'Langue de base pour l’affichage'),
           items: VocabLanguage.values
               .map((language) => DropdownMenuItem(value: language, child: Text(language.label)))
@@ -594,7 +594,7 @@ class _VocabViewState extends State<VocabView> {
         _buildStatsBar(items),
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabLanguage>(
-          value: _trainingBaseLanguage,
+          initialValue: _trainingBaseLanguage,
           decoration: const InputDecoration(
             labelText: 'Langue de base pour l’entraînement',
           ),
@@ -795,7 +795,7 @@ class _VocabViewState extends State<VocabView> {
             decoration: const InputDecoration(labelText: "Article éventuel (il, la, l', etc.)")),
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabDifficulty>(
-          value: _selectedDifficulty,
+          initialValue: _selectedDifficulty,
           decoration: const InputDecoration(labelText: 'Difficulté'),
           items: VocabDifficulty.values
               .map((difficulty) => DropdownMenuItem(value: difficulty, child: Text(difficulty.label)))
@@ -804,7 +804,7 @@ class _VocabViewState extends State<VocabView> {
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabPartOfSpeech>(
-          value: _selectedPartOfSpeech,
+          initialValue: _selectedPartOfSpeech,
           decoration: const InputDecoration(labelText: 'Genre grammatical'),
           items: VocabPartOfSpeech.values
               .map((part) => DropdownMenuItem(value: part, child: Text(part.label)))

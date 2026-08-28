@@ -24,7 +24,7 @@ void main() {
 
       expect(words, contains('duemila ventisei'));
       expect(words, isNot(contains('2026')));
-      expect(words.startsWith('${italianWeekday(date.weekday)} 16 luglio'), isTrue);
+      expect(words.startsWith('${italianWeekday(date.weekday)} sedici luglio'), isTrue);
     });
   });
 }

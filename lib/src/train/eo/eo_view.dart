@@ -248,17 +248,23 @@ class _EOViewState extends State<EOView> {
         title: const Text('Choisir le niveau'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
-          children: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level) {
-            return RadioListTile<String>(
-              title: Text('Niveau $level'),
-              value: level,
+          children: [
+            RadioGroup<String>(
               groupValue: currentLevel,
               onChanged: (val) {
                 if (val != null) _selectLevel(val);
                 Navigator.pop(context);
               },
-            );
-          }).toList(),
+              child: Column(
+                children: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+                    .map((level) => RadioListTile<String>(
+                          title: Text('Niveau $level'),
+                          value: level,
+                        ))
+                    .toList(),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -342,11 +348,12 @@ class _EOViewState extends State<EOView> {
                             child: Container(
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: showTip ? theme.colorScheme.primaryContainer.withOpacity(0.3) : null,
+                                color: showTip ? theme.colorScheme.primaryContainer.withValues(alpha: 0.3) : null,
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(
-                                  color:
-                                      showTip ? theme.colorScheme.primary : theme.colorScheme.outline.withOpacity(0.3),
+                                  color: showTip
+                                      ? theme.colorScheme.primary
+                                      : theme.colorScheme.outline.withValues(alpha: 0.3),
                                 ),
                               ),
                               child: Column(
@@ -387,12 +394,12 @@ class _EOViewState extends State<EOView> {
                             child: Container(
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: showAnswer ? theme.colorScheme.secondaryContainer.withOpacity(0.3) : null,
+                                color: showAnswer ? theme.colorScheme.secondaryContainer.withValues(alpha: 0.3) : null,
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(
                                   color: showAnswer
                                       ? theme.colorScheme.secondary
-                                      : theme.colorScheme.outline.withOpacity(0.3),
+                                      : theme.colorScheme.outline.withValues(alpha: 0.3),
                                 ),
                               ),
                               child: Column(
@@ -592,13 +599,13 @@ class _EvalChip extends StatelessWidget {
   Color? _colorForRating(int idx) {
     switch (idx) {
       case 3:
-        return Colors.green.withOpacity(0.3);
+        return Colors.green.withValues(alpha: 0.3);
       case 2:
-        return Colors.lightGreen.withOpacity(0.3);
+        return Colors.lightGreen.withValues(alpha: 0.3);
       case 1:
-        return Colors.orange.withOpacity(0.3);
+        return Colors.orange.withValues(alpha: 0.3);
       case 0:
-        return Colors.red.withOpacity(0.3);
+        return Colors.red.withValues(alpha: 0.3);
       default:
         return null;
     }

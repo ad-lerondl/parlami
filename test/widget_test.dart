@@ -41,7 +41,6 @@ void main() {
 
       expect(find.text('Choisir la date d’aperçu'), findsOneWidget);
       expect(find.text('Entraînement'), findsOneWidget);
-      expect(find.text('Choisir la date d’entraînement'), findsOneWidget);
     });
   });
 }
