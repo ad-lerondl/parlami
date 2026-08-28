@@ -1,0 +1,6 @@
+{
+  "appTitle": "Parlami",
+  "@appTitle": {
+    "description": "Le titre de l'application"
+  }
+}
