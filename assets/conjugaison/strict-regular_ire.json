@@ -1,0 +1,573 @@
+[
+  {
+    "infinitive": "dormire",
+    "translation": "dormir",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "dormo",
+          "tu": "dormi",
+          "lui/lei": "dorme",
+          "noi": "dormiamo",
+          "voi": "dormite",
+          "loro": "dormono"
+        },
+        "Passato Prossimo": {
+          "io": "ho dormito",
+          "tu": "hai dormito",
+          "lui/lei": "ha dormito",
+          "noi": "abbiamo dormito",
+          "voi": "avete dormito",
+          "loro": "hanno dormito"
+        },
+        "Imperfetto": {
+          "io": "dormivo",
+          "tu": "dormivi",
+          "lui/lei": "dormiva",
+          "noi": "dormivamo",
+          "voi": "dormivate",
+          "loro": "dormivano"
+        },
+        "Passato Remoto": {
+          "io": "dormii",
+          "tu": "dormisti",
+          "lui/lei": "dormì",
+          "noi": "dormimmo",
+          "voi": "dormiste",
+          "loro": "dormirono"
+        },
+        "Futuro Semplice": {
+          "io": "dormirò",
+          "tu": "dormirai",
+          "lui/lei": "dormirà",
+          "noi": "dormiremo",
+          "voi": "dormirete",
+          "loro": "dormiranno"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "dorma",
+          "tu": "dorma",
+          "lui/lei": "dorma",
+          "noi": "dormiamo",
+          "voi": "dormiate",
+          "loro": "dormano"
+        },
+        "Passato": {
+          "io": "abbia dormito",
+          "tu": "abbia dormito",
+          "lui/lei": "abbia dormito",
+          "noi": "abbiamo dormito",
+          "voi": "abbiate dormito",
+          "loro": "abbiano dormito"
+        },
+        "Imperfetto": {
+          "io": "dormissi",
+          "tu": "dormissi",
+          "lui/lei": "dormisse",
+          "noi": "dormissimo",
+          "voi": "dormiste",
+          "loro": "dormissero"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "dormirei",
+          "tu": "dormiresti",
+          "lui/lei": "dormirebbe",
+          "noi": "dormiremmo",
+          "voi": "dormireste",
+          "loro": "dormirebbero"
+        },
+        "Passato": {
+          "io": "avrei dormito",
+          "tu": "avresti dormito",
+          "lui/lei": "avrebbe dormito",
+          "noi": "avremmo dormito",
+          "voi": "avreste dormito",
+          "loro": "avrebbero dormito"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "dormi",
+          "lui/lei": "dorma",
+          "noi": "dormiamo",
+          "voi": "dormite",
+          "loro": "dormano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "dormire",
+          "Passato": "avere dormito"
+        },
+        "Gerundio": {
+          "Presente": "dormendo",
+          "Passato": "avendo dormito"
+        },
+        "Participio": {
+          "Presente": "dormente",
+          "Passato": ["dormito", "dormita", "dormiti", "dormite"]
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "aprire",
+    "translation": "ouvrir",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "apro",
+          "tu": "apri",
+          "lui/lei": "apre",
+          "noi": "apriamo",
+          "voi": "aprite",
+          "loro": "aprono"
+        },
+        "Passato Prossimo": {
+          "io": "ho aperto",
+          "tu": "hai aperto",
+          "lui/lei": "ha aperto",
+          "noi": "abbiamo aperto",
+          "voi": "avete aperto",
+          "loro": "hanno aperto"
+        },
+        "Imperfetto": {
+          "io": "aprivo",
+          "tu": "aprivi",
+          "lui/lei": "apriva",
+          "noi": "aprivamo",
+          "voi": "aprivate",
+          "loro": "aprivano"
+        },
+        "Passato Remoto": {
+          "io": "aprii / apersi",
+          "tu": "apristi",
+          "lui/lei": "aprì / aperse",
+          "noi": "aprimmo",
+          "voi": "apreste",
+          "loro": "aprirono / apersero"
+        },
+        "Futuro Semplice": {
+          "io": "aprirò",
+          "tu": "aprirai",
+          "lui/lei": "aprirà",
+          "noi": "apriremo",
+          "voi": "aprirete",
+          "loro": "apriranno"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "apra",
+          "tu": "apra",
+          "lui/lei": "apra",
+          "noi": "apriamo",
+          "voi": "apriate",
+          "loro": "aprano"
+        },
+        "Passato": {
+          "io": "abbia aperto",
+          "tu": "abbia aperto",
+          "lui/lei": "abbia aperto",
+          "noi": "abbiamo aperto",
+          "voi": "abbiate aperto",
+          "loro": "abbiano aperto"
+        },
+        "Imperfetto": {
+          "io": "aprissi",
+          "tu": "aprissi",
+          "lui/lei": "aprisse",
+          "noi": "aprissimo",
+          "voi": "apristi",
+          "loro": "aprissero"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "aprirei",
+          "tu": "apriresti",
+          "lui/lei": "aprirebbe",
+          "noi": "apriremmo",
+          "voi": "aprireste",
+          "loro": "aprirebbero"
+        },
+        "Passato": {
+          "io": "avrei aperto",
+          "tu": "avresti aperto",
+          "lui/lei": "avrebbe aperto",
+          "noi": "avremmo aperto",
+          "voi": "avreste aperto",
+          "loro": "avrebbero aperto"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "apri",
+          "lui/lei": "apra",
+          "noi": "apriamo",
+          "voi": "aprite",
+          "loro": "aprano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "aprire",
+          "Passato": "avere aperto"
+        },
+        "Gerundio": {
+          "Presente": "aprendo",
+          "Passato": "avendo aperto"
+        },
+        "Participio": {
+          "Presente": "aprente",
+          "Passato": ["aperto", "aperta", "aperti", "aperte"]
+        }
+      }
+    }
+  },
+  
+  {
+    "infinitive": "seguire",
+    "translation": "suivre",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "seguo",
+          "tu": "segui",
+          "lui/lei": "segue",
+          "noi": "seguiamo",
+          "voi": "seguite",
+          "loro": "seguono"
+        },
+        "Passato Prossimo": {
+          "io": "ho seguito",
+          "tu": "hai seguito",
+          "lui/lei": "ha seguito",
+          "noi": "abbiamo seguito",
+          "voi": "avete seguito",
+          "loro": "hanno seguito"
+        },
+        "Imperfetto": {
+          "io": "seguivo",
+          "tu": "seguivi",
+          "lui/lei": "seguiva",
+          "noi": "seguivamo",
+          "voi": "seguivate",
+          "loro": "seguivano"
+        },
+        "Passato Remoto": {
+          "io": "seguii",
+          "tu": "seguisti",
+          "lui/lei": "seguì",
+          "noi": "seguimmo",
+          "voi": "seguiste",
+          "loro": "seguirono"
+        },
+        "Futuro Semplice": {
+          "io": "seguirò",
+          "tu": "seguirai",
+          "lui/lei": "seguirà",
+          "noi": "seguiremo",
+          "voi": "seguirete",
+          "loro": "seguiranno"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "segua",
+          "tu": "segua",
+          "lui/lei": "segua",
+          "noi": "seguiamo",
+          "voi": "seguiate",
+          "loro": "seguano"
+        },
+        "Passato": {
+          "io": "abbia seguito",
+          "tu": "abbia seguito",
+          "lui/lei": "abbia seguito",
+          "noi": "abbiamo seguito",
+          "voi": "abbiate seguito",
+          "loro": "abbiano seguito"
+        },
+        "Imperfetto": {
+          "io": "seguissi",
+          "tu": "seguissi",
+          "lui/lei": "seguisse",
+          "noi": "seguissimo",
+          "voi": "seguiste",
+          "loro": "seguissero"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "seguirei",
+          "tu": "seguiresti",
+          "lui/lei": "seguirebbe",
+          "noi": "seguiremmo",
+          "voi": "seguireste",
+          "loro": "seguirebbero"
+        },
+        "Passato": {
+          "io": "avrei seguito",
+          "tu": "avresti seguito",
+          "lui/lei": "avrebbe seguito",
+          "noi": "avremmo seguito",
+          "voi": "avreste seguito",
+          "loro": "avrebbero seguito"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "segui",
+          "lui/lei": "segua",
+          "noi": "seguiamo",
+          "voi": "seguite",
+          "loro": "seguano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "seguire",
+          "Passato": "avere seguito"
+        },
+        "Gerundio": {
+          "Presente": "seguendo",
+          "Passato": "avendo seguito"
+        },
+        "Participio": {
+          "Presente": "seguente",
+          "Passato": ["seguito", "seguita", "seguiti", "seguite"]
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "servire",
+    "translation": "servir",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "servo",
+          "tu": "servi",
+          "lui/lei": "serve",
+          "noi": "serviamo",
+          "voi": "servite",
+          "loro": "servono"
+        },
+        "Passato Prossimo": {
+          "io": "ho servito",
+          "tu": "hai servito",
+          "lui/lei": "ha servito",
+          "noi": "abbiamo servito",
+          "voi": "avete servito",
+          "loro": "hanno servito"
+        },
+        "Imperfetto": {
+          "io": "servivo",
+          "tu": "servivi",
+          "lui/lei": "serviva",
+          "noi": "servivamo",
+          "voi": "servivate",
+          "loro": "servivano"
+        },
+        "Passato Remoto": {
+          "io": "servii",
+          "tu": "servisti",
+          "lui/lei": "servì",
+          "noi": "servimmo",
+          "voi": "serviste",
+          "loro": "servirono"
+        },
+        "Futuro Semplice": {
+          "io": "servirò",
+          "tu": "servirai",
+          "lui/lei": "servirà",
+          "noi": "serviremo",
+          "voi": "servirete",
+          "loro": "serviranno"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "serva",
+          "tu": "serva",
+          "lui/lei": "serva",
+          "noi": "serviamo",
+          "voi": "serviate",
+          "loro": "servano"
+        },
+        "Passato": {
+          "io": "abbia servito",
+          "tu": "abbia servito",
+          "lui/lei": "abbia servito",
+          "noi": "abbiamo servito",
+          "voi": "abbiate servito",
+          "loro": "abbiano servito"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "servirei",
+          "tu": "serviresti",
+          "lui/lei": "servirebbe",
+          "noi": "serviremmo",
+          "voi": "servireste",
+          "loro": "servirebbero"
+        },
+        "Passato": {
+          "io": "avrei servito",
+          "tu": "avresti servito",
+          "lui/lei": "avrebbe servito",
+          "noi": "avremmo servito",
+          "voi": "avreste servito",
+          "loro": "avrebbero servito"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "servi",
+          "lui/lei": "serva",
+          "noi": "serviamo",
+          "voi": "servite",
+          "loro": "servano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "servire",
+          "Passato": "avere servito"
+        },
+        "Gerundio": {
+          "Presente": "servendo",
+          "Passato": "avendo servito"
+        },
+        "Participio": {
+          "Presente": "servente",
+          "Passato": ["servito", "servita", "serviti", "servite"]
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "partire",
+    "translation": "partir",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "parto",
+          "tu": "parti",
+          "lui/lei": "parte",
+          "noi": "partiamo",
+          "voi": "partite",
+          "loro": "partono"
+        },
+        "Passato Prossimo": {
+          "io": "sono partito/partita",
+          "tu": "sei partito/partita",
+          "lui/lei": "è partito/partita",
+          "noi": "siamo partiti/partite",
+          "voi": "siete partiti/partite",
+          "loro": "sono partiti/partite"
+        },
+        "Imperfetto": {
+          "io": "partivo",
+          "tu": "partivi",
+          "lui/lei": "partiva",
+          "noi": "partivamo",
+          "voi": "partivate",
+          "loro": "partivano"
+        },
+        "Passato Remoto": {
+          "io": "partii",
+          "tu": "partisti",
+          "lui/lei": "partì",
+          "noi": "partimmo",
+          "voi": "partiste",
+          "loro": "partirono"
+        },
+        "Futuro Semplice": {
+          "io": "partirò",
+          "tu": "partirai",
+          "lui/lei": "partirà",
+          "noi": "partiremo",
+          "voi": "partirete",
+          "loro": "partiranno"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "parta",
+          "tu": "parta",
+          "lui/lei": "parta",
+          "noi": "partiamo",
+          "voi": "partiate",
+          "loro": "partano"
+        },
+        "Passato": {
+          "io": "sia partito/partita",
+          "tu": "sia partito/partita",
+          "lui/lei": "sia partito/partita",
+          "noi": "siamo partiti/partite",
+          "voi": "siate partiti/partite",
+          "loro": "siano partiti/partite"
+        },
+        "Imperfetto": {
+          "io": "partissi",
+          "tu": "partissi",
+          "lui/lei": "partisse",
+          "noi": "partissimo",
+          "voi": "partiste",
+          "loro": "partissero"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "partirei",
+          "tu": "partiresti",
+          "lui/lei": "partirebbe",
+          "noi": "partiremmo",
+          "voi": "partireste",
+          "loro": "partirebbero"
+        },
+        "Passato": {
+          "io": "sarei partito/partita",
+          "tu": "saresti partito/partita",
+          "lui/lei": "sarebbe partito/partita",
+          "noi": "saremmo partiti/partite",
+          "voi": "sareste partiti/partite",
+          "loro": "sarebbero partiti/partite"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "parti",
+          "lui/lei": "parta",
+          "noi": "partiamo",
+          "voi": "partite",
+          "loro": "partano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "partire",
+          "Passato": "[translate:essere partito/partita]"
+        },
+        "Gerundio": {
+          "Presente": "partendo",
+          "Passato": "[translate:essendo partito/partita]"
+        },
+        "Participio": {
+          "Presente": "partente",
+          "Passato": ["partito", "partita", "partiti", "partite"]
+        }
+      }
+    }
+  }
+]

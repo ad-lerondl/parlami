@@ -1,0 +1,621 @@
+[
+  {
+    "infinitive": "fare",
+    "translation": "faire",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "faccio",
+          "tu": "fai",
+          "lui/lei": "fa",
+          "noi": "facciamo",
+          "voi": "fate",
+          "loro": "fanno"
+        },
+        "Passato Prossimo": {
+          "io": "ho fatto",
+          "tu": "hai fait",
+          "lui/lei": "ha fatto",
+          "noi": "abbiamo fatto",
+          "voi": "avete fait",
+          "loro": "hanno fatto"
+        },
+        "Imperfetto": {
+          "io": "facevo",
+          "tu": "facevi",
+          "lui/lei": "faceva",
+          "noi": "facevamo",
+          "voi": "facevate",
+          "loro": "facevano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo fatto",
+          "tu": "avevi fatto",
+          "lui/lei": "aveva fatto",
+          "noi": "avevamo fait",
+          "voi": "avevate fatto",
+          "loro": "avevano fatto"
+        },
+        "Futuro Semplice": {
+          "io": "farò",
+          "tu": "farai",
+          "lui/lei": "farà",
+          "noi": "faremo",
+          "voi": "farete",
+          "loro": "faranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò fatto",
+          "tu": "avrai fatto",
+          "lui/lei": "avrà fait",
+          "noi": "avremo fatto",
+          "voi": "avrete fait",
+          "loro": "avranno fatto"
+        },
+        "Passato Remoto": {
+          "io": "feci",
+          "tu": "facesti",
+          "lui/lei": "fece",
+          "noi": "facemmo",
+          "voi": "faceste",
+          "loro": "fecero"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi fatto",
+          "tu": "avesti fatto",
+          "lui/lei": "ebbe fatto",
+          "noi": "avemmo fatto",
+          "voi": "aveste fatto",
+          "loro": "ebbero fatto"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "faccia",
+          "tu": "faccia",
+          "lui/lei": "faccia",
+          "noi": "facciamo",
+          "voi": "facciate",
+          "loro": "facciano"
+        },
+        "Passato": {
+          "io": "abbia fatto",
+          "tu": "abbia fait",
+          "lui/lei": "abbia fatto",
+          "noi": "abbiamo fait",
+          "voi": "abbiate fait",
+          "loro": "abbiano fatto"
+        },
+        "Imperfetto": {
+          "io": "facessi",
+          "tu": "facessi",
+          "lui/lei": "facesse",
+          "noi": "facessimo",
+          "voi": "faceste",
+          "loro": "facessero"
+        },
+        "Trapassato": {
+          "io": "avessi fatto",
+          "tu": "avessi fait",
+          "lui/lei": "avesse fatto",
+          "noi": "avessimo fait",
+          "voi": "aveste fait",
+          "loro": "avessero fatto"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "farei",
+          "tu": "faresti",
+          "lui/lei": "farebbe",
+          "noi": "faremmo",
+          "voi": "fareste",
+          "loro": "farebbero"
+        },
+        "Passato": {
+          "io": "avrei fatto",
+          "tu": "avresti fait",
+          "lui/lei": "avrebbe fait",
+          "noi": "avremmo fait",
+          "voi": "avreste fait",
+          "loro": "avrebbero fait"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "fa'/fai",
+          "lui/lei": "faccia",
+          "noi": "facciamo",
+          "voi": "fate",
+          "loro": "facciano"
+        },
+        "Negatif": {
+          "tu": "non fare",
+          "lui/lei": "non faccia",
+          "noi": "non facciamo",
+          "voi": "non fate",
+          "loro": "non facciano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "fare",
+          "Passato": "avere fatto"
+        },
+        "Gerundio": {
+          "Presente": "facendo",
+          "Passato": "avendo fatto"
+        },
+        "Participio": {
+          "Presente": "facente",
+          "Passato": "fatto"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "stare",
+    "translation": "rester / être / se porter",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "sto",
+          "tu": "stai",
+          "lui/lei": "sta",
+          "noi": "stiamo",
+          "voi": "state",
+          "loro": "stanno"
+        },
+        "Passato Prossimo": {
+          "io": "sono stato",
+          "tu": "sei stato",
+          "lui/lei": "è stato",
+          "noi": "siamo stati",
+          "voi": "siete stati",
+          "loro": "sono stati"
+        },
+        "Imperfetto": {
+          "io": "stavo",
+          "tu": "stavi",
+          "lui/lei": "stava",
+          "noi": "stavamo",
+          "voi": "stavate",
+          "loro": "stavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "ero stato",
+          "tu": "eri stato",
+          "lui/lei": "era stato",
+          "noi": "eravamo stati",
+          "voi": "eravate stati",
+          "loro": "erano stati"
+        },
+        "Futuro Semplice": {
+          "io": "starò",
+          "tu": "starai",
+          "lui/lei": "starà",
+          "noi": "staremo",
+          "voi": "starete",
+          "loro": "staranno"
+        },
+        "Futuro Anteriore": {
+          "io": "sarò stato",
+          "tu": "sarai stato",
+          "lui/lei": "sarà stato",
+          "noi": "saremo stati",
+          "voi": "sarete stati",
+          "loro": "saranno stati"
+        },
+        "Passato Remoto": {
+          "io": "stetti",
+          "tu": "stesti",
+          "lui/lei": "stette",
+          "noi": "stemmo",
+          "voi": "steste",
+          "loro": "stettero"
+        },
+        "Trapassato Remoto": {
+          "io": "fui stato",
+          "tu": "fosti stato",
+          "lui/lei": "fu stato",
+          "noi": "fummo stati",
+          "voi": "foste stati",
+          "loro": "furono stati"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "stia",
+          "tu": "stia",
+          "lui/lei": "stia",
+          "noi": "stiamo",
+          "voi": "stiate",
+          "loro": "stiano"
+        },
+        "Passato": {
+          "io": "sia stato",
+          "tu": "sia stato",
+          "lui/lei": "sia stato",
+          "noi": "siamo stati",
+          "voi": "siate stati",
+          "loro": "siano stati"
+        },
+        "Imperfetto": {
+          "io": "stessi",
+          "tu": "stessi",
+          "lui/lei": "stesse",
+          "noi": "stessimo",
+          "voi": "steste",
+          "loro": "stessero"
+        },
+        "Trapassato": {
+          "io": "fossi stato",
+          "tu": "fossi stato",
+          "lui/lei": "fosse stato",
+          "noi": "fossimo stati",
+          "voi": "foste stati",
+          "loro": "fossero stati"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "starei",
+          "tu": "staresti",
+          "lui/lei": "starebbe",
+          "noi": "staremmo",
+          "voi": "stareste",
+          "loro": "starebbero"
+        },
+        "Passato": {
+          "io": "sarei stato",
+          "tu": "saresti stato",
+          "lui/lei": "sarebbe stato",
+          "noi": "saremmo stati",
+          "voi": "sareste stati",
+          "loro": "sarebbero stati"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "sta'/stai",
+          "lui/lei": "stia",
+          "noi": "stiamo",
+          "voi": "state",
+          "loro": "stiano"
+        },
+        "Negatif": {
+          "tu": "non stare",
+          "lui/lei": "non stia",
+          "noi": "non stiamo",
+          "voi": "non state",
+          "loro": "non stiano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "stare",
+          "Passato": "essere stato"
+        },
+        "Gerundio": {
+          "Presente": "stando",
+          "Passato": "essendo stato"
+        },
+        "Participio": {
+          "Presente": "stante",
+          "Passato": "stato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "dare",
+    "translation": "donner",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "do",
+          "tu": "dai",
+          "lui/lei": "dà",
+          "noi": "diamo",
+          "voi": "date",
+          "loro": "danno"
+        },
+        "Passato Prossimo": {
+          "io": "ho dato",
+          "tu": "hai dato",
+          "lui/lei": "ha dato",
+          "noi": "abbiamo dato",
+          "voi": "avete dato",
+          "loro": "hanno dato"
+        },
+        "Imperfetto": {
+          "io": "davo",
+          "tu": "davi",
+          "lui/lei": "dava",
+          "noi": "davamo",
+          "voi": "davate",
+          "loro": "davano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo dato",
+          "tu": "avevi dato",
+          "lui/lei": "aveva dato",
+          "noi": "avevamo dato",
+          "voi": "avevate dato",
+          "loro": "avevano dato"
+        },
+        "Futuro Semplice": {
+          "io": "darò",
+          "tu": "darai",
+          "lui/lei": "darà",
+          "noi": "daremo",
+          "voi": "darete",
+          "loro": "daranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò dato",
+          "tu": "avrai dato",
+          "lui/lei": "avrà dato",
+          "noi": "avremo dato",
+          "voi": "avrete dato",
+          "loro": "avranno dato"
+        },
+        "Passato Remoto": {
+          "io": "diedi",
+          "tu": "desti",
+          "lui/lei": "diede",
+          "noi": "demmo",
+          "voi": "deste",
+          "loro": "diedero"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi dato",
+          "tu": "avesti dato",
+          "lui/lei": "ebbe dato",
+          "noi": "avemmo dato",
+          "voi": "aveste dato",
+          "loro": "ebbero dato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "dia",
+          "tu": "dia",
+          "lui/lei": "dia",
+          "noi": "diamo",
+          "voi": "diate",
+          "loro": "diano"
+        },
+        "Passato": {
+          "io": "abbia dato",
+          "tu": "abbia dato",
+          "lui/lei": "abbia dato",
+          "noi": "abbiamo dato",
+          "voi": "abbiate dato",
+          "loro": "abbiano dato"
+        },
+        "Imperfetto": {
+          "io": "dessi",
+          "tu": "dessi",
+          "lui/lei": "desse",
+          "noi": "dessimo",
+          "voi": "deste",
+          "loro": "dessero"
+        },
+        "Trapassato": {
+          "io": "avessi dato",
+          "tu": "avessi dato",
+          "lui/lei": "avesse dato",
+          "noi": "avessimo dato",
+          "voi": "aveste dato",
+          "loro": "avessero dato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "darei",
+          "tu": "daresti",
+          "lui/lei": "darebbe",
+          "noi": "daremmo",
+          "voi": "dareste",
+          "loro": "darebbero"
+        },
+        "Passato": {
+          "io": "avrei dato",
+          "tu": "avresti dato",
+          "lui/lei": "avrebbe dato",
+          "noi": "avremmo dato",
+          "voi": "avreste dato",
+          "loro": "avrebbero dato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "dai/da'",
+          "lui/lei": "dia",
+          "noi": "diamo",
+          "voi": "date",
+          "loro": "diano"
+        },
+        "Negatif": {
+          "tu": "non dare",
+          "lui/lei": "non dia",
+          "noi": "non diamo",
+          "voi": "non date",
+          "loro": "non diano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "dare",
+          "Passato": "avere dato"
+        },
+        "Gerundio": {
+          "Presente": "dando",
+          "Passato": "avendo dato"
+        },
+        "Participio": {
+          "Presente": "dante",
+          "Passato": "dato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "andare",
+    "translation": "aller",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "vado",
+          "tu": "vai",
+          "lui/lei": "va",
+          "noi": "andiamo",
+          "voi": "andate",
+          "loro": "vanno"
+        },
+        "Passato Prossimo": {
+          "io": "sono andato",
+          "tu": "sei andato",
+          "lui/lei": "è andato",
+          "noi": "siamo andati",
+          "voi": "siete andati",
+          "loro": "sono andati"
+        },
+        "Imperfetto": {
+          "io": "andavo",
+          "tu": "andavi",
+          "lui/lei": "andava",
+          "noi": "andavamo",
+          "voi": "andavate",
+          "loro": "andavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "ero andato",
+          "tu": "eri andato",
+          "lui/lei": "era andato",
+          "noi": "eravamo andati",
+          "voi": "eravate andati",
+          "loro": "erano andati"
+        },
+        "Futuro Semplice": {
+          "io": "andrò",
+          "tu": "andrai",
+          "lui/lei": "andrà",
+          "noi": "andremo",
+          "voi": "andrete",
+          "loro": "andranno"
+        },
+        "Futuro Anteriore": {
+          "io": "sarò andato",
+          "tu": "sarai andato",
+          "lui/lei": "sarà andato",
+          "noi": "saremo andati",
+          "voi": "sarete andati",
+          "loro": "saranno andati"
+        },
+        "Passato Remoto": {
+          "io": "andai",
+          "tu": "andasti",
+          "lui/lei": "andò",
+          "noi": "andammo",
+          "voi": "andaste",
+          "loro": "andarono"
+        },
+        "Trapassato Remoto": {
+          "io": "fui andato",
+          "tu": "fosti andato",
+          "lui/lei": "fu andato",
+          "noi": "fummo andati",
+          "voi": "foste andati",
+          "loro": "furono andati"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "vada",
+          "tu": "vada",
+          "lui/lei": "vada",
+          "noi": "andiamo",
+          "voi": "andiate",
+          "loro": "vadano"
+        },
+        "Passato": {
+          "io": "sia andato",
+          "tu": "sia andato",
+          "lui/lei": "sia andato",
+          "noi": "siamo andati",
+          "voi": "siate andati",
+          "loro": "siano andati"
+        },
+        "Imperfetto": {
+          "io": "andassi",
+          "tu": "andassi",
+          "lui/lei": "andasse",
+          "noi": "andassimo",
+          "voi": "andaste",
+          "loro": "andassero"
+        },
+        "Trapassato": {
+          "io": "fossi andato",
+          "tu": "fossi andato",
+          "lui/lei": "fosse andato",
+          "noi": "fossimo andati",
+          "voi": "foste andati",
+          "loro": "fossero andati"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "andrei",
+          "tu": "andresti",
+          "lui/lei": "andrebbe",
+          "noi": "andremmo",
+          "voi": "andreste",
+          "loro": "andrebbero"
+        },
+        "Passato": {
+          "io": "sarei andato",
+          "tu": "saresti andato",
+          "lui/lei": "sarebbe andato",
+          "noi": "saremmo andati",
+          "voi": "sareste andati",
+          "loro": "sarebbero andati"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "va'/vai",
+          "lui/lei": "vada",
+          "noi": "andiamo",
+          "voi": "andate",
+          "loro": "vadano"
+        },
+        "Negatif": {
+          "tu": "non andare",
+          "lui/lei": "non vada",
+          "noi": "non andiamo",
+          "voi": "non andate",
+          "loro": "non vadano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "andare",
+          "Passato": "essere andato"
+        },
+        "Gerundio": {
+          "Presente": "andando",
+          "Passato": "essendo andato"
+        },
+        "Participio": {
+          "Presente": "andante",
+          "Passato": "andato"
+        }
+      }
+    }
+  }
+]

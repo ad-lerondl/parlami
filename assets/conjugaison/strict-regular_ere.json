@@ -1,0 +1,311 @@
+[
+  {
+    "infinitive": "credere",
+    "translation": "croire",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "credo",
+          "tu": "credi",
+          "lui/lei": "crede",
+          "noi": "crediamo",
+          "voi": "credete",
+          "loro": "credono"
+        },
+        "Passato Prossimo": {
+          "io": "ho creduto",
+          "tu": "hai creduto",
+          "lui/lei": "ha creduto",
+          "noi": "abbiamo creduto",
+          "voi": "avete creduto",
+          "loro": "hanno creduto"
+        },
+        "Imperfetto": {
+          "io": "credevo",
+          "tu": "credevi",
+          "lui/lei": "credeva",
+          "noi": "credevamo",
+          "voi": "credevate",
+          "loro": "credevano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo creduto",
+          "tu": "avevi creduto",
+          "lui/lei": "aveva creduto",
+          "noi": "avevamo creduto",
+          "voi": "avevate creduto",
+          "loro": "avevano creduto"
+        },
+        "Futuro Semplice": {
+          "io": "crederò",
+          "tu": "crederai",
+          "lui/lei": "crederà",
+          "noi": "crederemo",
+          "voi": "crederete",
+          "loro": "crederanno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò creduto",
+          "tu": "avrai creduto",
+          "lui/lei": "avrà creduto",
+          "noi": "avremo creduto",
+          "voi": "avrete creduto",
+          "loro": "avranno creduto"
+        },
+        "Passato Remoto": {
+          "io": "credei/credetti",
+          "tu": "credesti",
+          "lui/lei": "credé/credette",
+          "noi": "credemmo",
+          "voi": "credeste",
+          "loro": "crederono/credettero"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi creduto",
+          "tu": "avesti creduto",
+          "lui/lei": "ebbe creduto",
+          "noi": "avemmo creduto",
+          "voi": "aveste creduto",
+          "loro": "ebbero creduto"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "creda",
+          "tu": "creda",
+          "lui/lei": "creda",
+          "noi": "crediamo",
+          "voi": "crediate",
+          "loro": "credano"
+        },
+        "Passato": {
+          "io": "abbia creduto",
+          "tu": "abbia creduto",
+          "lui/lei": "abbia creduto",
+          "noi": "abbiamo creduto",
+          "voi": "abbiate creduto",
+          "loro": "abbiano creduto"
+        },
+        "Imperfetto": {
+          "io": "credessi",
+          "tu": "credessi",
+          "lui/lei": "credesse",
+          "noi": "credessimo",
+          "voi": "credeste",
+          "loro": "credessero"
+        },
+        "Trapassato": {
+          "io": "avessi creduto",
+          "tu": "avessi creduto",
+          "lui/lei": "avesse creduto",
+          "noi": "avessimo creduto",
+          "voi": "aveste creduto",
+          "loro": "avessero creduto"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "crederei",
+          "tu": "crederesti",
+          "lui/lei": "crederebbe",
+          "noi": "crederemmo",
+          "voi": "credereste",
+          "loro": "crederebbero"
+        },
+        "Passato": {
+          "io": "avrei creduto",
+          "tu": "avresti creduto",
+          "lui/lei": "avrebbe creduto",
+          "noi": "avremmo creduto",
+          "voi": "avreste creduto",
+          "loro": "avrebbero creduto"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "credi",
+          "lui/lei": "creda",
+          "noi": "crediamo",
+          "voi": "credete",
+          "loro": "credano"
+        },
+        "Negatif": {
+          "tu": "non credere",
+          "lui/lei": "non creda",
+          "noi": "non crediamo",
+          "voi": "non credete",
+          "loro": "non credano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "credere",
+          "Passato": "avere creduto"
+        },
+        "Gerundio": {
+          "Presente": "credendo",
+          "Passato": "avendo creduto"
+        },
+        "Participio": {
+          "Presente": "credente",
+          "Passato": "creduto"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "decidere",
+    "translation": "décider",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "decido",
+          "tu": "decidi",
+          "lui/lei": "decide",
+          "noi": "decidiamo",
+          "voi": "decidete",
+          "loro": "decidono"
+        },
+        "Passato Prossimo": {
+          "io": "ho deciso",
+          "tu": "hai deciso",
+          "lui/lei": "ha deciso",
+          "noi": "abbiamo deciso",
+          "voi": "avete deciso",
+          "loro": "hanno deciso"
+        },
+        "Imperfetto": {
+          "io": "decidevo",
+          "tu": "decidevi",
+          "lui/lei": "decideva",
+          "noi": "decidevamo",
+          "voi": "decidevate",
+          "loro": "decidevano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo deciso",
+          "tu": "avevi deciso",
+          "lui/lei": "aveva deciso",
+          "noi": "avevamo deciso",
+          "voi": "avevate deciso",
+          "loro": "avevano deciso"
+        },
+        "Futuro Semplice": {
+          "io": "deciderò",
+          "tu": "deciderai",
+          "lui/lei": "deciderà",
+          "noi": "decideremo",
+          "voi": "deciderete",
+          "loro": "decideranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò deciso",
+          "tu": "avrai deciso",
+          "lui/lei": "avrà deciso",
+          "noi": "avremo deciso",
+          "voi": "avrete deciso",
+          "loro": "avranno deciso"
+        },
+        "Passato Remoto": {
+          "io": "decisi",
+          "tu": "decidesti",
+          "lui/lei": "decise",
+          "noi": "decidemmo",
+          "voi": "decideste",
+          "loro": "decisero"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi deciso",
+          "tu": "avesti deciso",
+          "lui/lei": "ebbe deciso",
+          "noi": "avemmo deciso",
+          "voi": "aveste deciso",
+          "loro": "ebbero deciso"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "decida",
+          "tu": "decida",
+          "lui/lei": "decida",
+          "noi": "decidiamo",
+          "voi": "decidiate",
+          "loro": "decidano"
+        },
+        "Passato": {
+          "io": "abbia deciso",
+          "tu": "abbia deciso",
+          "lui/lei": "abbia deciso",
+          "noi": "abbiamo deciso",
+          "voi": "abbiate deciso",
+          "loro": "abbiano deciso"
+        },
+        "Imperfetto": {
+          "io": "decidessi",
+          "tu": "decidessi",
+          "lui/lei": "decidesse",
+          "noi": "decidessimo",
+          "voi": "decideste",
+          "loro": "decidessero"
+        },
+        "Trapassato": {
+          "io": "avessi deciso",
+          "tu": "avessi deciso",
+          "lui/lei": "avesse deciso",
+          "noi": "avessimo deciso",
+          "voi": "aveste deciso",
+          "loro": "avessero deciso"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "deciderei",
+          "tu": "decideresti",
+          "lui/lei": "deciderebbe",
+          "noi": "decideremmo",
+          "voi": "decidereste",
+          "loro": "deciderebbero"
+        },
+        "Passato": {
+          "io": "avrei deciso",
+          "tu": "avresti deciso",
+          "lui/lei": "avrebbe deciso",
+          "noi": "avremmo deciso",
+          "voi": "avreste deciso",
+          "loro": "avrebbero deciso"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "decidi",
+          "lui/lei": "decida",
+          "noi": "decidiamo",
+          "voi": "decidete",
+          "loro": "decidano"
+        },
+        "Negatif": {
+          "tu": "non decidere",
+          "lui/lei": "non decida",
+          "noi": "non decidiamo",
+          "voi": "non decidete",
+          "loro": "non decidano"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "decidere",
+          "Passato": "avere deciso"
+        },
+        "Gerundio": {
+          "Presente": "decidendo",
+          "Passato": "avendo deciso"
+        },
+        "Participio": {
+          "Presente": "decidente",
+          "Passato": "deciso"
+        }
+      }
+    }
+  }
+]

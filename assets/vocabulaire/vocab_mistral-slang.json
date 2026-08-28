@@ -1,0 +1,864 @@
+[
+  {
+    "it": "sesso",
+    "fr": "sexe",
+    "categories": ["Sexe"],
+    "difficulty": "A2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "genere",
+    "fr": "genre",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "A2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "uomo",
+    "fr": "homme",
+    "categories": ["Sexe"],
+    "difficulty": "A1",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "donna",
+    "fr": "femme",
+    "categories": ["Sexe"],
+    "difficulty": "A1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "maschio",
+    "fr": "mâle",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "A2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "femmina",
+    "fr": "femelle",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "A2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "pene",
+    "fr": "pénis",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "vagina",
+    "fr": "vagin",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "clitoride",
+    "fr": "clitoris",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "testicolo",
+    "fr": "testicule",
+    "categories": ["Sexe", "Anatomie", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "ovaio",
+    "fr": "ovaire",
+    "categories": ["Sexe", "Anatomie", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "utero",
+    "fr": "utérus",
+    "categories": ["Sexe", "Anatomie", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "seno",
+    "fr": "sein",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "A2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "capezzolo",
+    "fr": "mamelon",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "ano",
+    "fr": "anus",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "erezione",
+    "fr": "érection",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "eiaculazione",
+    "fr": "éjaculation",
+    "categories": ["Sexe", "Anatomie", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "orgasmo",
+    "fr": "orgasme",
+    "categories": ["Sexe", "Anatomie"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "masturbazione",
+    "fr": "masturbation",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "preservativo",
+    "fr": "préservatif",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "pillola anticoncezionale",
+    "fr": "pilule contraceptive",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "spirale",
+    "fr": "stérilet",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "aborto",
+    "fr": "avortement",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "fecondazione",
+    "fr": "fécondation",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "menopausa",
+    "fr": "ménopause",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "mestruazioni",
+    "fr": "règles (menstruations)",
+    "categories": ["Sexe", "Médical"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "le"
+  },
+  {
+    "it": "libido",
+    "fr": "libido",
+    "categories": ["Sexe"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "eccitazione",
+    "fr": "excitation",
+    "categories": ["Sexe"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "desiderio sessuale",
+    "fr": "désir sexuel",
+    "categories": ["Sexe"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun phrase",
+    "article": "il"
+  },
+  {
+    "it": "fantasia erotica",
+    "fr": "fantasme érotique",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase",
+    "article": "la"
+  },
+  {
+    "it": "rapporto sessuale",
+    "fr": "rapport sexuel",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun phrase",
+    "article": "il"
+  },
+  {
+    "it": "fare l'amore",
+    "fr": "faire l'amour",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "A2",
+    "partOfSpeech": "verb phrase"
+  },
+  {
+    "it": "avere un rapporto",
+    "fr": "avoir un rapport",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "verb phrase"
+  },
+  {
+    "it": "baciare",
+    "fr": "embrasser",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "A1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "accarezzare",
+    "fr": "caresser",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "A2",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "toccare",
+    "fr": "toucher",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "A1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "leccare",
+    "fr": "lécher",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "penetrare",
+    "fr": "pénétrer",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "sesso orale",
+    "fr": "sexe oral",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase"
+  },
+  {
+    "it": "sesso anale",
+    "fr": "sexe anal",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase"
+  },
+  {
+    "it": "sesso di gruppo",
+    "fr": "partouze",
+    "categories": ["Sexe", "Pratiques", "Slang"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun phrase"
+  },
+  {
+    "it": "sesso virtuale",
+    "fr": "sexe virtuel",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase"
+  },
+  {
+    "it": "giocattolo erotico",
+    "fr": "jouet érotique",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase",
+    "article": "il"
+  },
+  {
+    "it": "vibratore",
+    "fr": "vibromasseur",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "dildo",
+    "fr": "gode",
+    "categories": ["Sexe", "Pratiques", "Slang"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "lubrificante",
+    "fr": "lubrifiant",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "BDSM",
+    "fr": "BDSM",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "dominazione",
+    "fr": "domination",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "sottomissione",
+    "fr": "soumission",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "feticismo",
+    "fr": "fétichisme",
+    "categories": ["Sexe", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "transessuale",
+    "fr": "transsexuel(le)",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "omosessuale",
+    "fr": "homosexuel(le)",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "eterosessuale",
+    "fr": "hétérosexuel(le)",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "bisessuale",
+    "fr": "bisexuel(le)",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "asesessuale",
+    "fr": "asexuel(le)",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "non binario",
+    "fr": "non-binaire",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "adjective"
+  },
+  {
+    "it": "intersessuale",
+    "fr": "intersexe",
+    "categories": ["Sexe", "LGBTQ+", "Médical"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "coming out",
+    "fr": "coming out",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "orientamento sessuale",
+    "fr": "orientation sexuelle",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase",
+    "article": "l'"
+  },
+  {
+    "it": "identità di genere",
+    "fr": "identité de genre",
+    "categories": ["Sexe", "LGBTQ+"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase",
+    "article": "l'"
+  },
+
+  {
+    "it": "scopare",
+    "fr": "baiser (vulgaire)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "fottere",
+    "fr": "niquer (vulgaire)",
+    "categories": ["Sexe", "Slang", "Insultes", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "chiavare",
+    "fr": "baiser (familier)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "trombare",
+    "fr": "baiser (familier)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "spompinare",
+    "fr": "faire une pipe (vulgaire)",
+    "categories": ["Sexe", "Slang", "Pratiques", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "pompa",
+    "fr": "pipe (familier)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "segaiolo",
+    "fr": "branleur (vulgaire)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "figa",
+    "fr": "chatte (vulgaire)",
+    "categories": ["Sexe", "Slang", "Insultes", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "fica",
+    "fr": "chatte (vulgaire, régional)",
+    "categories": ["Sexe", "Slang", "Insultes", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "cazzo",
+    "fr": "bite (vulgaire)",
+    "categories": ["Sexe", "Slang", "Insultes", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "cazzone",
+    "fr": "grosse bite (vulgaire)",
+    "categories": ["Sexe", "Slang", "Insultes", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "minchia",
+    "fr": "bite (vulgaire, sicilien)",
+    "categories": ["Sexe", "Slang", "Insultes", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "troia",
+    "fr": "pute (vulgaire)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "puttana",
+    "fr": "pute (vulgaire)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "zoccola",
+    "fr": "salope (vulgaire)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "bagaça",
+    "fr": "salope (vulgaire, régional)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "porno",
+    "fr": "porno",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "hard",
+    "fr": "hard (porno dur)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "adjective"
+  },
+  {
+    "it": "soft",
+    "fr": "soft (porno léger)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "adjective"
+  },
+  {
+    "it": "culattone",
+    "fr": "pédé (vulgaire)",
+    "categories": ["Slang", "Insultes", "LGBTQ+"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "frocio",
+    "fr": "pédé (vulgaire)",
+    "categories": ["Slang", "Insultes", "LGBTQ+"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "ricchione",
+    "fr": "pédé (vulgaire)",
+    "categories": ["Slang", "Insultes", "LGBTQ+"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "lesbica",
+    "fr": "lesbienne",
+    "categories": ["Sexe", "LGBTQ+", "Slang"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "finocchio",
+    "fr": "pédé (vulgaire, litt. 'fenouil')",
+    "categories": ["Slang", "Insultes", "LGBTQ+"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "pollo",
+    "fr": "jeune homme (argot pour prostitué masculin)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "battona",
+    "fr": "travesti (vulgaire)",
+    "categories": ["Slang", "Insultes", "LGBTQ+"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "trans",
+    "fr": "trans (familier)",
+    "categories": ["Sexe", "LGBTQ+", "Slang"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "sesso a tre",
+    "fr": "plan à trois",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun phrase"
+  },
+  {
+    "it": "scambista",
+    "fr": "échangiste",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il/la"
+  },
+  {
+    "it": "ornitologia",
+    "fr": "plan cul (litt. 'ornithologie', argot)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "l'"
+  },
+  {
+    "it": "rimorchio",
+    "fr": "drague",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "rimorchiare",
+    "fr": "draguer",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "ciavare",
+    "fr": "baiser (argot, régional)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "sverginare",
+    "fr": "dépuceler",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "vergine",
+    "fr": "pucelle/vierge",
+    "categories": ["Sexe", "Slang"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "sgorbia",
+    "fr": "branlette (vulgaire, régional)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "sega",
+    "fr": "branlette (familier)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "farsi una sega",
+    "fr": "se faire une branlette",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb phrase"
+  },
+  {
+    "it": "godere",
+    "fr": "jouir",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B2",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "venire",
+    "fr": "venir (orgasme)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "B1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "sborra",
+    "fr": "sperme (vulgaire)",
+    "categories": ["Sexe", "Slang", "Anatomie"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "sborrare",
+    "fr": "éjaculer (vulgaire)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "verb"
+  },
+  {
+    "it": "cazzeggio",
+    "fr": "branlette (litt. 'perte de temps', argot)",
+    "categories": ["Sexe", "Slang", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "porcata",
+    "fr": "plan cul (vulgaire)",
+    "categories": ["Sexe", "Slang", "Pratiques", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "troiaio",
+    "fr": "bordel (litt. 'endroit de putes')",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "bordo",
+    "fr": "bordel (familier)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "puttaniere",
+    "fr": "maison close (vulgaire)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "il"
+  },
+  {
+    "it": "lucciola",
+    "fr": "pute (litt. 'luciole', argot)",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "sciupafemmine",
+    "fr": "coureur de jupons (litt. 'gâche-femmes')",
+    "categories": ["Slang", "Insultes"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "lo"
+  },
+  {
+    "it": "gnocca",
+    "fr": "nana (familier)",
+    "categories": ["Slang"],
+    "difficulty": "B2",
+    "partOfSpeech": "noun",
+    "article": "la"
+  },
+  {
+    "it": "bocchinara",
+    "fr": "pipeuse (vulgaire)",
+    "categories": ["Slang", "Insultes", "Pratiques"],
+    "difficulty": "C1",
+    "partOfSpeech": "noun",
+    "article": "la"
+  }
+]

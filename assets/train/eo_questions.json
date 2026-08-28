@@ -1,0 +1,423 @@
+[
+  {
+    "id": "q_intro",
+    "prompt": "Presentati in 30 secondi.",
+    "level": "A1",
+    "expectedAnswer": "Mi chiamo..., ho ... anni, vengo da..., abito a...",
+    "topic": "Présentation",
+    "tip": "Enchaine les verbes essere/avere au présent et des connecteurs simples (e, ma, anche).",
+    "followUps": ["q_family_flash", "q_hobby_flash"]
+  },
+  {
+    "id": "q_restaurant",
+    "prompt": "Ordina in un ristorante che scopri.",
+    "level": "A1",
+    "expectedAnswer": "Per me... Vorrei... Da bere prendo... Il conto, per favore.",
+    "topic": "Vie quotidienne",
+    "tip": "Utilise le conditionnel de politesse (vorrei) et un compliment simple (è buonissimo).",
+    "followUps": ["q_waiter_advice", "q_allergy_request"]
+  },
+  {
+    "id": "q_family_flash",
+    "prompt": "Parla della tua famiglia in 40 secondi (fratelli, sorelle, dove vivono).",
+    "level": "A1",
+    "expectedAnswer": "Ho ... fratelli/sorelle, vivono a..., ci sentiamo..., sono...",
+    "topic": "Famille",
+    "tip": "Reste au présent, ajoute un aggettivo par personne (simpatico, divertente).",
+    "followUps": ["q_plan_weekend", "q_memory_trip"]
+  },
+  {
+    "id": "q_hobby_flash",
+    "prompt": "Aggiungi un hobby recente e perché ti piace.",
+    "level": "A1",
+    "expectedAnswer": "Mi piace..., lo faccio con..., perché mi rilassa/mi aiuta a...",
+    "topic": "Loisirs",
+    "tip": "Verbi au présent + due connecteurs (perché, quindi).",
+    "followUps": ["q_routine_morning", "q_market_photo"]
+  },
+  {
+    "id": "q_waiter_advice",
+    "prompt": "Chiedi un consiglio al cameriere su un piatto locale.",
+    "level": "A2",
+    "expectedAnswer": "Cosa consiglia oggi? Qual è il piatto tipico?",
+    "topic": "Restaurant",
+    "tip": "Utilise il condizionale di cortesia (potrei, vorrei) et un aggettivo (leggero, piccante).",
+    "followUps": ["q_allergy_request"],
+    "startable": false
+  },
+  {
+    "id": "q_allergy_request",
+    "prompt": "Chiedi un'opzione senza allergeni e proponi un'alternativa.",
+    "level": "A2",
+    "expectedAnswer": "Sono allergico a..., c'è un piatto senza...? Potrei avere...",
+    "topic": "Restaurant",
+    "tip": "Structure: informa → chiedi → proponi (posso cambiare il formaggio?).",
+    "followUps": ["q_travel_story"],
+    "startable": false
+  },
+  {
+    "id": "q_routine_morning",
+    "prompt": "Racconta la tua routine mattutina.",
+    "level": "A2",
+    "expectedAnswer": "Mi sveglio, faccio colazione, mi preparo, esco...",
+    "topic": "Habitudes",
+    "tip": "Liste 5 verbi (svegliarsi, alzarsi, lavarsi, vestirsi, uscire).",
+    "followUps": ["q_morning_never", "q_morning_upgrade"]
+  },
+  {
+    "id": "q_describe_person",
+    "prompt": "Descrivi una persona che ammiri.",
+    "level": "A2",
+    "expectedAnswer": "Uso l'imperfetto per il carattere e il fisico, poi spiego perché lo/la ammiro.",
+    "topic": "Personnes",
+    "tip": "être/avoir per gli aggettivi + un verbe d'azione (aiuta, insegna, ispira).",
+    "followUps": ["q_meet_time", "q_advice_received"]
+  },
+  {
+    "id": "q_plan_weekend",
+    "prompt": "Pianifica un weekend con amici a Roma.",
+    "level": "A2",
+    "expectedAnswer": "Sabato andiamo a..., domenica visitiamo..., prenotiamo i biglietti online.",
+    "topic": "Organisation",
+    "tip": "Alterner futur proche (andiamo a) et impératif inclusif (prenotiamo, prendiamo).",
+    "followUps": ["q_budget_split", "q_rain_plan"]
+  },
+  {
+    "id": "q_memory_trip",
+    "prompt": "Cita un ricordo di viaggio con la famiglia e cosa hai imparato.",
+    "level": "A2",
+    "expectedAnswer": "Siamo andati a..., è successo..., ho imparato che...",
+    "topic": "Souvenir",
+    "tip": "Passato prossimo pour l'événement + une morale simple (ho capito che...).",
+    "followUps": ["q_travel_story"],
+    "startable": false
+  },
+  {
+    "id": "q_morning_never",
+    "prompt": "Cosa non fai mai la mattina e perché?",
+    "level": "A2",
+    "expectedAnswer": "Non faccio mai..., perché mi fa perdere tempo/mi stressa.",
+    "topic": "Habitudes",
+    "tip": "Utilise mai/quasi mai + motivo (perché).",
+    "followUps": ["q_productivity_change"],
+    "startable": false
+  },
+  {
+    "id": "q_morning_upgrade",
+    "prompt": "Cosa vorresti migliorare della tua mattina?",
+    "level": "A2",
+    "expectedAnswer": "Vorrei svegliarmi prima, fare sport, preparare la colazione...",
+    "topic": "Habitudes",
+    "tip": "Futur proche (voglio/vorrei + infinito) + un beneficio (per essere più calmo).",
+    "followUps": ["q_productivity_change"],
+    "startable": false
+  },
+  {
+    "id": "q_meet_time",
+    "prompt": "Quando l'hai incontrato/a e in che contesto?",
+    "level": "A2",
+    "expectedAnswer": "L'ho incontrato nel... quando..., mi ha colpito perché...",
+    "topic": "Rencontre",
+    "tip": "Passato prossimo + un détail concret (in biblioteca, durante un corso).",
+    "followUps": ["q_career_problem"],
+    "startable": false
+  },
+  {
+    "id": "q_advice_received",
+    "prompt": "Quale consiglio ti ha dato e come lo applichi?",
+    "level": "A2",
+    "expectedAnswer": "Mi ha detto di..., adesso faccio..., il risultato è...",
+    "topic": "Conseil",
+    "tip": "Structure: conseil → action → effet.",
+    "followUps": ["q_career_problem"],
+    "startable": false
+  },
+  {
+    "id": "q_budget_split",
+    "prompt": "Come dividi il budget del weekend?",
+    "level": "A2",
+    "expectedAnswer": "Alloggio..., trasporti..., musei..., cibo..., per persona...",
+    "topic": "Organisation",
+    "tip": "Quantifie (tot euro) + verbe organiser (dividiamo, mettiamo da parte).",
+    "followUps": ["q_rain_plan"],
+    "startable": false
+  },
+  {
+    "id": "q_rain_plan",
+    "prompt": "Cosa fare se piove? Proponi un piano B.",
+    "level": "A2",
+    "expectedAnswer": "Se piove visitiamo..., prenotiamo..., cambiamo con...",
+    "topic": "Organisation",
+    "tip": "Condizionale/se + alternative (oppure).",
+    "followUps": ["q_travel_story"],
+    "startable": false
+  },
+  {
+    "id": "q_productivity_change",
+    "prompt": "Proponi un cambiamento per essere più produttivo/a la mattina.",
+    "level": "B1",
+    "expectedAnswer": "Metto la sveglia prima, preparo i vestiti, niente telefono fino a...",
+    "topic": "Organisation",
+    "tip": "Liste 3 actions + un bénéfice (così guadagno tempo).",
+    "followUps": ["q_social_opinion"]
+  },
+  {
+    "id": "q_travel_story",
+    "prompt": "Racconta un ricordo di viaggio inaspettato.",
+    "level": "B1",
+    "expectedAnswer": "Uso passato prossimo per i fatti e imperfetto per il contesto; concludo con cosa ho imparato.",
+    "topic": "Récit",
+    "tip": "Structure: contesto → problema → reazione → risultato → morale.",
+    "followUps": ["q_helped", "q_feelings"]
+  },
+  {
+    "id": "q_career_problem",
+    "prompt": "Spiega un problema al lavoro o a scuola e la tua soluzione.",
+    "level": "B1",
+    "expectedAnswer": "C'era un problema..., ho parlato con..., abbiamo deciso di..., adesso...",
+    "topic": "Vie professionnelle",
+    "tip": "Utilise un verbe modal (dovevo, potevo) et une concession (anche se, però).",
+    "followUps": ["q_alt_solution", "q_do_diff"]
+  },
+  {
+    "id": "q_social_opinion",
+    "prompt": "Dai il tuo parere sui social network.",
+    "level": "B1",
+    "expectedAnswer": "Secondo me..., da un lato..., dall'altro..., alla fine uso...",
+    "topic": "Opinion",
+    "tip": "Oppose deux arguments puis une conclusion personnelle (per me è importante / è inutile).",
+    "followUps": ["q_daily_use", "q_privacy"]
+  },
+  {
+    "id": "q_description_market",
+    "prompt": "Descrivi una foto immaginaria di un mercato italiano animato.",
+    "level": "B1",
+    "expectedAnswer": "Vedo bancarelle piene di..., la gente parla, i colori sono..., c'è profumo di...",
+    "topic": "Description",
+    "tip": "Verbes de perception (vedo, sento) + adjectifs sensoriels pour créer du relief.",
+    "followUps": ["q_buy_market", "q_companion_market"]
+  },
+  {
+    "id": "q_book_pitch",
+    "prompt": "Scegli un libro o un film e convinci l'interlocutore a scoprirlo.",
+    "level": "B1",
+    "expectedAnswer": "Parlo del tema, del personaggio principale, perché mi ha colpito, e a chi lo consiglio.",
+    "topic": "Culture",
+    "tip": "Inclus un superlatif (il più bello) et un verbe d'émotion (mi commuove, mi fa ridere).",
+    "followUps": ["q_scene", "q_not_recommend"]
+  },
+  {
+    "id": "q_helped",
+    "prompt": "Chi ti ha aiutato durante quel viaggio e come?",
+    "level": "B1",
+    "expectedAnswer": "Un amico/locale mi ha..., mi ha suggerito di..., grazie a lui/lei...",
+    "topic": "Récit",
+    "tip": "Met en valeur l'aide (mi ha salvato, mi ha calmato).",
+    "followUps": ["q_remote_work"],
+    "startable": false
+  },
+  {
+    "id": "q_feelings",
+    "prompt": "Cosa hai provato in quel momento?",
+    "level": "B1",
+    "expectedAnswer": "Ero spaventato/contento/sorpreso, ma dopo mi sono sentito...",
+    "topic": "Récit",
+    "tip": "Ajoute un connecteur (all'inizio..., poi...).",
+    "followUps": ["q_social_opinion"],
+    "startable": false
+  },
+  {
+    "id": "q_alt_solution",
+    "prompt": "Quale altra soluzione esisteva?",
+    "level": "B1",
+    "expectedAnswer": "Potevamo..., ma abbiamo scelto..., perché...",
+    "topic": "Analyse",
+    "tip": "Oppose option A/B + raison du choix.",
+    "followUps": ["q_project_pitch"],
+    "startable": false
+  },
+  {
+    "id": "q_do_diff",
+    "prompt": "Cosa faresti diversamente la prossima volta?",
+    "level": "B1",
+    "expectedAnswer": "La prossima volta..., cambierei..., chiederei...",
+    "topic": "Amélioration",
+    "tip": "Futur simple/condizionale + un détail concret.",
+    "followUps": ["q_project_pitch"],
+    "startable": false
+  },
+  {
+    "id": "q_daily_use",
+    "prompt": "Come usi i social ogni giorno?",
+    "level": "B1",
+    "expectedAnswer": "Li uso per..., per ... minuti, per lavoro/studio...",
+    "topic": "Opinion",
+    "tip": "Quantifie et précise l'usage (stories, messaggi, gruppi).",
+    "followUps": ["q_remote_work"]
+  },
+  {
+    "id": "q_privacy",
+    "prompt": "Come proteggi la tua privacy online?",
+    "level": "B2",
+    "expectedAnswer": "Uso password diverse, non condivido..., controllo le impostazioni...",
+    "topic": "Opinion",
+    "tip": "Liste 3 misure + motivazione (per sicurezza).",
+    "followUps": ["q_remote_work", "q_media_bias"]
+  },
+  {
+    "id": "q_buy_market",
+    "prompt": "Cosa compreresti in quel mercato?",
+    "level": "B1",
+    "expectedAnswer": "Comprerei frutta, formaggi, spezie..., perché...",
+    "topic": "Description",
+    "tip": "Utilise le conditionnel (comprerei) + un petit détail sensoriel.",
+    "followUps": ["q_companion_market"]
+  },
+  {
+    "id": "q_companion_market",
+    "prompt": "Con chi ci andresti e cosa fareste dopo?",
+    "level": "B1",
+    "expectedAnswer": "Andrei con..., poi mangeremmo..., scatteremmo foto...",
+    "topic": "Description",
+    "tip": "Coordonne 2-3 actions au conditionnel (andrei, mangeremmo).",
+    "followUps": ["q_book_pitch"],
+    "startable": false
+  },
+  {
+    "id": "q_scene",
+    "prompt": "Quale scena ti ha colpito di più?",
+    "level": "B1",
+    "expectedAnswer": "La scena in cui..., perché mi ha fatto ridere/piangere/pensare...",
+    "topic": "Culture",
+    "tip": "Décris l'émotion + un détail visuel/sonoro.",
+    "followUps": ["q_project_pitch"],
+    "startable": false
+  },
+  {
+    "id": "q_not_recommend",
+    "prompt": "A chi non lo consiglieresti e perché?",
+    "level": "B1",
+    "expectedAnswer": "Non lo consiglio a chi non ama..., perché è troppo..., manca...",
+    "topic": "Culture",
+    "tip": "Oppose public cible vs non-cible + justification.",
+    "followUps": ["q_project_pitch"],
+    "startable": false
+  },
+  {
+    "id": "q_remote_work",
+    "prompt": "Difendi o critica il lavoro da remoto.",
+    "level": "B2",
+    "expectedAnswer": "Porto due argomenti pro/contro, poi propongo una soluzione ibrida con esempi concreti.",
+    "topic": "Débat",
+    "tip": "Connecteurs d'opposition (tuttavia, invece) + quantifie (due giorni a settimana).",
+    "followUps": ["q_env_impact", "q_limits", "q_policy_balance"]
+  },
+  {
+    "id": "q_project_pitch",
+    "prompt": "Presenta un progetto che vorresti lanciare (professionale o personale).",
+    "level": "B2",
+    "expectedAnswer": "Descrivo l'idea, il problema che risolve, i passi per iniziare, e cosa mi manca.",
+    "topic": "Projet",
+    "tip": "Structure pitch: problema → soluzione → benefici → prossimo passo (sto cercando...).",
+    "followUps": ["q_need_start", "q_who_help", "q_board_pitch"]
+  },
+  {
+    "id": "q_env_impact",
+    "prompt": "Quale impatto ambientale ha il lavoro da remoto?",
+    "level": "B2",
+    "expectedAnswer": "Meno spostamenti, meno traffico, ma più consumo domestico...",
+    "topic": "Débat",
+    "tip": "Oppose effet positif (CO2) et limite (riscaldamento, elettricità).",
+    "followUps": []
+  },
+  {
+    "id": "q_limits",
+    "prompt": "Quali limiti fissi per lavorare da remoto in modo sano?",
+    "level": "B2",
+    "expectedAnswer": "Orari chiari, pausa pranzo, spazio dedicato, giorni in ufficio...",
+    "topic": "Débat",
+    "tip": "Liste 3-4 regole + bénéfice (evitare burnout).",
+    "followUps": []
+  },
+  {
+    "id": "q_need_start",
+    "prompt": "Di cosa hai bisogno per cominciare il progetto?",
+    "level": "B2",
+    "expectedAnswer": "Mi serve un partner, budget, tempo, feedback iniziali...",
+    "topic": "Projet",
+    "tip": "Énumère 3 besoins + action immédiate (contattare, cercare).",
+    "followUps": []
+  },
+  {
+    "id": "q_who_help",
+    "prompt": "Chi potrebbe aiutarti concretamente?",
+    "level": "B2",
+    "expectedAnswer": "Un mentore, un amico sviluppatore, una comunità online...",
+    "topic": "Projet",
+    "tip": "Cite une personne + ce qu'elle apporte (mentor per consigli, designer per UX).",
+    "followUps": []
+  },
+  {
+    "id": "q_media_bias",
+    "prompt": "Analizza un esempio di bias nei media e proponi come verificarlo.",
+    "level": "C1",
+    "expectedAnswer": "Individuo il bias, cito la fonte, confronto con dati e propongo una verifica incrociata.",
+    "topic": "Médias",
+    "tip": "Structure: fatto → bias (omissione, framing) → verifica (fonti multiple, dati).",
+    "followUps": ["q_fact_check"]
+  },
+  {
+    "id": "q_fact_check",
+    "prompt": "Costruisci un mini protocole di fact-checking per una notizia virale.",
+    "level": "C1",
+    "expectedAnswer": "Definisco la claim, cerco fonti primarie, verifico immagini, contatto un esperto.",
+    "topic": "Méthode",
+    "tip": "Liste 4 étapes + uno strumento (reverse image, archivi).",
+    "followUps": ["q_board_pitch"]
+  },
+  {
+    "id": "q_policy_balance",
+    "prompt": "Proponi una policy ibrida lavoro-presentiel/remote equilibrata per un'azienda internazionale.",
+    "level": "C1",
+    "expectedAnswer": "3 jours onsite roles client-facing, 2 remote per focus; criteri chiari e budget strumenti.",
+    "topic": "Politique RH",
+    "tip": "Equilibre besoins équipe/clients + metriche (engagement, turnover).",
+    "followUps": ["q_green_transition", "q_board_pitch"]
+  },
+  {
+    "id": "q_cross_culture",
+    "prompt": "Racconta come gestiresti un malinteso culturale tra due team e come ne trarresti lezioni durature.",
+    "level": "C1",
+    "expectedAnswer": "Ascolto entrambe le parti, riformulo, co-creo linee guida e un rituale di feedback continuo.",
+    "topic": "Interculturel",
+    "tip": "Passi: écoute → reformulation → accord → rituel (retro).",
+    "followUps": ["q_crisis_management"]
+  },
+  {
+    "id": "q_crisis_management",
+    "prompt": "Gestisci una crisi reputazionale online in 30 minuti: piano d'azione concreto.",
+    "level": "C2",
+    "expectedAnswer": "Team war-room, messaggio unico, FAQ live, monitoraggio KPI, decisioni in tempo reale.",
+    "topic": "Crise",
+    "tip": "Sequenza T0: diagnosi → risposta → monitoraggio → post-mortem breve.",
+    "followUps": ["q_board_pitch"]
+  },
+  {
+    "id": "q_green_transition",
+    "prompt": "Disegna un piano di transizione green per una PME con budget limitato.",
+    "level": "C2",
+    "expectedAnswer": "Audit energia, quick wins (LED, cloud green), roadmap investimenti, KPI CO2 e ROI.",
+    "topic": "Stratégie",
+    "tip": "Ordina: audit → quick wins → capex → pilot → mesure (KPI).",
+    "followUps": ["q_board_pitch"]
+  },
+  {
+    "id": "q_board_pitch",
+    "prompt": "Fai un pitch al board per ottenere budget su un projet complexe.",
+    "level": "C2",
+    "expectedAnswer": "Problema, opportunità, opzioni, rischio, budget, ROI, prossime 2 settimane.",
+    "topic": "Leadership",
+    "tip": "Slide mentale: why now, opzioni, raccomandazione, rischi, ask, next step.",
+    "followUps": []
+  }
+]

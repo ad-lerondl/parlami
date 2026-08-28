@@ -1,0 +1,1706 @@
+[
+  {
+    "infinitive": "parlare",
+    "translation": "parler",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "parlo",
+          "tu": "parli",
+          "lui/lei": "parla",
+          "noi": "parliamo",
+          "voi": "parlate",
+          "loro": "parlano"
+        },
+        "Passato Prossimo": {
+          "io": "ho parlato",
+          "tu": "hai parlato",
+          "lui/lei": "ha parlato",
+          "noi": "abbiamo parlato",
+          "voi": "avete parlato",
+          "loro": "hanno parlato"
+        },
+        "Imperfetto": {
+          "io": "parlavo",
+          "tu": "parlavi",
+          "lui/lei": "parlava",
+          "noi": "parlavamo",
+          "voi": "parlavate",
+          "loro": "parlavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo parlato",
+          "tu": "avevi parlato",
+          "lui/lei": "aveva parlato",
+          "noi": "avevamo parlato",
+          "voi": "avevate parlato",
+          "loro": "avevano parlato"
+        },
+        "Futuro Semplice": {
+          "io": "parlerò",
+          "tu": "parlerai",
+          "lui/lei": "parlerà",
+          "noi": "parleremo",
+          "voi": "parlerete",
+          "loro": "parleranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò parlato",
+          "tu": "avrai parlato",
+          "lui/lei": "avrà parlato",
+          "noi": "avremo parlato",
+          "voi": "avrete parlato",
+          "loro": "avranno parlato"
+        },
+        "Passato Remoto": {
+          "io": "parlai",
+          "tu": "parlasti",
+          "lui/lei": "parlò",
+          "noi": "parlammo",
+          "voi": "parlaste",
+          "loro": "parlarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi parlato",
+          "tu": "avesti parlato",
+          "lui/lei": "ebbe parlato",
+          "noi": "avemmo parlato",
+          "voi": "aveste parlato",
+          "loro": "ebbero parlato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "parli",
+          "tu": "parli",
+          "lui/lei": "parli",
+          "noi": "parliamo",
+          "voi": "parliate",
+          "loro": "parlino"
+        },
+        "Passato": {
+          "io": "abbia parlato",
+          "tu": "abbia parlato",
+          "lui/lei": "abbia parlato",
+          "noi": "abbiamo parlato",
+          "voi": "abbiate parlato",
+          "loro": "abbiano parlato"
+        },
+        "Imperfetto": {
+          "io": "parlassi",
+          "tu": "parlassi",
+          "lui/lei": "parlasse",
+          "noi": "parlassimo",
+          "voi": "parlaste",
+          "loro": "parlassero"
+        },
+        "Trapassato": {
+          "io": "avessi parlato",
+          "tu": "avessi parlato",
+          "lui/lei": "avesse parlato",
+          "noi": "avessimo parlato",
+          "voi": "aveste parlato",
+          "loro": "avessero parlato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "parlerei",
+          "tu": "parleresti",
+          "lui/lei": "parlerebbe",
+          "noi": "parleremmo",
+          "voi": "parlereste",
+          "loro": "parlerebbero"
+        },
+        "Passato": {
+          "io": "avrei parlato",
+          "tu": "avresti parlato",
+          "lui/lei": "avrebbe parlato",
+          "noi": "avremmo parlato",
+          "voi": "avreste parlato",
+          "loro": "avrebbero parlato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "parla",
+          "lui/lei": "parli",
+          "noi": "parliamo",
+          "voi": "parlate",
+          "loro": "parlino"
+        },
+        "Negatif": {
+          "tu": "non parlare",
+          "lui/lei": "non parli",
+          "noi": "non parliamo",
+          "voi": "non parlate",
+          "loro": "non parlino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "parlare",
+          "Passato": "avere parlato"
+        },
+        "Gerundio": {
+          "Presente": "parlando",
+          "Passato": "avendo parlato"
+        },
+        "Participio": {
+          "Presente": "parlante",
+          "Passato": "parlato"
+        }
+      }
+    }
+  }
+    ,
+  {
+    "infinitive": "abitare",
+    "translation": "habiter",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "abito",
+          "tu": "abiti",
+          "lui/lei": "abita",
+          "noi": "abitiamo",
+          "voi": "abitate",
+          "loro": "abitano"
+        },
+        "Passato Prossimo": {
+          "io": "ho abitato",
+          "tu": "hai abitato",
+          "lui/lei": "ha abitato",
+          "noi": "abbiamo abitato",
+          "voi": "avete abitato",
+          "loro": "hanno abitato"
+        },
+        "Imperfetto": {
+          "io": "abitavo",
+          "tu": "abitavi",
+          "lui/lei": "abitava",
+          "noi": "abitavamo",
+          "voi": "abitavate",
+          "loro": "abitavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo abitato",
+          "tu": "avevi abitato",
+          "lui/lei": "aveva abitato",
+          "noi": "avevamo abitato",
+          "voi": "avevate abitato",
+          "loro": "avevano abitato"
+        },
+        "Futuro Semplice": {
+          "io": "abiterò",
+          "tu": "abiterai",
+          "lui/lei": "abiterà",
+          "noi": "abiteremo",
+          "voi": "abiterete",
+          "loro": "abiteranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò abitato",
+          "tu": "avrai abitato",
+          "lui/lei": "avrà abitato",
+          "noi": "avremo abitato",
+          "voi": "avrete abitato",
+          "loro": "avranno abitato"
+        },
+        "Passato Remoto": {
+          "io": "abitai",
+          "tu": "abitasti",
+          "lui/lei": "abitò",
+          "noi": "abitammo",
+          "voi": "abitaste",
+          "loro": "abitarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi abitato",
+          "tu": "avesti abitato",
+          "lui/lei": "ebbe abitato",
+          "noi": "avemmo abitato",
+          "voi": "aveste abitato",
+          "loro": "ebbero abitato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "abiti",
+          "tu": "abiti",
+          "lui/lei": "abiti",
+          "noi": "abitiamo",
+          "voi": "abitiate",
+          "loro": "abitino"
+        },
+        "Passato": {
+          "io": "abbia abitato",
+          "tu": "abbia abitato",
+          "lui/lei": "abbia abitato",
+          "noi": "abbiamo abitato",
+          "voi": "abbiate abitato",
+          "loro": "abbiano abitato"
+        },
+        "Imperfetto": {
+          "io": "abitassi",
+          "tu": "abitassi",
+          "lui/lei": "abitasse",
+          "noi": "abitassimo",
+          "voi": "abitaste",
+          "loro": "abitassero"
+        },
+        "Trapassato": {
+          "io": "avessi abitato",
+          "tu": "avessi abitato",
+          "lui/lei": "avesse abitato",
+          "noi": "avessimo abitato",
+          "voi": "aveste abitato",
+          "loro": "avessero abitato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "abiterei",
+          "tu": "abiteresti",
+          "lui/lei": "abiterebbe",
+          "noi": "abiteremmo",
+          "voi": "abitereste",
+          "loro": "abiterebbero"
+        },
+        "Passato": {
+          "io": "avrei abitato",
+          "tu": "avresti abitato",
+          "lui/lei": "avrebbe abitato",
+          "noi": "avremmo abitato",
+          "voi": "avreste abitato",
+          "loro": "avrebbero abitato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "abita",
+          "lui/lei": "abiti",
+          "noi": "abitiamo",
+          "voi": "abitate",
+          "loro": "abitino"
+        },
+        "Negatif": {
+          "tu": "non abitare",
+          "lui/lei": "non abiti",
+          "noi": "non abitiamo",
+          "voi": "non abitate",
+          "loro": "non abitino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "abitare",
+          "Passato": "avere abitato"
+        },
+        "Gerundio": {
+          "Presente": "abitando",
+          "Passato": "avendo abitato"
+        },
+        "Participio": {
+          "Presente": "abitante",
+          "Passato": "abitato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "amare",
+    "translation": "aimer",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "amo",
+          "tu": "ami",
+          "lui/lei": "ama",
+          "noi": "amiamo",
+          "voi": "amate",
+          "loro": "amano"
+        },
+        "Passato Prossimo": {
+          "io": "ho amato",
+          "tu": "hai amato",
+          "lui/lei": "ha amato",
+          "noi": "abbiamo amato",
+          "voi": "avete amato",
+          "loro": "hanno amato"
+        },
+        "Imperfetto": {
+          "io": "amavo",
+          "tu": "amavi",
+          "lui/lei": "amava",
+          "noi": "amavamo",
+          "voi": "amavate",
+          "loro": "amavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo amato",
+          "tu": "avevi amato",
+          "lui/lei": "aveva amato",
+          "noi": "avevamo amato",
+          "voi": "avevate amato",
+          "loro": "avevano amato"
+        },
+        "Futuro Semplice": {
+          "io": "amerò",
+          "tu": "amerai",
+          "lui/lei": "amerà",
+          "noi": "ameremo",
+          "voi": "amerete",
+          "loro": "ameranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò amato",
+          "tu": "avrai amato",
+          "lui/lei": "avrà amato",
+          "noi": "avremo amato",
+          "voi": "avrete amato",
+          "loro": "avranno amato"
+        },
+        "Passato Remoto": {
+          "io": "amai",
+          "tu": "amasti",
+          "lui/lei": "amò",
+          "noi": "amammo",
+          "voi": "amaste",
+          "loro": "amarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi amato",
+          "tu": "avesti amato",
+          "lui/lei": "ebbe amato",
+          "noi": "avemmo amato",
+          "voi": "aveste amato",
+          "loro": "ebbero amato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "ami",
+          "tu": "ami",
+          "lui/lei": "ami",
+          "noi": "amiamo",
+          "voi": "amiate",
+          "loro": "amino"
+        },
+        "Passato": {
+          "io": "abbia amato",
+          "tu": "abbia amato",
+          "lui/lei": "abbia amato",
+          "noi": "abbiamo amato",
+          "voi": "abbiate amato",
+          "loro": "abbiano amato"
+        },
+        "Imperfetto": {
+          "io": "amassi",
+          "tu": "amassi",
+          "lui/lei": "amasse",
+          "noi": "amassimo",
+          "voi": "amaste",
+          "loro": "amassero"
+        },
+        "Trapassato": {
+          "io": "avessi amato",
+          "tu": "avessi amato",
+          "lui/lei": "avesse amato",
+          "noi": "avessimo amato",
+          "voi": "aveste amato",
+          "loro": "avessero amato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "amerei",
+          "tu": "ameresti",
+          "lui/lei": "amerebbe",
+          "noi": "ameremmo",
+          "voi": "amereste",
+          "loro": "amerebbero"
+        },
+        "Passato": {
+          "io": "avrei amato",
+          "tu": "avresti amato",
+          "lui/lei": "avrebbe amato",
+          "noi": "avremmo amato",
+          "voi": "avreste amato",
+          "loro": "avrebbero amato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "ama",
+          "lui/lei": "ami",
+          "noi": "amiamo",
+          "voi": "amate",
+          "loro": "amino"
+        },
+        "Negatif": {
+          "tu": "non amare",
+          "lui/lei": "non ami",
+          "noi": "non amiamo",
+          "voi": "non amate",
+          "loro": "non amino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "amare",
+          "Passato": "avere amato"
+        },
+        "Gerundio": {
+          "Presente": "amando",
+          "Passato": "avendo amato"
+        },
+        "Participio": {
+          "Presente": "amante",
+          "Passato": "amato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "ascoltare",
+    "translation": "écouter",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "ascolto",
+          "tu": "ascolti",
+          "lui/lei": "ascolta",
+          "noi": "ascoltiamo",
+          "voi": "ascoltate",
+          "loro": "ascoltano"
+        },
+        "Passato Prossimo": {
+          "io": "ho ascoltato",
+          "tu": "hai ascoltato",
+          "lui/lei": "ha ascoltato",
+          "noi": "abbiamo ascoltato",
+          "voi": "avete ascoltato",
+          "loro": "hanno ascoltato"
+        },
+        "Imperfetto": {
+          "io": "ascoltavo",
+          "tu": "ascoltavi",
+          "lui/lei": "ascoltava",
+          "noi": "ascoltavamo",
+          "voi": "ascoltavate",
+          "loro": "ascoltavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo ascoltato",
+          "tu": "avevi ascoltato",
+          "lui/lei": "aveva ascoltato",
+          "noi": "avevamo ascoltato",
+          "voi": "avevate ascoltato",
+          "loro": "avevano ascoltato"
+        },
+        "Futuro Semplice": {
+          "io": "ascolterò",
+          "tu": "ascolterai",
+          "lui/lei": "ascolterà",
+          "noi": "ascolteremo",
+          "voi": "ascolterete",
+          "loro": "ascolteranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò ascoltato",
+          "tu": "avrai ascoltato",
+          "lui/lei": "avrà ascoltato",
+          "noi": "avremo ascoltato",
+          "voi": "avrete ascoltato",
+          "loro": "avranno ascoltato"
+        },
+        "Passato Remoto": {
+          "io": "ascoltai",
+          "tu": "ascoltasti",
+          "lui/lei": "ascoltò",
+          "noi": "ascoltammo",
+          "voi": "ascoltaste",
+          "loro": "ascoltarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi ascoltato",
+          "tu": "avesti ascoltato",
+          "lui/lei": "ebbe ascoltato",
+          "noi": "avemmo ascoltato",
+          "voi": "aveste ascoltato",
+          "loro": "ebbero ascoltato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "ascolti",
+          "tu": "ascolti",
+          "lui/lei": "ascolti",
+          "noi": "ascoltiamo",
+          "voi": "ascoltiate",
+          "loro": "ascoltino"
+        },
+        "Passato": {
+          "io": "abbia ascoltato",
+          "tu": "abbia ascoltato",
+          "lui/lei": "abbia ascoltato",
+          "noi": "abbiamo ascoltato",
+          "voi": "abbiate ascoltato",
+          "loro": "abbiano ascoltato"
+        },
+        "Imperfetto": {
+          "io": "ascoltassi",
+          "tu": "ascoltassi",
+          "lui/lei": "ascoltasse",
+          "noi": "ascoltassimo",
+          "voi": "ascoltaste",
+          "loro": "ascoltassero"
+        },
+        "Trapassato": {
+          "io": "avessi ascoltato",
+          "tu": "avessi ascoltato",
+          "lui/lei": "avesse ascoltato",
+          "noi": "avessimo ascoltato",
+          "voi": "aveste ascoltato",
+          "loro": "avessero ascoltato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "ascolterei",
+          "tu": "ascolteresti",
+          "lui/lei": "ascolterebbe",
+          "noi": "ascolteremmo",
+          "voi": "ascoltereste",
+          "loro": "ascolterebbero"
+        },
+        "Passato": {
+          "io": "avrei ascoltato",
+          "tu": "avresti ascoltato",
+          "lui/lei": "avrebbe ascoltato",
+          "noi": "avremmo ascoltato",
+          "voi": "avreste ascoltato",
+          "loro": "avrebbero ascoltato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "ascolta",
+          "lui/lei": "ascolti",
+          "noi": "ascoltiamo",
+          "voi": "ascoltate",
+          "loro": "ascoltino"
+        },
+        "Negatif": {
+          "tu": "non ascoltare",
+          "lui/lei": "non ascolti",
+          "noi": "non ascoltiamo",
+          "voi": "non ascoltate",
+          "loro": "non ascoltino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "ascoltare",
+          "Passato": "avere ascoltato"
+        },
+        "Gerundio": {
+          "Presente": "ascoltando",
+          "Passato": "avendo ascoltato"
+        },
+        "Participio": {
+          "Presente": "ascoltante",
+          "Passato": "ascoltato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "aspettare",
+    "translation": "attendre",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "aspetto",
+          "tu": "aspetti",
+          "lui/lei": "aspetta",
+          "noi": "aspettiamo",
+          "voi": "aspettate",
+          "loro": "aspettano"
+        },
+        "Passato Prossimo": {
+          "io": "ho aspettato",
+          "tu": "hai aspettato",
+          "lui/lei": "ha aspettato",
+          "noi": "abbiamo aspettato",
+          "voi": "avete aspettato",
+          "loro": "hanno aspettato"
+        },
+        "Imperfetto": {
+          "io": "aspettavo",
+          "tu": "aspettavi",
+          "lui/lei": "aspettava",
+          "noi": "aspettavamo",
+          "voi": "aspettavate",
+          "loro": "aspettavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo aspettato",
+          "tu": "avevi aspettato",
+          "lui/lei": "aveva aspettato",
+          "noi": "avevamo aspettato",
+          "voi": "avevate aspettato",
+          "loro": "avevano aspettato"
+        },
+        "Futuro Semplice": {
+          "io": "aspetterò",
+          "tu": "aspetterai",
+          "lui/lei": "aspetterà",
+          "noi": "aspetteremo",
+          "voi": "aspetterete",
+          "loro": "aspetteranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò aspettato",
+          "tu": "avrai aspettato",
+          "lui/lei": "avrà aspettato",
+          "noi": "avremo aspettato",
+          "voi": "avrete aspettato",
+          "loro": "avranno aspettato"
+        },
+        "Passato Remoto": {
+          "io": "aspettai",
+          "tu": "aspettasti",
+          "lui/lei": "aspettò",
+          "noi": "aspettammo",
+          "voi": "aspettaste",
+          "loro": "aspettarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi aspettato",
+          "tu": "avesti aspettato",
+          "lui/lei": "ebbe aspettato",
+          "noi": "avemmo aspettato",
+          "voi": "aveste aspettato",
+          "loro": "ebbero aspettato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "aspetti",
+          "tu": "aspetti",
+          "lui/lei": "aspetti",
+          "noi": "aspettiamo",
+          "voi": "aspettiate",
+          "loro": "aspettino"
+        },
+        "Passato": {
+          "io": "abbia aspettato",
+          "tu": "abbia aspettato",
+          "lui/lei": "abbia aspettato",
+          "noi": "abbiamo aspettato",
+          "voi": "abbiate aspettato",
+          "loro": "abbiano aspettato"
+        },
+        "Imperfetto": {
+          "io": "aspettassi",
+          "tu": "aspettassi",
+          "lui/lei": "aspettasse",
+          "noi": "aspettassimo",
+          "voi": "aspettaste",
+          "loro": "aspettassero"
+        },
+        "Trapassato": {
+          "io": "avessi aspettato",
+          "tu": "avessi aspettato",
+          "lui/lei": "avesse aspettato",
+          "noi": "avessimo aspettato",
+          "voi": "aveste aspettato",
+          "loro": "avessero aspettato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "aspetterei",
+          "tu": "aspetteresti",
+          "lui/lei": "aspetterebbe",
+          "noi": "aspetteremmo",
+          "voi": "aspettereste",
+          "loro": "aspetterebbero"
+        },
+        "Passato": {
+          "io": "avrei aspettato",
+          "tu": "avresti aspettato",
+          "lui/lei": "avrebbe aspettato",
+          "noi": "avremmo aspettato",
+          "voi": "avreste aspettato",
+          "loro": "avrebbero aspettato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "aspetta",
+          "lui/lei": "aspetti",
+          "noi": "aspettiamo",
+          "voi": "aspettate",
+          "loro": "aspettino"
+        },
+        "Negatif": {
+          "tu": "non aspettare",
+          "lui/lei": "non aspetti",
+          "noi": "non aspettiamo",
+          "voi": "non aspettate",
+          "loro": "non aspettino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "aspettare",
+          "Passato": "avere aspettato"
+        },
+        "Gerundio": {
+          "Presente": "aspettando",
+          "Passato": "avendo aspettato"
+        },
+        "Participio": {
+          "Presente": "aspettante",
+          "Passato": "aspettato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "ballare",
+    "translation": "danser",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "ballo",
+          "tu": "balli",
+          "lui/lei": "balla",
+          "noi": "balliamo",
+          "voi": "ballate",
+          "loro": "ballano"
+        },
+        "Passato Prossimo": {
+          "io": "ho ballato",
+          "tu": "hai ballato",
+          "lui/lei": "ha ballato",
+          "noi": "abbiamo ballato",
+          "voi": "avete ballato",
+          "loro": "hanno ballato"
+        },
+        "Imperfetto": {
+          "io": "ballavo",
+          "tu": "ballavi",
+          "lui/lei": "ballava",
+          "noi": "ballavamo",
+          "voi": "ballavate",
+          "loro": "ballavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo ballato",
+          "tu": "avevi ballato",
+          "lui/lei": "aveva ballato",
+          "noi": "avevamo ballato",
+          "voi": "avevate ballato",
+          "loro": "avevano ballato"
+        },
+        "Futuro Semplice": {
+          "io": "ballerò",
+          "tu": "ballerai",
+          "lui/lei": "ballerà",
+          "noi": "balleremo",
+          "voi": "ballerete",
+          "loro": "balleranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò ballato",
+          "tu": "avrai ballato",
+          "lui/lei": "avrà ballato",
+          "noi": "avremo ballato",
+          "voi": "avrete ballato",
+          "loro": "avranno ballato"
+        },
+        "Passato Remoto": {
+          "io": "ballai",
+          "tu": "ballasti",
+          "lui/lei": "ballò",
+          "noi": "ballammo",
+          "voi": "ballaste",
+          "loro": "ballarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi ballato",
+          "tu": "avesti ballato",
+          "lui/lei": "ebbe ballato",
+          "noi": "avemmo ballato",
+          "voi": "aveste ballato",
+          "loro": "ebbero ballato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "balli",
+          "tu": "balli",
+          "lui/lei": "balli",
+          "noi": "balliamo",
+          "voi": "balliate",
+          "loro": "ballino"
+        },
+        "Passato": {
+          "io": "abbia ballato",
+          "tu": "abbia ballato",
+          "lui/lei": "abbia ballato",
+          "noi": "abbiamo ballato",
+          "voi": "abbiate ballato",
+          "loro": "abbiano ballato"
+        },
+        "Imperfetto": {
+          "io": "ballassi",
+          "tu": "ballassi",
+          "lui/lei": "ballasse",
+          "noi": "ballassimo",
+          "voi": "ballaste",
+          "loro": "ballassero"
+        },
+        "Trapassato": {
+          "io": "avessi ballato",
+          "tu": "avessi ballato",
+          "lui/lei": "avesse ballato",
+          "noi": "avessimo ballato",
+          "voi": "aveste ballato",
+          "loro": "avessero ballato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "ballerei",
+          "tu": "balleresti",
+          "lui/lei": "ballerebbe",
+          "noi": "balleremmo",
+          "voi": "ballereste",
+          "loro": "ballerebbero"
+        },
+        "Passato": {
+          "io": "avrei ballato",
+          "tu": "avresti ballato",
+          "lui/lei": "avrebbe ballato",
+          "noi": "avremmo ballato",
+          "voi": "avreste ballato",
+          "loro": "avrebbero ballato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "balla",
+          "lui/lei": "balli",
+          "noi": "balliamo",
+          "voi": "ballate",
+          "loro": "ballino"
+        },
+        "Negatif": {
+          "tu": "non ballare",
+          "lui/lei": "non balli",
+          "noi": "non balliamo",
+          "voi": "non ballate",
+          "loro": "non ballino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "ballare",
+          "Passato": "avere ballato"
+        },
+        "Gerundio": {
+          "Presente": "ballando",
+          "Passato": "avendo ballato"
+        },
+        "Participio": {
+          "Presente": "ballante",
+          "Passato": "ballato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "cantare",
+    "translation": "chanter",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "canto",
+          "tu": "canti",
+          "lui/lei": "canta",
+          "noi": "cantiamo",
+          "voi": "cantate",
+          "loro": "cantano"
+        },
+        "Passato Prossimo": {
+          "io": "ho cantato",
+          "tu": "hai cantato",
+          "lui/lei": "ha cantato",
+          "noi": "abbiamo cantato",
+          "voi": "avete cantato",
+          "loro": "hanno cantato"
+        },
+        "Imperfetto": {
+          "io": "cantavo",
+          "tu": "cantavi",
+          "lui/lei": "cantava",
+          "noi": "cantavamo",
+          "voi": "cantavate",
+          "loro": "cantavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo cantato",
+          "tu": "avevi cantato",
+          "lui/lei": "aveva cantato",
+          "noi": "avevamo cantato",
+          "voi": "avevate cantato",
+          "loro": "avevano cantato"
+        },
+        "Futuro Semplice": {
+          "io": "canterò",
+          "tu": "canterai",
+          "lui/lei": "canterà",
+          "noi": "canteremo",
+          "voi": "canterete",
+          "loro": "canteranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò cantato",
+          "tu": "avrai cantato",
+          "lui/lei": "avrà cantato",
+          "noi": "avremo cantato",
+          "voi": "avrete cantato",
+          "loro": "avranno cantato"
+        },
+        "Passato Remoto": {
+          "io": "cantai",
+          "tu": "cantasti",
+          "lui/lei": "cantò",
+          "noi": "cantammo",
+          "voi": "cantaste",
+          "loro": "cantarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi cantato",
+          "tu": "avesti cantato",
+          "lui/lei": "ebbe cantato",
+          "noi": "avemmo cantato",
+          "voi": "aveste cantato",
+          "loro": "ebbero cantato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "canti",
+          "tu": "canti",
+          "lui/lei": "canti",
+          "noi": "cantiamo",
+          "voi": "cantiate",
+          "loro": "cantino"
+        },
+        "Passato": {
+          "io": "abbia cantato",
+          "tu": "abbia cantato",
+          "lui/lei": "abbia cantato",
+          "noi": "abbiamo cantato",
+          "voi": "abbiate cantato",
+          "loro": "abbiano cantato"
+        },
+        "Imperfetto": {
+          "io": "cantassi",
+          "tu": "cantassi",
+          "lui/lei": "cantasse",
+          "noi": "cantassimo",
+          "voi": "cantaste",
+          "loro": "cantassero"
+        },
+        "Trapassato": {
+          "io": "avessi cantato",
+          "tu": "avessi cantato",
+          "lui/lei": "avesse cantato",
+          "noi": "avessimo cantato",
+          "voi": "aveste cantato",
+          "loro": "avessero cantato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "canterei",
+          "tu": "canteresti",
+          "lui/lei": "canterebbe",
+          "noi": "canteremmo",
+          "voi": "cantereste",
+          "loro": "canterebbero"
+        },
+        "Passato": {
+          "io": "avrei cantato",
+          "tu": "avresti cantato",
+          "lui/lei": "avrebbe cantato",
+          "noi": "avremmo cantato",
+          "voi": "avreste cantato",
+          "loro": "avrebbero cantato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "canta",
+          "lui/lei": "canti",
+          "noi": "cantiamo",
+          "voi": "cantate",
+          "loro": "cantino"
+        },
+        "Negatif": {
+          "tu": "non cantare",
+          "lui/lei": "non canti",
+          "noi": "non cantiamo",
+          "voi": "non cantate",
+          "loro": "non cantino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "cantare",
+          "Passato": "avere cantato"
+        },
+        "Gerundio": {
+          "Presente": "cantando",
+          "Passato": "avendo cantato"
+        },
+        "Participio": {
+          "Presente": "cantante",
+          "Passato": "cantato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "chiamare",
+    "translation": "appeler",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "chiamo",
+          "tu": "chiami",
+          "lui/lei": "chiama",
+          "noi": "chiamiamo",
+          "voi": "chiamate",
+          "loro": "chiamano"
+        },
+        "Passato Prossimo": {
+          "io": "ho chiamato",
+          "tu": "hai chiamato",
+          "lui/lei": "ha chiamato",
+          "noi": "abbiamo chiamato",
+          "voi": "avete chiamato",
+          "loro": "hanno chiamato"
+        },
+        "Imperfetto": {
+          "io": "chiamavo",
+          "tu": "chiamavi",
+          "lui/lei": "chiamava",
+          "noi": "chiamavamo",
+          "voi": "chiamavate",
+          "loro": "chiamavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo chiamato",
+          "tu": "avevi chiamato",
+          "lui/lei": "aveva chiamato",
+          "noi": "avevamo chiamato",
+          "voi": "avevate chiamato",
+          "loro": "avevano chiamato"
+        },
+        "Futuro Semplice": {
+          "io": "chiamerò",
+          "tu": "chiamerai",
+          "lui/lei": "chiamerà",
+          "noi": "chiameremo",
+          "voi": "chiamerete",
+          "loro": "chiameranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò chiamato",
+          "tu": "avrai chiamato",
+          "lui/lei": "avrà chiamato",
+          "noi": "avremo chiamato",
+          "voi": "avrete chiamato",
+          "loro": "avranno chiamato"
+        },
+        "Passato Remoto": {
+          "io": "chiamai",
+          "tu": "chiamasti",
+          "lui/lei": "chiamò",
+          "noi": "chiamammo",
+          "voi": "chiamaste",
+          "loro": "chiamarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi chiamato",
+          "tu": "avesti chiamato",
+          "lui/lei": "ebbe chiamato",
+          "noi": "avemmo chiamato",
+          "voi": "aveste chiamato",
+          "loro": "ebbero chiamato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "chiami",
+          "tu": "chiami",
+          "lui/lei": "chiami",
+          "noi": "chiamiamo",
+          "voi": "chiamiate",
+          "loro": "chiamino"
+        },
+        "Passato": {
+          "io": "abbia chiamato",
+          "tu": "abbia chiamato",
+          "lui/lei": "abbia chiamato",
+          "noi": "abbiamo chiamato",
+          "voi": "abbiate chiamato",
+          "loro": "abbiano chiamato"
+        },
+        "Imperfetto": {
+          "io": "chiamassi",
+          "tu": "chiamassi",
+          "lui/lei": "chiamasse",
+          "noi": "chiamassimo",
+          "voi": "chiamaste",
+          "loro": "chiamassero"
+        },
+        "Trapassato": {
+          "io": "avessi chiamato",
+          "tu": "avessi chiamato",
+          "lui/lei": "avesse chiamato",
+          "noi": "avessimo chiamato",
+          "voi": "aveste chiamato",
+          "loro": "avessero chiamato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "chiamerei",
+          "tu": "chiameresti",
+          "lui/lei": "chiamerebbe",
+          "noi": "chiameremmo",
+          "voi": "chiamereste",
+          "loro": "chiamerebbero"
+        },
+        "Passato": {
+          "io": "avrei chiamato",
+          "tu": "avresti chiamato",
+          "lui/lei": "avrebbe chiamato",
+          "noi": "avremmo chiamato",
+          "voi": "avreste chiamato",
+          "loro": "avrebbero chiamato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "chiama",
+          "lui/lei": "chiami",
+          "noi": "chiamiamo",
+          "voi": "chiamate",
+          "loro": "chiamino"
+        },
+        "Negatif": {
+          "tu": "non chiamare",
+          "lui/lei": "non chiami",
+          "noi": "non chiamiamo",
+          "voi": "non chiamate",
+          "loro": "non chiamino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "chiamare",
+          "Passato": "avere chiamato"
+        },
+        "Gerundio": {
+          "Presente": "chiamando",
+          "Passato": "avendo chiamato"
+        },
+        "Participio": {
+          "Presente": "chiamante",
+          "Passato": "chiamato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "costare",
+    "translation": "coûter",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "costo",
+          "tu": "costi",
+          "lui/lei": "costa",
+          "noi": "costiamo",
+          "voi": "costate",
+          "loro": "costano"
+        },
+        "Passato Prossimo": {
+          "io": "sono costato",
+          "tu": "sei costato",
+          "lui/lei": "è costato",
+          "noi": "siamo costati",
+          "voi": "siete costati",
+          "loro": "sono costati"
+        },
+        "Imperfetto": {
+          "io": "costavo",
+          "tu": "costavi",
+          "lui/lei": "costava",
+          "noi": "costavamo",
+          "voi": "costavate",
+          "loro": "costavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "ero costato",
+          "tu": "eri costato",
+          "lui/lei": "era costato",
+          "noi": "eravamo costati",
+          "voi": "eravate costati",
+          "loro": "erano costati"
+        },
+        "Futuro Semplice": {
+          "io": "costerò",
+          "tu": "costerai",
+          "lui/lei": "costerà",
+          "noi": "costeremo",
+          "voi": "costerete",
+          "loro": "costeranno"
+        },
+        "Futuro Anteriore": {
+          "io": "sarò costato",
+          "tu": "sarai costato",
+          "lui/lei": "sarà costato",
+          "noi": "saremo costati",
+          "voi": "sarete costati",
+          "loro": "saranno costati"
+        },
+        "Passato Remoto": {
+          "io": "costai",
+          "tu": "costasti",
+          "lui/lei": "costò",
+          "noi": "costammo",
+          "voi": "costaste",
+          "loro": "costarono"
+        },
+        "Trapassato Remoto": {
+          "io": "fui costato",
+          "tu": "fosti costato",
+          "lui/lei": "fu costato",
+          "noi": "fummo costati",
+          "voi": "foste costati",
+          "loro": "furono costati"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "costi",
+          "tu": "costi",
+          "lui/lei": "costi",
+          "noi": "costiamo",
+          "voi": "costiate",
+          "loro": "costino"
+        },
+        "Passato": {
+          "io": "sia costato",
+          "tu": "sia costato",
+          "lui/lei": "sia costato",
+          "noi": "siamo costati",
+          "voi": "siate costati",
+          "loro": "siano costati"
+        },
+        "Imperfetto": {
+          "io": "costassi",
+          "tu": "costassi",
+          "lui/lei": "costasse",
+          "noi": "costassimo",
+          "voi": "costaste",
+          "loro": "costassero"
+        },
+        "Trapassato": {
+          "io": "fossi costato",
+          "tu": "fossi costato",
+          "lui/lei": "fosse costato",
+          "noi": "fossimo costati",
+          "voi": "foste costati",
+          "loro": "fossero costati"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "costerei",
+          "tu": "costeresti",
+          "lui/lei": "costerebbe",
+          "noi": "costeremmo",
+          "voi": "costereste",
+          "loro": "costerrebbero"
+        },
+        "Passato": {
+          "io": "sarei costato",
+          "tu": "saresti costato",
+          "lui/lei": "sarebbe costato",
+          "noi": "saremmo costati",
+          "voi": "sareste costati",
+          "loro": "sarebbero costati"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "costa",
+          "lui/lei": "costi",
+          "noi": "costiamo",
+          "voi": "costate",
+          "loro": "costino"
+        },
+        "Negatif": {
+          "tu": "non costare",
+          "lui/lei": "non costi",
+          "noi": "non costiamo",
+          "voi": "non costate",
+          "loro": "non costino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "costare",
+          "Passato": "essere costato"
+        },
+        "Gerundio": {
+          "Presente": "costando",
+          "Passato": "essendo costato"
+        },
+        "Participio": {
+          "Presente": "costante",
+          "Passato": "costato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "pensare",
+    "translation": "penser",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "penso",
+          "tu": "pensi",
+          "lui/lei": "pensa",
+          "noi": "pensiamo",
+          "voi": "pensate",
+          "loro": "pensano"
+        },
+        "Passato Prossimo": {
+          "io": "ho pensato",
+          "tu": "hai pensato",
+          "lui/lei": "ha pensato",
+          "noi": "abbiamo pensato",
+          "voi": "avete pensato",
+          "loro": "hanno pensato"
+        },
+        "Imperfetto": {
+          "io": "pensavo",
+          "tu": "pensavi",
+          "lui/lei": "pensava",
+          "noi": "pensavamo",
+          "voi": "pensavate",
+          "loro": "pensavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo pensato",
+          "tu": "avevi pensato",
+          "lui/lei": "aveva pensato",
+          "noi": "avevamo pensato",
+          "voi": "avevate pensato",
+          "loro": "avevano pensato"
+        },
+        "Futuro Semplice": {
+          "io": "penserò",
+          "tu": "penserai",
+          "lui/lei": "penserà",
+          "noi": "penseremo",
+          "voi": "penserete",
+          "loro": "penseranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò pensato",
+          "tu": "avrai pensato",
+          "lui/lei": "avrà pensato",
+          "noi": "avremo pensato",
+          "voi": "avrete pensato",
+          "loro": "avranno pensato"
+        },
+        "Passato Remoto": {
+          "io": "pensai",
+          "tu": "pensasti",
+          "lui/lei": "pensò",
+          "noi": "pensammo",
+          "voi": "pensaste",
+          "loro": "pensarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi pensato",
+          "tu": "avesti pensato",
+          "lui/lei": "ebbe pensato",
+          "noi": "avemmo pensato",
+          "voi": "aveste pensato",
+          "loro": "ebbero pensato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "pensi",
+          "tu": "pensi",
+          "lui/lei": "pensi",
+          "noi": "pensiamo",
+          "voi": "pensiate",
+          "loro": "pensino"
+        },
+        "Passato": {
+          "io": "abbia pensato",
+          "tu": "abbia pensato",
+          "lui/lei": "abbia pensato",
+          "noi": "abbiamo pensato",
+          "voi": "abbiate pensato",
+          "loro": "abbiano pensato"
+        },
+        "Imperfetto": {
+          "io": "pensassi",
+          "tu": "pensassi",
+          "lui/lei": "pensasse",
+          "noi": "pensassimo",
+          "voi": "pensaste",
+          "loro": "pensassero"
+        },
+        "Trapassato": {
+          "io": "avessi pensato",
+          "tu": "avessi pensato",
+          "lui/lei": "avesse pensato",
+          "noi": "avessimo pensato",
+          "voi": "aveste pensato",
+          "loro": "avessero pensato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "penserei",
+          "tu": "penseresti",
+          "lui/lei": "penserebbe",
+          "noi": "penseremmo",
+          "voi": "pensereste",
+          "loro": "penserebbero"
+        },
+        "Passato": {
+          "io": "avrei pensato",
+          "tu": "avresti pensato",
+          "lui/lei": "avrebbe pensato",
+          "noi": "avremmo pensato",
+          "voi": "avreste pensato",
+          "loro": "avrebbero pensato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "pensa",
+          "lui/lei": "pensi",
+          "noi": "pensiamo",
+          "voi": "pensate",
+          "loro": "pensino"
+        },
+        "Negatif": {
+          "tu": "non pensare",
+          "lui/lei": "non pensi",
+          "noi": "non pensiamo",
+          "voi": "non pensate",
+          "loro": "non pensino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "pensare",
+          "Passato": "avere pensato"
+        },
+        "Gerundio": {
+          "Presente": "pensando",
+          "Passato": "avendo pensato"
+        },
+        "Participio": {
+          "Presente": "pensante",
+          "Passato": "pensato"
+        }
+      }
+    }
+  },
+
+  {
+    "infinitive": "spostare",
+    "translation": "déplacer",
+    "conjugations": {
+      "Indicativo": {
+        "Presente": {
+          "io": "sposto",
+          "tu": "sposti",
+          "lui/lei": "sposta",
+          "noi": "spostiamo",
+          "voi": "spostate",
+          "loro": "spostano"
+        },
+        "Passato Prossimo": {
+          "io": "ho spostato",
+          "tu": "hai spostato",
+          "lui/lei": "ha spostato",
+          "noi": "abbiamo spostato",
+          "voi": "avete spostato",
+          "loro": "hanno spostato"
+        },
+        "Imperfetto": {
+          "io": "spostavo",
+          "tu": "spostavi",
+          "lui/lei": "spostava",
+          "noi": "spostavamo",
+          "voi": "spostavate",
+          "loro": "spostavano"
+        },
+        "Trapassato Prossimo": {
+          "io": "avevo spostato",
+          "tu": "avevi spostato",
+          "lui/lei": "aveva spostato",
+          "noi": "avevamo spostato",
+          "voi": "avevate spostato",
+          "loro": "avevano spostato"
+        },
+        "Futuro Semplice": {
+          "io": "sposterò",
+          "tu": "sposterai",
+          "lui/lei": "sposterà",
+          "noi": "sposteremo",
+          "voi": "sposterete",
+          "loro": "sposteranno"
+        },
+        "Futuro Anteriore": {
+          "io": "avrò spostato",
+          "tu": "avrai spostato",
+          "lui/lei": "avrà spostato",
+          "noi": "avremo spostato",
+          "voi": "avrete spostato",
+          "loro": "avranno spostato"
+        },
+        "Passato Remoto": {
+          "io": "spostai",
+          "tu": "spostasti",
+          "lui/lei": "spostò",
+          "noi": "spostammo",
+          "voi": "spostaste",
+          "loro": "spostarono"
+        },
+        "Trapassato Remoto": {
+          "io": "ebbi spostato",
+          "tu": "avesti spostato",
+          "lui/lei": "ebbe spostato",
+          "noi": "avemmo spostato",
+          "voi": "aveste spostato",
+          "loro": "ebbero spostato"
+        }
+      },
+      "Congiuntivo": {
+        "Presente": {
+          "io": "sposti",
+          "tu": "sposti",
+          "lui/lei": "sposti",
+          "noi": "spostiamo",
+          "voi": "spostiate",
+          "loro": "spostino"
+        },
+        "Passato": {
+          "io": "abbia spostato",
+          "tu": "abbia spostato",
+          "lui/lei": "abbia spostato",
+          "noi": "abbiamo spostato",
+          "voi": "abbiate spostato",
+          "loro": "abbiano spostato"
+        },
+        "Imperfetto": {
+          "io": "spostassi",
+          "tu": "spostassi",
+          "lui/lei": "spostasse",
+          "noi": "spostassimo",
+          "voi": "spostaste",
+          "loro": "spostassero"
+        },
+        "Trapassato": {
+          "io": "avessi spostato",
+          "tu": "avessi spostato",
+          "lui/lei": "avesse spostato",
+          "noi": "avessimo spostato",
+          "voi": "aveste spostato",
+          "loro": "avessero spostato"
+        }
+      },
+      "Condizionale": {
+        "Presente": {
+          "io": "sposterei",
+          "tu": "sposteresti",
+          "lui/lei": "sposterebbe",
+          "noi": "sposteremmo",
+          "voi": "spostereste",
+          "loro": "sposterebbero"
+        },
+        "Passato": {
+          "io": "avrei spostato",
+          "tu": "avresti spostato",
+          "lui/lei": "avrebbe spostato",
+          "noi": "avremmo spostato",
+          "voi": "avreste spostato",
+          "loro": "avrebbero spostato"
+        }
+      },
+      "Imperativo": {
+        "Presente": {
+          "tu": "sposta",
+          "lui/lei": "sposti",
+          "noi": "spostiamo",
+          "voi": "spostate",
+          "loro": "spostino"
+        },
+        "Negatif": {
+          "tu": "non spostare",
+          "lui/lei": "non sposti",
+          "noi": "non spostiamo",
+          "voi": "non spostate",
+          "loro": "non spostino"
+        }
+      },
+      "Forme Impersonali": {
+        "Infinito": {
+          "Presente": "spostare",
+          "Passato": "avere spostato"
+        },
+        "Gerundio": {
+          "Presente": "spostando",
+          "Passato": "avendo spostato"
+        },
+        "Participio": {
+          "Presente": "spostante",
+          "Passato": "spostato"
+        }
+      }
+    }
+  }
+]
