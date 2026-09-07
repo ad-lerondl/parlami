@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "Öğren",
+  "navTrain": "Pratik Yap",
+  "navEvaluate": "Kendini Test Et",
+  "navResults": "Sonuçlar",
+  "navProfile": "Profil",
+  "learnConjugation": "Fiil Çekimi",
+  "learnConjugationDescription": "Fiil çekimi pratiği yap",
+  "learnVocabulary": "Kelime Bilgisi",
+  "learnVocabularyDescription": "Konuya ve seviyeye göre",
+  "learnNumbersDates": "Sayılar ve Tarihler",
+  "learnNumbersDatesDescription": "Sayıları ve tarihleri yaz",
+  "learnGrammar": "Dilbilgisi",
+  "learnGrammarDescription": "Ders notları",
+  "learnSpelling": "Heceleme",
+  "learnSpellingDescription": "Yakında",
+  "trainOralExpression": "EO - Sözlü İfade",
+  "trainOralExpressionDescription": "Yüksek sesle cevapla",
+  "trainOralComprehension": "CO - İşitsel Anlama",
+  "trainOralComprehensionDescription": "Radyo istasyonlarını dinle",
+  "trainWrittenComprehension": "CE - Okuduğunu Anlama",
+  "trainWrittenComprehensionDescription": "İtalyanca haberleri oku",
+  "trainWrittenExpression": "EE - Yazılı İfade",
+  "trainWrittenExpressionDescription": "Cümleleri çevir",
+  "evaluateTitle": "Kendini test et - Gerçek hayat durumları",
+  "evaluateIntro": "Gerçek hayat durumlarını simüle etmek için aynı anda birkaç beceriyi birleştirin.",
+  "evaluateProgression": "Öğrenme temelleri oluşturur. Pratik, belirli becerileri hedefler. Test, genel ustalığınızı ölçer.",
+  "scenarioDailyConversation": "Günlük konuşma",
+  "scenarioArticleSummary": "Makale özeti",
+  "scenarioMatchDebrief": "Maç değerlendirmesi",
+  "scenarioQuickDiscussion": "Hızlı tartışma",
+  "scenarioDailyConversationDetails": "Dinle, anla ve doğal bir şekilde cevap ver.",
+  "scenarioArticleSummaryDetails": "Bir metni oku, ardından net ve yapılandırılmış bir özet üret.",
+  "scenarioMatchDebriefDetails": "Kelime dağarcığı ve kültürel referanslar kullanarak bir maç hakkında konuşun.",
+  "scenarioQuickDiscussionDetails": "Zaman kısıtlamaları olan dinamik bir sohbette hızlı tepki verin.",
+  "resultsComingSoon": "Performans grafikleri yakında",
+  "grammarTitle": "Dilbilgisi",
+  "grammarComingSoon": "Dilbilgisi notları - içerik yakında.\n\nBu modüle sayfalar veya işlenmiş Markdown olarak notlar ekleyin.",
+  "spellingTitle": "Heceleme",
+  "spellingComingSoon": "Heceleme modülü - yakında.",
+  "ceTitle": "CE - Okuduğunu Anlama",
+  "ceIntro": "Okuduğunu anlamayı geliştirmek için İtalyanca makaleler oku",
+  "ceAdviceTitle": "Tavsiye",
+  "ceAdvice": "Kısa makalelerle başlayın. Önce genel anlamı anlamak için okuyun, ardından ayrıntılar için tekrar okuyun.",
+  "ceOpenSource": "Kaynak siteyi aç",
+  "eeTitle": "EE - Yazılı İfade",
+  "eePrompt": "Aşağıdaki cümleyi İtalyancaya çevirin",
+  "eeTranslationLabel": "İtalyanca çeviriniz",
+  "eeTranslationHint": "Çevirinizi buraya yazın...",
+  "eeCheck": "Kontrol Et",
+  "eeCorrection": "Düzeltme",
+  "eeYourAnswer": "Cevabınız",
+  "coTitle": "CO - İşitsel Anlama",
+  "coIntro": "İşitsel anlamanızı geliştirmek için İtalyan radyo istasyonlarını dinleyin",
+  "coLive": "Canlı:",
+  "coStopped": "{station} durduruldu",
+  "coConnecting": "{station} bağlanıyor...",
+  "coPlay": "Oynat",
+  "coStop": "Durdur",
+  "eoTitle": "EO - Sözlü İfade",
+  "eoChooseLevel": "Seviyeyi seç",
+  "eoLevel": "Seviye {level}",
+  "eoNoQuestion": "Soru yok",
+  "eoQuestion": "Soru",
+  "eoHint": "İpucu",
+  "eoClickHint": "İpucu için tıklayın",
+  "eoAnswerHint": "Cevap ipucu",
+  "eoClickAnswerHint": "Cevap ipucu için tıklayın",
+  "eoTimer": "Zamanlayıcı",
+  "eoTotal": "Toplam",
+  "eoSpeech": "Konuşma",
+  "eoHesitation": "Duraksama",
+  "eoStart": "Başla",
+  "eoStop": "Durdur",
+  "eoReset": "Sıfırla",
+  "eoModeFree": "Serbest mod",
+  "eoModeFreeDescription": "Yardım almadan istediğiniz zaman ilerleyin.",
+  "eoModeEasy": "Kolay",
+  "eoModeEasyDescription": "Cevapla, kendini değerlendir ve bir ipucu gör.",
+  "eoModeHard": "Zor",
+  "eoModeHardDescription": "Zamanlayıcı, duraksama takibi ve öz değerlendirme.",
+  "eoLevelChip": "Seviye {level}",
+  "eoSelfEvaluation": "Öz Değerlendirme",
+  "eoExcellent": "Mükemmel",
+  "eoGood": "İyi",
+  "eoAverage": "Orta",
+  "eoDifficult": "Zor",
+  "eoNextQuestion": "Sonraki soru",
+  "numDateTitle": "Sayılar ve Tarihler",
+  "numDateNumbersTab": "Sayılar",
+  "numDateDatesTab": "Tarihler",
+  "numDateTimeTab": "Saat",
+  "numDatePreviewNumberTitle": "Bir önizleme numarası seçin",
+  "numDatePreviewNumberSubtitle": "Bu değer sadece hızlı dönüştürme için kullanılır.",
+  "numDatePreviewNumberLabel": "Önizleme numarası",
+  "numDatePositiveInteger": "Başlamak için pozitif bir tam sayı girin.",
+  "numDateTraining": "Pratik",
+  "numDateTrainingNumberSubtitle": "İtalyanca kelimelerle yazma pratiği yapmak için başka bir numara seçin.",
+  "numDateTrainingNumberLabel": "Pratik numarası",
+  "numDateAnswerInWords": "Kelimelerle cevabınız",
+  "numDateCheck": "Kontrol Et",
+  "numDateClear": "Temizle",
+  "numDatePreviewDateTitle": "Bir önizleme tarihi seçin",
+  "numDatePreviewDateSubtitle": "Bu tarih sadece hızlı referans için kullanılır.",
+  "numDateToday": "Bugün",
+  "numDateTrainingDateSubtitle": "İtalyanca kelimelerle yazma pratiği yapmak için başka bir tarih seçin.",
+  "numDateExpectedDay": "Beklenen gün: {day}",
+  "numDatePreviewTimeTitle": "Bir önizleme saati seçin",
+  "numDatePreviewTimeSubtitle": "Bu saat sadece hızlı okuma için kullanılır.",
+  "numDateTrainingTimeSubtitle": "Pratik yapmak için özellikle çeyrek saatler olmak üzere başka bir zaman seçin.",
+  "numDateDefinedTime": "Belirlenen zaman:",
+  "answerCorrect": "Doğru cevap.",
+  "answerIncorrect": "Yanlış cevap.",
+  "answerYourAnswer": "Cevabınız: {answer}",
+  "answerExpected": "Doğru cevap: {answer}",
+  "conjugationTitle": "Fiil Çekimi",
+  "conjugationRegular": "Düzenli",
+  "conjugationSemiRegular": "Yarı Düzenli",
+  "conjugationIrregular": "Düzensiz",
+  "conjugationClearFilters": "Tüm filtreleri temizle",
+  "conjugationChooseVerb": "Bir fiil seçin",
+  "conjugationRandomVerb": "Rastgele fiil",
+  "conjugationHideBaseVerb": "Kök fiili gizle",
+  "conjugationChooseMood": "Bir kip seç",
+  "conjugationChooseTense": "Bir zaman seç",
+  "conjugationVerb": "Fiil: {verb}",
+  "conjugationTranslation": "Çeviri: {translation}",
+  "conjugationMood": "Kip: {mood}",
+  "conjugationTense": "Zaman: {tense}",
+  "conjugationLoadingError": "Yükleme hatası: {error}",
+  "profileLanguage": "Arayüz dili",
+  "profileUserName": "Kullanıcı adı",
+  "profileAbout": "Uygulama hakkında",
+  "profileAboutDescription": "Parlami İtalyanca öğrenmenize yardımcı olur.",
+  "profileTheme": "Tema",
+  "profileThemeDescription": "Açık ve koyu mod arasında geçiş yap",
+  "themeSystem": "Sistem teması",
+  "themeLight": "Açık tema",
+  "themeDark": "Koyu tema",
+  "vocabTitle": "Kelime Bilgisi",
+  "vocabReview": "Gözden Geçir",
+  "vocabCatalog": "Katalog",
+  "vocabAdd": "Ekle",
+  "vocabImport": "Kelimeleri içe aktar",
+  "vocabExport": "Kelimelerimi dışa aktar",
+  "vocabResetCatalog": "Orijinal kataloğu sıfırla",
+  "vocabSelect": "Seç",
+  "vocabSave": "Kelimeyi kaydet",
+  "vocabChooseCategories": "Kelime kategorilerini seç",
+  "vocabPasteJson": "Kelimelerin JSON listesini yapıştırın. Kabul edilen format:",
+  "vocabCancel": "İptal",
+  "vocabImportError": "İçe aktarma başarısız: {error}",
+  "vocabResetQuestion": "Orijinal kelimeleri sıfırla?",
+  "vocabResetDescription": "Bu, içe aktarılan kelimeleri sıfırlar ve orijinal kataloğu yeniden uygular. Kullanıcı tarafından eklenen kelimeler tutulur.",
+  "vocabDeleteQuestion": "Bu kelime silinsin mi?",
+  "vocabDeleteDescription": "\"{word}\" katalogdan silinsin mi?",
+  "vocabDelete": "Sil",
+  "vocabNoCategory": "Hiçbir kategori seçilmedi",
+  "vocabLoading": "Kelime bilgisi yükleniyor...",
+  "vocabFields": "Sözcük alanları",
+  "vocabNoMatch": "Geçerli filtrelere uyan kelime yok.",
+  "vocabNoTrainingMatch": "Eğitim filtrelerine uyan kelime yok.",
+  "vocabTrainingWord": "Pratik kelimesi",
+  "vocabScore": "Puan %{score}",
+  "vocabBaseLanguage": "Temel dil: {language}",
+  "vocabHiddenAnswer": "Cevap gizli.",
+  "vocabKnown": "Bilinçli",
+  "vocabUnknown": "Bilinmiyor",
+  "vocabNextWord": "Sonraki kelime",
+  "vocabCategories": "Kategoriler: {categories}",
+  "vocabPreparing": "Pratik kelimeleri hazırlanıyor...",
+  "vocabPriority": "Henüz ustalaşmamış kelimelere öncelik ver",
+  "vocabPriorityDescription": "Rastgele karıştırmak için devre dışı bırakın.",
+  "vocabSelectedCount": "Seçilen kelimeler: {count}",
+  "vocabClearAll": "Hepsini temizle",
+  "vocabConfirm": "Onayla",
+  "conjugationCheck": "Kontrol Et",
+  "conjugationNextVerb": "Sonraki fiil",
+  "eeNextSentence": "Sonraki cümle",
+  "eeNoSentence": "Mevcut cümle yok",
+  "ceLevel": "Seviye: {level}",
+  "sampleItems": "Örnek öğeler",
+  "sampleItemDetails": "Öğe detayları",
+  "sampleMoreInformation": "Daha fazla bilgi burada",
+  "sampleItem": "Örnek öğe {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + Kültür",
+  "evaluateScenarioSpeed": "CO + EO + Hız",
+  "conjugationAnswerLabel": "Cevabınız",
+  "vocabWords": "Kelimeler",
+  "vocabAverageMastery": "Ortalama ustalık",
+  "vocabMode": "Mod",
+  "vocabMastery": "Ustalık",
+  "vocabRandom": "Rastgele",
+  "vocabSearchWord": "Bir kelime ara",
+  "vocabBaseLanguageDisplay": "Temel dili göster",
+  "vocabDifficulty": "Zorluk",
+  "vocabPartOfSpeech": "Sözcük türü",
+  "vocabChooseFilterCategories": "Filtre kategorilerini seç",
+  "vocabSearchTrainingWord": "Bir kelime ara",
+  "vocabTrainingBaseLanguage": "Pratik temel dili",
+  "vocabFilters": "Filtreler",
+  "vocabChooseTrainingCategories": "Pratik kategorilerini seç",
+  "vocabItalianWord": "İtalyanca kelime",
+  "vocabFrenchTranslation": "Çeviri (temel dil)",
+  "vocabOptionalArticle": "İsteğe bağlı makale (il, la, l', vb.)",
+  "vocabCategoriesTitle": "Kategoriler",
+  "vocabSearchCategory": "Bir kategori ara",
+  "vocabAddCategory": "\"{category}\" ekle",
+  "vocabDeleteFromCatalog": "Katalogdan sil",
+  "vocabHideAnswer": "Cevabı gizle",
+  "vocabShowAnswer": "Cevabı göster",
+  "vocabStatusSaved": "Kelime kaydedildi ve filtrelerde mevcut.",
+  "vocabStatusImport": "İçe aktarma tamamlandı: {count} kelime eklendi.",
+  "vocabStatusExport": "Dışa aktarma tamamlandı: {location}",
+  "vocabStatusNoExport": "Dışa aktarılacak kullanıcı kelimesi yok.",
+  "vocabStatusReset": "Orijinal katalog sıfırlandı.",
+  "vocabStatusDeleted": "Kelime katalogdan kaldırıldı.",
+  "vocabStatusKnown": "Not edildi.",
+  "vocabStatusReview": "Yakında gözden geçir.",
+  "vocabItalian": "İtalyanca",
+  "vocabFrench": "Fransızca",
+  "vocabSourceOriginal": "Orijinal",
+  "vocabSourceUser": "Kullanıcı",
+  "vocabNoun": "İsim",
+  "vocabVerb": "Fiil",
+  "vocabAdjective": "Sıfat",
+  "vocabAdverb": "Zarf",
+  "vocabPronoun": "Zamir",
+  "vocabDeterminer": "Belirleyici",
+  "vocabPreposition": "Edat",
+  "vocabConjunction": "Bağlaç",
+  "vocabInterjection": "Ünlem",
+  "vocabExpression": "İfade",
+  "vocabOther": "Diğer",
+  "profileDonate": "Bağış yap",
+  "profileDonateDescription": "Desteğiniz için teşekkürler",
+  "profilePrivacy": "Gizlilik politikası",
+  "profilePrivacyDescription": "Gizlilik politikasını aç",
+  "unavailable": "Özellik henüz mevcut değil.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

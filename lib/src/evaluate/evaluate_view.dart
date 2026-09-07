@@ -1,50 +1,52 @@
 import 'package:flutter/material.dart';
+import '../localization/app_localizations.dart';
 
 class EvaluateView extends StatelessWidget {
   const EvaluateView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scenarios = [
-      const _Scenario(
-        title: 'Conversation du quotidien',
-        subtitle: 'CO + EO',
-        details: 'Ecouter, comprendre puis repondre naturellement.',
+      _Scenario(
+        title: l10n.scenarioDailyConversation,
+        subtitle: l10n.evaluateScenarioOral,
+        details: l10n.scenarioDailyConversationDetails,
         icon: Icons.forum,
       ),
-      const _Scenario(
-        title: 'Resume d\'article',
-        subtitle: 'CE + EE',
-        details: 'Lire un texte puis produire un resume clair et structure.',
+      _Scenario(
+        title: l10n.scenarioArticleSummary,
+        subtitle: l10n.evaluateScenarioWritten,
+        details: l10n.scenarioArticleSummaryDetails,
         icon: Icons.summarize,
       ),
-      const _Scenario(
-        title: 'Debrief de match',
-        subtitle: 'EO + Culture',
-        details: 'Parler d\'un match en mobilisant vocabulaire et references culturelles.',
+      _Scenario(
+        title: l10n.scenarioMatchDebrief,
+        subtitle: l10n.evaluateScenarioCulture,
+        details: l10n.scenarioMatchDebriefDetails,
         icon: Icons.sports_soccer,
       ),
-      const _Scenario(
-        title: 'Discussion rapide',
-        subtitle: 'CO + EO + Rapidite',
-        details: 'Reagir vite dans un echange dynamique avec contraintes de temps.',
+      _Scenario(
+        title: l10n.scenarioQuickDiscussion,
+        subtitle: l10n.evaluateScenarioSpeed,
+        details: l10n.scenarioQuickDiscussionDetails,
         icon: Icons.speed,
       ),
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Se tester - Conditions reelles")),
+      appBar: AppBar(title: Text(l10n.evaluateTitle)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Text(
-            "Ici, tu combines plusieurs competences en meme temps pour simuler des situations reelles.",
-            style: TextStyle(fontSize: 16),
+          Text(
+            l10n.evaluateIntro,
+            style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 12),
-          const Text(
-            "Apprendre pose les bases. S'entrainer travaille des points isoles. Se tester mesure ta maitrise globale.",
-            style: TextStyle(fontSize: 14, color: Colors.black54),
+          Text(
+            l10n.evaluateProgression,
+            style: const TextStyle(fontSize: 14, color: Colors.black54),
           ),
           const SizedBox(height: 16),
           ...scenarios.map((scenario) => _ScenarioCard(scenario: scenario)),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:parlami/src/data/models/vocab_word.dart';
 import 'package:parlami/src/repositories/vocab_repository.dart';
 import 'package:parlami/src/services/vocab_export_service.dart';
+import 'package:parlami/src/localization/app_localizations.dart';
 
 enum _VocabMenuAction { exportUserWords, resetOriginalWords }
 
@@ -40,6 +41,23 @@ class _VocabViewState extends State<VocabView> {
   VocabWord? _activeWord;
   String? _statusMessage;
   List<VocabWord> _trainingPool = const [];
+
+  String _languageLabel(VocabLanguage language, AppLocalizations l10n) =>
+      language == VocabLanguage.italian ? l10n.vocabItalian : l10n.vocabFrench;
+
+  String _partLabel(VocabPartOfSpeech part, AppLocalizations l10n) => switch (part) {
+        VocabPartOfSpeech.noun => l10n.vocabNoun,
+        VocabPartOfSpeech.verb => l10n.vocabVerb,
+        VocabPartOfSpeech.adjective => l10n.vocabAdjective,
+        VocabPartOfSpeech.adverb => l10n.vocabAdverb,
+        VocabPartOfSpeech.pronoun => l10n.vocabPronoun,
+        VocabPartOfSpeech.determiner => l10n.vocabDeterminer,
+        VocabPartOfSpeech.preposition => l10n.vocabPreposition,
+        VocabPartOfSpeech.conjunction => l10n.vocabConjunction,
+        VocabPartOfSpeech.interjection => l10n.vocabInterjection,
+        VocabPartOfSpeech.expression => l10n.vocabExpression,
+        VocabPartOfSpeech.other => l10n.vocabOther,
+      };
 
   @override
   void initState() {
@@ -117,9 +135,10 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Future<void> _saveWord() async {
+    final l10n = AppLocalizations.of(context)!;
     final categories = _draftCategories.toList(growable: false);
     if (_addItalianController.text.trim().isEmpty || _addFrenchController.text.trim().isEmpty) {
-      setState(() => _statusMessage = 'Ajoute au moins la version italienne et la traduction.');
+      setState(() => _statusMessage = l10n.vocabFrenchTranslation);
       return;
     }
 
@@ -144,10 +163,11 @@ class _VocabViewState extends State<VocabView> {
     _addArticleController.clear();
     _draftCategories.clear();
     _refreshTrainingPool();
-    setState(() => _statusMessage = 'Mot enregistré et disponible dans les filtres.');
+    setState(() => _statusMessage = l10n.vocabStatusSaved);
   }
 
   Future<void> _importWords() async {
+    final l10n = AppLocalizations.of(context)!;
     const example = '''[
   {
     "it": "andare",
@@ -161,7 +181,7 @@ class _VocabViewState extends State<VocabView> {
     final imported = await showDialog<List<VocabWord>>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: const Text('Importer des mots'),
+        title: Text(l10n.vocabImport),
         content: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
@@ -169,7 +189,7 @@ class _VocabViewState extends State<VocabView> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Colle ici une liste JSON de mots. Format accepté:'),
+                Text(l10n.vocabPasteJson),
                 const SizedBox(height: 8),
                 const SelectableText(example),
                 const SizedBox(height: 12),
@@ -177,7 +197,7 @@ class _VocabViewState extends State<VocabView> {
                   controller: controller,
                   minLines: 8,
                   maxLines: 14,
-                  decoration: const InputDecoration(border: OutlineInputBorder(), labelText: 'JSON à importer'),
+                  decoration: InputDecoration(border: const OutlineInputBorder(), labelText: l10n.vocabImport),
                 ),
               ],
             ),
@@ -186,7 +206,7 @@ class _VocabViewState extends State<VocabView> {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(null),
-            child: const Text('Annuler'),
+            child: Text(l10n.vocabCancel),
           ),
           FilledButton(
             onPressed: () async {
@@ -198,12 +218,12 @@ class _VocabViewState extends State<VocabView> {
               } catch (error) {
                 if (dialogContext.mounted) {
                   ScaffoldMessenger.of(dialogContext).showSnackBar(
-                    SnackBar(content: Text('Import impossible: $error')),
+                    SnackBar(content: Text(l10n.vocabImportError(error.toString()))),
                   );
                 }
               }
             },
-            child: const Text('Importer'),
+            child: Text(l10n.vocabImport),
           ),
         ],
       ),
@@ -213,15 +233,16 @@ class _VocabViewState extends State<VocabView> {
     if (!mounted) return;
     setState(() {
       _refreshTrainingPool();
-      _statusMessage = 'Import terminé: ${imported.length} mot(s) ajoutés.';
+      _statusMessage = l10n.vocabStatusImport(imported.length.toString());
     });
   }
 
   Future<void> _exportUserWords() async {
+    final l10n = AppLocalizations.of(context)!;
     if (!_repoReady) return;
     final userWords = _repo.userWords();
     if (userWords.isEmpty) {
-      setState(() => _statusMessage = 'Aucun mot utilisateur à exporter.');
+      setState(() => _statusMessage = l10n.vocabStatusNoExport);
       return;
     }
 
@@ -229,26 +250,25 @@ class _VocabViewState extends State<VocabView> {
     final fileName = 'vocabulaire_utilisateur_${DateTime.now().toIso8601String().replaceAll(':', '-')}.json';
     final exportLocation = await exportVocabJson(fileName, json);
     if (!mounted) return;
-    setState(() => _statusMessage = 'Export terminé: $exportLocation');
+    setState(() => _statusMessage = l10n.vocabStatusExport(exportLocation));
   }
 
   Future<void> _resetOriginalWords() async {
+    final l10n = AppLocalizations.of(context)!;
     if (!_repoReady) return;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: const Text('Réinitialiser les mots d’origine ?'),
-        content: const Text(
-          'Cela remet à zéro les mots importés depuis vocab_apprendreitalien-vocabulaire.json et réapplique le catalogue d’origine. Les mots ajoutés par l’utilisateur sont conservés.',
-        ),
+        title: Text(l10n.vocabResetQuestion),
+        content: Text(l10n.vocabResetDescription),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: const Text('Annuler'),
+            child: Text(l10n.vocabCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: const Text('Réinitialiser'),
+            child: Text(l10n.vocabResetCatalog),
           ),
         ],
       ),
@@ -259,25 +279,26 @@ class _VocabViewState extends State<VocabView> {
     if (!mounted) return;
     setState(() {
       _refreshTrainingPool();
-      _statusMessage = 'Catalogue d’origine réinitialisé.';
+      _statusMessage = l10n.vocabStatusReset;
     });
   }
 
   Future<void> _deleteWord(VocabWord word) async {
+    final l10n = AppLocalizations.of(context)!;
     if (!_repoReady) return;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: const Text('Supprimer ce mot ?'),
-        content: Text('Supprimer « ${word.italian} » du catalogue ?'),
+        title: Text(l10n.vocabDeleteQuestion),
+        content: Text(l10n.vocabDeleteDescription(word.italian)),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: const Text('Annuler'),
+            child: Text(l10n.vocabCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: const Text('Supprimer'),
+            child: Text(l10n.vocabDelete),
           ),
         ],
       ),
@@ -288,7 +309,7 @@ class _VocabViewState extends State<VocabView> {
     if (!mounted) return;
     setState(() {
       _refreshTrainingPool();
-      _statusMessage = 'Mot supprimé du catalogue.';
+      _statusMessage = l10n.vocabStatusDeleted;
     });
   }
 
@@ -333,6 +354,7 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Widget _buildStatsBar(List<VocabWord> items) {
+    final l10n = AppLocalizations.of(context)!;
     final total = items.length;
     final averageMastery = total == 0 ? 0.0 : items.map((word) => word.masteryScore()).reduce((a, b) => a + b) / total;
     return Card(
@@ -340,9 +362,10 @@ class _VocabViewState extends State<VocabView> {
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
-            Expanded(child: _StatTile(label: 'Mots', value: '$total')),
-            Expanded(child: _StatTile(label: 'Maitrise moyenne', value: '${averageMastery.toStringAsFixed(0)}%')),
-            Expanded(child: _StatTile(label: 'Mode', value: _masteryOrder ? 'Maitrise' : 'Aléatoire')),
+            Expanded(child: _StatTile(label: l10n.vocabWords, value: '$total')),
+            Expanded(child: _StatTile(label: l10n.vocabAverageMastery, value: '${averageMastery.toStringAsFixed(0)}%')),
+            Expanded(
+                child: _StatTile(label: l10n.vocabMode, value: _masteryOrder ? l10n.vocabMastery : l10n.vocabRandom)),
           ],
         ),
       ),
@@ -379,8 +402,9 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Widget _buildSelectedCategorySummary(Set<String> selectedCategories) {
+    final l10n = AppLocalizations.of(context)!;
     if (selectedCategories.isEmpty) {
-      return const Text('Aucune catégorie sélectionnée');
+      return Text(l10n.vocabNoCategory);
     }
     final sorted = selectedCategories.toList(growable: false)..sort();
     return Wrap(
@@ -391,16 +415,17 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Widget _buildCatalogTab() {
+    final l10n = AppLocalizations.of(context)!;
     if (!_repoReady) {
-      return const Center(
+      return Center(
         child: Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 16),
-              Text('Chargement du vocabulaire...'),
+              const CircularProgressIndicator(),
+              const SizedBox(height: 16),
+              Text(l10n.vocabLoading),
             ],
           ),
         ),
@@ -415,7 +440,7 @@ class _VocabViewState extends State<VocabView> {
         TextField(
           controller: _searchController,
           decoration: InputDecoration(
-            labelText: 'Rechercher un mot',
+            labelText: l10n.vocabSearchWord,
             suffixIcon: IconButton(
               icon: Icon(_regexSearch ? Icons.code : Icons.search),
               onPressed: () => setState(() => _regexSearch = !_regexSearch),
@@ -426,15 +451,15 @@ class _VocabViewState extends State<VocabView> {
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabLanguage>(
           initialValue: _baseLanguage,
-          decoration: const InputDecoration(labelText: 'Langue de base pour l’affichage'),
+          decoration: InputDecoration(labelText: l10n.vocabBaseLanguageDisplay),
           items: VocabLanguage.values
-              .map((language) => DropdownMenuItem(value: language, child: Text(language.label)))
+              .map((language) => DropdownMenuItem(value: language, child: Text(_languageLabel(language, l10n))))
               .toList(growable: false),
           onChanged: (language) => setState(() => _baseLanguage = language ?? VocabLanguage.italian),
         ),
         const SizedBox(height: 12),
         _buildFilterChips<VocabDifficulty>(
-          title: 'Difficulté',
+          title: l10n.vocabDifficulty,
           options: _repo.allDifficulties(),
           selected: _libraryDifficulties,
           labelOf: (value) => value.label,
@@ -448,7 +473,7 @@ class _VocabViewState extends State<VocabView> {
         ),
         const SizedBox(height: 12),
         _buildFilterChips<VocabPartOfSpeech>(
-          title: 'Genre grammatical',
+          title: l10n.vocabPartOfSpeech,
           options: _repo.allPartsOfSpeech(),
           selected: _libraryParts,
           labelOf: (value) => value.label,
@@ -463,11 +488,11 @@ class _VocabViewState extends State<VocabView> {
         const SizedBox(height: 12),
         Row(
           children: [
-            Expanded(child: Text('Champs lexicaux', style: Theme.of(context).textTheme.titleSmall)),
+            Expanded(child: Text(l10n.vocabFields, style: Theme.of(context).textTheme.titleSmall)),
             TextButton(
               onPressed: () async {
                 final result = await _openCategoryPicker(
-                  title: 'Choisir les catégories du filtre',
+                  title: l10n.vocabChooseFilterCategories,
                   initialCategories: _libraryCategories,
                 );
                 if (result == null || !mounted) return;
@@ -477,7 +502,7 @@ class _VocabViewState extends State<VocabView> {
                     ..addAll(result);
                 });
               },
-              child: const Text('Sélectionner'),
+              child: Text(l10n.vocabSelect),
             ),
           ],
         ),
@@ -485,25 +510,26 @@ class _VocabViewState extends State<VocabView> {
         _buildSelectedCategorySummary(_libraryCategories),
         const SizedBox(height: 12),
         if (items.isEmpty)
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 48),
-            child: Center(child: Text('Aucun mot ne correspond aux filtres actuels.')),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 48),
+            child: Center(child: Text(l10n.vocabNoMatch)),
           )
         else
           ...items.map((word) => _VocabWordCard(
               word: word,
               baseLanguage: _baseLanguage,
               onTap: () => setState(() => _statusMessage =
-                  '${word.labelFor(_baseLanguage)} • ${word.difficulty.label} • ${word.partOfSpeech.label}'),
+                  '${word.labelFor(_baseLanguage)} • ${word.difficulty.label} • ${_partLabel(word.partOfSpeech, l10n)}'),
               onDelete: () => _deleteWord(word))),
       ],
     );
   }
 
   Widget _buildTrainingCard() {
+    final l10n = AppLocalizations.of(context)!;
     final word = _activeWord;
     if (word == null) {
-      return const Center(child: Text('Aucun mot ne correspond aux filtres d’entraînement.'));
+      return Center(child: Text(l10n.vocabNoTrainingMatch));
     }
     final prompt = _trainingBaseLanguage == VocabLanguage.italian
         ? word.labelFor(VocabLanguage.italian)
@@ -517,25 +543,26 @@ class _VocabViewState extends State<VocabView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Mot d’entraînement', style: Theme.of(context).textTheme.titleLarge),
+            Text(l10n.vocabTrainingWord, style: Theme.of(context).textTheme.titleLarge),
             Row(
               children: [
-                Chip(label: Text('Score ${word.masteryScore().toStringAsFixed(0)}%')),
+                Chip(label: Text(l10n.vocabScore(word.masteryScore().toStringAsFixed(0)))),
                 const SizedBox(width: 8),
                 Chip(label: Text(word.difficulty.label)),
                 const SizedBox(width: 8),
-                Chip(label: Text(word.partOfSpeech.label)),
+                Chip(label: Text(_partLabel(word.partOfSpeech, l10n))),
               ],
             ),
             const SizedBox(height: 16),
-            Text('Langue de base: ${_trainingBaseLanguage.label}', style: Theme.of(context).textTheme.titleSmall),
+            Text(l10n.vocabBaseLanguage(_languageLabel(_trainingBaseLanguage, l10n)),
+                style: Theme.of(context).textTheme.titleSmall),
             const SizedBox(height: 8),
             Text(prompt, style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 12),
             AnimatedCrossFade(
               duration: const Duration(milliseconds: 180),
               crossFadeState: _showAnswer ? CrossFadeState.showSecond : CrossFadeState.showFirst,
-              firstChild: const Text('Réponse cachée.'),
+              firstChild: Text(l10n.vocabHiddenAnswer),
               secondChild: Text(hidden, style: Theme.of(context).textTheme.titleLarge),
             ),
             const SizedBox(height: 16),
@@ -545,24 +572,24 @@ class _VocabViewState extends State<VocabView> {
               children: [
                 FilledButton.tonal(
                   onPressed: () => setState(() => _showAnswer = !_showAnswer),
-                  child: Text(_showAnswer ? 'Masquer la réponse' : 'Afficher la réponse'),
+                  child: Text(_showAnswer ? l10n.vocabHideAnswer : l10n.vocabShowAnswer),
                 ),
                 OutlinedButton(
                   onPressed: () => _classifyCurrent(true),
-                  child: const Text('Su'),
+                  child: Text(l10n.vocabKnown),
                 ),
                 OutlinedButton(
                   onPressed: () => _classifyCurrent(false),
-                  child: const Text('Non su'),
+                  child: Text(l10n.vocabUnknown),
                 ),
                 FilledButton(
                   onPressed: _advanceTrainingPool,
-                  child: const Text('Mot suivant'),
+                  child: Text(l10n.vocabNextWord),
                 ),
               ],
             ),
             const SizedBox(height: 12),
-            Text('Catégories: ${word.categories.join(', ')}'),
+            Text(l10n.vocabCategories(word.categories.join(', '))),
           ],
         ),
       ),
@@ -570,16 +597,17 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Widget _buildTrainingTab() {
+    final l10n = AppLocalizations.of(context)!;
     if (!_repoReady) {
-      return const Center(
+      return Center(
         child: Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 16),
-              Text('Préparation des mots d’entraînement...'),
+              const CircularProgressIndicator(),
+              const SizedBox(height: 16),
+              Text(l10n.vocabPreparing),
             ],
           ),
         ),
@@ -595,14 +623,15 @@ class _VocabViewState extends State<VocabView> {
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabLanguage>(
           initialValue: _trainingBaseLanguage,
-          decoration: const InputDecoration(
-            labelText: 'Langue de base pour l’entraînement',
+          decoration: InputDecoration(
+            labelText: l10n.vocabTrainingBaseLanguage,
+            border: const OutlineInputBorder(),
           ),
           items: VocabLanguage.values
               .map(
                 (language) => DropdownMenuItem(
                   value: language,
-                  child: Text(language.label),
+                  child: Text(_languageLabel(language, l10n)),
                 ),
               )
               .toList(growable: false),
@@ -621,8 +650,8 @@ class _VocabViewState extends State<VocabView> {
             _masteryOrder = value;
             _refreshTrainingPool();
           }),
-          title: const Text('Mots non sus prioritaires'),
-          subtitle: const Text('Désactive pour mélanger aléatoirement.'),
+          title: Text(l10n.vocabPriority),
+          subtitle: Text(l10n.vocabPriorityDescription),
         ),
         const SizedBox(height: 16),
         Card(
@@ -639,7 +668,7 @@ class _VocabViewState extends State<VocabView> {
                 TextField(
                   controller: _trainSearchController,
                   decoration: InputDecoration(
-                    labelText: 'Chercher un mot',
+                    labelText: l10n.vocabSearchTrainingWord,
                     prefixIcon: const Icon(Icons.search),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -655,7 +684,7 @@ class _VocabViewState extends State<VocabView> {
                 ),
                 const SizedBox(height: 20),
                 _buildHorizontalFilterChips<VocabDifficulty>(
-                  title: 'Difficulté',
+                  title: l10n.vocabDifficulty,
                   options: _repo.allDifficulties(),
                   selected: _trainingDifficulties,
                   labelOf: (value) => value.label,
@@ -670,10 +699,10 @@ class _VocabViewState extends State<VocabView> {
                 ),
                 const SizedBox(height: 20),
                 _buildHorizontalFilterChips<VocabPartOfSpeech>(
-                  title: 'Genre grammatical',
+                  title: l10n.vocabPartOfSpeech,
                   options: _repo.allPartsOfSpeech(),
                   selected: _trainingParts,
-                  labelOf: (value) => value.label,
+                  labelOf: (value) => _partLabel(value, l10n),
                   onChanged: (value, checked) => setState(() {
                     if (checked) {
                       _trainingParts.add(value);
@@ -688,14 +717,14 @@ class _VocabViewState extends State<VocabView> {
                   children: [
                     Expanded(
                       child: Text(
-                        'Champs lexicaux',
+                        l10n.vocabFields,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),
                     TextButton(
                       onPressed: () async {
                         final result = await _openCategoryPicker(
-                          title: 'Choisir les catégories d’entraînement',
+                          title: l10n.vocabChooseTrainingCategories,
                           initialCategories: _trainingCategories,
                         );
 
@@ -708,7 +737,7 @@ class _VocabViewState extends State<VocabView> {
                           _refreshTrainingPool();
                         });
                       },
-                      child: const Text('Sélectionner'),
+                      child: Text(l10n.vocabSelect),
                     ),
                   ],
                 ),
@@ -727,7 +756,7 @@ class _VocabViewState extends State<VocabView> {
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         const SizedBox(height: 8),
-        Text('Mots retenus : ${items.length}'),
+        Text(l10n.vocabSelectedCount(items.length.toString())),
         if (items.isNotEmpty) ...[
           const SizedBox(height: 8),
           ...items.take(8).map(
@@ -782,21 +811,20 @@ class _VocabViewState extends State<VocabView> {
   }
 
   Widget _buildAddTab() {
+    final l10n = AppLocalizations.of(context)!;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        TextField(controller: _addItalianController, decoration: const InputDecoration(labelText: 'Mot italien')),
+        TextField(controller: _addItalianController, decoration: InputDecoration(labelText: l10n.vocabItalianWord)),
         const SizedBox(height: 12),
         TextField(
-            controller: _addFrenchController, decoration: const InputDecoration(labelText: 'Traduction française')),
+            controller: _addFrenchController, decoration: InputDecoration(labelText: l10n.vocabFrenchTranslation)),
         const SizedBox(height: 12),
-        TextField(
-            controller: _addArticleController,
-            decoration: const InputDecoration(labelText: "Article éventuel (il, la, l', etc.)")),
+        TextField(controller: _addArticleController, decoration: InputDecoration(labelText: l10n.vocabOptionalArticle)),
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabDifficulty>(
           initialValue: _selectedDifficulty,
-          decoration: const InputDecoration(labelText: 'Difficulté'),
+          decoration: InputDecoration(labelText: l10n.vocabDifficulty),
           items: VocabDifficulty.values
               .map((difficulty) => DropdownMenuItem(value: difficulty, child: Text(difficulty.label)))
               .toList(growable: false),
@@ -805,20 +833,20 @@ class _VocabViewState extends State<VocabView> {
         const SizedBox(height: 12),
         DropdownButtonFormField<VocabPartOfSpeech>(
           initialValue: _selectedPartOfSpeech,
-          decoration: const InputDecoration(labelText: 'Genre grammatical'),
+          decoration: InputDecoration(labelText: l10n.vocabPartOfSpeech),
           items: VocabPartOfSpeech.values
-              .map((part) => DropdownMenuItem(value: part, child: Text(part.label)))
+              .map((part) => DropdownMenuItem(value: part, child: Text(_partLabel(part, l10n))))
               .toList(growable: false),
           onChanged: (part) => setState(() => _selectedPartOfSpeech = part ?? VocabPartOfSpeech.other),
         ),
         const SizedBox(height: 12),
         Row(
           children: [
-            Expanded(child: Text('Catégories', style: Theme.of(context).textTheme.titleSmall)),
+            Expanded(child: Text(l10n.vocabCategoriesTitle, style: Theme.of(context).textTheme.titleSmall)),
             TextButton(
               onPressed: () async {
                 final result = await _openCategoryPicker(
-                  title: 'Choisir les catégories du mot',
+                  title: l10n.vocabChooseCategories,
                   initialCategories: _draftCategories,
                 );
                 if (result == null || !mounted) return;
@@ -828,14 +856,14 @@ class _VocabViewState extends State<VocabView> {
                     ..addAll(result);
                 });
               },
-              child: const Text('Sélectionner'),
+              child: Text(l10n.vocabSelect),
             ),
           ],
         ),
         const SizedBox(height: 8),
         _buildSelectedCategorySummary(_draftCategories),
         const SizedBox(height: 16),
-        FilledButton(onPressed: _repoReady ? _saveWord : null, child: const Text('Enregistrer le mot')),
+        FilledButton(onPressed: _repoReady ? _saveWord : null, child: Text(l10n.vocabSave)),
         if (_statusMessage != null) ...[
           const SizedBox(height: 12),
           Text(_statusMessage!),
@@ -846,11 +874,12 @@ class _VocabViewState extends State<VocabView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Vocabulaire'),
+          title: Text(l10n.vocabTitle),
           actions: [
             PopupMenuButton<_VocabMenuAction>(
               enabled: _repoReady,
@@ -864,28 +893,28 @@ class _VocabViewState extends State<VocabView> {
                     break;
                 }
               },
-              itemBuilder: (context) => const [
+              itemBuilder: (context) => [
                 PopupMenuItem(
                   value: _VocabMenuAction.exportUserWords,
-                  child: Text('Exporter mes mots'),
+                  child: Text(l10n.vocabExport),
                 ),
                 PopupMenuItem(
                   value: _VocabMenuAction.resetOriginalWords,
-                  child: Text('Réinitialiser le catalogue d’origine'),
+                  child: Text(l10n.vocabResetCatalog),
                 ),
               ],
             ),
             IconButton(
-              tooltip: 'Importer des mots',
+              tooltip: l10n.vocabImport,
               onPressed: _repoReady ? _importWords : null,
               icon: const Icon(Icons.file_upload_outlined),
             ),
           ],
-          bottom: const TabBar(
+          bottom: TabBar(
             tabs: [
-              Tab(text: 'Réviser'),
-              Tab(text: 'Catalogue'),
-              Tab(text: 'Ajouter'),
+              Tab(text: l10n.vocabReview),
+              Tab(text: l10n.vocabCatalog),
+              Tab(text: l10n.vocabAdd),
             ],
           ),
         ),
@@ -983,7 +1012,7 @@ class _CategoryPickerSheetState extends State<_CategoryPickerSheet> {
             TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                labelText: 'Rechercher une catégorie',
+                labelText: AppLocalizations.of(context)!.vocabSearchCategory,
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () => setState(() {}),
@@ -999,7 +1028,7 @@ class _CategoryPickerSheetState extends State<_CategoryPickerSheet> {
                 child: OutlinedButton.icon(
                   onPressed: _addCustomCategory,
                   icon: const Icon(Icons.add),
-                  label: Text('Ajouter "${_searchController.text.trim()}"'),
+                  label: Text(AppLocalizations.of(context)!.vocabAddCategory(_searchController.text.trim())),
                 ),
               ),
             const SizedBox(height: 8),
@@ -1029,17 +1058,17 @@ class _CategoryPickerSheetState extends State<_CategoryPickerSheet> {
               children: [
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(<String>{}),
-                  child: const Text('Tout effacer'),
+                  child: Text(AppLocalizations.of(context)!.vocabClearAll),
                 ),
                 const Spacer(),
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(null),
-                  child: const Text('Annuler'),
+                  child: Text(AppLocalizations.of(context)!.vocabCancel),
                 ),
                 const SizedBox(width: 8),
                 FilledButton(
                   onPressed: () => Navigator.of(context).pop(_selected),
-                  child: const Text('Valider'),
+                  child: Text(AppLocalizations.of(context)!.vocabConfirm),
                 ),
               ],
             ),
@@ -1079,13 +1108,14 @@ class _VocabWordCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final mastery = word.masteryScore();
     return Card(
       child: ListTile(
         onTap: onTap,
         title: Text(word.labelFor(baseLanguage)),
         subtitle: Text(
-            '${word.labelFor(baseLanguage == VocabLanguage.italian ? VocabLanguage.french : VocabLanguage.italian)} • ${word.categories.join(', ')} • ${word.source.label}'),
+            '${word.labelFor(baseLanguage == VocabLanguage.italian ? VocabLanguage.french : VocabLanguage.italian)} • ${word.categories.join(', ')} • ${word.source == VocabWordSource.original ? l10n.vocabSourceOriginal : l10n.vocabSourceUser}'),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -1098,7 +1128,7 @@ class _VocabWordCard extends StatelessWidget {
               ],
             ),
             IconButton(
-              tooltip: 'Supprimer du catalogue',
+              tooltip: AppLocalizations.of(context)!.vocabDeleteFromCatalog,
               onPressed: onDelete,
               icon: const Icon(Icons.delete_outline),
             ),

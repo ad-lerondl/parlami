@@ -1,5 +1,5 @@
 [build]
-  command = "bash scripts/install_flutter.sh && export PATH=\"$HOME/flutter/bin:$PATH\" && flutter build web --release && mkdir -p build/web/privacy build/web/download && cp privacy/index.html build/web/privacy/index.html && cp download/index.html build/web/download/index.html"
+  command = "bash scripts/install_flutter.sh && export PATH=\"$HOME/flutter/bin:$PATH\" && flutter build web --release && cp -R web-pages/privacy build/web/privacy && cp -R web-pages/download build/web/download"
   publish = "build/web"
 
 [[redirects]]
@@ -9,7 +9,7 @@
 
 [[redirects]]
   from = "/privacy/"
-  to = "/privacy/index.html"
+  to = "/privacy/fr/"
   status = 200
 
 [[redirects]]
@@ -19,7 +19,7 @@
 
 [[redirects]]
   from = "/download/"
-  to = "/download/index.html"
+  to = "/download/fr/"
   status = 200
 
 [[redirects]]

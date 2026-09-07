@@ -52,6 +52,27 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 - `lib/src/services/quiz_prefs.dart`: persistance pref quiz
 - `lib/src/services/radio_player_service.dart`: service radio live
 
+### Localisation
+- `lib/src/localization/app_*.arb`: source unique des chaînes d'interface, un fichier par langue.
+- `lib/src/localization/app_localizations.dart`: fichier généré par Flutter, ne pas modifier manuellement.
+- `lib/src/settings/settings_service.dart`: persistance locale de la langue choisie.
+- `lib/src/settings/settings_controller.dart`: état observable de la langue et du thème.
+
+Langues d'interface supportées: `fr`, `en`, `es`, `de`, `pt`, `ar`, `ru`, `ja`, `he`, `pl`, `ro`, `sv`, `tr`.
+
+Les pages HTML publiques sont rangées dans `web-pages/privacy/<lang>/` et
+`web-pages/download/<lang>/`. Netlify les publie respectivement sous
+`/privacy/<lang>/` et `/download/<lang>/`; les URLs sans langue redirigent
+vers la version française.
+
+### Règles de modification pour les humains et les IA
+1. Toute nouvelle chaîne visible doit être ajoutée à `app_en.arb` et `app_fr.arb`, puis à tous les autres fichiers `app_*.arb` avant d'être utilisée dans un widget.
+2. Ne jamais modifier `app_localizations*.dart` à la main: lancer `flutter gen-l10n` après une modification ARB.
+3. Ne pas mettre de texte d'interface dans les modèles, repositories ou assets métier. Les données pédagogiques restent séparées des chaînes UI.
+4. Pour un texte dynamique, utiliser un message ARB avec paramètres plutôt qu'une concaténation dans le widget.
+5. Après chaque lot de localisation, lancer `flutter analyze` puis les tests ciblés. Une modification de langue doit être vérifiée en changeant la locale depuis le profil et après redémarrage.
+6. Toute nouvelle langue doit être ajoutée simultanément aux ARB, à `AppLocalizations.supportedLocales` si nécessaire, et au sélecteur du profil.
+
 ### Assets
 - `assets/conjugaison/*.json`
 - `assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json`

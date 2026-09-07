@@ -52,3 +52,8 @@ android/key.properties
 
 # Backup files
 *.bak
+
+# Python files
+*.py[cod]
+# Widget Preview related
+.widget_preview/

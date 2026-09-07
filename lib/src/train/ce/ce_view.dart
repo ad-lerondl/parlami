@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../localization/app_localizations.dart';
 
 class NewsSource {
   final String name;
@@ -59,32 +60,32 @@ class CEView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: const Text('CE - Compréhension Écrite')),
+      appBar: AppBar(title: Text(l10n.ceTitle)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Text(
-            'Lisez des articles en italien pour améliorer votre compréhension écrite',
-            style: TextStyle(fontSize: 16),
+          Text(
+            l10n.ceIntro,
+            style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 8),
-          const Card(
+          Card(
             child: Padding(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.lightbulb_outline, size: 20),
-                      SizedBox(width: 8),
-                      Text('Conseil', style: TextStyle(fontWeight: FontWeight.bold)),
+                      const Icon(Icons.lightbulb_outline, size: 20),
+                      const SizedBox(width: 8),
+                      Text(l10n.ceAdviceTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  SizedBox(height: 4),
-                  Text(
-                      'Commencez par des articles courts. Lisez d\'abord pour comprendre le sens général, puis relisez pour les détails.'),
+                  const SizedBox(height: 4),
+                  Text(l10n.ceAdvice),
                 ],
               ),
             ),
@@ -99,10 +100,11 @@ class CEView extends StatelessWidget {
                     ),
                   ),
                   title: Text(source.name),
-                  subtitle: Text('${source.description}\nNiveau: ${source.level}'),
+                  subtitle: Text('${source.description}\n${AppLocalizations.of(context)!.ceLevel(source.level)}'),
                   isThreeLine: true,
                   trailing: IconButton(
                     icon: const Icon(Icons.open_in_new),
+                    tooltip: AppLocalizations.of(context)!.ceOpenSource,
                     onPressed: () => launchUrl(
                       Uri.parse(source.url),
                       mode: LaunchMode.externalApplication,

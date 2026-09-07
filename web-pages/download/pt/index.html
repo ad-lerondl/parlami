@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="pt" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Télécharger Parlami — Apprendre l'italien</title>
-  <meta name="description" content="Téléchargez Parlami, une application gratuite pour apprendre l'italien avec du vocabulaire, de la conjugaison, des exercices et de la compréhension orale.">
+  <title>Baixar Parlami — Aprender Italiano</title>
+  <meta name="description" content="Baixe o Parlami, um aplicativo gratuito para aprender italiano com vocabulário, conjugação, exercícios e compreensão oral.">
 
   <style>
     :root {
@@ -74,14 +73,32 @@
       object-fit: cover;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     .nav-link {
       color: var(--muted);
       text-decoration: none;
       font-size: 0.95rem;
+      font-weight: 500;
     }
 
     .nav-link:hover {
       color: var(--green-dark);
+    }
+
+    .lang-selector select {
+      padding: 6px 10px;
+      font-size: 0.88rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .hero {
@@ -113,8 +130,8 @@
       margin: 0 auto 18px;
       max-width: 760px;
       font-size: clamp(2.5rem, 6vw, 4.6rem);
-      line-height: 1.03;
-      letter-spacing: -0.055em;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
     }
 
     .hero p {
@@ -250,14 +267,14 @@
 
     .trust-list li {
       position: relative;
-      padding-left: 25px;
+      padding-inline-start: 25px;
       color: #405048;
     }
 
     .trust-list li::before {
       content: "✓";
       position: absolute;
-      left: 0;
+      inset-inline-start: 0;
       font-weight: 800;
       color: var(--green-dark);
     }
@@ -346,7 +363,11 @@
       }
 
       h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+      }
+      
+      .nav-right {
+        gap: 12px;
       }
     }
   </style>
@@ -362,12 +383,29 @@
       <span>Parlami</span>
     </a>
 
-```
-<a class="nav-link" href="/privacy/">
-  Confidentialité
-</a>
-```
-
+    <div class="nav-right">
+      <div class="lang-selector">
+        <select onchange="if(this.value) window.location.href='/' + (this.value === 'fr' ? '' : this.value + '/')">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="pt" selected="selected">Português</option>
+          <option value="ar">العربية</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="he">עברית</option>
+          <option value="pl">Polski</option>
+          <option value="ro">Română</option>
+          <option value="sv">Svenska</option>
+          <option value="tr">Türkçe</option>
+          
+        </select>
+      </div>
+      <a class="nav-link" href="https://www.learn-parlami.netlify.app/privacy/pt/">
+        Privacidade
+      </a>
+    </div>
   </div>
 </header>
 
@@ -378,50 +416,43 @@
   <section class="hero">
     <div class="container">
 
-```
-  <img
-    class="logo"
-    src="/assets/assets/images/app_icon.png"
-    alt="Parlami"
-  >
+      <img
+        class="logo"
+        src="/assets/assets/images/app_icon.png"
+        alt="Parlami"
+      >
 
-  <div class="badge">Première version publique · v0.1.0</div>
+      <div class="badge">Primeira versão pública · v0.1.0</div>
 
-  <h1>
-    L'italien,<br>
-    un passo alla volta.
-  </h1>
+      <h1>
+        Italiano,<br>
+        un passo alla volta.
+      </h1>
 
-  <p>
-    Parlami est une application gratuite pour apprendre l'italien
-    en pratiquant réellement : vocabulaire, conjugaison,
-    compréhension et exercices, le tout dans une interface simple
-    et pensée pour progresser à son rythme.
-  </p>
+      <p>
+        O Parlami é um aplicativo gratuito para aprender italiano praticando de verdade: vocabulário, conjugação, compreensão e exercícios, tudo em uma interface pensada para você evoluir no seu ritmo.
+      </p>
 
-  <div class="buttons">
+      <div class="buttons">
 
-    <a class="button button-primary" href="/">
-      🌐 Essayer sur le Web
-    </a>
+        <a class="button button-primary" href="/">
+          🌐 Experimentar na Web
+        </a>
 
-    <!-- REMPLACER CETTE URL PAR LE LIEN DIRECT DE L'APK -->
-    <a
-      class="button button-secondary"
-      href="https://github.com/ad-lerondl/parlami/releases/download/v0.1.0/app-release.apk"
-    >
-      📱 Télécharger pour Android
-    </a>
+        <a
+          class="button button-secondary"
+          href="https://github.com/ad-lerondl/parlami/releases/download/v0.1.0/app-release.apk"
+        >
+          📱 Baixar para Android
+        </a>
 
-  </div>
+      </div>
 
-  <div class="version">
-    Android · v0.1.0 · Gratuit
-  </div>
+      <div class="version">
+        Android · v0.1.0 · Grátis
+      </div>
 
-</div>
-```
-
+    </div>
   </section>
 
   <!-- FEATURES -->
@@ -429,54 +460,39 @@
   <section class="features">
     <div class="container">
 
-```
-  <div class="section-title">
-    <h2>Apprendre autrement</h2>
-    <p>Tout ce dont tu as besoin pour pratiquer ton italien.</p>
-  </div>
+      <div class="section-title">
+        <h2>Aprenda de forma diferente</h2>
+        <p>Tudo o que você precisa para praticar italiano.</p>
+      </div>
 
-  <div class="grid">
+      <div class="grid">
 
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Vocabulaire</h3>
-      <p>
-        Apprends de nouveaux mots et expressions et construis
-        progressivement ton propre vocabulaire.
-      </p>
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>Vocabulário</h3>
+          <p>Aprenda novas palavras e expressões e monte gradualmente seu vocabulário personalizado.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔤</div>
+          <h3>Conjugação</h3>
+          <p>Pratique verbos italianos e aprenda a conjugar sem apenas decorar tabelas.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎧</div>
+          <h3>Compreensão</h3>
+          <p>Treine seu ouvido com áudios em italiano e estações de rádio autênticas.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✍️</div>
+          <h3>Exercícios</h3>
+          <p>Pratique regularmente com exercícios dinâmicos para fixar o aprendizado com naturalidade.</p>
+        </div>
+
+      </div>
     </div>
-
-    <div class="card">
-      <div class="icon">🔤</div>
-      <h3>Conjugaison</h3>
-      <p>
-        Entraîne-toi sur les verbes italiens et apprends à
-        conjuguer sans simplement réciter des tableaux.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎧</div>
-      <h3>Compréhension</h3>
-      <p>
-        Habitue ton oreille à l'italien avec des contenus
-        audio et des ressources réelles.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">✍️</div>
-      <h3>Exercices</h3>
-      <p>
-        Pratique régulièrement avec différents exercices pour
-        transformer tes connaissances en automatismes.
-      </p>
-    </div>
-
-  </div>
-</div>
-```
-
   </section>
 
   <!-- TRUST -->
@@ -484,39 +500,25 @@
   <section class="trust">
     <div class="container">
 
-```
-  <div class="trust-box">
+      <div class="trust-box">
 
-    <h2>Pourquoi télécharger un APK ?</h2>
+        <h2>Por que baixar um APK?</h2>
 
-    <p>
-      Parlami est actuellement une première version indépendante.
-      La publication sur Google Play demande notamment des frais
-      et des démarches supplémentaires. En tant qu'étudiant,
-      j'ai choisi de rendre cette première version disponible
-      directement, gratuitement, en attendant sa publication
-      sur les stores.
-    </p>
+        <p>O Parlami é atualmente uma versão inicial independente. A publicação na Google Play envolve taxas e etapas burocráticas adicionais. Como estudante, optei por disponibilizar esta primeira versão diretamente e de graça enquanto preparo o lançamento nas lojas.</p>
 
-    <p>
-      Le fichier est publié depuis le dépôt GitHub officiel de
-      Parlami. L'application ne nécessite pas de compte et les
-      données d'apprentissage restent sur ton appareil.
-    </p>
+        <p>O arquivo é publicado diretamente a partir do repositório oficial do Parlami no GitHub. O app não exige conta e seus dados de estudo permanecem somente no seu celular.</p>
 
-    <ul class="trust-list">
-      <li>Aucun compte nécessaire</li>
-      <li>Pas de publicité</li>
-      <li>Pas d'analytics</li>
-      <li>Pas de serveur Parlami</li>
-      <li>Données pédagogiques stockées localement</li>
-      <li>Code et versions publiés sur GitHub</li>
-    </ul>
+        <ul class="trust-list">
+          <li>Nenhuma conta necessária</li>
+          <li>Sem anúncios</li>
+          <li>Sem rastreadores de analytics</li>
+          <li>Sem servidores do Parlami</li>
+          <li>Dados pedagógicos salvos localmente</li>
+          <li>Código e versões abertas no GitHub</li>
+        </ul>
 
-  </div>
-</div>
-```
-
+      </div>
+    </div>
   </section>
 
   <!-- INSTALLATION -->
@@ -524,48 +526,20 @@
   <section class="download-info">
     <div class="container">
 
-```
-  <div class="info-box">
+      <div class="info-box">
 
-    <h2>📱 Installer Parlami sur Android</h2>
+        <h2>📱 Como instalar o Parlami no Android</h2>
 
-    <p>
-      Le téléchargement proposé ici est un fichier <strong>APK</strong>,
-      le format d'installation standard des applications Android.
-    </p>
+        <p>O download fornecido é um arquivo <strong>APK</strong>, o pacote padrão de instalação no Android.</p>
 
-    <p>
-      Comme Parlami n'est pas encore distribué par Google Play,
-      Android peut afficher un avertissement concernant
-      l'installation depuis une source externe. C'est normal pour
-      une application installée directement.
-    </p>
+        <p>Como o Parlami ainda não está na Google Play, o Android pode exibir um alerta sobre instalação de fontes externas. Isso é padrão em qualquer instalação direta.</p>
 
-    <p>
-      Pour vérifier que tu télécharges bien la bonne version,
-      utilise uniquement le bouton présent sur ce site ou la
-      <a
-        href="https://github.com/ad-lerondl/parlami/releases"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        page officielle des releases GitHub
-      </a>.
-    </p>
+        <p>Para garantir que está instalando a versão segura, use apenas o botão deste site ou a <a href="https://github.com/ad-lerondl/parlami/releases" target="_blank" rel="noopener noreferrer">página oficial de releases no GitHub</a>.</p>
 
-    <p>
-      Pour connaître précisément les données utilisées par
-      Parlami et les services externes auxquels l'application
-      peut se connecter, consulte la
-      <a href="/privacy/">
-        politique de confidentialité
-      </a>.
-    </p>
+        <p>Para entender exatamente como o Parlami lida com dados, consulte nossa <a href="https://www.learn-parlami.netlify.app/privacy/pt/">política de privacidade</a>.</p>
 
-  </div>
-</div>
-```
-
+      </div>
+    </div>
   </section>
 
 </main>
@@ -573,23 +547,21 @@
 <footer>
   <div class="container footer-inner">
 
-```
-<div>
-  © 2026 Parlami · Première version publique v0.1.0
-</div>
+    <div>
+      © 2026 Parlami · Primeira versão pública v0.1.0
+    </div>
 
-<div>
-  <a href="/privacy/">Politique de confidentialité</a>
-  &nbsp;·&nbsp;
-  <a
-    href="https://github.com/ad-lerondl/parlami"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub
-  </a>
-</div>
-```
+    <div>
+      <a href="https://www.learn-parlami.netlify.app/privacy/pt/">Política de privacidade</a>
+      &nbsp;·&nbsp;
+      <a
+        href="https://github.com/ad-lerondl/parlami"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
 
   </div>
 </footer>

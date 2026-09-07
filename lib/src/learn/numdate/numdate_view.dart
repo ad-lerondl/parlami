@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../../localization/app_localizations.dart';
 
 import 'date_words.dart';
 import 'number_words.dart';
@@ -231,6 +232,7 @@ class _NumDateViewState extends State<NumDateView> {
     }
 
     final isCorrect = state == _AnswerState.correct;
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
     final background = isCorrect ? colors.primaryContainer : colors.errorContainer;
@@ -248,15 +250,15 @@ class _NumDateViewState extends State<NumDateView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            isCorrect ? 'Bonne réponse.' : 'Réponse incorrecte.',
+            isCorrect ? l10n.answerCorrect : l10n.answerIncorrect,
             style: theme.textTheme.titleMedium?.copyWith(color: foreground),
           ),
           if (attempt != null && attempt.isNotEmpty) ...[
             const SizedBox(height: 8),
-            Text('Ta réponse : $attempt', style: theme.textTheme.bodyMedium?.copyWith(color: foreground)),
+            Text(l10n.answerYourAnswer(attempt), style: theme.textTheme.bodyMedium?.copyWith(color: foreground)),
           ],
           const SizedBox(height: 8),
-          Text('Bonne réponse : $expected', style: theme.textTheme.bodyMedium?.copyWith(color: foreground)),
+          Text(l10n.answerExpected(expected), style: theme.textTheme.bodyMedium?.copyWith(color: foreground)),
         ],
       ),
     );
@@ -289,6 +291,7 @@ class _NumDateViewState extends State<NumDateView> {
   }
 
   Widget _buildNumberTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final previewTarget = int.tryParse(_numberPreviewController.text.trim());
     final target = _parseNumberTarget();
@@ -298,23 +301,23 @@ class _NumDateViewState extends State<NumDateView> {
       children: [
         _buildSectionCard(
           context: context,
-          title: 'Choisir le nombre d’aperçu',
-          subtitle: 'Cette valeur sert uniquement à la conversion rapide.',
+          title: l10n.numDatePreviewNumberTitle,
+          subtitle: l10n.numDatePreviewNumberSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
                 controller: _numberPreviewController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Nombre d’aperçu',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n.numDatePreviewNumberLabel,
+                  border: const OutlineInputBorder(),
                 ),
                 onChanged: (_) => setState(() {}),
               ),
               const SizedBox(height: 12),
               SelectableText(
-                previewTarget == null ? 'Saisis un entier positif pour démarrer.' : numberToItalian(previewTarget),
+                previewTarget == null ? l10n.numDatePositiveInteger : numberToItalian(previewTarget),
                 style: theme.textTheme.headlineSmall,
               ),
               const SizedBox(height: 12),
@@ -324,17 +327,17 @@ class _NumDateViewState extends State<NumDateView> {
         const SizedBox(height: 16),
         _buildSectionCard(
           context: context,
-          title: 'Entraînement',
-          subtitle: 'Choisis un autre nombre pour t’entraîner à l’écrire en lettres italiennes.',
+          title: l10n.numDateTraining,
+          subtitle: l10n.numDateTrainingNumberSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
                 controller: _numberTargetController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Nombre d’entraînement',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n.numDateTrainingNumberLabel,
+                  border: const OutlineInputBorder(),
                 ),
                 onChanged: (_) => setState(() {
                   _numberState = _AnswerState.idle;
@@ -346,9 +349,9 @@ class _NumDateViewState extends State<NumDateView> {
               TextField(
                 controller: _numberAnswerController,
                 textInputAction: TextInputAction.done,
-                decoration: const InputDecoration(
-                  labelText: 'Ta réponse en lettres',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n.numDateAnswerInWords,
+                  border: const OutlineInputBorder(),
                 ),
                 onSubmitted: (_) => _checkNumberAnswer(),
               ),
@@ -360,7 +363,7 @@ class _NumDateViewState extends State<NumDateView> {
                   ElevatedButton.icon(
                     onPressed: target == null ? null : _checkNumberAnswer,
                     icon: const Icon(Icons.check),
-                    label: const Text('Vérifier'),
+                    label: Text(l10n.numDateCheck),
                   ),
                   OutlinedButton.icon(
                     onPressed: target == null
@@ -372,7 +375,7 @@ class _NumDateViewState extends State<NumDateView> {
                               _numberTargetController.text = _initialNumberTarget().toString();
                             }),
                     icon: const Icon(Icons.clear),
-                    label: const Text('Effacer'),
+                    label: Text(l10n.numDateClear),
                   ),
                 ],
               ),
@@ -391,13 +394,14 @@ class _NumDateViewState extends State<NumDateView> {
   }
 
   Widget _buildDateTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
         _buildSectionCard(
           context: context,
-          title: 'Choisir la date d’aperçu',
-          subtitle: 'Cette date sert uniquement de référence rapide.',
+          title: l10n.numDatePreviewDateTitle,
+          subtitle: l10n.numDatePreviewDateSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -417,7 +421,7 @@ class _NumDateViewState extends State<NumDateView> {
                 children: [
                   TextButton(
                     onPressed: () => _setPreviewDate(DateTime.now()),
-                    child: const Text('Aujourd’hui'),
+                    child: Text(l10n.numDateToday),
                   ),
                 ],
               ),
@@ -428,8 +432,8 @@ class _NumDateViewState extends State<NumDateView> {
         const SizedBox(height: 16),
         _buildSectionCard(
           context: context,
-          title: 'Entraînement',
-          subtitle: 'Choisis une autre date pour t’entraîner à l’écrire en lettres italiennes.',
+          title: l10n.numDateTraining,
+          subtitle: l10n.numDateTrainingDateSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -437,7 +441,7 @@ class _NumDateViewState extends State<NumDateView> {
                 contentPadding: EdgeInsets.zero,
                 title: Text(
                     '${_exerciseDate.day.toString().padLeft(2, '0')}/${_exerciseDate.month.toString().padLeft(2, '0')}/${_exerciseDate.year}'),
-                subtitle: Text('Jour attendu : ${frenchWeekday(_exerciseDate.weekday)}'),
+                subtitle: Text(l10n.numDateExpectedDay(frenchWeekday(_exerciseDate.weekday))),
                 trailing: const Icon(Icons.event_available),
                 onTap: _pickExerciseDate,
               ),
@@ -448,7 +452,7 @@ class _NumDateViewState extends State<NumDateView> {
                 children: [
                   TextButton(
                     onPressed: () => _setExerciseDate(DateTime.now()),
-                    child: const Text('Aujourd’hui'),
+                    child: Text(l10n.numDateToday),
                   ),
                 ],
               ),
@@ -458,9 +462,9 @@ class _NumDateViewState extends State<NumDateView> {
                 minLines: 2,
                 maxLines: 4,
                 textInputAction: TextInputAction.done,
-                decoration: const InputDecoration(
-                  labelText: 'Ta réponse en lettres',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n.numDateAnswerInWords,
+                  border: const OutlineInputBorder(),
                 ),
                 onSubmitted: (_) => _checkDateAnswer(),
               ),
@@ -472,7 +476,7 @@ class _NumDateViewState extends State<NumDateView> {
                   ElevatedButton.icon(
                     onPressed: _checkDateAnswer,
                     icon: const Icon(Icons.check),
-                    label: const Text('Vérifier'),
+                    label: Text(l10n.numDateCheck),
                   ),
                   OutlinedButton.icon(
                     onPressed: () => setState(() {
@@ -481,7 +485,7 @@ class _NumDateViewState extends State<NumDateView> {
                       _dateAnswerController.clear();
                     }),
                     icon: const Icon(Icons.clear),
-                    label: const Text('Effacer'),
+                    label: Text(l10n.numDateClear),
                   ),
                 ],
               ),
@@ -499,13 +503,14 @@ class _NumDateViewState extends State<NumDateView> {
   }
 
   Widget _buildTimeTab(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
         _buildSectionCard(
           context: context,
-          title: 'Choisir l’heure d’aperçu',
-          subtitle: 'Cette heure sert uniquement de lecture rapide.',
+          title: l10n.numDatePreviewTimeTitle,
+          subtitle: l10n.numDatePreviewTimeSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -542,14 +547,14 @@ class _NumDateViewState extends State<NumDateView> {
         const SizedBox(height: 16),
         _buildSectionCard(
           context: context,
-          title: 'Entraînement',
-          subtitle: "Choisis une autre heure pour t'entraîner, surtout sur les quarts d'heure.",
+          title: l10n.numDateTraining,
+          subtitle: l10n.numDateTrainingTimeSubtitle,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                title: const Text("Heure définie :"),
+                title: Text(l10n.numDateDefinedTime),
                 subtitle: Text(_timeLabel(_exerciseTime)),
                 trailing: const Icon(Icons.edit),
                 onTap: _pickExerciseTime,
@@ -579,9 +584,9 @@ class _NumDateViewState extends State<NumDateView> {
                 minLines: 2,
                 maxLines: 4,
                 textInputAction: TextInputAction.done,
-                decoration: const InputDecoration(
-                  labelText: 'Ta réponse en lettres',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n.numDateAnswerInWords,
+                  border: const OutlineInputBorder(),
                 ),
                 onSubmitted: (_) => _checkTimeAnswer(),
               ),
@@ -593,7 +598,7 @@ class _NumDateViewState extends State<NumDateView> {
                   ElevatedButton.icon(
                     onPressed: _checkTimeAnswer,
                     icon: const Icon(Icons.check),
-                    label: const Text('Vérifier'),
+                    label: Text(l10n.numDateCheck),
                   ),
                   OutlinedButton.icon(
                     onPressed: () => setState(() {
@@ -602,7 +607,7 @@ class _NumDateViewState extends State<NumDateView> {
                       _timeAnswerController.clear();
                     }),
                     icon: const Icon(Icons.clear),
-                    label: const Text('Effacer'),
+                    label: Text(l10n.numDateClear),
                   ),
                 ],
               ),
@@ -621,16 +626,17 @@ class _NumDateViewState extends State<NumDateView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Nombres & Dates'),
-          bottom: const TabBar(
+          title: Text(l10n.numDateTitle),
+          bottom: TabBar(
             tabs: [
-              Tab(text: 'Nombres', icon: Icon(Icons.tag)),
-              Tab(text: 'Dates', icon: Icon(Icons.event)),
-              Tab(text: 'Heure', icon: Icon(Icons.schedule)),
+              Tab(text: l10n.numDateNumbersTab, icon: const Icon(Icons.tag)),
+              Tab(text: l10n.numDateDatesTab, icon: const Icon(Icons.event)),
+              Tab(text: l10n.numDateTimeTab, icon: const Icon(Icons.schedule)),
             ],
           ),
         ),

@@ -3,15 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:parlami/src/data/models/eo_question.dart';
 import 'package:parlami/src/repositories/eo_repository.dart';
+import 'package:parlami/src/localization/app_localizations.dart';
 
 enum EODifficulty {
-  free('Mode libre', 'Tu avances quand tu veux, sans aide.'),
-  selfEval('Facile', 'Réponds puis auto-évalue-toi et regarde une piste de réponse.'),
-  timed('Difficile', 'Chrono, suivi des hésitations et auto-évaluation.');
-
-  final String label;
-  final String description;
-  const EODifficulty(this.label, this.description);
+  free,
+  selfEval,
+  timed,
 }
 
 class EOView extends StatefulWidget {
@@ -132,7 +129,6 @@ class _EOViewState extends State<EOView> {
       candidates.add((levels[currentIdx - 2], 0.02));
     }
 
-    // -3 (1%)
     if (currentIdx > 2) {
       candidates.add((levels[currentIdx - 3], 0.01));
     }
@@ -242,10 +238,11 @@ class _EOViewState extends State<EOView> {
   }
 
   void _showLevelPicker(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Choisir le niveau'),
+        title: Text(l10n.eoChooseLevel),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -258,7 +255,7 @@ class _EOViewState extends State<EOView> {
               child: Column(
                 children: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
                     .map((level) => RadioListTile<String>(
-                          title: Text('Niveau $level'),
+                          title: Text(l10n.eoLevel(level)),
                           value: level,
                         ))
                     .toList(),
@@ -272,6 +269,7 @@ class _EOViewState extends State<EOView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final q = current;
     final liveTalk = talkElapsed +
@@ -285,7 +283,7 @@ class _EOViewState extends State<EOView> {
     final liveTotal = liveTalk + liveHesitate;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('EO - Expression Orale')),
+      appBar: AppBar(title: Text(l10n.eoTitle)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
@@ -293,7 +291,11 @@ class _EOViewState extends State<EOView> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SegmentedButton<EODifficulty>(
-                segments: EODifficulty.values.map((d) => ButtonSegment(value: d, label: Text(d.label))).toList(),
+                segments: [
+                  ButtonSegment(value: EODifficulty.free, label: Text(l10n.eoModeFree)),
+                  ButtonSegment(value: EODifficulty.selfEval, label: Text(l10n.eoModeEasy)),
+                  ButtonSegment(value: EODifficulty.timed, label: Text(l10n.eoModeHard)),
+                ],
                 selected: {difficulty},
                 onSelectionChanged: (s) {
                   setState(() {
@@ -312,28 +314,34 @@ class _EOViewState extends State<EOView> {
                 },
               ),
               const SizedBox(height: 12),
-              Text(difficulty.description, style: theme.textTheme.bodySmall),
+              Text(
+                switch (difficulty) {
+                  EODifficulty.free => l10n.eoModeFreeDescription,
+                  EODifficulty.selfEval => l10n.eoModeEasyDescription,
+                  EODifficulty.timed => l10n.eoModeHardDescription,
+                },
+                style: theme.textTheme.bodySmall,
+              ),
               const SizedBox(height: 20),
               if (q == null) ...[
-                const Center(child: Text('Aucune question disponible')),
+                Center(child: Text(l10n.eoNoQuestion)),
               ] else ...[
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: Text(
-                                q.topic != null ? 'Question : ${q.topic}' : 'Question',
+                                q.topic != null ? '${l10n.eoQuestion} : ${q.topic}' : l10n.eoQuestion,
                                 style: theme.textTheme.titleMedium,
                               ),
                             ),
                             ActionChip(
-                              label: Text('Niveau $currentLevel'),
+                              label: Text(l10n.eoLevelChip(currentLevel)),
                               onPressed: () => _showLevelPicker(context),
                             ),
                           ],
@@ -367,7 +375,7 @@ class _EOViewState extends State<EOView> {
                                       ),
                                       const SizedBox(width: 8),
                                       Text(
-                                        showTip ? 'Indice' : 'Cliquer pour un indice',
+                                        showTip ? l10n.eoHint : l10n.eoClickHint,
                                         style: theme.textTheme.labelLarge?.copyWith(
                                           color: showTip ? theme.colorScheme.primary : null,
                                         ),
@@ -413,7 +421,7 @@ class _EOViewState extends State<EOView> {
                                       ),
                                       const SizedBox(width: 8),
                                       Text(
-                                        showAnswer ? 'Piste de réponse' : 'Cliquer pour une piste de réponse',
+                                        showAnswer ? l10n.eoAnswerHint : l10n.eoClickAnswerHint,
                                         style: theme.textTheme.labelLarge?.copyWith(
                                           color: showAnswer ? theme.colorScheme.secondary : null,
                                         ),
@@ -446,23 +454,23 @@ class _EOViewState extends State<EOView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Text('Chronomètre', style: theme.textTheme.titleMedium),
+                          Text(l10n.eoTimer, style: theme.textTheme.titleMedium),
                           const SizedBox(height: 12),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               _MetricBox(
-                                label: 'Total',
+                                label: l10n.eoTotal,
                                 value: _format(liveTotal),
                                 color: theme.colorScheme.primary,
                               ),
                               _MetricBox(
-                                label: 'Parole',
+                                label: l10n.eoSpeech,
                                 value: _format(liveTalk),
                                 color: Colors.green,
                               ),
                               _MetricBox(
-                                label: 'Hésitation',
+                                label: l10n.eoHesitation,
                                 value: _format(liveHesitate),
                                 color: Colors.orange,
                               ),
@@ -483,9 +491,7 @@ class _EOViewState extends State<EOView> {
                                       : Icons.play_arrow,
                                 ),
                                 label: Text(
-                                  timerRunning
-                                      ? (isTalking ? 'Marquer une hésitation' : 'Reprendre la parole')
-                                      : 'Démarrer',
+                                  timerRunning ? (isTalking ? l10n.eoHesitation : l10n.eoSpeech) : l10n.eoStart,
                                 ),
                               ),
                               const SizedBox(width: 12),
@@ -496,11 +502,11 @@ class _EOViewState extends State<EOView> {
                                     backgroundColor: Colors.red,
                                   ),
                                   icon: const Icon(Icons.stop),
-                                  label: const Text('Arrêter'),
+                                  label: Text(l10n.eoStop),
                                 ),
                               const SizedBox(width: 8),
                               IconButton(
-                                tooltip: 'Réinitialiser',
+                                tooltip: l10n.eoReset,
                                 onPressed: _resetTiming,
                                 icon: const Icon(Icons.restart_alt),
                               ),
@@ -519,15 +525,18 @@ class _EOViewState extends State<EOView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Auto-évaluation', style: theme.textTheme.titleMedium),
+                          Text(l10n.eoSelfEvaluation, style: theme.textTheme.titleMedium),
                           const SizedBox(height: 8),
                           Wrap(
                             spacing: 8,
                             children: [
-                              _EvalChip(label: 'Excellent', index: 3, current: selfRating, onTap: () => _onEvaluate(3)),
-                              _EvalChip(label: 'Bien', index: 2, current: selfRating, onTap: () => _onEvaluate(2)),
-                              _EvalChip(label: 'Moyen', index: 1, current: selfRating, onTap: () => _onEvaluate(1)),
-                              _EvalChip(label: 'Difficile', index: 0, current: selfRating, onTap: () => _onEvaluate(0)),
+                              _EvalChip(
+                                  label: l10n.eoExcellent, index: 3, current: selfRating, onTap: () => _onEvaluate(3)),
+                              _EvalChip(label: l10n.eoGood, index: 2, current: selfRating, onTap: () => _onEvaluate(2)),
+                              _EvalChip(
+                                  label: l10n.eoAverage, index: 1, current: selfRating, onTap: () => _onEvaluate(1)),
+                              _EvalChip(
+                                  label: l10n.eoDifficult, index: 0, current: selfRating, onTap: () => _onEvaluate(0)),
                             ],
                           ),
                         ],
@@ -542,7 +551,7 @@ class _EOViewState extends State<EOView> {
                       ? null
                       : _loadQuestion,
                   icon: const Icon(Icons.skip_next),
-                  label: const Text('Question suivante'),
+                  label: Text(l10n.eoNextQuestion),
                 ),
               ],
             ],

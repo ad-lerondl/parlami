@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "Учить",
+  "navTrain": "Практика",
+  "navEvaluate": "Проверить себя",
+  "navResults": "Результаты",
+  "navProfile": "Профиль",
+  "learnConjugation": "Спряжение",
+  "learnConjugationDescription": "Практика спряжения глаголов",
+  "learnVocabulary": "Словарный запас",
+  "learnVocabularyDescription": "По темам и уровням",
+  "learnNumbersDates": "Числа и даты",
+  "learnNumbersDatesDescription": "Писать числа и даты",
+  "learnGrammar": "Грамматика",
+  "learnGrammarDescription": "Заметки курса",
+  "learnSpelling": "Орфография",
+  "learnSpellingDescription": "Скоро",
+  "trainOralExpression": "EO - Устная речь",
+  "trainOralExpressionDescription": "Отвечать вслух",
+  "trainOralComprehension": "CO - Аудирование",
+  "trainOralComprehensionDescription": "Слушать радиостанции",
+  "trainWrittenComprehension": "CE - Чтение",
+  "trainWrittenComprehensionDescription": "Читать итальянские новости",
+  "trainWrittenExpression": "EE - Письмо",
+  "trainWrittenExpressionDescription": "Переводить предложения",
+  "evaluateTitle": "Проверь себя - Реальные ситуации",
+  "evaluateIntro": "Комбинируйте несколько навыков, чтобы симулировать реальные ситуации.",
+  "evaluateProgression": "Обучение закладывает основы. Практика развивает навыки. Тестирование измеряет общий уровень.",
+  "scenarioDailyConversation": "Ежедневный разговор",
+  "scenarioArticleSummary": "Краткое содержание статьи",
+  "scenarioMatchDebrief": "Обсуждение матча",
+  "scenarioQuickDiscussion": "Быстрая дискуссия",
+  "scenarioDailyConversationDetails": "Слушайте, понимайте и отвечайте естественно.",
+  "scenarioArticleSummaryDetails": "Прочитайте текст и сделайте четкое резюме.",
+  "scenarioMatchDebriefDetails": "Поговорите о матче, используя лексику и культурные отсылки.",
+  "scenarioQuickDiscussionDetails": "Быстро реагируйте в динамичном обмене репликами.",
+  "resultsComingSoon": "Графики производительности скоро",
+  "grammarTitle": "Грамматика",
+  "grammarComingSoon": "Заметки по грамматике - скоро.\n\nДобавляйте заметки в этот модуль как страницы или Markdown.",
+  "spellingTitle": "Орфография",
+  "spellingComingSoon": "Модуль орфографии - скоро.",
+  "ceTitle": "CE - Чтение",
+  "ceIntro": "Читайте итальянские статьи для улучшения понимания текста",
+  "ceAdviceTitle": "Совет",
+  "ceAdvice": "Начните с коротких статей. Сначала читайте для общего смысла, затем для деталей.",
+  "ceOpenSource": "Открыть сайт источника",
+  "eeTitle": "EE - Письмо",
+  "eePrompt": "Переведите следующее предложение на итальянский",
+  "eeTranslationLabel": "Ваш перевод на итальянский",
+  "eeTranslationHint": "Напишите перевод здесь...",
+  "eeCheck": "Проверить",
+  "eeCorrection": "Исправление",
+  "eeYourAnswer": "Ваш ответ",
+  "coTitle": "CO - Аудирование",
+  "coIntro": "Слушайте итальянские радиостанции для улучшения аудирования",
+  "coLive": "Прямой эфир:",
+  "coStopped": "{station} остановлено",
+  "coConnecting": "Подключение к {station}...",
+  "coPlay": "Играть",
+  "coStop": "Стоп",
+  "eoTitle": "EO - Устная речь",
+  "eoChooseLevel": "Выберите уровень",
+  "eoLevel": "Уровень {level}",
+  "eoNoQuestion": "Нет доступных вопросов",
+  "eoQuestion": "Вопрос",
+  "eoHint": "Подсказка",
+  "eoClickHint": "Нажмите для подсказки",
+  "eoAnswerHint": "Ключ к ответу",
+  "eoClickAnswerHint": "Нажмите для ключа к ответу",
+  "eoTimer": "Таймер",
+  "eoTotal": "Всего",
+  "eoSpeech": "Речь",
+  "eoHesitation": "Заминка",
+  "eoStart": "Старт",
+  "eoStop": "Стоп",
+  "eoReset": "Сброс",
+  "eoModeFree": "Свободный режим",
+  "eoModeFreeDescription": "Двигайтесь вперед, когда хотите, без помощи.",
+  "eoModeEasy": "Легкий",
+  "eoModeEasyDescription": "Ответьте, оцените себя и посмотрите подсказку.",
+  "eoModeHard": "Сложный",
+  "eoModeHardDescription": "Таймер, отслеживание заминок и самооценка.",
+  "eoLevelChip": "Уровень {level}",
+  "eoSelfEvaluation": "Самооценка",
+  "eoExcellent": "Отлично",
+  "eoGood": "Хорошо",
+  "eoAverage": "Средне",
+  "eoDifficult": "Сложно",
+  "eoNextQuestion": "Следующий вопрос",
+  "numDateTitle": "Числа и даты",
+  "numDateNumbersTab": "Числа",
+  "numDateDatesTab": "Даты",
+  "numDateTimeTab": "Время",
+  "numDatePreviewNumberTitle": "Выберите число для предпросмотра",
+  "numDatePreviewNumberSubtitle": "Это значение используется только для быстрой конвертации.",
+  "numDatePreviewNumberLabel": "Число предпросмотра",
+  "numDatePositiveInteger": "Введите целое положительное число для начала.",
+  "numDateTraining": "Практика",
+  "numDateTrainingNumberSubtitle": "Выберите другое число, чтобы попрактиковаться писать его по-итальянски.",
+  "numDateTrainingNumberLabel": "Число для практики",
+  "numDateAnswerInWords": "Ваш ответ прописью",
+  "numDateCheck": "Проверить",
+  "numDateClear": "Очистить",
+  "numDatePreviewDateTitle": "Выберите дату для предпросмотра",
+  "numDatePreviewDateSubtitle": "Эта дата используется только для справки.",
+  "numDateToday": "Сегодня",
+  "numDateTrainingDateSubtitle": "Выберите другую дату, чтобы попрактиковаться писать её по-итальянски.",
+  "numDateExpectedDay": "Ожидаемый день: {day}",
+  "numDatePreviewTimeTitle": "Выберите время для предпросмотра",
+  "numDatePreviewTimeSubtitle": "Это время используется только для справки.",
+  "numDateTrainingTimeSubtitle": "Выберите другое время для практики, особенно четверти часа.",
+  "numDateDefinedTime": "Заданное время:",
+  "answerCorrect": "Правильный ответ.",
+  "answerIncorrect": "Неправильный ответ.",
+  "answerYourAnswer": "Ваш ответ: {answer}",
+  "answerExpected": "Правильный ответ: {answer}",
+  "conjugationTitle": "Спряжение",
+  "conjugationRegular": "Правильные",
+  "conjugationSemiRegular": "Полуправильные",
+  "conjugationIrregular": "Неправильные",
+  "conjugationClearFilters": "Очистить все фильтры",
+  "conjugationChooseVerb": "Выберите глагол",
+  "conjugationRandomVerb": "Случайный глагол",
+  "conjugationHideBaseVerb": "Скрыть инфинитив",
+  "conjugationChooseMood": "Выберите наклонение",
+  "conjugationChooseTense": "Выберите время",
+  "conjugationVerb": "Глагол: {verb}",
+  "conjugationTranslation": "Перевод: {translation}",
+  "conjugationMood": "Наклонение: {mood}",
+  "conjugationTense": "Время: {tense}",
+  "conjugationLoadingError": "Ошибка загрузки: {error}",
+  "profileLanguage": "Язык интерфейса",
+  "profileUserName": "Имя пользователя",
+  "profileAbout": "О приложении",
+  "profileAboutDescription": "Parlami помогает изучать итальянский.",
+  "profileTheme": "Тема",
+  "profileThemeDescription": "Переключение между светлой и темной темой",
+  "themeSystem": "Системная тема",
+  "themeLight": "Светлая тема",
+  "themeDark": "Темная тема",
+  "vocabTitle": "Словарный запас",
+  "vocabReview": "Повторение",
+  "vocabCatalog": "Каталог",
+  "vocabAdd": "Добавить",
+  "vocabImport": "Импорт слов",
+  "vocabExport": "Экспорт моих слов",
+  "vocabResetCatalog": "Сбросить оригинальный каталог",
+  "vocabSelect": "Выбрать",
+  "vocabSave": "Сохранить слово",
+  "vocabChooseCategories": "Выбрать категории слов",
+  "vocabPasteJson": "Вставьте JSON список слов. Принимаемый формат:",
+  "vocabCancel": "Отмена",
+  "vocabImportError": "Ошибка импорта: {error}",
+  "vocabResetQuestion": "Сбросить оригинальные слова?",
+  "vocabResetDescription": "Это сбросит импортированные слова и вернет оригинальный каталог. Слова пользователя сохранятся.",
+  "vocabDeleteQuestion": "Удалить это слово?",
+  "vocabDeleteDescription": "Удалить \"{word}\" из каталога?",
+  "vocabDelete": "Удалить",
+  "vocabNoCategory": "Категория не выбрана",
+  "vocabLoading": "Загрузка словаря...",
+  "vocabFields": "Лексические поля",
+  "vocabNoMatch": "Нет слов, соответствующих текущим фильтрам.",
+  "vocabNoTrainingMatch": "Нет слов, соответствующих фильтрам тренировки.",
+  "vocabTrainingWord": "Слово для тренировки",
+  "vocabScore": "Счет {score}%",
+  "vocabBaseLanguage": "Базовый язык: {language}",
+  "vocabHiddenAnswer": "Ответ скрыт.",
+  "vocabKnown": "Известно",
+  "vocabUnknown": "Неизвестно",
+  "vocabNextWord": "Следующее слово",
+  "vocabCategories": "Категории: {categories}",
+  "vocabPreparing": "Подготовка слов для тренировки...",
+  "vocabPriority": "Приоритет неизученных слов",
+  "vocabPriorityDescription": "Отключите для случайного перемешивания.",
+  "vocabSelectedCount": "Выбрано слов: {count}",
+  "vocabClearAll": "Очистить все",
+  "vocabConfirm": "Подтвердить",
+  "conjugationCheck": "Проверить",
+  "conjugationNextVerb": "Следующий глагол",
+  "eeNextSentence": "Следующее предложение",
+  "eeNoSentence": "Нет доступных предложений",
+  "ceLevel": "Уровень: {level}",
+  "sampleItems": "Примеры элементов",
+  "sampleItemDetails": "Детали элемента",
+  "sampleMoreInformation": "Больше информации здесь",
+  "sampleItem": "Пример элемента {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + Культура",
+  "evaluateScenarioSpeed": "CO + EO + Скорость",
+  "conjugationAnswerLabel": "Ваш ответ",
+  "vocabWords": "Слова",
+  "vocabAverageMastery": "Среднее владение",
+  "vocabMode": "Режим",
+  "vocabMastery": "Владение",
+  "vocabRandom": "Случайно",
+  "vocabSearchWord": "Поиск слова",
+  "vocabBaseLanguageDisplay": "Отображать базовый язык",
+  "vocabDifficulty": "Сложность",
+  "vocabPartOfSpeech": "Часть речи",
+  "vocabChooseFilterCategories": "Выберите категории фильтра",
+  "vocabSearchTrainingWord": "Поиск слова",
+  "vocabTrainingBaseLanguage": "Базовый язык тренировки",
+  "vocabFilters": "Фильтры",
+  "vocabChooseTrainingCategories": "Выберите категории тренировки",
+  "vocabItalianWord": "Итальянское слово",
+  "vocabFrenchTranslation": "Перевод (базовый язык)",
+  "vocabOptionalArticle": "Артикль (il, la, l', и т.д.)",
+  "vocabCategoriesTitle": "Категории",
+  "vocabSearchCategory": "Поиск категории",
+  "vocabAddCategory": "Добавить \"{category}\"",
+  "vocabDeleteFromCatalog": "Удалить из каталога",
+  "vocabHideAnswer": "Скрыть ответ",
+  "vocabShowAnswer": "Показать ответ",
+  "vocabStatusSaved": "Слово сохранено и доступно в фильтрах.",
+  "vocabStatusImport": "Импорт завершен: добавлено {count} слов(о).",
+  "vocabStatusExport": "Экспорт завершен: {location}",
+  "vocabStatusNoExport": "Нет пользовательских слов для экспорта.",
+  "vocabStatusReset": "Оригинальный каталог сброшен.",
+  "vocabStatusDeleted": "Слово удалено из каталога.",
+  "vocabStatusKnown": "Отмечено.",
+  "vocabStatusReview": "Скоро повторить.",
+  "vocabItalian": "Итальянский",
+  "vocabFrench": "Французский",
+  "vocabSourceOriginal": "Оригинал",
+  "vocabSourceUser": "Пользователь",
+  "vocabNoun": "Существительное",
+  "vocabVerb": "Глагол",
+  "vocabAdjective": "Прилагательное",
+  "vocabAdverb": "Наречие",
+  "vocabPronoun": "Местоимение",
+  "vocabDeterminer": "Определитель",
+  "vocabPreposition": "Предлог",
+  "vocabConjunction": "Союз",
+  "vocabInterjection": "Междометие",
+  "vocabExpression": "Выражение",
+  "vocabOther": "Другое",
+  "profileDonate": "Сделать пожертвование",
+  "profileDonateDescription": "Спасибо за вашу поддержку",
+  "profilePrivacy": "Политика конфиденциальности",
+  "profilePrivacyDescription": "Открыть политику",
+  "unavailable": "Функция пока недоступна.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pobierz Parlami — Ucz się włoskiego</title>
+  <meta name="description" content="Pobierz Parlami, darmową aplikację do nauki języka włoskiego: słownictwo, odmiana czasowników, ćwiczenia i rozumienie ze słuchu.">
+
+  <style>
+    :root {
+      --green: #4f8f68;
+      --green-dark: #376c4d;
+      --green-light: #edf6f0;
+      --cream: #faf9f5;
+      --text: #26332b;
+      --muted: #68736d;
+      --white: #ffffff;
+      --border: #dfe8e2;
+      --shadow: 0 12px 40px rgba(40, 70, 50, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--green-dark);
+    }
+
+    .lang-selector select {
+      padding: 6px 10px;
+      font-size: 0.88rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 0 55px;
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 27px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 auto 18px;
+      max-width: 760px;
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 8px 24px rgba(79, 143, 104, 0.25);
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .version {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .features {
+      padding: 30px 0 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 20px rgba(40, 70, 50, 0.04);
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .trust {
+      padding: 0 0 80px;
+    }
+
+    .trust-box {
+      background: var(--green-light);
+      border: 1px solid #d7e9dc;
+      border-radius: 26px;
+      padding: 40px;
+    }
+
+    .trust-box h2 {
+      margin: 0 0 12px;
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .trust-box p {
+      margin: 0 0 18px;
+      color: #526159;
+    }
+
+    .trust-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+      margin: 25px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trust-list li {
+      position: relative;
+      padding-inline-start: 25px;
+      color: #405048;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      position: absolute;
+      inset-inline-start: 0;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .download-info {
+      padding: 0 0 80px;
+    }
+
+    .info-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .info-box h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .info-box p {
+      color: var(--muted);
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 35px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--green-dark);
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1080px);
+      }
+
+      .hero {
+        padding: 45px 0 45px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-box,
+      .info-box {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-right {
+        gap: 12px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/assets/images/app_icon.png" alt="Logo Parlami">
+      <span>Parlami</span>
+    </a>
+
+    <div class="nav-right">
+      <div class="lang-selector">
+        <select onchange="if(this.value) window.location.href='/' + (this.value === 'fr' ? '' : this.value + '/')">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="ar">العربية</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="he">עברית</option>
+          <option value="pl" selected="selected">Polski</option>
+          <option value="ro">Română</option>
+          <option value="sv">Svenska</option>
+          <option value="tr">Türkçe</option>
+          
+        </select>
+      </div>
+      <a class="nav-link" href="https://www.learn-parlami.netlify.app/privacy/pl/">
+        Prywatność
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <img
+        class="logo"
+        src="/assets/assets/images/app_icon.png"
+        alt="Parlami"
+      >
+
+      <div class="badge">Pierwsza wersja publiczna · v0.1.0</div>
+
+      <h1>
+        Włoski,<br>
+        un passo alla volta.
+      </h1>
+
+      <p>
+        Parlami to bezpłatna aplikacja do nauki języka włoskiego poprzez prawdziwą praktykę: słownictwo, koniugację, rozumienie ze słuchu i ćwiczenia w przejrzystym interfejsie.
+      </p>
+
+      <div class="buttons">
+
+        <a class="button button-primary" href="/">
+          🌐 Wypróbuj w przeglądarce
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="https://github.com/ad-lerondl/parlami/releases/download/v0.1.0/app-release.apk"
+        >
+          📱 Pobierz na Androida
+        </a>
+
+      </div>
+
+      <div class="version">
+        Android · v0.1.0 · Bezpłatnie
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Nowoczesna nauka</h2>
+        <p>Wszystko, czego potrzebujesz, aby swobodnie ćwiczyć włoski.</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>Słownictwo</h3>
+          <p>Poznawaj nowe słowa i zwroty, stopniowo budując swój osobisty zasób leksykalny.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔤</div>
+          <h3>Odmiana czasowników</h3>
+          <p>Ćwicz włoskie czasowniki i naucz się koniugacji bez mechanicznego wkuwania tabel.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎧</div>
+          <h3>Rozumienie ze słuchu</h3>
+          <p>Oswajaj ucho z włoską mową dzięki autentycznym nagraniom i stacjom radiowym na żywo.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✍️</div>
+          <h3>Ćwiczenia</h3>
+          <p>Ćwicz regularnie dzięki zróżnicowanym zadaniom, które zamieniają wiedzę w naturalne nawyki.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+
+  <section class="trust">
+    <div class="container">
+
+      <div class="trust-box">
+
+        <h2>Dlaczego plik APK?</h2>
+
+        <p>Parlami to obecnie pierwsze, niezależne wydanie. Publikacja w sklepie Google Play wiąże się z opłatami i formalnościami. Jako student postanowiłem udostępnić tę wersję bezpośrednio i całkowicie za darmo w oczekiwaniu na oficjalne wydanie w sklepach.</p>
+
+        <p>Plik pochodzi bezpośrednio z oficjalnego repozytorium Parlami na GitHubie. Aplikacja nie wymaga konta, a postępy w nauce pozostają wyłącznie na Twoim telefonie.</p>
+
+        <ul class="trust-list">
+          <li>Brak konieczności tworzenia konta</li>
+          <li>Brak reklam</li>
+          <li>Brak narzędzi analitycznych</li>
+          <li>Brak zewnętrznych serwerów</li>
+          <li>Dane przechowywane lokalnie</li>
+          <li>Kod i wydania publicznie na GitHub</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALLATION -->
+
+  <section class="download-info">
+    <div class="container">
+
+      <div class="info-box">
+
+        <h2>📱 Jak zainstalować Parlami na Androidzie</h2>
+
+        <p>Plik do pobrania to standardowy pakiet instalacyjny <strong>APK</strong> dla systemu Android.</p>
+
+        <p>Ponieważ Parlami nie jest jeszcze pobierane z Google Play, Android może wyświetlić standardowe ostrzeżenie o instalacji z nieznanych źródeł. To normalne przy instalacji bezpośredniej.</p>
+
+        <p>Aby mieć pewność, że pobierasz bezpieczną wersję, korzystaj wyłącznie z przycisku na tej stronie lub z <a href="https://github.com/ad-lerondl/parlami/releases" target="_blank" rel="noopener noreferrer">oficjalnej strony wydań na GitHubie</a>.</p>
+
+        <p>Więcej informacji o ochronie danych znajdziesz w naszej <a href="https://www.learn-parlami.netlify.app/privacy/pl/">polityce prywatności</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 Parlami · Pierwsza wersja publiczna v0.1.0
+    </div>
+
+    <div>
+      <a href="https://www.learn-parlami.netlify.app/privacy/pl/">Polityka prywatności</a>
+      &nbsp;·&nbsp;
+      <a
+        href="https://github.com/ad-lerondl/parlami"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

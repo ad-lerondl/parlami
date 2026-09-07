@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../../localization/app_localizations.dart';
 
 import '../../services/radio_player_service.dart';
 
@@ -73,7 +74,6 @@ class _COViewState extends State<COView> {
     super.initState();
     _radioPlayerService = RadioPlayerService();
 
-    // Écouter les erreurs
     _errorSubscription = _radioPlayerService.errorStream.listen((error) {
       if (error != null && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -99,7 +99,8 @@ class _COViewState extends State<COView> {
 
     _radioPlayerService.toggleStation(station.name, station.streamUrl);
 
-    final message = (wasPlaying && wasCurrentStation) ? '${station.name} arrêtée' : 'Connexion à ${station.name}...';
+    final l10n = AppLocalizations.of(context)!;
+    final message = (wasPlaying && wasCurrentStation) ? l10n.coStopped(station.name) : l10n.coConnecting(station.name);
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -111,17 +112,18 @@ class _COViewState extends State<COView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: const Text('CO - Compréhension Orale')),
+      appBar: AppBar(title: Text(l10n.coTitle)),
       body: Column(
         children: [
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                const Text(
-                  'Écoutez des radios italiennes pour améliorer votre compréhension orale',
-                  style: TextStyle(fontSize: 16),
+                Text(
+                  l10n.coIntro,
+                  style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
                 ...stations.map((station) => _buildStationCard(station)),
@@ -159,6 +161,9 @@ class _COViewState extends State<COView> {
                   icon: Icon(
                     isCurrentStation && isPlaying ? Icons.radio_button_checked : Icons.play_arrow,
                   ),
+                  tooltip: isCurrentStation && isPlaying
+                      ? AppLocalizations.of(context)!.coStop
+                      : AppLocalizations.of(context)!.coPlay,
                   onPressed: () => _toggleStation(station),
                 );
               },
@@ -195,9 +200,9 @@ class _COViewState extends State<COView> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'En direct:',
-                      style: TextStyle(
+                    Text(
+                      AppLocalizations.of(context)!.coLive,
+                      style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 12,
                       ),
@@ -226,6 +231,7 @@ class _COViewState extends State<COView> {
                       color: Colors.white,
                       size: 32,
                     ),
+                    tooltip: isPlaying ? AppLocalizations.of(context)!.coStop : AppLocalizations.of(context)!.coPlay,
                     onPressed: () {
                       final selected = stations.firstWhere(
                         (station) => station.name == stationName,

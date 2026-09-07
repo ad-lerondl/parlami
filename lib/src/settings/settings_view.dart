@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'settings_controller.dart';
+import '../localization/app_localizations.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -15,9 +16,10 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(l10n.profileTheme),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -30,18 +32,18 @@ class SettingsView extends StatelessWidget {
           value: controller.themeMode,
           // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
-          items: const [
+          items: [
             DropdownMenuItem(
               value: ThemeMode.system,
-              child: Text('System Theme'),
+              child: Text(l10n.themeSystem),
             ),
             DropdownMenuItem(
               value: ThemeMode.light,
-              child: Text('Light Theme'),
+              child: Text(l10n.themeLight),
             ),
             DropdownMenuItem(
               value: ThemeMode.dark,
-              child: Text('Dark Theme'),
+              child: Text(l10n.themeDark),
             )
           ],
         ),

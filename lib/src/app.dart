@@ -45,8 +45,21 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
-            Locale('fr'), // Français, sans code pays
+            Locale('fr'),
+            Locale('en'),
+            Locale('es'),
+            Locale('de'),
+            Locale('pt'),
+            Locale('ar'),
+            Locale('ru'),
+            Locale('ja'),
+            Locale('he'),
+            Locale('pl'),
+            Locale('ro'),
+            Locale('sv'),
+            Locale('tr'),
           ],
+          locale: settingsController.locale,
 
           // Use AppLocalizations to configure the correct application title
           // depending on the user's locale.
@@ -118,20 +131,22 @@ class _HomeShellState extends State<_HomeShell> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle)),
+      appBar: AppBar(title: Text(l10n.appTitle)),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: _getPage(_index),
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.school), label: 'Apprendre'),
-          NavigationDestination(icon: Icon(Icons.fitness_center), label: "S'entraîner"),
-          NavigationDestination(icon: Icon(Icons.verified_user), label: "Se tester"),
-          NavigationDestination(icon: Icon(Icons.insights), label: 'Résultats'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'Profil'),
+        destinations: [
+          NavigationDestination(icon: const Icon(Icons.school), label: l10n.navLearn),
+          NavigationDestination(icon: const Icon(Icons.fitness_center), label: l10n.navTrain),
+          NavigationDestination(icon: const Icon(Icons.verified_user), label: l10n.navEvaluate),
+          NavigationDestination(icon: const Icon(Icons.insights), label: l10n.navResults),
+          NavigationDestination(icon: const Icon(Icons.person), label: l10n.navProfile),
         ],
         onDestinationSelected: (i) => setState(() => _index = i),
       ),

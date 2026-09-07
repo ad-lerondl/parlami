@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "Aprender",
+  "navTrain": "Praticar",
+  "navEvaluate": "Testar",
+  "navResults": "Resultados",
+  "navProfile": "Perfil",
+  "learnConjugation": "Conjugação",
+  "learnConjugationDescription": "Praticar conjugação de verbos",
+  "learnVocabulary": "Vocabulário",
+  "learnVocabularyDescription": "Por tema e nível",
+  "learnNumbersDates": "Números e Datas",
+  "learnNumbersDatesDescription": "Escrever números e datas",
+  "learnGrammar": "Gramática",
+  "learnGrammarDescription": "Notas do curso",
+  "learnSpelling": "Ortografia",
+  "learnSpellingDescription": "Em breve",
+  "trainOralExpression": "EO - Expressão oral",
+  "trainOralExpressionDescription": "Responder em voz alta",
+  "trainOralComprehension": "CO - Compreensão oral",
+  "trainOralComprehensionDescription": "Ouvir estações de rádio",
+  "trainWrittenComprehension": "CE - Compreensão escrita",
+  "trainWrittenComprehensionDescription": "Ler notícias italianas",
+  "trainWrittenExpression": "EE - Expressão escrita",
+  "trainWrittenExpressionDescription": "Traduzir frases",
+  "evaluateTitle": "Teste-se - Situações reais",
+  "evaluateIntro": "Combine várias habilidades ao mesmo tempo para simular situações da vida real.",
+  "evaluateProgression": "Aprender constrói as bases. Praticar foca em habilidades específicas. Testar mede seu domínio geral.",
+  "scenarioDailyConversation": "Conversa diária",
+  "scenarioArticleSummary": "Resumo de artigo",
+  "scenarioMatchDebrief": "Análise da partida",
+  "scenarioQuickDiscussion": "Discussão rápida",
+  "scenarioDailyConversationDetails": "Ouça, entenda e responda naturalmente.",
+  "scenarioArticleSummaryDetails": "Leia um texto e produza um resumo claro e estruturado.",
+  "scenarioMatchDebriefDetails": "Fale sobre uma partida usando vocabulário e referências culturais.",
+  "scenarioQuickDiscussionDetails": "Reaja rapidamente em uma troca dinâmica com limite de tempo.",
+  "resultsComingSoon": "Gráficos de desempenho em breve",
+  "grammarTitle": "Gramática",
+  "grammarComingSoon": "Notas de gramática - conteúdo em breve.\n\nAdicione notas a este módulo como páginas ou Markdown renderizado.",
+  "spellingTitle": "Ortografia",
+  "spellingComingSoon": "Módulo de ortografia - em breve.",
+  "ceTitle": "CE - Compreensão escrita",
+  "ceIntro": "Leia artigos em italiano para melhorar sua compreensão escrita",
+  "ceAdviceTitle": "Conselho",
+  "ceAdvice": "Comece com artigos curtos. Leia primeiro para o sentido geral, depois leia novamente para os detalhes.",
+  "ceOpenSource": "Abrir site de origem",
+  "eeTitle": "EE - Expressão escrita",
+  "eePrompt": "Traduza a seguinte frase para o italiano",
+  "eeTranslationLabel": "Sua tradução para o italiano",
+  "eeTranslationHint": "Escreva sua tradução aqui...",
+  "eeCheck": "Verificar",
+  "eeCorrection": "Correção",
+  "eeYourAnswer": "Sua resposta",
+  "coTitle": "CO - Compreensão oral",
+  "coIntro": "Ouça rádios italianas para melhorar sua compreensão oral",
+  "coLive": "Ao vivo:",
+  "coStopped": "{station} parada",
+  "coConnecting": "Conectando a {station}...",
+  "coPlay": "Tocar",
+  "coStop": "Parar",
+  "eoTitle": "EO - Expressão oral",
+  "eoChooseLevel": "Escolha o nível",
+  "eoLevel": "Nível {level}",
+  "eoNoQuestion": "Nenhuma pergunta disponível",
+  "eoQuestion": "Pergunta",
+  "eoHint": "Dica",
+  "eoClickHint": "Clique para uma dica",
+  "eoAnswerHint": "Pista da resposta",
+  "eoClickAnswerHint": "Clique para uma pista da resposta",
+  "eoTimer": "Cronômetro",
+  "eoTotal": "Total",
+  "eoSpeech": "Falar",
+  "eoHesitation": "Hesitação",
+  "eoStart": "Começar",
+  "eoStop": "Parar",
+  "eoReset": "Reiniciar",
+  "eoModeFree": "Modo livre",
+  "eoModeFreeDescription": "Avance quando quiser, sem ajuda.",
+  "eoModeEasy": "Fácil",
+  "eoModeEasyDescription": "Responda, autoavalie-se e veja uma pista.",
+  "eoModeHard": "Difícil",
+  "eoModeHardDescription": "Cronômetro, rastreamento de hesitação e autoavaliação.",
+  "eoLevelChip": "Nível {level}",
+  "eoSelfEvaluation": "Autoavaliação",
+  "eoExcellent": "Excelente",
+  "eoGood": "Bom",
+  "eoAverage": "Médio",
+  "eoDifficult": "Difícil",
+  "eoNextQuestion": "Próxima pergunta",
+  "numDateTitle": "Números e Datas",
+  "numDateNumbersTab": "Números",
+  "numDateDatesTab": "Datas",
+  "numDateTimeTab": "Hora",
+  "numDatePreviewNumberTitle": "Escolha um número de visualização",
+  "numDatePreviewNumberSubtitle": "Este valor é usado apenas para conversão rápida.",
+  "numDatePreviewNumberLabel": "Número de visualização",
+  "numDatePositiveInteger": "Insira um número inteiro positivo para começar.",
+  "numDateTraining": "Prática",
+  "numDateTrainingNumberSubtitle": "Escolha outro número para praticar escrevê-lo em italiano.",
+  "numDateTrainingNumberLabel": "Número de prática",
+  "numDateAnswerInWords": "Sua resposta por extenso",
+  "numDateCheck": "Verificar",
+  "numDateClear": "Limpar",
+  "numDatePreviewDateTitle": "Escolha uma data de visualização",
+  "numDatePreviewDateSubtitle": "Esta data é usada apenas como referência rápida.",
+  "numDateToday": "Hoje",
+  "numDateTrainingDateSubtitle": "Escolha outra data para praticar escrevê-la em italiano.",
+  "numDateExpectedDay": "Dia esperado: {day}",
+  "numDatePreviewTimeTitle": "Escolha um horário de visualização",
+  "numDatePreviewTimeSubtitle": "Este horário é usado apenas para leitura rápida.",
+  "numDateTrainingTimeSubtitle": "Escolha outro horário para praticar, especialmente os quartos de hora.",
+  "numDateDefinedTime": "Horário definido:",
+  "answerCorrect": "Resposta correta.",
+  "answerIncorrect": "Resposta incorreta.",
+  "answerYourAnswer": "Sua resposta: {answer}",
+  "answerExpected": "Resposta correta: {answer}",
+  "conjugationTitle": "Conjugação",
+  "conjugationRegular": "Regulares",
+  "conjugationSemiRegular": "Semirregulares",
+  "conjugationIrregular": "Irregulares",
+  "conjugationClearFilters": "Limpar todos os filtros",
+  "conjugationChooseVerb": "Escolha um verbo",
+  "conjugationRandomVerb": "Verbo aleatório",
+  "conjugationHideBaseVerb": "Ocultar verbo base",
+  "conjugationChooseMood": "Escolha um modo",
+  "conjugationChooseTense": "Escolha um tempo verbal",
+  "conjugationVerb": "Verbo: {verb}",
+  "conjugationTranslation": "Tradução: {translation}",
+  "conjugationMood": "Modo: {mood}",
+  "conjugationTense": "Tempo: {tense}",
+  "conjugationLoadingError": "Erro de carregamento: {error}",
+  "profileLanguage": "Idioma da interface",
+  "profileUserName": "Nome de usuário",
+  "profileAbout": "Sobre o aplicativo",
+  "profileAboutDescription": "Parlami ajuda você a aprender italiano.",
+  "profileTheme": "Tema",
+  "profileThemeDescription": "Alternar entre modo claro e escuro",
+  "themeSystem": "Tema do sistema",
+  "themeLight": "Tema claro",
+  "themeDark": "Tema escuro",
+  "vocabTitle": "Vocabulário",
+  "vocabReview": "Revisar",
+  "vocabCatalog": "Catálogo",
+  "vocabAdd": "Adicionar",
+  "vocabImport": "Importar palavras",
+  "vocabExport": "Exportar minhas palavras",
+  "vocabResetCatalog": "Restaurar catálogo original",
+  "vocabSelect": "Selecionar",
+  "vocabSave": "Salvar palavra",
+  "vocabChooseCategories": "Escolher categorias",
+  "vocabPasteJson": "Cole uma lista JSON de palavras. Formato aceito:",
+  "vocabCancel": "Cancelar",
+  "vocabImportError": "Falha na importação: {error}",
+  "vocabResetQuestion": "Restaurar palavras originais?",
+  "vocabResetDescription": "Isso redefine as palavras importadas e reaplica o catálogo original. As palavras adicionadas pelo usuário são mantidas.",
+  "vocabDeleteQuestion": "Excluir esta palavra?",
+  "vocabDeleteDescription": "Excluir \"{word}\" do catálogo?",
+  "vocabDelete": "Excluir",
+  "vocabNoCategory": "Nenhuma categoria selecionada",
+  "vocabLoading": "Carregando vocabulário...",
+  "vocabFields": "Campos lexicais",
+  "vocabNoMatch": "Nenhuma palavra corresponde aos filtros atuais.",
+  "vocabNoTrainingMatch": "Nenhuma palavra corresponde aos filtros de prática.",
+  "vocabTrainingWord": "Palavra de prática",
+  "vocabScore": "Pontuação {score}%",
+  "vocabBaseLanguage": "Idioma base: {language}",
+  "vocabHiddenAnswer": "Resposta oculta.",
+  "vocabKnown": "Conhecida",
+  "vocabUnknown": "Desconhecida",
+  "vocabNextWord": "Próxima palavra",
+  "vocabCategories": "Categorias: {categories}",
+  "vocabPreparing": "Preparando palavras de prática...",
+  "vocabPriority": "Priorizar palavras não dominadas",
+  "vocabPriorityDescription": "Desative para misturar aleatoriamente.",
+  "vocabSelectedCount": "Palavras selecionadas: {count}",
+  "vocabClearAll": "Limpar tudo",
+  "vocabConfirm": "Confirmar",
+  "conjugationCheck": "Verificar",
+  "conjugationNextVerb": "Próximo verbo",
+  "eeNextSentence": "Próxima frase",
+  "eeNoSentence": "Nenhuma frase disponível",
+  "ceLevel": "Nível: {level}",
+  "sampleItems": "Itens de exemplo",
+  "sampleItemDetails": "Detalhes do item",
+  "sampleMoreInformation": "Mais informações aqui",
+  "sampleItem": "Item de exemplo {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + Cultura",
+  "evaluateScenarioSpeed": "CO + EO + Velocidade",
+  "conjugationAnswerLabel": "Sua resposta",
+  "vocabWords": "Palavras",
+  "vocabAverageMastery": "Domínio médio",
+  "vocabMode": "Modo",
+  "vocabMastery": "Domínio",
+  "vocabRandom": "Aleatório",
+  "vocabSearchWord": "Pesquisar uma palavra",
+  "vocabBaseLanguageDisplay": "Exibir idioma base",
+  "vocabDifficulty": "Dificuldade",
+  "vocabPartOfSpeech": "Classe gramatical",
+  "vocabChooseFilterCategories": "Escolher categorias de filtro",
+  "vocabSearchTrainingWord": "Pesquisar uma palavra",
+  "vocabTrainingBaseLanguage": "Idioma base de prática",
+  "vocabFilters": "Filtros",
+  "vocabChooseTrainingCategories": "Escolher categorias de prática",
+  "vocabItalianWord": "Palavra italiana",
+  "vocabFrenchTranslation": "Tradução (idioma base)",
+  "vocabOptionalArticle": "Artigo opcional (il, la, l', etc.)",
+  "vocabCategoriesTitle": "Categorias",
+  "vocabSearchCategory": "Pesquisar uma categoria",
+  "vocabAddCategory": "Adicionar \"{category}\"",
+  "vocabDeleteFromCatalog": "Excluir do catálogo",
+  "vocabHideAnswer": "Ocultar resposta",
+  "vocabShowAnswer": "Mostrar resposta",
+  "vocabStatusSaved": "Palavra salva e disponível nos filtros.",
+  "vocabStatusImport": "Importação concluída: {count} palavra(s) adicionada(s).",
+  "vocabStatusExport": "Exportação concluída: {location}",
+  "vocabStatusNoExport": "Nenhuma palavra de usuário para exportar.",
+  "vocabStatusReset": "Catálogo original restaurado.",
+  "vocabStatusDeleted": "Palavra removida do catálogo.",
+  "vocabStatusKnown": "Anotado.",
+  "vocabStatusReview": "Revisar em breve.",
+  "vocabItalian": "Italiano",
+  "vocabFrench": "Francês",
+  "vocabSourceOriginal": "Original",
+  "vocabSourceUser": "Usuário",
+  "vocabNoun": "Substantivo",
+  "vocabVerb": "Verbo",
+  "vocabAdjective": "Adjetivo",
+  "vocabAdverb": "Advérbio",
+  "vocabPronoun": "Pronome",
+  "vocabDeterminer": "Determinante",
+  "vocabPreposition": "Preposição",
+  "vocabConjunction": "Conjunção",
+  "vocabInterjection": "Interjeição",
+  "vocabExpression": "Expressão",
+  "vocabOther": "Outro",
+  "profileDonate": "Fazer uma doação",
+  "profileDonateDescription": "Obrigado pelo seu apoio",
+  "profilePrivacy": "Política de privacidade",
+  "profilePrivacyDescription": "Abrir a política de privacidade",
+  "unavailable": "Recurso ainda não disponível.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

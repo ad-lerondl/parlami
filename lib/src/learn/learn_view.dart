@@ -4,40 +4,42 @@ import 'vocab/vocab_view.dart';
 import 'numdate/numdate_view.dart';
 import 'grammar/grammar_view.dart';
 import 'spelling/spelling_view.dart';
+import '../localization/app_localizations.dart';
 
 class LearnView extends StatelessWidget {
   const LearnView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final tiles = [
       _ModuleTile(
-        title: 'Conjugaison',
-        subtitle: "S'entraîner à conjuguer",
+        title: l10n.learnConjugation,
+        subtitle: l10n.learnConjugationDescription,
         builder: (context) => const ConjugationView(),
         icon: Icons.edit_note,
       ),
       _ModuleTile(
-        title: 'Vocabulaire',
-        subtitle: 'Par thèmes et niveaux',
+        title: l10n.learnVocabulary,
+        subtitle: l10n.learnVocabularyDescription,
         builder: (context) => const VocabView(),
         icon: Icons.language,
       ),
       _ModuleTile(
-        title: 'Nombres & Dates',
-        subtitle: 'Écrire les nombres et dates',
+        title: l10n.learnNumbersDates,
+        subtitle: l10n.learnNumbersDatesDescription,
         builder: (context) => const NumDateView(),
         icon: Icons.calendar_month,
       ),
       _ModuleTile(
-        title: 'Grammaire',
-        subtitle: 'Fiches de cours',
+        title: l10n.learnGrammar,
+        subtitle: l10n.learnGrammarDescription,
         builder: (context) => const GrammarView(),
         icon: Icons.menu_book,
       ),
       _ModuleTile(
-        title: 'Orthographe',
-        subtitle: 'Bientôt disponible',
+        title: l10n.learnSpelling,
+        subtitle: l10n.learnSpellingDescription,
         builder: (context) => const SpellingView(),
         icon: Icons.spellcheck,
       ),

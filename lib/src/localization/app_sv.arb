@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "Lär dig",
+  "navTrain": "Träna",
+  "navEvaluate": "Testa dig själv",
+  "navResults": "Resultat",
+  "navProfile": "Profil",
+  "learnConjugation": "Konjugation",
+  "learnConjugationDescription": "Öva på att böja verb",
+  "learnVocabulary": "Ordförråd",
+  "learnVocabularyDescription": "Efter ämne och nivå",
+  "learnNumbersDates": "Siffror och datum",
+  "learnNumbersDatesDescription": "Skriv siffror och datum",
+  "learnGrammar": "Grammatik",
+  "learnGrammarDescription": "Kursanteckningar",
+  "learnSpelling": "Stavning",
+  "learnSpellingDescription": "Kommer snart",
+  "trainOralExpression": "EO - Muntligt uttryck",
+  "trainOralExpressionDescription": "Svara högt",
+  "trainOralComprehension": "CO - Hörförståelse",
+  "trainOralComprehensionDescription": "Lyssna på radiostationer",
+  "trainWrittenComprehension": "CE - Läsförståelse",
+  "trainWrittenComprehensionDescription": "Läs italienska nyheter",
+  "trainWrittenExpression": "EE - Skriftligt uttryck",
+  "trainWrittenExpressionDescription": "Översätt meningar",
+  "evaluateTitle": "Testa dig själv - Verkliga situationer",
+  "evaluateIntro": "Kombinera flera färdigheter samtidigt för att simulera verkliga situationer.",
+  "evaluateProgression": "Inlärning bygger grunderna. Träning riktar sig mot specifika färdigheter. Test mäter din övergripande behärskning.",
+  "scenarioDailyConversation": "Vardagskonversation",
+  "scenarioArticleSummary": "Artikelsammanfattning",
+  "scenarioMatchDebrief": "Matchgenomgång",
+  "scenarioQuickDiscussion": "Snabb diskussion",
+  "scenarioDailyConversationDetails": "Lyssna, förstå och svara sedan naturligt.",
+  "scenarioArticleSummaryDetails": "Läs en text och gör sedan en tydlig, strukturerad sammanfattning.",
+  "scenarioMatchDebriefDetails": "Prata om en match med hjälp av ordförråd och kulturella referenser.",
+  "scenarioQuickDiscussionDetails": "Reagera snabbt i ett dynamiskt utbyte med tidsbegränsning.",
+  "resultsComingSoon": "Prestationsdiagram kommer snart",
+  "grammarTitle": "Grammatik",
+  "grammarComingSoon": "Grammatikanteckningar - innehåll kommer snart.\n\nLägg till anteckningar till denna modul som sidor eller renderad Markdown.",
+  "spellingTitle": "Stavning",
+  "spellingComingSoon": "Stavningsmodul - kommer snart.",
+  "ceTitle": "CE - Läsförståelse",
+  "ceIntro": "Läs italienska artiklar för att förbättra din läsförståelse",
+  "ceAdviceTitle": "Råd",
+  "ceAdvice": "Börja med korta artiklar. Läs först för att förstå huvudpoängen, läs sedan igen för detaljer.",
+  "ceOpenSource": "Öppna källwebbplats",
+  "eeTitle": "EE - Skriftligt uttryck",
+  "eePrompt": "Översätt följande mening till italienska",
+  "eeTranslationLabel": "Din översättning till italienska",
+  "eeTranslationHint": "Skriv din översättning här...",
+  "eeCheck": "Kontrollera",
+  "eeCorrection": "Rättelse",
+  "eeYourAnswer": "Ditt svar",
+  "coTitle": "CO - Hörförståelse",
+  "coIntro": "Lyssna på italienska radiostationer för att förbättra din hörförståelse",
+  "coLive": "Live:",
+  "coStopped": "{station} stoppad",
+  "coConnecting": "Ansluter till {station}...",
+  "coPlay": "Spela",
+  "coStop": "Stopp",
+  "eoTitle": "EO - Muntligt uttryck",
+  "eoChooseLevel": "Välj nivå",
+  "eoLevel": "Nivå {level}",
+  "eoNoQuestion": "Ingen fråga tillgänglig",
+  "eoQuestion": "Fråga",
+  "eoHint": "Tips",
+  "eoClickHint": "Klicka för ett tips",
+  "eoAnswerHint": "Svarledtråd",
+  "eoClickAnswerHint": "Klicka för en svarledtråd",
+  "eoTimer": "Timer",
+  "eoTotal": "Totalt",
+  "eoSpeech": "Tal",
+  "eoHesitation": "Tvekan",
+  "eoStart": "Start",
+  "eoStop": "Stopp",
+  "eoReset": "Återställ",
+  "eoModeFree": "Fritt läge",
+  "eoModeFreeDescription": "Gå framåt när du vill, utan hjälp.",
+  "eoModeEasy": "Lätt",
+  "eoModeEasyDescription": "Svara, utvärdera dig själv och se en ledtråd.",
+  "eoModeHard": "Svårt",
+  "eoModeHardDescription": "Timer, spårning av tvekan och självutvärdering.",
+  "eoLevelChip": "Nivå {level}",
+  "eoSelfEvaluation": "Självutvärdering",
+  "eoExcellent": "Utmärkt",
+  "eoGood": "Bra",
+  "eoAverage": "Medel",
+  "eoDifficult": "Svårt",
+  "eoNextQuestion": "Nästa fråga",
+  "numDateTitle": "Siffror och datum",
+  "numDateNumbersTab": "Siffror",
+  "numDateDatesTab": "Datum",
+  "numDateTimeTab": "Tid",
+  "numDatePreviewNumberTitle": "Välj ett förhandsgranskningsnummer",
+  "numDatePreviewNumberSubtitle": "Detta värde används endast för snabb konvertering.",
+  "numDatePreviewNumberLabel": "Förhandsgranskningsnummer",
+  "numDatePositiveInteger": "Ange ett positivt heltal för att börja.",
+  "numDateTraining": "Övning",
+  "numDateTrainingNumberSubtitle": "Välj ett annat nummer för att öva på att skriva det med italienska ord.",
+  "numDateTrainingNumberLabel": "Övningsnummer",
+  "numDateAnswerInWords": "Ditt svar i ord",
+  "numDateCheck": "Kontrollera",
+  "numDateClear": "Rensa",
+  "numDatePreviewDateTitle": "Välj ett förhandsgranskningsdatum",
+  "numDatePreviewDateSubtitle": "Detta datum används endast som en snabb referens.",
+  "numDateToday": "Idag",
+  "numDateTrainingDateSubtitle": "Välj ett annat datum för att öva på att skriva det med italienska ord.",
+  "numDateExpectedDay": "Förväntad dag: {day}",
+  "numDatePreviewTimeTitle": "Välj en förhandsgranskningstid",
+  "numDatePreviewTimeSubtitle": "Denna tid används endast som en snabb referens.",
+  "numDateTrainingTimeSubtitle": "Välj en annan tid att öva på, särskilt kvartar.",
+  "numDateDefinedTime": "Angiven tid:",
+  "answerCorrect": "Rätt svar.",
+  "answerIncorrect": "Fel svar.",
+  "answerYourAnswer": "Ditt svar: {answer}",
+  "answerExpected": "Rätt svar: {answer}",
+  "conjugationTitle": "Konjugation",
+  "conjugationRegular": "Regelbundna",
+  "conjugationSemiRegular": "Halvregelbundna",
+  "conjugationIrregular": "Oregelbundna",
+  "conjugationClearFilters": "Rensa alla filter",
+  "conjugationChooseVerb": "Välj ett verb",
+  "conjugationRandomVerb": "Slumpmässigt verb",
+  "conjugationHideBaseVerb": "Dölj grundverb",
+  "conjugationChooseMood": "Välj modus",
+  "conjugationChooseTense": "Välj tempus",
+  "conjugationVerb": "Verb: {verb}",
+  "conjugationTranslation": "Översättning: {translation}",
+  "conjugationMood": "Modus: {mood}",
+  "conjugationTense": "Tempus: {tense}",
+  "conjugationLoadingError": "Laddningsfel: {error}",
+  "profileLanguage": "Gränssnittsspråk",
+  "profileUserName": "Användarnamn",
+  "profileAbout": "Om appen",
+  "profileAboutDescription": "Parlami hjälper dig att lära dig italienska.",
+  "profileTheme": "Tema",
+  "profileThemeDescription": "Växla mellan ljust och mörkt läge",
+  "themeSystem": "Systemtema",
+  "themeLight": "Ljust tema",
+  "themeDark": "Mörkt tema",
+  "vocabTitle": "Ordförråd",
+  "vocabReview": "Repetera",
+  "vocabCatalog": "Katalog",
+  "vocabAdd": "Lägg till",
+  "vocabImport": "Importera ord",
+  "vocabExport": "Exportera mina ord",
+  "vocabResetCatalog": "Återställ originalkatalog",
+  "vocabSelect": "Välj",
+  "vocabSave": "Spara ord",
+  "vocabChooseCategories": "Välj ordkategorier",
+  "vocabPasteJson": "Klistra in en JSON-lista med ord. Accepterat format:",
+  "vocabCancel": "Avbryt",
+  "vocabImportError": "Import misslyckades: {error}",
+  "vocabResetQuestion": "Återställa originalord?",
+  "vocabResetDescription": "Detta återställer importerade ord och tillämpar originalkatalogen igen. Användartillagda ord behålls.",
+  "vocabDeleteQuestion": "Ta bort detta ord?",
+  "vocabDeleteDescription": "Ta bort \"{word}\" från katalogen?",
+  "vocabDelete": "Ta bort",
+  "vocabNoCategory": "Ingen kategori vald",
+  "vocabLoading": "Laddar ordförråd...",
+  "vocabFields": "Lexikala fält",
+  "vocabNoMatch": "Inget ord matchar de aktuella filtren.",
+  "vocabNoTrainingMatch": "Inget ord matchar träningsfiltren.",
+  "vocabTrainingWord": "Träningsord",
+  "vocabScore": "Poäng {score}%",
+  "vocabBaseLanguage": "Basksrpåk: {language}",
+  "vocabHiddenAnswer": "Svaret är dolt.",
+  "vocabKnown": "Känt",
+  "vocabUnknown": "Okänt",
+  "vocabNextWord": "Nästa ord",
+  "vocabCategories": "Kategorier: {categories}",
+  "vocabPreparing": "Förbereder träningsord...",
+  "vocabPriority": "Prioritera ord som ännu inte bemästrats",
+  "vocabPriorityDescription": "Inaktivera för att blanda slumpmässigt.",
+  "vocabSelectedCount": "Valda ord: {count}",
+  "vocabClearAll": "Rensa alla",
+  "vocabConfirm": "Bekräfta",
+  "conjugationCheck": "Kontrollera",
+  "conjugationNextVerb": "Nästa verb",
+  "eeNextSentence": "Nästa mening",
+  "eeNoSentence": "Ingen mening tillgänglig",
+  "ceLevel": "Nivå: {level}",
+  "sampleItems": "Exempelobjekt",
+  "sampleItemDetails": "Objektdetaljer",
+  "sampleMoreInformation": "Mer information här",
+  "sampleItem": "Exempelobjekt {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + Kultur",
+  "evaluateScenarioSpeed": "CO + EO + Hastighet",
+  "conjugationAnswerLabel": "Ditt svar",
+  "vocabWords": "Ord",
+  "vocabAverageMastery": "Genomsnittlig behärskning",
+  "vocabMode": "Läge",
+  "vocabMastery": "Behärskning",
+  "vocabRandom": "Slumpmässigt",
+  "vocabSearchWord": "Sök efter ett ord",
+  "vocabBaseLanguageDisplay": "Visa basksrpåk",
+  "vocabDifficulty": "Svårighetsgrad",
+  "vocabPartOfSpeech": "Ordklass",
+  "vocabChooseFilterCategories": "Välj filterkategorier",
+  "vocabSearchTrainingWord": "Sök efter ett ord",
+  "vocabTrainingBaseLanguage": "Basksrpåk för träning",
+  "vocabFilters": "Filter",
+  "vocabChooseTrainingCategories": "Välj träningskategorier",
+  "vocabItalianWord": "Italienskt ord",
+  "vocabFrenchTranslation": "Översättning (basksrpåk)",
+  "vocabOptionalArticle": "Valfri artikel (il, la, l', etc.)",
+  "vocabCategoriesTitle": "Kategorier",
+  "vocabSearchCategory": "Sök efter en kategori",
+  "vocabAddCategory": "Lägg till \"{category}\"",
+  "vocabDeleteFromCatalog": "Ta bort från katalogen",
+  "vocabHideAnswer": "Dölj svar",
+  "vocabShowAnswer": "Visa svar",
+  "vocabStatusSaved": "Ord sparat och tillgängligt i filter.",
+  "vocabStatusImport": "Import slutförd: {count} ord lades till.",
+  "vocabStatusExport": "Export slutförd: {location}",
+  "vocabStatusNoExport": "Inga användarord att exportera.",
+  "vocabStatusReset": "Originalkatalog återställd.",
+  "vocabStatusDeleted": "Ord borttaget från katalogen.",
+  "vocabStatusKnown": "Noterat.",
+  "vocabStatusReview": "Repetera snart.",
+  "vocabItalian": "Italienska",
+  "vocabFrench": "Franska",
+  "vocabSourceOriginal": "Original",
+  "vocabSourceUser": "Användare",
+  "vocabNoun": "Substantiv",
+  "vocabVerb": "Verb",
+  "vocabAdjective": "Adjektiv",
+  "vocabAdverb": "Adverb",
+  "vocabPronoun": "Pronomen",
+  "vocabDeterminer": "Bestämningsord",
+  "vocabPreposition": "Preposition",
+  "vocabConjunction": "Konjunktion",
+  "vocabInterjection": "Interjektion",
+  "vocabExpression": "Uttryck",
+  "vocabOther": "Annat",
+  "profileDonate": "Ge en gåva",
+  "profileDonateDescription": "Tack för ditt stöd",
+  "profilePrivacy": "Integritetspolicy",
+  "profilePrivacyDescription": "Öppna integritetspolicyn",
+  "unavailable": "Funktionen är ännu inte tillgänglig.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

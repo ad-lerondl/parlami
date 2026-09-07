@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "Învață",
+  "navTrain": "Exersează",
+  "navEvaluate": "Testează-te",
+  "navResults": "Rezultate",
+  "navProfile": "Profil",
+  "learnConjugation": "Conjugare",
+  "learnConjugationDescription": "Exersează conjugarea verbelor",
+  "learnVocabulary": "Vocabular",
+  "learnVocabularyDescription": "Pe teme și niveluri",
+  "learnNumbersDates": "Numere și date",
+  "learnNumbersDatesDescription": "Scrierea numerelor și a datelor",
+  "learnGrammar": "Gramatică",
+  "learnGrammarDescription": "Note de curs",
+  "learnSpelling": "Ortografie",
+  "learnSpellingDescription": "În curând",
+  "trainOralExpression": "EO - Expresie orală",
+  "trainOralExpressionDescription": "Răspunde cu voce tare",
+  "trainOralComprehension": "CO - Înțelegere orală",
+  "trainOralComprehensionDescription": "Ascultă stații radio",
+  "trainWrittenComprehension": "CE - Înțelegere scrisă",
+  "trainWrittenComprehensionDescription": "Citește știri în italiană",
+  "trainWrittenExpression": "EE - Expresie scrisă",
+  "trainWrittenExpressionDescription": "Tradu propoziții",
+  "evaluateTitle": "Testează-te - Situații reale",
+  "evaluateIntro": "Combină mai multe abilități simultan pentru a simula situații reale.",
+  "evaluateProgression": "Învățarea construiește bazele. Exersarea vizează abilități specifice. Testarea măsoară stăpânirea generală.",
+  "scenarioDailyConversation": "Conversație zilnică",
+  "scenarioArticleSummary": "Rezumat articol",
+  "scenarioMatchDebrief": "Analiză meci",
+  "scenarioQuickDiscussion": "Discuție rapidă",
+  "scenarioDailyConversationDetails": "Ascultă, înțelege și răspunde natural.",
+  "scenarioArticleSummaryDetails": "Citește un text și creează un rezumat clar și structurat.",
+  "scenarioMatchDebriefDetails": "Vorbește despre un meci folosind vocabular și referințe culturale.",
+  "scenarioQuickDiscussionDetails": "Reacționează rapid într-un schimb dinamic cu limită de timp.",
+  "resultsComingSoon": "Grafice de performanță în curând",
+  "grammarTitle": "Gramatică",
+  "grammarComingSoon": "Note de gramatică - conținut în curând.\n\nAdaugă note în acest modul ca pagini sau Markdown randat.",
+  "spellingTitle": "Ortografie",
+  "spellingComingSoon": "Modul de ortografie - în curând.",
+  "ceTitle": "CE - Înțelegere scrisă",
+  "ceIntro": "Citește articole în italiană pentru a-ți îmbunătăți înțelegerea scrisă",
+  "ceAdviceTitle": "Sfat",
+  "ceAdvice": "Începe cu articole scurte. Citește prima dată pentru sensul general, apoi recitește pentru detalii.",
+  "ceOpenSource": "Deschide site-ul sursă",
+  "eeTitle": "EE - Expresie scrisă",
+  "eePrompt": "Tradu următoarea propoziție în italiană",
+  "eeTranslationLabel": "Traducerea ta în italiană",
+  "eeTranslationHint": "Scrie traducerea aici...",
+  "eeCheck": "Verifică",
+  "eeCorrection": "Corecție",
+  "eeYourAnswer": "Răspunsul tău",
+  "coTitle": "CO - Înțelegere orală",
+  "coIntro": "Ascultă posturi de radio italiene pentru a-ți îmbunătăți înțelegerea orală",
+  "coLive": "În direct:",
+  "coStopped": "{station} oprit",
+  "coConnecting": "Conectare la {station}...",
+  "coPlay": "Redare",
+  "coStop": "Stop",
+  "eoTitle": "EO - Expresie orală",
+  "eoChooseLevel": "Alege nivelul",
+  "eoLevel": "Nivel {level}",
+  "eoNoQuestion": "Nicio întrebare disponibilă",
+  "eoQuestion": "Întrebare",
+  "eoHint": "Indiciu",
+  "eoClickHint": "Fă clic pentru un indiciu",
+  "eoAnswerHint": "Indiciu pentru răspuns",
+  "eoClickAnswerHint": "Fă clic pentru un indiciu de răspuns",
+  "eoTimer": "Cronometru",
+  "eoTotal": "Total",
+  "eoSpeech": "Vorbire",
+  "eoHesitation": "Ezitare",
+  "eoStart": "Start",
+  "eoStop": "Stop",
+  "eoReset": "Resetare",
+  "eoModeFree": "Mod liber",
+  "eoModeFreeDescription": "Mergi mai departe oricând dorești, fără ajutor.",
+  "eoModeEasy": "Ușor",
+  "eoModeEasyDescription": "Răspunde, autoevaluează-te și vezi un indiciu.",
+  "eoModeHard": "Dificil",
+  "eoModeHardDescription": "Cronometru, urmărirea ezitărilor și autoevaluare.",
+  "eoLevelChip": "Nivel {level}",
+  "eoSelfEvaluation": "Autoevaluare",
+  "eoExcellent": "Excelent",
+  "eoGood": "Bine",
+  "eoAverage": "Mediu",
+  "eoDifficult": "Dificil",
+  "eoNextQuestion": "Următoarea întrebare",
+  "numDateTitle": "Numere și date",
+  "numDateNumbersTab": "Numere",
+  "numDateDatesTab": "Date",
+  "numDateTimeTab": "Oră",
+  "numDatePreviewNumberTitle": "Alege un număr pentru previzualizare",
+  "numDatePreviewNumberSubtitle": "Această valoare este utilizată doar pentru conversie rapidă.",
+  "numDatePreviewNumberLabel": "Număr previzualizat",
+  "numDatePositiveInteger": "Introdu un număr întreg pozitiv pentru a începe.",
+  "numDateTraining": "Exersare",
+  "numDateTrainingNumberSubtitle": "Alege alt număr pentru a exersa scrierea acestuia în italiană.",
+  "numDateTrainingNumberLabel": "Număr de exersare",
+  "numDateAnswerInWords": "Răspunsul tău în cuvinte",
+  "numDateCheck": "Verifică",
+  "numDateClear": "Șterge",
+  "numDatePreviewDateTitle": "Alege o dată pentru previzualizare",
+  "numDatePreviewDateSubtitle": "Această dată este folosită doar ca referință rapidă.",
+  "numDateToday": "Astăzi",
+  "numDateTrainingDateSubtitle": "Alege altă dată pentru a exersa scrierea acesteia în italiană.",
+  "numDateExpectedDay": "Ziua așteptată: {day}",
+  "numDatePreviewTimeTitle": "Alege o oră pentru previzualizare",
+  "numDatePreviewTimeSubtitle": "Această oră este folosită doar pentru citire rapidă.",
+  "numDateTrainingTimeSubtitle": "Alege o altă oră pentru exersare, în special sferturi de oră.",
+  "numDateDefinedTime": "Timp definit:",
+  "answerCorrect": "Răspuns corect.",
+  "answerIncorrect": "Răspuns incorect.",
+  "answerYourAnswer": "Răspunsul tău: {answer}",
+  "answerExpected": "Răspuns corect: {answer}",
+  "conjugationTitle": "Conjugare",
+  "conjugationRegular": "Regulate",
+  "conjugationSemiRegular": "Semi-regulate",
+  "conjugationIrregular": "Neregulate",
+  "conjugationClearFilters": "Șterge toate filtrele",
+  "conjugationChooseVerb": "Alege un verb",
+  "conjugationRandomVerb": "Verb aleatoriu",
+  "conjugationHideBaseVerb": "Ascunde verbul de bază",
+  "conjugationChooseMood": "Alege un mod",
+  "conjugationChooseTense": "Alege un timp",
+  "conjugationVerb": "Verb: {verb}",
+  "conjugationTranslation": "Traducere: {translation}",
+  "conjugationMood": "Mod: {mood}",
+  "conjugationTense": "Timp: {tense}",
+  "conjugationLoadingError": "Eroare de încărcare: {error}",
+  "profileLanguage": "Limba interfeței",
+  "profileUserName": "Nume de utilizator",
+  "profileAbout": "Despre aplicație",
+  "profileAboutDescription": "Parlami te ajută să înveți italiana.",
+  "profileTheme": "Temă",
+  "profileThemeDescription": "Comută între modul luminos și cel întunecat",
+  "themeSystem": "Tema sistemului",
+  "themeLight": "Temă luminoasă",
+  "themeDark": "Temă întunecată",
+  "vocabTitle": "Vocabular",
+  "vocabReview": "Revizuire",
+  "vocabCatalog": "Catalog",
+  "vocabAdd": "Adaugă",
+  "vocabImport": "Importă cuvinte",
+  "vocabExport": "Exportă cuvintele mele",
+  "vocabResetCatalog": "Resetează catalogul original",
+  "vocabSelect": "Selectează",
+  "vocabSave": "Salvează cuvântul",
+  "vocabChooseCategories": "Alege categoriile",
+  "vocabPasteJson": "Lipește o listă JSON de cuvinte. Format acceptat:",
+  "vocabCancel": "Anulează",
+  "vocabImportError": "Import eșuat: {error}",
+  "vocabResetQuestion": "Resetezi cuvintele originale?",
+  "vocabResetDescription": "Aceasta va reseta cuvintele importate și va reaplica catalogul original. Cuvintele adăugate de utilizator sunt păstrate.",
+  "vocabDeleteQuestion": "Ștergi acest cuvânt?",
+  "vocabDeleteDescription": "Ștergi \"{word}\" din catalog?",
+  "vocabDelete": "Șterge",
+  "vocabNoCategory": "Nicio categorie selectată",
+  "vocabLoading": "Se încarcă vocabularul...",
+  "vocabFields": "Câmpuri lexicale",
+  "vocabNoMatch": "Niciun cuvânt nu corespunde filtrelor actuale.",
+  "vocabNoTrainingMatch": "Niciun cuvânt nu se potrivește filtrelor de antrenament.",
+  "vocabTrainingWord": "Cuvânt de antrenament",
+  "vocabScore": "Scor {score}%",
+  "vocabBaseLanguage": "Limba de bază: {language}",
+  "vocabHiddenAnswer": "Răspuns ascuns.",
+  "vocabKnown": "Cunoscut",
+  "vocabUnknown": "Necunoscut",
+  "vocabNextWord": "Următorul cuvânt",
+  "vocabCategories": "Categorii: {categories}",
+  "vocabPreparing": "Se pregătesc cuvintele de antrenament...",
+  "vocabPriority": "Prioritizează cuvintele care nu au fost asimilate",
+  "vocabPriorityDescription": "Dezactivează pentru a amesteca aleatoriu.",
+  "vocabSelectedCount": "Cuvinte selectate: {count}",
+  "vocabClearAll": "Șterge tot",
+  "vocabConfirm": "Confirmă",
+  "conjugationCheck": "Verifică",
+  "conjugationNextVerb": "Următorul verb",
+  "eeNextSentence": "Următoarea propoziție",
+  "eeNoSentence": "Nicio propoziție disponibilă",
+  "ceLevel": "Nivel: {level}",
+  "sampleItems": "Elemente eșantion",
+  "sampleItemDetails": "Detalii element",
+  "sampleMoreInformation": "Mai multe informații aici",
+  "sampleItem": "Element eșantion {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + Cultură",
+  "evaluateScenarioSpeed": "CO + EO + Viteză",
+  "conjugationAnswerLabel": "Răspunsul tău",
+  "vocabWords": "Cuvinte",
+  "vocabAverageMastery": "Stăpânire medie",
+  "vocabMode": "Mod",
+  "vocabMastery": "Stăpânire",
+  "vocabRandom": "Aleatoriu",
+  "vocabSearchWord": "Caută un cuvânt",
+  "vocabBaseLanguageDisplay": "Afișează limba de bază",
+  "vocabDifficulty": "Dificultate",
+  "vocabPartOfSpeech": "Parte de vorbire",
+  "vocabChooseFilterCategories": "Alege categoriile filtrului",
+  "vocabSearchTrainingWord": "Caută un cuvânt",
+  "vocabTrainingBaseLanguage": "Limba de bază pentru antrenament",
+  "vocabFilters": "Filtre",
+  "vocabChooseTrainingCategories": "Alege categoriile de antrenament",
+  "vocabItalianWord": "Cuvânt în italiană",
+  "vocabFrenchTranslation": "Traducere (limba de bază)",
+  "vocabOptionalArticle": "Articol opțional (il, la, l', etc.)",
+  "vocabCategoriesTitle": "Categorii",
+  "vocabSearchCategory": "Caută o categorie",
+  "vocabAddCategory": "Adaugă \"{category}\"",
+  "vocabDeleteFromCatalog": "Șterge din catalog",
+  "vocabHideAnswer": "Ascunde răspunsul",
+  "vocabShowAnswer": "Afișează răspunsul",
+  "vocabStatusSaved": "Cuvânt salvat și disponibil în filtre.",
+  "vocabStatusImport": "Import complet: {count} cuvinte adăugate.",
+  "vocabStatusExport": "Export complet: {location}",
+  "vocabStatusNoExport": "Nu există cuvinte de utilizator pentru export.",
+  "vocabStatusReset": "Catalog original resetat.",
+  "vocabStatusDeleted": "Cuvânt eliminat din catalog.",
+  "vocabStatusKnown": "Bine de știut.",
+  "vocabStatusReview": "Revizuire în curând.",
+  "vocabItalian": "Italiană",
+  "vocabFrench": "Franceză",
+  "vocabSourceOriginal": "Original",
+  "vocabSourceUser": "Utilizator",
+  "vocabNoun": "Substantiv",
+  "vocabVerb": "Verb",
+  "vocabAdjective": "Adjectiv",
+  "vocabAdverb": "Adverb",
+  "vocabPronoun": "Pronume",
+  "vocabDeterminer": "Determinant",
+  "vocabPreposition": "Prepoziție",
+  "vocabConjunction": "Conjuncție",
+  "vocabInterjection": "Interjecție",
+  "vocabExpression": "Expresie",
+  "vocabOther": "Altele",
+  "profileDonate": "Fă o donație",
+  "profileDonateDescription": "Mulțumim pentru sprijin",
+  "profilePrivacy": "Politică de confidențialitate",
+  "profilePrivacyDescription": "Deschide politica de confidențialitate",
+  "unavailable": "Funcția nu este încă disponibilă.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

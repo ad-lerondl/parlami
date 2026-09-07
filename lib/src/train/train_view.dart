@@ -3,33 +3,35 @@ import 'eo/eo_view.dart';
 import 'co/co_view.dart';
 import 'ce/ce_view.dart';
 import 'ee/ee_view.dart';
+import '../localization/app_localizations.dart';
 
 class TrainView extends StatelessWidget {
   const TrainView({super.key});
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final modules = [
       _TrainModuleTile(
-        title: 'EO - Expression Orale',
-        subtitle: 'Répondre à voix haute',
+        title: l10n.trainOralExpression,
+        subtitle: l10n.trainOralExpressionDescription,
         icon: Icons.mic,
         builder: (context) => const EOView(),
       ),
       _TrainModuleTile(
-        title: 'CO - Compréhension Orale',
-        subtitle: 'Écouter des stations radio',
+        title: l10n.trainOralComprehension,
+        subtitle: l10n.trainOralComprehensionDescription,
         icon: Icons.radio,
         builder: (context) => const COView(),
       ),
       _TrainModuleTile(
-        title: 'CE - Compréhension Écrite',
-        subtitle: 'Lire des news italiennes',
+        title: l10n.trainWrittenComprehension,
+        subtitle: l10n.trainWrittenComprehensionDescription,
         icon: Icons.article,
         builder: (context) => const CEView(),
       ),
       _TrainModuleTile(
-        title: 'EE - Expression Écrite',
-        subtitle: 'Traduire des phrases',
+        title: l10n.trainWrittenExpression,
+        subtitle: l10n.trainWrittenExpressionDescription,
         icon: Icons.translate,
         builder: (context) => const EEView(),
       ),

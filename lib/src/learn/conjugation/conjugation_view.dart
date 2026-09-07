@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parlami/src/repositories/conjugation_repository.dart';
 import 'package:parlami/src/services/quiz_prefs.dart';
+import 'package:parlami/src/localization/app_localizations.dart';
 
 class ConjugationView extends StatefulWidget {
   const ConjugationView({super.key});
@@ -47,7 +48,7 @@ class _ConjugationViewState extends State<ConjugationView> {
       // Show error in UI if repository fails to load
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur de chargement: $error')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.conjugationLoadingError(error.toString()))),
         );
       }
     });
@@ -55,9 +56,10 @@ class _ConjugationViewState extends State<ConjugationView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final isRepoReady = repo.all().isNotEmpty;
     return Scaffold(
-      appBar: AppBar(title: const Text('Conjugaison')),
+      appBar: AppBar(title: Text(l10n.conjugationTitle)),
       body: !isRepoReady
           ? const Center(child: CircularProgressIndicator())
           : ListView(
@@ -73,7 +75,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                         runSpacing: 8,
                         children: [
                           FilterChip(
-                            label: const Text('Réguliers'),
+                            label: Text(l10n.conjugationRegular),
                             selected: filterRegularity == 'regular',
                             onSelected: (v) {
                               setState(() => filterRegularity = v ? 'regular' : null);
@@ -81,7 +83,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                             },
                           ),
                           FilterChip(
-                            label: const Text('Semi-réguliers'),
+                            label: Text(l10n.conjugationSemiRegular),
                             selected: filterRegularity == 'semi-regular',
                             onSelected: (v) {
                               setState(() => filterRegularity = v ? 'semi-regular' : null);
@@ -89,7 +91,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                             },
                           ),
                           FilterChip(
-                            label: const Text('Irréguliers'),
+                            label: Text(l10n.conjugationIrregular),
                             selected: filterRegularity == 'irregular',
                             onSelected: (v) {
                               setState(() => filterRegularity = v ? 'irregular' : null);
@@ -115,7 +117,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                     ),
                     IconButton(
                       icon: const Icon(Icons.clear_all),
-                      tooltip: 'Supprimer tous les filtres',
+                      tooltip: l10n.conjugationClearFilters,
                       onPressed: () {
                         setState(() {
                           filterRegularity = null;
@@ -165,10 +167,10 @@ class _ConjugationViewState extends State<ConjugationView> {
                           return TextField(
                             controller: controller,
                             focusNode: focusNode,
-                            decoration: const InputDecoration(
-                              labelText: 'Choisir un verbe',
+                            decoration: InputDecoration(
+                              labelText: l10n.conjugationChooseVerb,
                               isDense: true,
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                             ),
                           );
                         },
@@ -187,7 +189,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                             QuizPrefs.saveState(infinitive: random.infinitive);
                           }
                         },
-                        child: const Text('Verbe aléatoire', overflow: TextOverflow.ellipsis),
+                        child: Text(l10n.conjugationRandomVerb, overflow: TextOverflow.ellipsis),
                       ),
                     ),
                   ],
@@ -196,7 +198,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                 // Masquer base verbale (dans recherche ET vérification)
                 Row(
                   children: [
-                    const Expanded(child: Text('Masquer base verbale')),
+                    Expanded(child: Text(l10n.conjugationHideBaseVerb)),
                     Switch(
                       value: !showBaseVerb,
                       onChanged: (v) {
@@ -215,7 +217,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                     Expanded(
                       child: DropdownButton<String>(
                         value: selectedMood,
-                        hint: const Text('Choisir un mode'),
+                        hint: Text(l10n.conjugationChooseMood),
                         isExpanded: true,
                         items: (selectedInfinitive != null
                                 ? repo.moods(selectedInfinitive!)
@@ -238,7 +240,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                     Expanded(
                       child: DropdownButton<String>(
                         value: selectedTense,
-                        hint: const Text('Choisir un temps'),
+                        hint: Text(l10n.conjugationChooseTense),
                         isExpanded: true,
                         items: (selectedInfinitive != null && selectedMood != null
                                 ? repo.tenses(selectedInfinitive!, selectedMood!)
@@ -290,11 +292,12 @@ class _ConjugationViewState extends State<ConjugationView> {
                                   children: [
                                     Text(
                                       showBaseVerb
-                                          ? 'Verbe : ${selectedInfinitive!}${v?.translation != null ? ' (${v!.translation})' : ''}'
-                                          : 'Traduction : ${v?.translation ?? '—'}',
+                                          ? l10n.conjugationVerb(
+                                              '$selectedInfinitive${v?.translation != null ? ' (${v!.translation})' : ''}')
+                                          : l10n.conjugationTranslation(v?.translation ?? '—'),
                                     ),
-                                    Text('Mode: $selectedMood'),
-                                    Text('Temps: $selectedTense'),
+                                    Text(l10n.conjugationMood(selectedMood!)),
+                                    Text(l10n.conjugationTense(selectedTense!)),
                                   ],
                                 ),
                                 const SizedBox(height: 8),
@@ -340,9 +343,9 @@ class _ConjugationViewState extends State<ConjugationView> {
                                             child: TextFormField(
                                               key: ValueKey('input_$p'),
                                               initialValue: value,
-                                              decoration: const InputDecoration(
-                                                labelText: 'Votre réponse',
-                                                border: OutlineInputBorder(),
+                                              decoration: InputDecoration(
+                                                labelText: l10n.conjugationAnswerLabel,
+                                                border: const OutlineInputBorder(),
                                               ),
                                               onChanged: (v) {
                                                 userInputs[p] = v;
@@ -392,7 +395,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                                           }
                                         });
                                       },
-                                      child: const Text('Vérifier'),
+                                      child: Text(l10n.conjugationCheck),
                                     ),
                                     if (hasVerified)
                                       ElevatedButton(
@@ -413,7 +416,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                                             QuizPrefs.saveState(infinitive: random.infinitive);
                                           }
                                         },
-                                        child: const Text('Verbe suivant'),
+                                        child: Text(l10n.conjugationNextVerb),
                                       ),
                                   ],
                                 ),

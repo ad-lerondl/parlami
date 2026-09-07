@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "למידה",
+  "navTrain": "תרגול",
+  "navEvaluate": "בחן את עצמך",
+  "navResults": "תוצאות",
+  "navProfile": "פרופיל",
+  "learnConjugation": "נטיית פעלים",
+  "learnConjugationDescription": "תרגול נטיית פעלים",
+  "learnVocabulary": "אוצר מילים",
+  "learnVocabularyDescription": "לפי נושא ורמה",
+  "learnNumbersDates": "מספרים ותאריכים",
+  "learnNumbersDatesDescription": "כתיבת מספרים ותאריכים",
+  "learnGrammar": "דקדוק",
+  "learnGrammarDescription": "הערות קורס",
+  "learnSpelling": "איות",
+  "learnSpellingDescription": "בקרוב",
+  "trainOralExpression": "EO - הבעה בעל פה",
+  "trainOralExpressionDescription": "לענות בקול רם",
+  "trainOralComprehension": "CO - הבנת הנשמע",
+  "trainOralComprehensionDescription": "להאזין לתחנות רדיו",
+  "trainWrittenComprehension": "CE - הבנת הנקרא",
+  "trainWrittenComprehensionDescription": "לקרוא חדשות באיטלקית",
+  "trainWrittenExpression": "EE - הבעה בכתב",
+  "trainWrittenExpressionDescription": "לתרגם משפטים",
+  "evaluateTitle": "בחן את עצמך - מצבים אמיתיים",
+  "evaluateIntro": "שלב מספר מיומנויות בו-זמנית כדי לדמות מצבים מהחיים האמיתיים.",
+  "evaluateProgression": "למידה בונה את היסודות. תרגול מתמקד במיומנויות ספציפיות. מבחן מודד את השליטה הכוללת שלך.",
+  "scenarioDailyConversation": "שיחה יומיומית",
+  "scenarioArticleSummary": "סיכום מאמר",
+  "scenarioMatchDebrief": "ניתוח משחק",
+  "scenarioQuickDiscussion": "דיון מהיר",
+  "scenarioDailyConversationDetails": "להקשיב, להבין ולענות בטבעיות.",
+  "scenarioArticleSummaryDetails": "לקרוא טקסט ואז ליצור סיכום ברור ומובנה.",
+  "scenarioMatchDebriefDetails": "לדבר על משחק תוך שימוש באוצר מילים והקשרים תרבותיים.",
+  "scenarioQuickDiscussionDetails": "להגיב במהירות בשיח דינמי תחת מגבלת זמן.",
+  "resultsComingSoon": "תרשימי ביצועים בקרוב",
+  "grammarTitle": "דקדוק",
+  "grammarComingSoon": "הערות דקדוק - התוכן בקרוב.\n\nהוסף הערות למודול זה כדפים או כ-Markdown.",
+  "spellingTitle": "איות",
+  "spellingComingSoon": "מודול איות - בקרוב.",
+  "ceTitle": "CE - הבנת הנקרא",
+  "ceIntro": "קרא מאמרים באיטלקית כדי לשפר את הבנת הנקרא שלך",
+  "ceAdviceTitle": "עצה",
+  "ceAdvice": "התחל עם מאמרים קצרים. קרא תחילה להבנת הרעיון הכללי, ואז קרא שוב לפרטים.",
+  "ceOpenSource": "פתח את אתר המקור",
+  "eeTitle": "EE - הבעה בכתב",
+  "eePrompt": "תרגם את המשפט הבא לאיטלקית",
+  "eeTranslationLabel": "התרגום שלך לאיטלקית",
+  "eeTranslationHint": "כתוב את התרגום שלך כאן...",
+  "eeCheck": "בדוק",
+  "eeCorrection": "תיקון",
+  "eeYourAnswer": "התשובה שלך",
+  "coTitle": "CO - הבנת הנשמע",
+  "coIntro": "האזן לתחנות רדיו איטלקיות כדי לשפר את הבנת הנשמע שלך",
+  "coLive": "בשידור חי:",
+  "coStopped": "{station} נעצרה",
+  "coConnecting": "מתחבר ל-{station}...",
+  "coPlay": "נגן",
+  "coStop": "עצור",
+  "eoTitle": "EO - הבעה בעל פה",
+  "eoChooseLevel": "בחר את הרמה",
+  "eoLevel": "רמה {level}",
+  "eoNoQuestion": "אין שאלה זמינה",
+  "eoQuestion": "שאלה",
+  "eoHint": "רמז",
+  "eoClickHint": "לחץ לקבלת רמז",
+  "eoAnswerHint": "רמז לתשובה",
+  "eoClickAnswerHint": "לחץ לקבלת רמז לתשובה",
+  "eoTimer": "טיימר",
+  "eoTotal": "סך הכל",
+  "eoSpeech": "דיבור",
+  "eoHesitation": "היסוס",
+  "eoStart": "התחל",
+  "eoStop": "עצור",
+  "eoReset": "איפוס",
+  "eoModeFree": "מצב חופשי",
+  "eoModeFreeDescription": "התקדם מתי שתרצה, ללא עזרה.",
+  "eoModeEasy": "קל",
+  "eoModeEasyDescription": "ענה, הערך את עצמך וצפה ברמז לתשובה.",
+  "eoModeHard": "קשה",
+  "eoModeHardDescription": "טיימר, מעקב אחר היסוסים והערכה עצמית.",
+  "eoLevelChip": "רמה {level}",
+  "eoSelfEvaluation": "הערכה עצמית",
+  "eoExcellent": "מצוין",
+  "eoGood": "טוב",
+  "eoAverage": "בינוני",
+  "eoDifficult": "קשה",
+  "eoNextQuestion": "השאלה הבאה",
+  "numDateTitle": "מספרים ותאריכים",
+  "numDateNumbersTab": "מספרים",
+  "numDateDatesTab": "תאריכים",
+  "numDateTimeTab": "שעה",
+  "numDatePreviewNumberTitle": "בחר מספר לתצוגה מקדימה",
+  "numDatePreviewNumberSubtitle": "ערך זה משמש רק להמרה מהירה.",
+  "numDatePreviewNumberLabel": "מספר תצוגה מקדימה",
+  "numDatePositiveInteger": "הזן מספר שלם חיובי כדי להתחיל.",
+  "numDateTraining": "תרגול",
+  "numDateTrainingNumberSubtitle": "בחר מספר אחר כדי לתרגל את כתיבתו במילים באיטלקית.",
+  "numDateTrainingNumberLabel": "מספר תרגול",
+  "numDateAnswerInWords": "התשובה שלך במילים",
+  "numDateCheck": "בדוק",
+  "numDateClear": "נקה",
+  "numDatePreviewDateTitle": "בחר תאריך לתצוגה מקדימה",
+  "numDatePreviewDateSubtitle": "תאריך זה משמש רק כהתייחסות מהירה.",
+  "numDateToday": "היום",
+  "numDateTrainingDateSubtitle": "בחר תאריך אחר כדי לתרגל את כתיבתו במילים באיטלקית.",
+  "numDateExpectedDay": "יום צפוי: {day}",
+  "numDatePreviewTimeTitle": "בחר שעה לתצוגה מקדימה",
+  "numDatePreviewTimeSubtitle": "שעה זו משמשת רק לקריאה מהירה.",
+  "numDateTrainingTimeSubtitle": "בחר שעה אחרת לתרגול, במיוחד רבעי שעה.",
+  "numDateDefinedTime": "שעה מוגדרת:",
+  "answerCorrect": "תשובה נכונה.",
+  "answerIncorrect": "תשובה לא נכונה.",
+  "answerYourAnswer": "התשובה שלך: {answer}",
+  "answerExpected": "תשובה נכונה: {answer}",
+  "conjugationTitle": "נטיית פעלים",
+  "conjugationRegular": "רגילים",
+  "conjugationSemiRegular": "חצי רגילים",
+  "conjugationIrregular": "חריגים",
+  "conjugationClearFilters": "נקה את כל המסננים",
+  "conjugationChooseVerb": "בחר פועל",
+  "conjugationRandomVerb": "פועל אקראי",
+  "conjugationHideBaseVerb": "הסתר פועל בסיס",
+  "conjugationChooseMood": "בחר אופן (Mood)",
+  "conjugationChooseTense": "בחר זמן",
+  "conjugationVerb": "פועל: {verb}",
+  "conjugationTranslation": "תרגום: {translation}",
+  "conjugationMood": "אופן: {mood}",
+  "conjugationTense": "זמן: {tense}",
+  "conjugationLoadingError": "שגיאת טעינה: {error}",
+  "profileLanguage": "שפת הממשק",
+  "profileUserName": "שם משתמש",
+  "profileAbout": "על האפליקציה",
+  "profileAboutDescription": "Parlami עוזר לך ללמוד איטלקית.",
+  "profileTheme": "ערכת נושא",
+  "profileThemeDescription": "מעבר בין מצב בהיר לכהה",
+  "themeSystem": "ערכת נושא של המערכת",
+  "themeLight": "ערכת נושא בהירה",
+  "themeDark": "ערכת נושא כהה",
+  "vocabTitle": "אוצר מילים",
+  "vocabReview": "חזרה",
+  "vocabCatalog": "קטלוג",
+  "vocabAdd": "הוספה",
+  "vocabImport": "ייבוא מילים",
+  "vocabExport": "ייצוא המילים שלי",
+  "vocabResetCatalog": "איפוס הקטלוג המקורי",
+  "vocabSelect": "בחר",
+  "vocabSave": "שמור מילה",
+  "vocabChooseCategories": "בחר קטגוריות מילים",
+  "vocabPasteJson": "הדבק רשימת JSON של מילים. פורמט נתמך:",
+  "vocabCancel": "ביטול",
+  "vocabImportError": "ייבוא נכשל: {error}",
+  "vocabResetQuestion": "לאפס מילים מקוריות?",
+  "vocabResetDescription": "פעולה זו מאפסת מילים שיובאו ומחילה מחדש את הקטלוג המקורי. מילים שהמשתמש הוסיף נשמרות.",
+  "vocabDeleteQuestion": "למחוק מילה זו?",
+  "vocabDeleteDescription": "למחוק את \"{word}\" מהקטלוג?",
+  "vocabDelete": "מחק",
+  "vocabNoCategory": "לא נבחרה קטגוריה",
+  "vocabLoading": "טוען אוצר מילים...",
+  "vocabFields": "שדות לקסיקליים",
+  "vocabNoMatch": "אף מילה לא תואמת למסננים הנוכחיים.",
+  "vocabNoTrainingMatch": "אף מילה לא תואמת למסנני התרגול.",
+  "vocabTrainingWord": "מילת תרגול",
+  "vocabScore": "ציון {score}%",
+  "vocabBaseLanguage": "שפת בסיס: {language}",
+  "vocabHiddenAnswer": "תשובה מוסתרת.",
+  "vocabKnown": "ידועה",
+  "vocabUnknown": "לא ידועה",
+  "vocabNextWord": "מילה הבאה",
+  "vocabCategories": "קטגוריות: {categories}",
+  "vocabPreparing": "מכין מילות תרגול...",
+  "vocabPriority": "תעדוף מילים שטרם נלמדו",
+  "vocabPriorityDescription": "השבת כדי לערבב באופן אקראי.",
+  "vocabSelectedCount": "מילים שנבחרו: {count}",
+  "vocabClearAll": "נקה הכל",
+  "vocabConfirm": "אישור",
+  "conjugationCheck": "בדוק",
+  "conjugationNextVerb": "הפועל הבא",
+  "eeNextSentence": "המשפט הבא",
+  "eeNoSentence": "אין משפט זמין",
+  "ceLevel": "רמה: {level}",
+  "sampleItems": "פריטים לדוגמה",
+  "sampleItemDetails": "פרטי פריט",
+  "sampleMoreInformation": "מידע נוסף כאן",
+  "sampleItem": "פריט לדוגמה {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + תרבות",
+  "evaluateScenarioSpeed": "CO + EO + מהירות",
+  "conjugationAnswerLabel": "התשובה שלך",
+  "vocabWords": "מילים",
+  "vocabAverageMastery": "שליטה ממוצעת",
+  "vocabMode": "מצב",
+  "vocabMastery": "שליטה",
+  "vocabRandom": "אקראי",
+  "vocabSearchWord": "חפש מילה",
+  "vocabBaseLanguageDisplay": "הצג שפת בסיס",
+  "vocabDifficulty": "קושי",
+  "vocabPartOfSpeech": "חלק דיבר",
+  "vocabChooseFilterCategories": "בחר קטגוריות סינון",
+  "vocabSearchTrainingWord": "חפש מילה",
+  "vocabTrainingBaseLanguage": "שפת בסיס לתרגול",
+  "vocabFilters": "מסננים",
+  "vocabChooseTrainingCategories": "בחר קטגוריות תרגול",
+  "vocabItalianWord": "מילה באיטלקית",
+  "vocabFrenchTranslation": "תרגום (שפת בסיס)",
+  "vocabOptionalArticle": "תווית בחירה (il, la, l', וכו')",
+  "vocabCategoriesTitle": "קטגוריות",
+  "vocabSearchCategory": "חפש קטגוריה",
+  "vocabAddCategory": "הוסף \"{category}\"",
+  "vocabDeleteFromCatalog": "מחק מהקטלוג",
+  "vocabHideAnswer": "הסתר תשובה",
+  "vocabShowAnswer": "הצג תשובה",
+  "vocabStatusSaved": "מילה נשמרה וזמינה במסננים.",
+  "vocabStatusImport": "הייבוא הושלם: {count} מילים נוספו.",
+  "vocabStatusExport": "הייצוא הושלם: {location}",
+  "vocabStatusNoExport": "אין מילות משתמש לייצוא.",
+  "vocabStatusReset": "הקטלוג המקורי אופס.",
+  "vocabStatusDeleted": "המילה הוסרה מהקטלוג.",
+  "vocabStatusKnown": "ידוע היטב.",
+  "vocabStatusReview": "לחזור בקרוב.",
+  "vocabItalian": "איטלקית",
+  "vocabFrench": "צרפתית",
+  "vocabSourceOriginal": "מקורי",
+  "vocabSourceUser": "משתמש",
+  "vocabNoun": "שם עצם",
+  "vocabVerb": "פועל",
+  "vocabAdjective": "שם תואר",
+  "vocabAdverb": "תואר הפועל",
+  "vocabPronoun": "כינוי גוף",
+  "vocabDeterminer": "מיידע",
+  "vocabPreposition": "מילת יחס",
+  "vocabConjunction": "מילת חיבור",
+  "vocabInterjection": "מילת קריאה",
+  "vocabExpression": "ביטוי",
+  "vocabOther": "אחר",
+  "profileDonate": "תרומה",
+  "profileDonateDescription": "תודה על תמיכתך",
+  "profilePrivacy": "מדיניות פרטיות",
+  "profilePrivacyDescription": "פתח את מדיניות הפרטיות",
+  "unavailable": "התכונה עדיין אינה זמינה.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

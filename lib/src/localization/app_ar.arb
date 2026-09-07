@@ -1,0 +1,386 @@
+{
+  "appTitle": "Parlami",
+  "navLearn": "تعلّم",
+  "navTrain": "تدرّب",
+  "navEvaluate": "اختبر نفسك",
+  "navResults": "النتائج",
+  "navProfile": "الملف الشخصي",
+  "learnConjugation": "تصريف الأفعال",
+  "learnConjugationDescription": "تدرّب على تصريف الأفعال",
+  "learnVocabulary": "المفردات",
+  "learnVocabularyDescription": "حسب الموضوع والمستوى",
+  "learnNumbersDates": "الأرقام والتواريخ",
+  "learnNumbersDatesDescription": "كتابة الأرقام والتواريخ",
+  "learnGrammar": "القواعد",
+  "learnGrammarDescription": "ملاحظات الدورة",
+  "learnSpelling": "التهجئة",
+  "learnSpellingDescription": "قريباً",
+  "trainOralExpression": "EO - التعبير الشفهي",
+  "trainOralExpressionDescription": "أجب بصوت عالٍ",
+  "trainOralComprehension": "CO - الفهم الشفوي",
+  "trainOralComprehensionDescription": "استمع إلى محطات الراديو",
+  "trainWrittenComprehension": "CE - الفهم الكتابي",
+  "trainWrittenComprehensionDescription": "اقرأ الأخبار الإيطالية",
+  "trainWrittenExpression": "EE - التعبير الكتابي",
+  "trainWrittenExpressionDescription": "ترجمة الجمل",
+  "evaluateTitle": "اختبر نفسك - مواقف واقعية",
+  "evaluateIntro": "اجمع بين مهارات متعددة لمحاكاة مواقف الحياة الواقعية.",
+  "evaluateProgression": "التعلم يبني الأسس. التدريب يركز على مهارات محددة. الاختبار يقيس مدى إتقانك العام.",
+  "scenarioDailyConversation": "محادثة يومية",
+  "scenarioArticleSummary": "ملخص مقال",
+  "scenarioMatchDebrief": "تحليل مباراة",
+  "scenarioQuickDiscussion": "نقاش سريع",
+  "scenarioDailyConversationDetails": "استمع، افهم، ثم أجب بشكل طبيعي.",
+  "scenarioArticleSummaryDetails": "اقرأ نصاً، ثم قدم ملخصاً واضحاً ومنظماً.",
+  "scenarioMatchDebriefDetails": "تحدث عن مباراة باستخدام المفردات والمراجع الثقافية.",
+  "scenarioQuickDiscussionDetails": "تفاعل بسرعة في حوار ديناميكي بوقت محدد.",
+  "resultsComingSoon": "مخططات الأداء قريباً",
+  "grammarTitle": "القواعد",
+  "grammarComingSoon": "ملاحظات القواعد - المحتوى قريباً.\n\nأضف ملاحظات كصفحات أو Markdown.",
+  "spellingTitle": "التهجئة",
+  "spellingComingSoon": "وحدة التهجئة - قريباً.",
+  "ceTitle": "CE - الفهم الكتابي",
+  "ceIntro": "اقرأ مقالات إيطالية لتحسين فهمك الكتابي",
+  "ceAdviceTitle": "نصيحة",
+  "ceAdvice": "ابدأ بالمقالات القصيرة. اقرأ أولاً للفهم العام، ثم أعد القراءة للتفاصيل.",
+  "ceOpenSource": "افتح موقع المصدر",
+  "eeTitle": "EE - التعبير الكتابي",
+  "eePrompt": "ترجم الجملة التالية إلى الإيطالية",
+  "eeTranslationLabel": "ترجمتك إلى الإيطالية",
+  "eeTranslationHint": "اكتب ترجمتك هنا...",
+  "eeCheck": "تحقق",
+  "eeCorrection": "التصحيح",
+  "eeYourAnswer": "إجابتك",
+  "coTitle": "CO - الفهم الشفوي",
+  "coIntro": "استمع إلى محطات الراديو الإيطالية لتحسين فهمك الشفهي",
+  "coLive": "مباشر:",
+  "coStopped": "تم إيقاف {station}",
+  "coConnecting": "جارٍ الاتصال بـ {station}...",
+  "coPlay": "تشغيل",
+  "coStop": "إيقاف",
+  "eoTitle": "EO - التعبير الشفهي",
+  "eoChooseLevel": "اختر المستوى",
+  "eoLevel": "المستوى {level}",
+  "eoNoQuestion": "لا توجد أسئلة متاحة",
+  "eoQuestion": "سؤال",
+  "eoHint": "تلميح",
+  "eoClickHint": "انقر للحصول على تلميح",
+  "eoAnswerHint": "دليل الإجابة",
+  "eoClickAnswerHint": "انقر للحصول على دليل الإجابة",
+  "eoTimer": "المؤقت",
+  "eoTotal": "المجموع",
+  "eoSpeech": "التحدث",
+  "eoHesitation": "التردد",
+  "eoStart": "ابدأ",
+  "eoStop": "إيقاف",
+  "eoReset": "إعادة ضبط",
+  "eoModeFree": "الوضع الحر",
+  "eoModeFreeDescription": "تقدم متى شئت، دون مساعدة.",
+  "eoModeEasy": "سهل",
+  "eoModeEasyDescription": "أجب، قيّم نفسك، وشاهد دليل الإجابة.",
+  "eoModeHard": "صعب",
+  "eoModeHardDescription": "المؤقت، تتبع التردد، والتقييم الذاتي.",
+  "eoLevelChip": "المستوى {level}",
+  "eoSelfEvaluation": "التقييم الذاتي",
+  "eoExcellent": "ممتاز",
+  "eoGood": "جيد",
+  "eoAverage": "متوسط",
+  "eoDifficult": "صعب",
+  "eoNextQuestion": "السؤال التالي",
+  "numDateTitle": "الأرقام والتواريخ",
+  "numDateNumbersTab": "الأرقام",
+  "numDateDatesTab": "التواريخ",
+  "numDateTimeTab": "الوقت",
+  "numDatePreviewNumberTitle": "اختر رقماً للمعاينة",
+  "numDatePreviewNumberSubtitle": "تستخدم هذه القيمة للتحويل السريع فقط.",
+  "numDatePreviewNumberLabel": "رقم المعاينة",
+  "numDatePositiveInteger": "أدخل عدداً صحيحاً موجباً للبدء.",
+  "numDateTraining": "تدرّب",
+  "numDateTrainingNumberSubtitle": "اختر رقماً آخر للتدرب على كتابته بالكلمات الإيطالية.",
+  "numDateTrainingNumberLabel": "رقم التدريب",
+  "numDateAnswerInWords": "إجابتك بالكلمات",
+  "numDateCheck": "تحقق",
+  "numDateClear": "مسح",
+  "numDatePreviewDateTitle": "اختر تاريخاً للمعاينة",
+  "numDatePreviewDateSubtitle": "يستخدم هذا التاريخ كمرجع سريع فقط.",
+  "numDateToday": "اليوم",
+  "numDateTrainingDateSubtitle": "اختر تاريخاً آخر للتدرب على كتابته بالكلمات الإيطالية.",
+  "numDateExpectedDay": "اليوم المتوقع: {day}",
+  "numDatePreviewTimeTitle": "اختر وقتاً للمعاينة",
+  "numDatePreviewTimeSubtitle": "يستخدم هذا الوقت للقراءة السريعة فقط.",
+  "numDateTrainingTimeSubtitle": "اختر وقتاً آخر للتدرب، خاصة أرباع الساعة.",
+  "numDateDefinedTime": "الوقت المحدد:",
+  "answerCorrect": "إجابة صحيحة.",
+  "answerIncorrect": "إجابة غير صحيحة.",
+  "answerYourAnswer": "إجابتك: {answer}",
+  "answerExpected": "الإجابة الصحيحة: {answer}",
+  "conjugationTitle": "تصريف الأفعال",
+  "conjugationRegular": "منتظمة",
+  "conjugationSemiRegular": "شبه منتظمة",
+  "conjugationIrregular": "غير منتظمة",
+  "conjugationClearFilters": "مسح جميع الفلاتر",
+  "conjugationChooseVerb": "اختر فعلاً",
+  "conjugationRandomVerb": "فعل عشوائي",
+  "conjugationHideBaseVerb": "إخفاء الفعل الأساسي",
+  "conjugationChooseMood": "اختر الصيغة",
+  "conjugationChooseTense": "اختر الزمن",
+  "conjugationVerb": "الفعل: {verb}",
+  "conjugationTranslation": "الترجمة: {translation}",
+  "conjugationMood": "الصيغة: {mood}",
+  "conjugationTense": "الزمن: {tense}",
+  "conjugationLoadingError": "خطأ في التحميل: {error}",
+  "profileLanguage": "لغة الواجهة",
+  "profileUserName": "اسم المستخدم",
+  "profileAbout": "عن التطبيق",
+  "profileAboutDescription": "يساعدك Parlami على تعلم الإيطالية.",
+  "profileTheme": "المظهر",
+  "profileThemeDescription": "التبديل بين الوضع الفاتح والداكن",
+  "themeSystem": "مظهر النظام",
+  "themeLight": "مظهر فاتح",
+  "themeDark": "مظهر داكن",
+  "vocabTitle": "المفردات",
+  "vocabReview": "مراجعة",
+  "vocabCatalog": "الكتالوج",
+  "vocabAdd": "إضافة",
+  "vocabImport": "استيراد الكلمات",
+  "vocabExport": "تصدير كلماتي",
+  "vocabResetCatalog": "إعادة تعيين الكتالوج الأصلي",
+  "vocabSelect": "تحديد",
+  "vocabSave": "حفظ الكلمة",
+  "vocabChooseCategories": "اختر فئات الكلمة",
+  "vocabPasteJson": "الصق قائمة JSON للكلمات. التنسيق المقبول:",
+  "vocabCancel": "إلغاء",
+  "vocabImportError": "فشل الاستيراد: {error}",
+  "vocabResetQuestion": "إعادة تعيين الكلمات الأصلية؟",
+  "vocabResetDescription": "سيؤدي هذا إلى إعادة تعيين الكلمات المستوردة وتطبيق الكتالوج الأصلي. يتم الاحتفاظ بكلمات المستخدم.",
+  "vocabDeleteQuestion": "حذف هذه الكلمة؟",
+  "vocabDeleteDescription": "هل تريد حذف \"{word}\" من الكتالوج؟",
+  "vocabDelete": "حذف",
+  "vocabNoCategory": "لم يتم تحديد فئة",
+  "vocabLoading": "جارٍ تحميل المفردات...",
+  "vocabFields": "الحقول المعجمية",
+  "vocabNoMatch": "لا توجد كلمة تطابق الفلاتر الحالية.",
+  "vocabNoTrainingMatch": "لا توجد كلمة تطابق فلاتر التدريب.",
+  "vocabTrainingWord": "كلمة التدريب",
+  "vocabScore": "النتيجة {score}%",
+  "vocabBaseLanguage": "اللغة الأساسية: {language}",
+  "vocabHiddenAnswer": "الإجابة مخفية.",
+  "vocabKnown": "معروفة",
+  "vocabUnknown": "غير معروفة",
+  "vocabNextWord": "الكلمة التالية",
+  "vocabCategories": "الفئات: {categories}",
+  "vocabPreparing": "جارٍ إعداد كلمات التدريب...",
+  "vocabPriority": "إعطاء الأولوية للكلمات غير المتقنة",
+  "vocabPriorityDescription": "قم بتعطيله للخلط العشوائي.",
+  "vocabSelectedCount": "الكلمات المحددة: {count}",
+  "vocabClearAll": "مسح الكل",
+  "vocabConfirm": "تأكيد",
+  "conjugationCheck": "تحقق",
+  "conjugationNextVerb": "الفعل التالي",
+  "eeNextSentence": "الجملة التالية",
+  "eeNoSentence": "لا توجد جملة متاحة",
+  "ceLevel": "المستوى: {level}",
+  "sampleItems": "عناصر نموذجية",
+  "sampleItemDetails": "تفاصيل العنصر",
+  "sampleMoreInformation": "مزيد من المعلومات هنا",
+  "sampleItem": "عنصر نموذجي {id}",
+  "evaluateScenarioOral": "CO + EO",
+  "evaluateScenarioWritten": "CE + EE",
+  "evaluateScenarioCulture": "EO + ثقافة",
+  "evaluateScenarioSpeed": "CO + EO + سرعة",
+  "conjugationAnswerLabel": "إجابتك",
+  "vocabWords": "الكلمات",
+  "vocabAverageMastery": "متوسط الإتقان",
+  "vocabMode": "الوضع",
+  "vocabMastery": "الإتقان",
+  "vocabRandom": "عشوائي",
+  "vocabSearchWord": "ابحث عن كلمة",
+  "vocabBaseLanguageDisplay": "عرض اللغة الأساسية",
+  "vocabDifficulty": "الصعوبة",
+  "vocabPartOfSpeech": "جزء من الكلام",
+  "vocabChooseFilterCategories": "اختر فئات الفلتر",
+  "vocabSearchTrainingWord": "ابحث عن كلمة",
+  "vocabTrainingBaseLanguage": "لغة التدريب الأساسية",
+  "vocabFilters": "الفلاتر",
+  "vocabChooseTrainingCategories": "اختر فئات التدريب",
+  "vocabItalianWord": "كلمة إيطالية",
+  "vocabFrenchTranslation": "الترجمة (اللغة الأساسية)",
+  "vocabOptionalArticle": "أداة اختيارية (il, la, l', إلخ)",
+  "vocabCategoriesTitle": "الفئات",
+  "vocabSearchCategory": "ابحث عن فئة",
+  "vocabAddCategory": "إضافة \"{category}\"",
+  "vocabDeleteFromCatalog": "حذف من الكتالوج",
+  "vocabHideAnswer": "إخفاء الإجابة",
+  "vocabShowAnswer": "إظهار الإجابة",
+  "vocabStatusSaved": "تم حفظ الكلمة وهي متاحة في الفلاتر.",
+  "vocabStatusImport": "اكتمل الاستيراد: تمت إضافة {count} كلمة/كلمات.",
+  "vocabStatusExport": "اكتمل التصدير: {location}",
+  "vocabStatusNoExport": "لا توجد كلمات مستخدم للتصدير.",
+  "vocabStatusReset": "تمت إعادة تعيين الكتالوج الأصلي.",
+  "vocabStatusDeleted": "تمت إزالة الكلمة من الكتالوج.",
+  "vocabStatusKnown": "تمت الملاحظة.",
+  "vocabStatusReview": "راجعها قريباً.",
+  "vocabItalian": "الإيطالية",
+  "vocabFrench": "الفرنسية",
+  "vocabSourceOriginal": "أصلي",
+  "vocabSourceUser": "مستخدم",
+  "vocabNoun": "اسم",
+  "vocabVerb": "فعل",
+  "vocabAdjective": "صفة",
+  "vocabAdverb": "ظرف",
+  "vocabPronoun": "ضمير",
+  "vocabDeterminer": "محدد",
+  "vocabPreposition": "حرف جر",
+  "vocabConjunction": "حرف عطف",
+  "vocabInterjection": "صيغة تعجب",
+  "vocabExpression": "تعبير",
+  "vocabOther": "أخرى",
+  "profileDonate": "تبرع",
+  "profileDonateDescription": "شكراً لدعمك",
+  "profilePrivacy": "سياسة الخصوصية",
+  "profilePrivacyDescription": "افتح سياسة الخصوصية",
+  "unavailable": "الميزة غير متاحة بعد.",
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
