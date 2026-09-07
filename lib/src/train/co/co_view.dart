@@ -8,13 +8,13 @@ import '../../services/radio_player_service.dart';
 class RadioStation {
   final String name;
   final String streamUrl;
-  final String description;
+  final String descriptionKey;
   final String region;
 
   const RadioStation({
     required this.name,
     required this.streamUrl,
-    required this.description,
+    required this.descriptionKey,
     required this.region,
   });
 }
@@ -34,37 +34,37 @@ class _COViewState extends State<COView> {
     RadioStation(
       name: 'Radio RAI 1',
       streamUrl: 'https://icestreaming.rai.it/1.mp3',
-      description: 'Radio généraliste italienne',
+      descriptionKey: 'coRadioGeneral',
       region: 'National',
     ),
     RadioStation(
       name: 'Radio RAI 2',
       streamUrl: 'https://icestreaming.rai.it/2.mp3',
-      description: 'Musique et divertissement',
+      descriptionKey: 'coMusicEntertainment',
       region: 'National',
     ),
     RadioStation(
       name: 'Radio RAI 3',
       streamUrl: 'https://icestreaming.rai.it/3.mp3',
-      description: 'Culture et actualités',
+      descriptionKey: 'coCultureNews',
       region: 'National',
     ),
     RadioStation(
       name: 'RDS',
       streamUrl: 'https://icstream.rds.radio/rds',
-      description: 'Musique pop et actualités',
+      descriptionKey: 'coPopNews',
       region: 'National',
     ),
     RadioStation(
       name: 'Radio 105',
       streamUrl: 'https://icy.unitedradio.it/Radio105.mp3',
-      description: 'Musique et divertissement',
+      descriptionKey: 'coMusicEntertainment',
       region: 'National',
     ),
     RadioStation(
       name: 'RTL 102.5',
       streamUrl: 'https://streamingv2.shoutcast.com/rtl-1025',
-      description: 'Actualités et musique',
+      descriptionKey: 'coRadioNewsMusic',
       region: 'National',
     ),
   ];
@@ -130,7 +130,6 @@ class _COViewState extends State<COView> {
               ],
             ),
           ),
-          _buildPlayerBar(),
         ],
       ),
     );
@@ -151,19 +150,19 @@ class _COViewState extends State<COView> {
               ),
             ),
             title: Text(station.name),
-            subtitle: Text('${station.description}\n${station.region}'),
+            subtitle: Text(
+              '${_descriptionFor(station, AppLocalizations.of(context)!)}\n${AppLocalizations.of(context)!.coNational}',
+            ),
             isThreeLine: true,
             trailing: StreamBuilder<bool>(
               stream: _radioPlayerService.isPlayingStream,
               builder: (context, snapshot) {
                 final isPlaying = snapshot.data ?? false;
                 return IconButton(
-                  icon: Icon(
-                    isCurrentStation && isPlaying ? Icons.radio_button_checked : Icons.play_arrow,
-                  ),
+                  icon: Icon(isCurrentStation && isPlaying ? Icons.pause : Icons.play_arrow),
                   tooltip: isCurrentStation && isPlaying
-                      ? AppLocalizations.of(context)!.coStop
-                      : AppLocalizations.of(context)!.coPlay,
+                      ? AppLocalizations.of(context)!.coPause
+                      : AppLocalizations.of(context)!.coResume,
                   onPressed: () => _toggleStation(station),
                 );
               },
@@ -174,78 +173,14 @@ class _COViewState extends State<COView> {
     );
   }
 
-  Widget _buildPlayerBar() {
-    return StreamBuilder<String?>(
-      stream: _radioPlayerService.currentStationStream,
-      builder: (context, snapshot) {
-        final stationName = snapshot.data;
-        if (stationName == null) return const SizedBox.shrink();
-
-        return Container(
-          decoration: BoxDecoration(
-            color: Colors.red[600],
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.3),
-                blurRadius: 4,
-                offset: const Offset(0, -2),
-              ),
-            ],
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      AppLocalizations.of(context)!.coLive,
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 12,
-                      ),
-                    ),
-                    Text(
-                      stationName,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 16),
-              StreamBuilder<bool>(
-                stream: _radioPlayerService.isPlayingStream,
-                builder: (context, snapshot) {
-                  final isPlaying = snapshot.data ?? false;
-                  return IconButton(
-                    icon: Icon(
-                      isPlaying ? Icons.stop_circle : Icons.play_circle,
-                      color: Colors.white,
-                      size: 32,
-                    ),
-                    tooltip: isPlaying ? AppLocalizations.of(context)!.coStop : AppLocalizations.of(context)!.coPlay,
-                    onPressed: () {
-                      final selected = stations.firstWhere(
-                        (station) => station.name == stationName,
-                        orElse: () => stations.first,
-                      );
-                      _toggleStation(selected);
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
-        );
-      },
-    );
+  String _descriptionFor(RadioStation station, AppLocalizations l10n) {
+    return switch (station.descriptionKey) {
+      'coRadioGeneral' => l10n.coRadioGeneral,
+      'coMusicEntertainment' => l10n.coMusicEntertainment,
+      'coCultureNews' => l10n.coCultureNews,
+      'coPopNews' => l10n.coPopNews,
+      'coRadioNewsMusic' => l10n.coRadioNewsMusic,
+      _ => station.descriptionKey,
+    };
   }
 }

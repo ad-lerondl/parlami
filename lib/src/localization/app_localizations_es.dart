@@ -200,6 +200,49 @@ class AppLocalizationsEs extends AppLocalizations {
   String get coStop => 'Detener';
 
   @override
+  String get coPause => 'Pausa';
+
+  @override
+  String get coResume => 'Reanudar';
+
+  @override
+  String get coRadioGeneral => 'Radio generalista italiana';
+
+  @override
+  String get coMusicEntertainment => 'Música y entretenimiento';
+
+  @override
+  String get coCultureNews => 'Cultura y noticias';
+
+  @override
+  String get coPopNews => 'Música pop y noticias';
+
+  @override
+  String get coRadioNewsMusic => 'Noticias y música';
+
+  @override
+  String get coNational => 'Nacional';
+
+  @override
+  String get ceAnsaDescription =>
+      'Agencia de noticias italiana - artículos breves';
+
+  @override
+  String get ceRepubblicaDescription => 'Gran diario nacional italiano';
+
+  @override
+  String get ceCorriereDescription => 'Periódico de referencia';
+
+  @override
+  String get ceIlPostDescription => 'Noticias y análisis';
+
+  @override
+  String get ceRaiDescription => 'Noticias de la RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'Noticias en italiano fácil';
+
+  @override
   String get eoTitle => 'EO - Expresión oral';
 
   @override
@@ -397,6 +440,32 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Irregulares';
+
+  @override
+  String get conjugationPronominal => 'Pronominales';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Grupo $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Auxiliar $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Mostrar';
+
+  @override
+  String get conjugationHideAnswers => 'Ocultar';
+
+  @override
+  String get conjugationNonPronominal => 'No pronominales';
+
+  @override
+  String get conjugationDetailsVisibility =>
+      'Mostrar características del verbo';
 
   @override
   String get conjugationClearFilters => 'Borrar todos los filtros';

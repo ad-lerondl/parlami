@@ -58,6 +58,20 @@
   "coConnecting": "Ansluter till {station}...",
   "coPlay": "Spela",
   "coStop": "Stopp",
+  "coPause": "Pausa",
+  "coResume": "Återuppta",
+  "coRadioGeneral": "Italiensk allmänradio",
+  "coMusicEntertainment": "Musik och underhållning",
+  "coCultureNews": "Kultur och nyheter",
+  "coPopNews": "Popmusik och nyheter",
+  "coRadioNewsMusic": "Nyheter och musik",
+  "coNational": "Nationell",
+  "ceAnsaDescription": "Italiensk nyhetsbyrå – korta artiklar",
+  "ceRepubblicaDescription": "Stor italiensk dagstidning",
+  "ceCorriereDescription": "Ledande referenstidning",
+  "ceIlPostDescription": "Nyheter och analyser",
+  "ceRaiDescription": "RAI-nyheter",
+  "ceEasyItalianDescription": "Nyheter på lätt italienska",
   "eoTitle": "EO - Muntligt uttryck",
   "eoChooseLevel": "Välj nivå",
   "eoLevel": "Nivå {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Regelbundna",
   "conjugationSemiRegular": "Halvregelbundna",
   "conjugationIrregular": "Oregelbundna",
+  "conjugationPronominal": "Pronominala",
+  "conjugationGroup": "Grupp {group}",
+  "conjugationAuxiliary": "Hjälpverb {auxiliary}",
+  "conjugationShowAnswers": "Visa",
+  "conjugationHideAnswers": "Dölj",
+  "conjugationNonPronominal": "Icke-pronominala",
+  "conjugationDetailsVisibility": "Visa verbets egenskaper",
   "conjugationClearFilters": "Rensa alla filter",
   "conjugationChooseVerb": "Välj ett verb",
   "conjugationRandomVerb": "Slumpmässigt verb",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

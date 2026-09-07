@@ -1,14 +1,24 @@
 class VerbConjugation {
   final String infinitive;
-  final String? translation;
+  final Map<String, String> translations;
+  final int group;
+  final bool regular;
+  final bool pronominal;
+  final String? auxiliary;
   // mood -> tense -> person -> form
   final Map<String, Map<String, Map<String, String>>> conjugations;
 
   const VerbConjugation({
     required this.infinitive,
-    this.translation,
+    this.translations = const {},
+    this.group = 0,
+    this.regular = false,
+    this.pronominal = false,
+    this.auxiliary,
     required this.conjugations,
   });
+
+  String? translationFor(String languageCode) => translations[languageCode];
 
   factory VerbConjugation.fromJson(Map<String, dynamic> json) {
     final Map<String, Map<String, Map<String, String>>> conj = {};
@@ -36,10 +46,27 @@ class VerbConjugation {
       });
       conj[mood] = moodMap;
     });
+    final rawTranslations = json['translations'];
+    final translations = rawTranslations is Map
+        ? rawTranslations.map((key, value) => MapEntry(key.toString(), value.toString()))
+        : const <String, String>{};
     return VerbConjugation(
       infinitive: json['infinitive'] as String,
-      translation: json['translation'] as String?,
+      translations: translations,
+      group: (json['group'] as num?)?.toInt() ?? 0,
+      regular: json['regular'] as bool? ?? false,
+      pronominal: json['pronominal'] as bool? ?? false,
+      auxiliary: json['auxiliary'] as String?,
       conjugations: conj,
     );
   }
 }
+
+bool matchesConjugationAnswer(String input, String expected) {
+  final expectedForms = _splitAcceptedForms(expected);
+  final enteredForms = _splitAcceptedForms(input);
+  return enteredForms.isNotEmpty && enteredForms.every(expectedForms.contains);
+}
+
+Set<String> _splitAcceptedForms(String value) =>
+    value.split(RegExp(r'[,/]')).map((form) => form.trim().toLowerCase()).where((form) => form.isNotEmpty).toSet();

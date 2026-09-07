@@ -58,6 +58,20 @@
   "coConnecting": "Łączenie z {station}...",
   "coPlay": "Odtwarzaj",
   "coStop": "Zatrzymaj",
+  "coPause": "Pauza",
+  "coResume": "Wznów",
+  "coRadioGeneral": "Włoskie radio ogólnotematyczne",
+  "coMusicEntertainment": "Muzyka i rozrywka",
+  "coCultureNews": "Kultura i wiadomości",
+  "coPopNews": "Muzyka pop i wiadomości",
+  "coRadioNewsMusic": "Wiadomości i muzyka",
+  "coNational": "Ogólnokrajowe",
+  "ceAnsaDescription": "Włoska agencja prasowa – krótkie artykuły",
+  "ceRepubblicaDescription": "Duży włoski dziennik",
+  "ceCorriereDescription": "Wiodący dziennik opiniotwórczy",
+  "ceIlPostDescription": "Wiadomości i analizy",
+  "ceRaiDescription": "Wiadomości RAI",
+  "ceEasyItalianDescription": "Wiadomości w prostym włoskim",
   "eoTitle": "EO - Ekspresja ustna",
   "eoChooseLevel": "Wybierz poziom",
   "eoLevel": "Poziom {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Regularne",
   "conjugationSemiRegular": "Półregularne",
   "conjugationIrregular": "Nieregularne",
+  "conjugationPronominal": "Zaimkowe",
+  "conjugationGroup": "Grupa {group}",
+  "conjugationAuxiliary": "Czasownik posiłkowy {auxiliary}",
+  "conjugationShowAnswers": "Pokaż",
+  "conjugationHideAnswers": "Ukryj",
+  "conjugationNonPronominal": "Niezaimkowe",
+  "conjugationDetailsVisibility": "Pokaż cechy czasownika",
   "conjugationClearFilters": "Wyczyść wszystkie filtry",
   "conjugationChooseVerb": "Wybierz czasownik",
   "conjugationRandomVerb": "Losowy czasownik",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

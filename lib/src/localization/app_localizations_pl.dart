@@ -201,6 +201,48 @@ class AppLocalizationsPl extends AppLocalizations {
   String get coStop => 'Zatrzymaj';
 
   @override
+  String get coPause => 'Pauza';
+
+  @override
+  String get coResume => 'Wznów';
+
+  @override
+  String get coRadioGeneral => 'Włoskie radio ogólnotematyczne';
+
+  @override
+  String get coMusicEntertainment => 'Muzyka i rozrywka';
+
+  @override
+  String get coCultureNews => 'Kultura i wiadomości';
+
+  @override
+  String get coPopNews => 'Muzyka pop i wiadomości';
+
+  @override
+  String get coRadioNewsMusic => 'Wiadomości i muzyka';
+
+  @override
+  String get coNational => 'Ogólnokrajowe';
+
+  @override
+  String get ceAnsaDescription => 'Włoska agencja prasowa – krótkie artykuły';
+
+  @override
+  String get ceRepubblicaDescription => 'Duży włoski dziennik';
+
+  @override
+  String get ceCorriereDescription => 'Wiodący dziennik opiniotwórczy';
+
+  @override
+  String get ceIlPostDescription => 'Wiadomości i analizy';
+
+  @override
+  String get ceRaiDescription => 'Wiadomości RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'Wiadomości w prostym włoskim';
+
+  @override
   String get eoTitle => 'EO - Ekspresja ustna';
 
   @override
@@ -400,6 +442,31 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Nieregularne';
+
+  @override
+  String get conjugationPronominal => 'Zaimkowe';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Grupa $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Czasownik posiłkowy $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Pokaż';
+
+  @override
+  String get conjugationHideAnswers => 'Ukryj';
+
+  @override
+  String get conjugationNonPronominal => 'Niezaimkowe';
+
+  @override
+  String get conjugationDetailsVisibility => 'Pokaż cechy czasownika';
 
   @override
   String get conjugationClearFilters => 'Wyczyść wszystkie filtry';

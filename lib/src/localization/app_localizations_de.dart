@@ -201,6 +201,49 @@ class AppLocalizationsDe extends AppLocalizations {
   String get coStop => 'Stopp';
 
   @override
+  String get coPause => 'Pause';
+
+  @override
+  String get coResume => 'Fortsetzen';
+
+  @override
+  String get coRadioGeneral => 'Italienischer Vollprogramm-Radiosender';
+
+  @override
+  String get coMusicEntertainment => 'Musik und Unterhaltung';
+
+  @override
+  String get coCultureNews => 'Kultur und Nachrichten';
+
+  @override
+  String get coPopNews => 'Popmusik und Nachrichten';
+
+  @override
+  String get coRadioNewsMusic => 'Nachrichten und Musik';
+
+  @override
+  String get coNational => 'National';
+
+  @override
+  String get ceAnsaDescription =>
+      'Italienische Nachrichtenagentur – kurze Artikel';
+
+  @override
+  String get ceRepubblicaDescription => 'Große italienische Tageszeitung';
+
+  @override
+  String get ceCorriereDescription => 'Führende Referenzzeitung';
+
+  @override
+  String get ceIlPostDescription => 'Nachrichten und Analysen';
+
+  @override
+  String get ceRaiDescription => 'RAI-Nachrichten';
+
+  @override
+  String get ceEasyItalianDescription => 'Nachrichten in einfachem Italienisch';
+
+  @override
   String get eoTitle => 'EO - Mündlicher Ausdruck';
 
   @override
@@ -399,6 +442,31 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Unregelmäßig';
+
+  @override
+  String get conjugationPronominal => 'Pronominal';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Gruppe $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Hilfsverb $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Anzeigen';
+
+  @override
+  String get conjugationHideAnswers => 'Ausblenden';
+
+  @override
+  String get conjugationNonPronominal => 'Nicht-pronominal';
+
+  @override
+  String get conjugationDetailsVisibility => 'Verbmerkmale anzeigen';
 
   @override
   String get conjugationClearFilters => 'Alle Filter löschen';

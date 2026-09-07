@@ -201,6 +201,49 @@ class AppLocalizationsRu extends AppLocalizations {
   String get coStop => 'Стоп';
 
   @override
+  String get coPause => 'Пауза';
+
+  @override
+  String get coResume => 'Продолжить';
+
+  @override
+  String get coRadioGeneral => 'Итальянское радио широкого формата';
+
+  @override
+  String get coMusicEntertainment => 'Музыка и развлечения';
+
+  @override
+  String get coCultureNews => 'Культура и новости';
+
+  @override
+  String get coPopNews => 'Поп-музыка и новости';
+
+  @override
+  String get coRadioNewsMusic => 'Новости и музыка';
+
+  @override
+  String get coNational => 'Национальное';
+
+  @override
+  String get ceAnsaDescription =>
+      'Итальянское информационное агентство — короткие статьи';
+
+  @override
+  String get ceRepubblicaDescription => 'Крупная итальянская ежедневная газета';
+
+  @override
+  String get ceCorriereDescription => 'Авторитетное издание';
+
+  @override
+  String get ceIlPostDescription => 'Новости и аналитика';
+
+  @override
+  String get ceRaiDescription => 'Новости RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'Новости на простом итальянском';
+
+  @override
   String get eoTitle => 'EO - Устная речь';
 
   @override
@@ -399,6 +442,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Неправильные';
+
+  @override
+  String get conjugationPronominal => 'Местоименные';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Группа $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Вспомогательный глагол $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Показать';
+
+  @override
+  String get conjugationHideAnswers => 'Скрыть';
+
+  @override
+  String get conjugationNonPronominal => 'Неместоименные';
+
+  @override
+  String get conjugationDetailsVisibility => 'Показать характеристики глагола';
 
   @override
   String get conjugationClearFilters => 'Очистить все фильтры';

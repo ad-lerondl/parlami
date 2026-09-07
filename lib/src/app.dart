@@ -135,9 +135,16 @@ class _HomeShellState extends State<_HomeShell> {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.appTitle)),
-      body: Padding(
-        padding: const EdgeInsets.all(12),
-        child: _getPage(_index),
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: _getPage(_index),
+            ),
+          ),
+          _GlobalRadioControl(service: RadioPlayerService()),
+        ],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
@@ -150,6 +157,66 @@ class _HomeShellState extends State<_HomeShell> {
         ],
         onDestinationSelected: (i) => setState(() => _index = i),
       ),
+    );
+  }
+}
+
+class _GlobalRadioControl extends StatelessWidget {
+  const _GlobalRadioControl({required this.service});
+
+  final RadioPlayerService service;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return StreamBuilder<String?>(
+      stream: service.currentStationStream,
+      builder: (context, stationSnapshot) {
+        final station = stationSnapshot.data;
+        if (station == null) return const SizedBox.shrink();
+
+        return Material(
+          color: Theme.of(context).colorScheme.inverseSurface,
+          child: SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              child: Row(
+                children: [
+                  const Icon(Icons.radio, color: Colors.white),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      station,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  StreamBuilder<bool>(
+                    stream: service.isPlayingStream,
+                    builder: (context, playingSnapshot) {
+                      final isPlaying = playingSnapshot.data ?? false;
+                      return IconButton(
+                        tooltip: isPlaying ? l10n.coPause : l10n.coResume,
+                        color: Colors.white,
+                        icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                        onPressed: service.togglePlayback,
+                      );
+                    },
+                  ),
+                  IconButton(
+                    tooltip: l10n.coStop,
+                    color: Colors.white,
+                    icon: const Icon(Icons.stop),
+                    onPressed: service.stop,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

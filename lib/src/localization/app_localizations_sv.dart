@@ -200,6 +200,48 @@ class AppLocalizationsSv extends AppLocalizations {
   String get coStop => 'Stopp';
 
   @override
+  String get coPause => 'Pausa';
+
+  @override
+  String get coResume => 'Återuppta';
+
+  @override
+  String get coRadioGeneral => 'Italiensk allmänradio';
+
+  @override
+  String get coMusicEntertainment => 'Musik och underhållning';
+
+  @override
+  String get coCultureNews => 'Kultur och nyheter';
+
+  @override
+  String get coPopNews => 'Popmusik och nyheter';
+
+  @override
+  String get coRadioNewsMusic => 'Nyheter och musik';
+
+  @override
+  String get coNational => 'Nationell';
+
+  @override
+  String get ceAnsaDescription => 'Italiensk nyhetsbyrå – korta artiklar';
+
+  @override
+  String get ceRepubblicaDescription => 'Stor italiensk dagstidning';
+
+  @override
+  String get ceCorriereDescription => 'Ledande referenstidning';
+
+  @override
+  String get ceIlPostDescription => 'Nyheter och analyser';
+
+  @override
+  String get ceRaiDescription => 'RAI-nyheter';
+
+  @override
+  String get ceEasyItalianDescription => 'Nyheter på lätt italienska';
+
+  @override
   String get eoTitle => 'EO - Muntligt uttryck';
 
   @override
@@ -397,6 +439,31 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Oregelbundna';
+
+  @override
+  String get conjugationPronominal => 'Pronominala';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Grupp $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Hjälpverb $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Visa';
+
+  @override
+  String get conjugationHideAnswers => 'Dölj';
+
+  @override
+  String get conjugationNonPronominal => 'Icke-pronominala';
+
+  @override
+  String get conjugationDetailsVisibility => 'Visa verbets egenskaper';
 
   @override
   String get conjugationClearFilters => 'Rensa alla filter';

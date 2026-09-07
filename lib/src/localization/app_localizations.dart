@@ -474,6 +474,90 @@ abstract class AppLocalizations {
   /// **'Stop'**
   String get coStop;
 
+  /// No description provided for @coPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get coPause;
+
+  /// No description provided for @coResume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get coResume;
+
+  /// No description provided for @coRadioGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General-interest Italian radio'**
+  String get coRadioGeneral;
+
+  /// No description provided for @coMusicEntertainment.
+  ///
+  /// In en, this message translates to:
+  /// **'Music and entertainment'**
+  String get coMusicEntertainment;
+
+  /// No description provided for @coCultureNews.
+  ///
+  /// In en, this message translates to:
+  /// **'Culture and news'**
+  String get coCultureNews;
+
+  /// No description provided for @coPopNews.
+  ///
+  /// In en, this message translates to:
+  /// **'Pop music and news'**
+  String get coPopNews;
+
+  /// No description provided for @coRadioNewsMusic.
+  ///
+  /// In en, this message translates to:
+  /// **'News and music'**
+  String get coRadioNewsMusic;
+
+  /// No description provided for @coNational.
+  ///
+  /// In en, this message translates to:
+  /// **'National'**
+  String get coNational;
+
+  /// No description provided for @ceAnsaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Italian news agency - short articles'**
+  String get ceAnsaDescription;
+
+  /// No description provided for @ceRepubblicaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Major Italian daily newspaper'**
+  String get ceRepubblicaDescription;
+
+  /// No description provided for @ceCorriereDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Leading Italian newspaper of record'**
+  String get ceCorriereDescription;
+
+  /// No description provided for @ceIlPostDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'News and analysis'**
+  String get ceIlPostDescription;
+
+  /// No description provided for @ceRaiDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'RAI news'**
+  String get ceRaiDescription;
+
+  /// No description provided for @ceEasyItalianDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'News in easy Italian'**
+  String get ceEasyItalianDescription;
+
   /// No description provided for @eoTitle.
   ///
   /// In en, this message translates to:
@@ -833,6 +917,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Irregular'**
   String get conjugationIrregular;
+
+  /// No description provided for @conjugationPronominal.
+  ///
+  /// In en, this message translates to:
+  /// **'Pronominal'**
+  String get conjugationPronominal;
+
+  /// No description provided for @conjugationGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Group {group}'**
+  String conjugationGroup(Object group);
+
+  /// No description provided for @conjugationAuxiliary.
+  ///
+  /// In en, this message translates to:
+  /// **'Auxiliary {auxiliary}'**
+  String conjugationAuxiliary(Object auxiliary);
+
+  /// No description provided for @conjugationShowAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Show'**
+  String get conjugationShowAnswers;
+
+  /// No description provided for @conjugationHideAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide'**
+  String get conjugationHideAnswers;
+
+  /// No description provided for @conjugationNonPronominal.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-pronominal'**
+  String get conjugationNonPronominal;
+
+  /// No description provided for @conjugationDetailsVisibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Show verb characteristics'**
+  String get conjugationDetailsVisibility;
 
   /// No description provided for @conjugationClearFilters.
   ///

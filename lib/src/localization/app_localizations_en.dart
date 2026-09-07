@@ -200,6 +200,48 @@ class AppLocalizationsEn extends AppLocalizations {
   String get coStop => 'Stop';
 
   @override
+  String get coPause => 'Pause';
+
+  @override
+  String get coResume => 'Resume';
+
+  @override
+  String get coRadioGeneral => 'General-interest Italian radio';
+
+  @override
+  String get coMusicEntertainment => 'Music and entertainment';
+
+  @override
+  String get coCultureNews => 'Culture and news';
+
+  @override
+  String get coPopNews => 'Pop music and news';
+
+  @override
+  String get coRadioNewsMusic => 'News and music';
+
+  @override
+  String get coNational => 'National';
+
+  @override
+  String get ceAnsaDescription => 'Italian news agency - short articles';
+
+  @override
+  String get ceRepubblicaDescription => 'Major Italian daily newspaper';
+
+  @override
+  String get ceCorriereDescription => 'Leading Italian newspaper of record';
+
+  @override
+  String get ceIlPostDescription => 'News and analysis';
+
+  @override
+  String get ceRaiDescription => 'RAI news';
+
+  @override
+  String get ceEasyItalianDescription => 'News in easy Italian';
+
+  @override
   String get eoTitle => 'EO - Oral expression';
 
   @override
@@ -397,6 +439,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Irregular';
+
+  @override
+  String get conjugationPronominal => 'Pronominal';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Group $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Auxiliary $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Show';
+
+  @override
+  String get conjugationHideAnswers => 'Hide';
+
+  @override
+  String get conjugationNonPronominal => 'Non-pronominal';
+
+  @override
+  String get conjugationDetailsVisibility => 'Show verb characteristics';
 
   @override
   String get conjugationClearFilters => 'Clear all filters';

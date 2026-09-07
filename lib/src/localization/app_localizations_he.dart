@@ -198,6 +198,48 @@ class AppLocalizationsHe extends AppLocalizations {
   String get coStop => 'עצור';
 
   @override
+  String get coPause => 'השהה';
+
+  @override
+  String get coResume => 'המשך';
+
+  @override
+  String get coRadioGeneral => 'רדיו איטלקי כללי';
+
+  @override
+  String get coMusicEntertainment => 'מוזיקה ובידור';
+
+  @override
+  String get coCultureNews => 'תרבות וחדשות';
+
+  @override
+  String get coPopNews => 'מוזיקת פופ וחדשות';
+
+  @override
+  String get coRadioNewsMusic => 'חדשות ומוזיקה';
+
+  @override
+  String get coNational => 'ארצי';
+
+  @override
+  String get ceAnsaDescription => 'סוכנות ידיעות איטלקית - מאמרים קצרים';
+
+  @override
+  String get ceRepubblicaDescription => 'עיתון יומי איטלקי מרכזי';
+
+  @override
+  String get ceCorriereDescription => 'עיתון מוביל ורב-השפעה';
+
+  @override
+  String get ceIlPostDescription => 'חדשות וניתוחים';
+
+  @override
+  String get ceRaiDescription => 'חדשות RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'חדשות באיטלקית קלה';
+
+  @override
   String get eoTitle => 'EO - הבעה בעל פה';
 
   @override
@@ -389,6 +431,31 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'חריגים';
+
+  @override
+  String get conjugationPronominal => 'פעלים חוזרים (פרונומינליים)';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'קבוצה $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'פועל עזר $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'הצג';
+
+  @override
+  String get conjugationHideAnswers => 'הסתר';
+
+  @override
+  String get conjugationNonPronominal => 'לא חוזרים';
+
+  @override
+  String get conjugationDetailsVisibility => 'הצג מאפייני פועל';
 
   @override
   String get conjugationClearFilters => 'נקה את כל המסננים';

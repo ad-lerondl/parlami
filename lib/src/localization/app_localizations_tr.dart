@@ -200,6 +200,48 @@ class AppLocalizationsTr extends AppLocalizations {
   String get coStop => 'Durdur';
 
   @override
+  String get coPause => 'Duraklat';
+
+  @override
+  String get coResume => 'Devam Et';
+
+  @override
+  String get coRadioGeneral => 'İtalyan genel yayın radyosu';
+
+  @override
+  String get coMusicEntertainment => 'Müzik ve eğlence';
+
+  @override
+  String get coCultureNews => 'Kültür ve haberler';
+
+  @override
+  String get coPopNews => 'Pop müzik ve haberler';
+
+  @override
+  String get coRadioNewsMusic => 'Haber ve müzik';
+
+  @override
+  String get coNational => 'Ulusal';
+
+  @override
+  String get ceAnsaDescription => 'İtalyan haber ajansı - kısa makaleler';
+
+  @override
+  String get ceRepubblicaDescription => 'Büyük İtalyan günlük gazetesi';
+
+  @override
+  String get ceCorriereDescription => 'Referans gazete';
+
+  @override
+  String get ceIlPostDescription => 'Haberler ve analizler';
+
+  @override
+  String get ceRaiDescription => 'RAI haberleri';
+
+  @override
+  String get ceEasyItalianDescription => 'Kolay İtalyanca haberler';
+
+  @override
   String get eoTitle => 'EO - Sözlü İfade';
 
   @override
@@ -398,6 +440,31 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Düzensiz';
+
+  @override
+  String get conjugationPronominal => 'Dönüşlü';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Grup $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Yardımcı fiil $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Göster';
+
+  @override
+  String get conjugationHideAnswers => 'Gizle';
+
+  @override
+  String get conjugationNonPronominal => 'Dönüşlü olmayan';
+
+  @override
+  String get conjugationDetailsVisibility => 'Fiil özelliklerini göster';
 
   @override
   String get conjugationClearFilters => 'Tüm filtreleri temizle';

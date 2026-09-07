@@ -58,6 +58,20 @@
   "coConnecting": "{station} に接続中...",
   "coPlay": "再生",
   "coStop": "停止",
+  "coPause": "一時停止",
+  "coResume": "再開",
+  "coRadioGeneral": "総合イタリア語ラジオ",
+  "coMusicEntertainment": "音楽・エンターテインメント",
+  "coCultureNews": "文化・ニュース",
+  "coPopNews": "ポップス・ニュース",
+  "coRadioNewsMusic": "ニュース・音楽",
+  "coNational": "全国",
+  "ceAnsaDescription": "イタリア通信社 - 短い記事",
+  "ceRepubblicaDescription": "イタリアの主要日刊紙",
+  "ceCorriereDescription": "代表的な全国紙",
+  "ceIlPostDescription": "ニュースと分析",
+  "ceRaiDescription": "RAIニュース",
+  "ceEasyItalianDescription": "やさしいイタリア語ニュース",
   "eoTitle": "EO - 口頭表現",
   "eoChooseLevel": "レベルを選択",
   "eoLevel": "レベル {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "規則動詞",
   "conjugationSemiRegular": "半規則動詞",
   "conjugationIrregular": "不規則動詞",
+  "conjugationPronominal": "代名動詞",
+  "conjugationGroup": "第{group}グループ",
+  "conjugationAuxiliary": "助動詞 {auxiliary}",
+  "conjugationShowAnswers": "表示",
+  "conjugationHideAnswers": "非表示",
+  "conjugationNonPronominal": "非代名動詞",
+  "conjugationDetailsVisibility": "動詞の特徴を表示",
   "conjugationClearFilters": "すべてのフィルターをクリア",
   "conjugationChooseVerb": "動詞を選択",
   "conjugationRandomVerb": "ランダムな動詞",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

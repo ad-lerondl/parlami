@@ -11,6 +11,10 @@ class RadioPlayerService {
   late AudioPlayer _audioPlayer;
   StreamSubscription<PlaybackEvent>? _playbackEventSubscription;
   StreamSubscription<PlayerState>? _playerStateSubscription;
+  Future<void> _pendingOperation = Future<void>.value();
+  int _commandGeneration = 0;
+  bool _isLoadingStation = false;
+  bool _isStopping = false;
   final _isPlayingSubject = BehaviorSubject<bool>.seeded(false);
   final _currentStationSubject = BehaviorSubject<String?>.seeded(null);
   final _errorSubject = BehaviorSubject<String?>.seeded(null);
@@ -55,7 +59,9 @@ class RadioPlayerService {
       // Détecter les erreurs de chargement
       if (playerState.processingState == ProcessingState.idle &&
           playerState.playing == false &&
-          _currentStationSubject.value != null) {
+          _currentStationSubject.value != null &&
+          !_isLoadingStation &&
+          !_isStopping) {
         _errorSubject.add('Impossible de charger cette radio');
         _currentStationSubject.add(null);
       }
@@ -69,21 +75,56 @@ class RadioPlayerService {
   bool get isPlaying => _isPlayingSubject.value;
   String? get currentStation => _currentStationSubject.value;
 
-  Future<void> toggleStation(String stationName, String streamUrl) async {
-    final isSameStation = _currentStationSubject.value == stationName;
-    if (isSameStation && _audioPlayer.playing) {
-      await stop();
-      return;
-    }
+  Future<void> toggleStation(String stationName, String streamUrl) {
+    return _enqueue(() async {
+      final isSameStation = _currentStationSubject.value == stationName;
+      if (isSameStation) {
+        await _togglePlayback();
+        return;
+      }
 
-    await _startStation(stationName, streamUrl);
+      await _startStation(stationName, streamUrl);
+    });
   }
 
-  Future<void> playRadio(String stationName, String streamUrl) async {
-    await _startStation(stationName, streamUrl);
+  Future<void> playRadio(String stationName, String streamUrl) {
+    return _enqueue(() => _startStation(stationName, streamUrl));
+  }
+
+  Future<void> togglePlayback() {
+    return _enqueue(_togglePlayback);
+  }
+
+  Future<void> _togglePlayback() async {
+    if (_currentStationSubject.value == null) return;
+    if (_audioPlayer.playing) {
+      await _pause();
+    } else {
+      await _resume();
+    }
+  }
+
+  Future<void> pause() {
+    return _enqueue(_pause);
+  }
+
+  Future<void> _pause() async {
+    await _audioPlayer.pause();
+    _isPlayingSubject.add(false);
+  }
+
+  Future<void> resume() {
+    return _enqueue(_resume);
+  }
+
+  Future<void> _resume() async {
+    await _audioPlayer.play();
+    _isPlayingSubject.add(true);
   }
 
   Future<void> _startStation(String stationName, String streamUrl) async {
+    final generation = ++_commandGeneration;
+    _isLoadingStation = true;
     try {
       _errorSubject.add(null);
       _currentStationSubject.add(stationName);
@@ -91,6 +132,8 @@ class RadioPlayerService {
       if (_audioPlayer.playing) {
         await _audioPlayer.stop();
       }
+
+      if (generation != _commandGeneration) return;
 
       final mediaItem = MediaItem(
         id: streamUrl,
@@ -105,6 +148,7 @@ class RadioPlayerService {
           tag: mediaItem,
         ),
       );
+      if (generation != _commandGeneration) return;
       await _audioPlayer.play();
     } catch (e) {
       String errorMessage = 'Erreur de connexion';
@@ -125,17 +169,34 @@ class RadioPlayerService {
       _errorSubject.add(errorMessage);
       _currentStationSubject.add(null);
       _isPlayingSubject.add(false);
+    } finally {
+      _isLoadingStation = false;
     }
   }
 
-  Future<void> stop() async {
+  Future<void> stop() {
+    _commandGeneration++;
+    return _stop();
+  }
+
+  Future<void> _stop() async {
+    _isStopping = true;
+    _currentStationSubject.add(null);
+    _isPlayingSubject.add(false);
     try {
+      await _audioPlayer.pause();
       await _audioPlayer.stop();
-      _currentStationSubject.add(null);
-      _isPlayingSubject.add(false);
     } catch (e) {
       _errorSubject.add('Erreur lors de l\'arrêt: ${e.toString()}');
+    } finally {
+      _isStopping = false;
     }
+  }
+
+  Future<void> _enqueue(Future<void> Function() operation) {
+    final next = _pendingOperation.then((_) => operation());
+    _pendingOperation = next.catchError((_) {});
+    return next;
   }
 
   void dispose() {

@@ -58,6 +58,20 @@
   "coConnecting": "Conectando a {station}...",
   "coPlay": "Tocar",
   "coStop": "Parar",
+  "coPause": "Pausar",
+  "coResume": "Retomar",
+  "coRadioGeneral": "Rádio generalista italiana",
+  "coMusicEntertainment": "Música e entretenimento",
+  "coCultureNews": "Cultura e notícias",
+  "coPopNews": "Música pop e notícias",
+  "coRadioNewsMusic": "Notícias e música",
+  "coNational": "Nacional",
+  "ceAnsaDescription": "Agência de notícias italiana - artigos curtos",
+  "ceRepubblicaDescription": "Grande diário italiano",
+  "ceCorriereDescription": "Jornal de referência",
+  "ceIlPostDescription": "Notícias e análises",
+  "ceRaiDescription": "Notícias da RAI",
+  "ceEasyItalianDescription": "Notícias em italiano fácil",
   "eoTitle": "EO - Expressão oral",
   "eoChooseLevel": "Escolha o nível",
   "eoLevel": "Nível {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Regulares",
   "conjugationSemiRegular": "Semirregulares",
   "conjugationIrregular": "Irregulares",
+  "conjugationPronominal": "Pronominais",
+  "conjugationGroup": "Grupo {group}",
+  "conjugationAuxiliary": "Auxiliar {auxiliary}",
+  "conjugationShowAnswers": "Mostrar",
+  "conjugationHideAnswers": "Ocultar",
+  "conjugationNonPronominal": "Não pronominais",
+  "conjugationDetailsVisibility": "Mostrar características do verbo",
   "conjugationClearFilters": "Limpar todos os filtros",
   "conjugationChooseVerb": "Escolha um verbo",
   "conjugationRandomVerb": "Verbo aleatório",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

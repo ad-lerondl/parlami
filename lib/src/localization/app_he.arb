@@ -58,6 +58,20 @@
   "coConnecting": "מתחבר ל-{station}...",
   "coPlay": "נגן",
   "coStop": "עצור",
+  "coPause": "השהה",
+  "coResume": "המשך",
+  "coRadioGeneral": "רדיו איטלקי כללי",
+  "coMusicEntertainment": "מוזיקה ובידור",
+  "coCultureNews": "תרבות וחדשות",
+  "coPopNews": "מוזיקת פופ וחדשות",
+  "coRadioNewsMusic": "חדשות ומוזיקה",
+  "coNational": "ארצי",
+  "ceAnsaDescription": "סוכנות ידיעות איטלקית - מאמרים קצרים",
+  "ceRepubblicaDescription": "עיתון יומי איטלקי מרכזי",
+  "ceCorriereDescription": "עיתון מוביל ורב-השפעה",
+  "ceIlPostDescription": "חדשות וניתוחים",
+  "ceRaiDescription": "חדשות RAI",
+  "ceEasyItalianDescription": "חדשות באיטלקית קלה",
   "eoTitle": "EO - הבעה בעל פה",
   "eoChooseLevel": "בחר את הרמה",
   "eoLevel": "רמה {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "רגילים",
   "conjugationSemiRegular": "חצי רגילים",
   "conjugationIrregular": "חריגים",
+  "conjugationPronominal": "פעלים חוזרים (פרונומינליים)",
+  "conjugationGroup": "קבוצה {group}",
+  "conjugationAuxiliary": "פועל עזר {auxiliary}",
+  "conjugationShowAnswers": "הצג",
+  "conjugationHideAnswers": "הסתר",
+  "conjugationNonPronominal": "לא חוזרים",
+  "conjugationDetailsVisibility": "הצג מאפייני פועל",
   "conjugationClearFilters": "נקה את כל המסננים",
   "conjugationChooseVerb": "בחר פועל",
   "conjugationRandomVerb": "פועל אקראי",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

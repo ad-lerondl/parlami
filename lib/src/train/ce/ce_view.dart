@@ -5,13 +5,13 @@ import '../../localization/app_localizations.dart';
 class NewsSource {
   final String name;
   final String url;
-  final String description;
+  final String descriptionKey;
   final String level;
 
   const NewsSource({
     required this.name,
     required this.url,
-    required this.description,
+    required this.descriptionKey,
     required this.level,
   });
 }
@@ -23,37 +23,37 @@ class CEView extends StatelessWidget {
     NewsSource(
       name: 'ANSA - Facile',
       url: 'https://www.ansa.it/',
-      description: 'Agence de presse italienne - articles courts',
+      descriptionKey: 'ceAnsaDescription',
       level: 'A2-B1',
     ),
     NewsSource(
       name: 'La Repubblica',
       url: 'https://www.repubblica.it/',
-      description: 'Grand quotidien italien',
+      descriptionKey: 'ceRepubblicaDescription',
       level: 'B2-C1',
     ),
     NewsSource(
       name: 'Corriere della Sera',
       url: 'https://www.corriere.it/',
-      description: 'Journal de référence',
+      descriptionKey: 'ceCorriereDescription',
       level: 'B2-C1',
     ),
     NewsSource(
       name: 'Il Post',
       url: 'https://www.ilpost.it/',
-      description: 'Actualités et analyses',
+      descriptionKey: 'ceIlPostDescription',
       level: 'B1-B2',
     ),
     NewsSource(
       name: 'RAI News',
       url: 'https://www.rainews.it/',
-      description: 'Actualités de la RAI',
+      descriptionKey: 'ceRaiDescription',
       level: 'B1-B2',
     ),
     NewsSource(
       name: 'Easy Italian News',
       url: 'https://www.newsinslowitalian.com/',
-      description: 'Nouvelles en italien facile',
+      descriptionKey: 'ceEasyItalianDescription',
       level: 'A1-A2',
     ),
   ];
@@ -100,7 +100,7 @@ class CEView extends StatelessWidget {
                     ),
                   ),
                   title: Text(source.name),
-                  subtitle: Text('${source.description}\n${AppLocalizations.of(context)!.ceLevel(source.level)}'),
+                  subtitle: Text('${_descriptionFor(source, l10n)}\n${l10n.ceLevel(source.level)}'),
                   isThreeLine: true,
                   trailing: IconButton(
                     icon: const Icon(Icons.open_in_new),
@@ -115,5 +115,17 @@ class CEView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _descriptionFor(NewsSource source, AppLocalizations l10n) {
+    return switch (source.descriptionKey) {
+      'ceAnsaDescription' => l10n.ceAnsaDescription,
+      'ceRepubblicaDescription' => l10n.ceRepubblicaDescription,
+      'ceCorriereDescription' => l10n.ceCorriereDescription,
+      'ceIlPostDescription' => l10n.ceIlPostDescription,
+      'ceRaiDescription' => l10n.ceRaiDescription,
+      'ceEasyItalianDescription' => l10n.ceEasyItalianDescription,
+      _ => source.descriptionKey,
+    };
   }
 }

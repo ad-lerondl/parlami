@@ -58,6 +58,20 @@
   "coConnecting": "جارٍ الاتصال بـ {station}...",
   "coPlay": "تشغيل",
   "coStop": "إيقاف",
+  "coPause": "إيقاف مؤقت",
+  "coResume": "استئناف",
+  "coRadioGeneral": "إذاعة إيطالية عامة",
+  "coMusicEntertainment": "موسيقى وترفيه",
+  "coCultureNews": "ثقافة وأخبار",
+  "coPopNews": "موسيقى بوب وأخبار",
+  "coRadioNewsMusic": "أخبار وموسيقى",
+  "coNational": "وطني",
+  "ceAnsaDescription": "وكالة أنباء إيطالية - مقالات قصيرة",
+  "ceRepubblicaDescription": "صحيفة يومية إيطالية كبرى",
+  "ceCorriereDescription": "صحيفة مرجعية",
+  "ceIlPostDescription": "أخبار وتحليلات",
+  "ceRaiDescription": "أخبار RAI",
+  "ceEasyItalianDescription": "أخبار بإيطالية مبسطة",
   "eoTitle": "EO - التعبير الشفهي",
   "eoChooseLevel": "اختر المستوى",
   "eoLevel": "المستوى {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "منتظمة",
   "conjugationSemiRegular": "شبه منتظمة",
   "conjugationIrregular": "غير منتظمة",
+  "conjugationPronominal": "ضمائرية",
+  "conjugationGroup": "المجموعة {group}",
+  "conjugationAuxiliary": "الفعل المساعد {auxiliary}",
+  "conjugationShowAnswers": "عرض",
+  "conjugationHideAnswers": "إخفاء",
+  "conjugationNonPronominal": "غير ضمائرية",
+  "conjugationDetailsVisibility": "عرض خصائص الفعل",
   "conjugationClearFilters": "مسح جميع الفلاتر",
   "conjugationChooseVerb": "اختر فعلاً",
   "conjugationRandomVerb": "فعل عشوائي",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

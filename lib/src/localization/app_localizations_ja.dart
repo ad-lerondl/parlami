@@ -192,6 +192,48 @@ class AppLocalizationsJa extends AppLocalizations {
   String get coStop => '停止';
 
   @override
+  String get coPause => '一時停止';
+
+  @override
+  String get coResume => '再開';
+
+  @override
+  String get coRadioGeneral => '総合イタリア語ラジオ';
+
+  @override
+  String get coMusicEntertainment => '音楽・エンターテインメント';
+
+  @override
+  String get coCultureNews => '文化・ニュース';
+
+  @override
+  String get coPopNews => 'ポップス・ニュース';
+
+  @override
+  String get coRadioNewsMusic => 'ニュース・音楽';
+
+  @override
+  String get coNational => '全国';
+
+  @override
+  String get ceAnsaDescription => 'イタリア通信社 - 短い記事';
+
+  @override
+  String get ceRepubblicaDescription => 'イタリアの主要日刊紙';
+
+  @override
+  String get ceCorriereDescription => '代表的な全国紙';
+
+  @override
+  String get ceIlPostDescription => 'ニュースと分析';
+
+  @override
+  String get ceRaiDescription => 'RAIニュース';
+
+  @override
+  String get ceEasyItalianDescription => 'やさしいイタリア語ニュース';
+
+  @override
   String get eoTitle => 'EO - 口頭表現';
 
   @override
@@ -380,6 +422,31 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get conjugationIrregular => '不規則動詞';
+
+  @override
+  String get conjugationPronominal => '代名動詞';
+
+  @override
+  String conjugationGroup(Object group) {
+    return '第$groupグループ';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return '助動詞 $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => '表示';
+
+  @override
+  String get conjugationHideAnswers => '非表示';
+
+  @override
+  String get conjugationNonPronominal => '非代名動詞';
+
+  @override
+  String get conjugationDetailsVisibility => '動詞の特徴を表示';
 
   @override
   String get conjugationClearFilters => 'すべてのフィルターをクリア';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parlami/src/data/models/verb_conjugation.dart';
 import 'package:parlami/src/repositories/conjugation_repository.dart';
 import 'package:parlami/src/services/quiz_prefs.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
@@ -19,12 +20,16 @@ class _ConjugationViewState extends State<ConjugationView> {
   final Map<String, String> userInputs = {};
   final Map<String, bool?> checkResults = {};
   final Map<String, bool> isPartialMatch = {}; // true if user gave one of multiple accepted forms
+  TextEditingController? _verbSearchController;
   bool showBaseVerb = true; // Afficher base verbale dans le champ de vérification
   bool maskBaseVerbInSearch = false; // Masquer base verbale dans l'autocomplete
   bool showAnswers = false; // Afficher réponses attendues
+  bool showDetails = true;
   bool hasVerified = false; // Track if verification has been done
-  String? filterRegularity; // 'regular', 'semi-regular', 'irregular', or null for all
-  final Set<String> filterGroups = {'are', 'ere'}; // sélection par groupe
+  bool? filterRegular;
+  bool? filterPronominal;
+  final Set<int> filterGroups = {};
+  String? filterAuxiliary;
   Set<String> preferredPersons = {}; // Memorize user's person selection
 
   @override
@@ -35,10 +40,21 @@ class _ConjugationViewState extends State<ConjugationView> {
       setState(() {
         showBaseVerb = prefs.showBaseVerb;
         showAnswers = prefs.showAnswers;
-        filterRegularity = prefs.filterRegular ? 'regular' : null;
+        showDetails = prefs.showDetails;
+        filterRegular = switch (prefs.filterRegularity) {
+          'regular' => true,
+          'irregular' => false,
+          _ => null,
+        };
+        filterPronominal = switch (prefs.filterPronominal) {
+          'pronominal' => true,
+          'non-pronominal' => false,
+          _ => null,
+        };
         filterGroups
           ..clear()
-          ..addAll(prefs.filterGroups);
+          ..addAll(prefs.filterGroups.map(int.tryParse).whereType<int>());
+        filterAuxiliary = prefs.filterAuxiliary;
         preferredPersons = prefs.persons.toSet();
       });
       if (prefs.infinitive != null) {
@@ -57,6 +73,7 @@ class _ConjugationViewState extends State<ConjugationView> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final showFrenchTranslation = Localizations.localeOf(context).languageCode == 'fr';
     final isRepoReady = repo.all().isNotEmpty;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.conjugationTitle)),
@@ -76,30 +93,42 @@ class _ConjugationViewState extends State<ConjugationView> {
                         children: [
                           FilterChip(
                             label: Text(l10n.conjugationRegular),
-                            selected: filterRegularity == 'regular',
+                            selected: filterRegular == true,
                             onSelected: (v) {
-                              setState(() => filterRegularity = v ? 'regular' : null);
-                              QuizPrefs.saveState(filterRegular: filterRegularity == 'regular');
-                            },
-                          ),
-                          FilterChip(
-                            label: Text(l10n.conjugationSemiRegular),
-                            selected: filterRegularity == 'semi-regular',
-                            onSelected: (v) {
-                              setState(() => filterRegularity = v ? 'semi-regular' : null);
-                              QuizPrefs.saveState(filterRegular: false);
+                              setState(() => filterRegular = v ? true : null);
+                              if (v) {
+                                QuizPrefs.saveState(filterRegular: true);
+                              } else {
+                                QuizPrefs.clearRegularityFilter();
+                              }
                             },
                           ),
                           FilterChip(
                             label: Text(l10n.conjugationIrregular),
-                            selected: filterRegularity == 'irregular',
+                            selected: filterRegular == false,
                             onSelected: (v) {
-                              setState(() => filterRegularity = v ? 'irregular' : null);
-                              QuizPrefs.saveState(filterRegular: false);
+                              setState(() => filterRegular = v ? false : null);
+                              if (v) {
+                                QuizPrefs.saveState(filterRegular: false);
+                              } else {
+                                QuizPrefs.clearRegularityFilter();
+                              }
                             },
                           ),
-                          ...['are', 'ere', 'ire'].map((g) => FilterChip(
-                                label: Text(g),
+                          FilterChip(
+                            label: Text(l10n.conjugationPronominal),
+                            selected: filterPronominal == true,
+                            onSelected: (v) {
+                              setState(() => filterPronominal = v ? true : null);
+                              if (v) {
+                                QuizPrefs.saveState(filterPronominal: true);
+                              } else {
+                                QuizPrefs.clearPronominalFilter();
+                              }
+                            },
+                          ),
+                          ...[1, 2, 3].map((g) => FilterChip(
+                                label: Text(l10n.conjugationGroup(g)),
                                 selected: filterGroups.contains(g),
                                 onSelected: (v) {
                                   setState(() {
@@ -109,7 +138,19 @@ class _ConjugationViewState extends State<ConjugationView> {
                                       filterGroups.remove(g);
                                     }
                                   });
-                                  QuizPrefs.saveState(filterGroups: filterGroups);
+                                  QuizPrefs.saveState(filterGroups: filterGroups.map((g) => '$g'));
+                                },
+                              )),
+                          ...['avere', 'essere'].map((a) => FilterChip(
+                                label: Text(l10n.conjugationAuxiliary(a)),
+                                selected: filterAuxiliary == a,
+                                onSelected: (v) {
+                                  setState(() => filterAuxiliary = v ? a : null);
+                                  if (v) {
+                                    QuizPrefs.saveState(filterAuxiliary: a);
+                                  } else {
+                                    QuizPrefs.clearAuxiliaryFilter();
+                                  }
                                 },
                               )),
                         ],
@@ -120,10 +161,12 @@ class _ConjugationViewState extends State<ConjugationView> {
                       tooltip: l10n.conjugationClearFilters,
                       onPressed: () {
                         setState(() {
-                          filterRegularity = null;
+                          filterRegular = null;
+                          filterPronominal = null;
                           filterGroups.clear();
+                          filterAuxiliary = null;
                         });
-                        QuizPrefs.saveState(filterRegular: false, filterGroups: const <String>[]);
+                        QuizPrefs.clearConjugationFilters();
                       },
                     ),
                   ],
@@ -134,36 +177,36 @@ class _ConjugationViewState extends State<ConjugationView> {
                   children: [
                     Expanded(
                       child: Autocomplete<String>(
-                        key: ValueKey('autocomplete_${filterRegularity}_${filterGroups.join('_')}'),
+                        key: ValueKey(
+                            'autocomplete_${filterRegular}_${filterPronominal}_${filterAuxiliary}_${filterGroups.join('_')}'),
                         optionsBuilder: (text) {
-                          final q = text.text.trim().toLowerCase();
-                          // Apply filters to autocomplete options
-                          final filtered = repo.filter(
-                            regularity: filterRegularity,
+                          final filtered = repo.search(
+                            text.text,
+                            regular: filterRegular,
+                            pronominal: filterPronominal,
+                            auxiliary: filterAuxiliary,
                             groups: filterGroups.isEmpty ? null : filterGroups,
                           );
-                          if (q.isEmpty) {
-                            return filtered.map((v) => v.infinitive);
-                          }
-                          return filtered.map((v) => v.infinitive).where((s) {
-                            final verb = repo.byInfinitive(s);
-                            final translation = verb?.translation?.toLowerCase() ?? '';
-                            return s.toLowerCase().contains(q) || translation.contains(q);
-                          });
+                          return filtered.map((v) => v.infinitive);
                         },
                         displayStringForOption: (infinitive) {
                           if (maskBaseVerbInSearch) {
                             final v = repo.byInfinitive(infinitive);
-                            return v?.translation ?? infinitive;
+                            return showFrenchTranslation ? v?.translationFor('fr') ?? infinitive : infinitive;
                           }
                           final v = repo.byInfinitive(infinitive);
-                          return v?.translation != null ? '$infinitive (${v!.translation})' : infinitive;
+                          final translation = v?.translationFor('fr');
+                          return !showFrenchTranslation || translation == null
+                              ? infinitive
+                              : '$infinitive ($translation)';
                         },
                         onSelected: (value) {
+                          _verbSearchController?.clear();
                           _selectVerb(value);
                           QuizPrefs.saveState(infinitive: value);
                         },
                         fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
+                          _verbSearchController = controller;
                           return TextField(
                             controller: controller,
                             focusNode: focusNode,
@@ -181,10 +224,13 @@ class _ConjugationViewState extends State<ConjugationView> {
                       child: ElevatedButton(
                         onPressed: () {
                           final random = repo.random(
-                            regularity: filterRegularity,
+                            regular: filterRegular,
+                            pronominal: filterPronominal,
+                            auxiliary: filterAuxiliary,
                             groups: filterGroups.isEmpty ? null : filterGroups,
                           );
                           if (random != null) {
+                            _verbSearchController?.clear();
                             _selectVerb(random.infinitive, preserveMoodTense: true);
                             QuizPrefs.saveState(infinitive: random.infinitive);
                           }
@@ -207,6 +253,19 @@ class _ConjugationViewState extends State<ConjugationView> {
                           maskBaseVerbInSearch = v;
                         });
                         QuizPrefs.saveState(showBaseVerb: showBaseVerb);
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(child: Text(l10n.conjugationDetailsVisibility)),
+                    Switch(
+                      value: showDetails,
+                      onChanged: (value) {
+                        setState(() => showDetails = value);
+                        QuizPrefs.saveState(showDetails: value);
                       },
                     ),
                   ],
@@ -285,17 +344,36 @@ class _ConjugationViewState extends State<ConjugationView> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Text(
+                                  _verbLabel(l10n, v, showBaseVerb, showFrenchTranslation),
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                if (showDetails) ...[
+                                  const SizedBox(height: 8),
+                                  Wrap(
+                                    spacing: 8,
+                                    runSpacing: 8,
+                                    children: [
+                                      Chip(
+                                          label: Text(v?.regular == true
+                                              ? l10n.conjugationRegular
+                                              : l10n.conjugationIrregular)),
+                                      Chip(
+                                          label: Text(v?.pronominal == true
+                                              ? l10n.conjugationPronominal
+                                              : l10n.conjugationNonPronominal)),
+                                      if (v != null) Chip(label: Text(l10n.conjugationGroup(v.group))),
+                                      if (v?.auxiliary != null)
+                                        Chip(label: Text(l10n.conjugationAuxiliary(v!.auxiliary!))),
+                                    ],
+                                  ),
+                                ],
+                                const SizedBox(height: 8),
                                 Wrap(
                                   spacing: 12,
                                   runSpacing: 8,
-                                  crossAxisAlignment: WrapCrossAlignment.center,
                                   children: [
-                                    Text(
-                                      showBaseVerb
-                                          ? l10n.conjugationVerb(
-                                              '$selectedInfinitive${v?.translation != null ? ' (${v!.translation})' : ''}')
-                                          : l10n.conjugationTranslation(v?.translation ?? '—'),
-                                    ),
                                     Text(l10n.conjugationMood(selectedMood!)),
                                     Text(l10n.conjugationTense(selectedTense!)),
                                   ],
@@ -379,15 +457,19 @@ class _ConjugationViewState extends State<ConjugationView> {
                                             final expected = forms?[p]?.trim();
                                             final input = (userInputs[p] ?? '').trim();
                                             if (expected != null) {
-                                              // Split on ' / ' to get all accepted variants
-                                              final variants =
-                                                  expected.split(' / ').map((s) => s.trim().toLowerCase()).toList();
-                                              final inputLower = input.toLowerCase();
-                                              // Check if input matches any variant
-                                              final isCorrect = variants.contains(inputLower);
+                                              final variants = expected
+                                                  .split(RegExp(r'[,/]'))
+                                                  .map((s) => s.trim().toLowerCase())
+                                                  .where((s) => s.isNotEmpty)
+                                                  .toSet();
+                                              final entered = input
+                                                  .split(RegExp(r'[,/]'))
+                                                  .map((s) => s.trim().toLowerCase())
+                                                  .where((s) => s.isNotEmpty)
+                                                  .toSet();
+                                              final isCorrect = matchesConjugationAnswer(input, expected);
                                               checkResults[p] = isCorrect;
-                                              // Track if this was a partial match (multiple forms available)
-                                              isPartialMatch[p] = isCorrect && variants.length > 1;
+                                              isPartialMatch[p] = isCorrect && entered.length < variants.length;
                                             } else {
                                               checkResults[p] = false;
                                               isPartialMatch[p] = false;
@@ -402,13 +484,16 @@ class _ConjugationViewState extends State<ConjugationView> {
                                         onPressed: () {
                                           setState(() => showAnswers = !showAnswers);
                                         },
-                                        child: Text(showAnswers ? 'Masquer' : 'Afficher'),
+                                        child: Text(
+                                            showAnswers ? l10n.conjugationHideAnswers : l10n.conjugationShowAnswers),
                                       ),
                                     if (hasVerified)
                                       ElevatedButton(
                                         onPressed: () {
                                           final random = repo.random(
-                                            regularity: filterRegularity,
+                                            regular: filterRegular,
+                                            pronominal: filterPronominal,
+                                            auxiliary: filterAuxiliary,
                                             groups: filterGroups.isEmpty ? null : filterGroups,
                                           );
                                           if (random != null) {
@@ -428,7 +513,7 @@ class _ConjugationViewState extends State<ConjugationView> {
                                       children: selectedPersons.map((p) {
                                         final expected = forms?[p]?.trim();
                                         return Text(
-                                          '$p: ${expected ?? '—'}',
+                                          expected == null ? p : '$p: $expected',
                                           style: const TextStyle(fontStyle: FontStyle.italic, color: Colors.black54),
                                         );
                                       }).toList(),
@@ -473,6 +558,7 @@ class _ConjugationViewState extends State<ConjugationView> {
   }
 
   void _selectVerb(String infinitive, {bool preserveMoodTense = false}) {
+    _verbSearchController?.clear();
     final moods = repo.moods(infinitive).toList();
     String? newMood = selectedMood;
     if (!preserveMoodTense || newMood == null || !moods.contains(newMood)) {
@@ -501,5 +587,15 @@ class _ConjugationViewState extends State<ConjugationView> {
       'futuro semplice',
     };
     return common.contains(tense.toLowerCase());
+  }
+
+  String _verbLabel(AppLocalizations l10n, VerbConjugation? verb, bool showBaseVerb, bool showFrenchTranslation) {
+    final infinitive = verb?.infinitive ?? selectedInfinitive ?? '';
+    final translation = verb?.translationFor('fr');
+    if (showBaseVerb || !showFrenchTranslation || translation == null) {
+      return l10n
+          .conjugationVerb(showFrenchTranslation && translation != null ? '$infinitive ($translation)' : infinitive);
+    }
+    return l10n.conjugationTranslation(translation);
   }
 }

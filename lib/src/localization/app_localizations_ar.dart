@@ -198,6 +198,48 @@ class AppLocalizationsAr extends AppLocalizations {
   String get coStop => 'إيقاف';
 
   @override
+  String get coPause => 'إيقاف مؤقت';
+
+  @override
+  String get coResume => 'استئناف';
+
+  @override
+  String get coRadioGeneral => 'إذاعة إيطالية عامة';
+
+  @override
+  String get coMusicEntertainment => 'موسيقى وترفيه';
+
+  @override
+  String get coCultureNews => 'ثقافة وأخبار';
+
+  @override
+  String get coPopNews => 'موسيقى بوب وأخبار';
+
+  @override
+  String get coRadioNewsMusic => 'أخبار وموسيقى';
+
+  @override
+  String get coNational => 'وطني';
+
+  @override
+  String get ceAnsaDescription => 'وكالة أنباء إيطالية - مقالات قصيرة';
+
+  @override
+  String get ceRepubblicaDescription => 'صحيفة يومية إيطالية كبرى';
+
+  @override
+  String get ceCorriereDescription => 'صحيفة مرجعية';
+
+  @override
+  String get ceIlPostDescription => 'أخبار وتحليلات';
+
+  @override
+  String get ceRaiDescription => 'أخبار RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'أخبار بإيطالية مبسطة';
+
+  @override
   String get eoTitle => 'EO - التعبير الشفهي';
 
   @override
@@ -391,6 +433,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'غير منتظمة';
+
+  @override
+  String get conjugationPronominal => 'ضمائرية';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'المجموعة $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'الفعل المساعد $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'عرض';
+
+  @override
+  String get conjugationHideAnswers => 'إخفاء';
+
+  @override
+  String get conjugationNonPronominal => 'غير ضمائرية';
+
+  @override
+  String get conjugationDetailsVisibility => 'عرض خصائص الفعل';
 
   @override
   String get conjugationClearFilters => 'مسح جميع الفلاتر';

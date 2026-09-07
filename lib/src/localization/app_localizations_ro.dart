@@ -201,6 +201,48 @@ class AppLocalizationsRo extends AppLocalizations {
   String get coStop => 'Stop';
 
   @override
+  String get coPause => 'Pauză';
+
+  @override
+  String get coResume => 'Reia';
+
+  @override
+  String get coRadioGeneral => 'Radio generalist italian';
+
+  @override
+  String get coMusicEntertainment => 'Muzică și divertisment';
+
+  @override
+  String get coCultureNews => 'Cultură și știri';
+
+  @override
+  String get coPopNews => 'Muzică pop și știri';
+
+  @override
+  String get coRadioNewsMusic => 'Știri și muzică';
+
+  @override
+  String get coNational => 'Național';
+
+  @override
+  String get ceAnsaDescription => 'Agenție de presă italiană - articole scurte';
+
+  @override
+  String get ceRepubblicaDescription => 'Cotidian italian de referință';
+
+  @override
+  String get ceCorriereDescription => 'Ziar de referință';
+
+  @override
+  String get ceIlPostDescription => 'Știri și analize';
+
+  @override
+  String get ceRaiDescription => 'Știri RAI';
+
+  @override
+  String get ceEasyItalianDescription => 'Știri în italiană ușoară';
+
+  @override
   String get eoTitle => 'EO - Expresie orală';
 
   @override
@@ -400,6 +442,32 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get conjugationIrregular => 'Neregulate';
+
+  @override
+  String get conjugationPronominal => 'Pronominale';
+
+  @override
+  String conjugationGroup(Object group) {
+    return 'Grupul $group';
+  }
+
+  @override
+  String conjugationAuxiliary(Object auxiliary) {
+    return 'Auxiliar $auxiliary';
+  }
+
+  @override
+  String get conjugationShowAnswers => 'Afișează';
+
+  @override
+  String get conjugationHideAnswers => 'Ascunde';
+
+  @override
+  String get conjugationNonPronominal => 'Nepronominale';
+
+  @override
+  String get conjugationDetailsVisibility =>
+      'Afișează caracteristicile verbului';
 
   @override
   String get conjugationClearFilters => 'Șterge toate filtrele';

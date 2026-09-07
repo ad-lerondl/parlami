@@ -58,6 +58,20 @@
   "coConnecting": "{station} bağlanıyor...",
   "coPlay": "Oynat",
   "coStop": "Durdur",
+  "coPause": "Duraklat",
+  "coResume": "Devam Et",
+  "coRadioGeneral": "İtalyan genel yayın radyosu",
+  "coMusicEntertainment": "Müzik ve eğlence",
+  "coCultureNews": "Kültür ve haberler",
+  "coPopNews": "Pop müzik ve haberler",
+  "coRadioNewsMusic": "Haber ve müzik",
+  "coNational": "Ulusal",
+  "ceAnsaDescription": "İtalyan haber ajansı - kısa makaleler",
+  "ceRepubblicaDescription": "Büyük İtalyan günlük gazetesi",
+  "ceCorriereDescription": "Referans gazete",
+  "ceIlPostDescription": "Haberler ve analizler",
+  "ceRaiDescription": "RAI haberleri",
+  "ceEasyItalianDescription": "Kolay İtalyanca haberler",
   "eoTitle": "EO - Sözlü İfade",
   "eoChooseLevel": "Seviyeyi seç",
   "eoLevel": "Seviye {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Düzenli",
   "conjugationSemiRegular": "Yarı Düzenli",
   "conjugationIrregular": "Düzensiz",
+  "conjugationPronominal": "Dönüşlü",
+  "conjugationGroup": "Grup {group}",
+  "conjugationAuxiliary": "Yardımcı fiil {auxiliary}",
+  "conjugationShowAnswers": "Göster",
+  "conjugationHideAnswers": "Gizle",
+  "conjugationNonPronominal": "Dönüşlü olmayan",
+  "conjugationDetailsVisibility": "Fiil özelliklerini göster",
   "conjugationClearFilters": "Tüm filtreleri temizle",
   "conjugationChooseVerb": "Bir fiil seçin",
   "conjugationRandomVerb": "Rastgele fiil",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

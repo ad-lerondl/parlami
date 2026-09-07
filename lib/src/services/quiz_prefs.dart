@@ -8,8 +8,11 @@ class QuizPrefs {
   static const _kPersons = '${_kPrefix}selectedPersons';
   static const _kShowBaseVerb = '${_kPrefix}showBaseVerb';
   static const _kShowAnswers = '${_kPrefix}showAnswers';
-  static const _kFilterRegular = '${_kPrefix}filterRegular';
+  static const _kShowDetails = '${_kPrefix}showDetails';
+  static const _kFilterRegularity = '${_kPrefix}filterRegularity';
+  static const _kFilterPronominal = '${_kPrefix}filterPronominal';
   static const _kFilterGroups = '${_kPrefix}filterGroups';
+  static const _kFilterAuxiliary = '${_kPrefix}filterAuxiliary';
 
   static Future<void> saveState({
     String? infinitive,
@@ -18,8 +21,11 @@ class QuizPrefs {
     Iterable<String>? persons,
     bool? showBaseVerb,
     bool? showAnswers,
+    bool? showDetails,
     bool? filterRegular,
+    bool? filterPronominal,
     Iterable<String>? filterGroups,
+    String? filterAuxiliary,
   }) async {
     try {
       final p = await SharedPreferences.getInstance();
@@ -29,12 +35,41 @@ class QuizPrefs {
       if (persons != null) await p.setStringList(_kPersons, persons.toList());
       if (showBaseVerb != null) await p.setBool(_kShowBaseVerb, showBaseVerb);
       if (showAnswers != null) await p.setBool(_kShowAnswers, showAnswers);
-      if (filterRegular != null) await p.setBool(_kFilterRegular, filterRegular);
+      if (showDetails != null) await p.setBool(_kShowDetails, showDetails);
+      if (filterRegular != null) await p.setString(_kFilterRegularity, filterRegular ? 'regular' : 'irregular');
+      if (filterPronominal != null)
+        await p.setString(_kFilterPronominal, filterPronominal ? 'pronominal' : 'non-pronominal');
       if (filterGroups != null) await p.setStringList(_kFilterGroups, filterGroups.toList());
+      if (filterAuxiliary != null) await p.setString(_kFilterAuxiliary, filterAuxiliary);
     } catch (e) {
       // Gracefully handle platforms where shared_preferences is not available (e.g., Web without proper setup)
       // Silently ignore preference save errors
     }
+  }
+
+  static Future<void> clearConjugationFilters() async {
+    try {
+      final p = await SharedPreferences.getInstance();
+      await p.remove(_kFilterRegularity);
+      await p.remove(_kFilterPronominal);
+      await p.remove(_kFilterGroups);
+      await p.remove(_kFilterAuxiliary);
+    } catch (_) {}
+  }
+
+  static Future<void> clearRegularityFilter() async {
+    final p = await SharedPreferences.getInstance();
+    await p.remove(_kFilterRegularity);
+  }
+
+  static Future<void> clearPronominalFilter() async {
+    final p = await SharedPreferences.getInstance();
+    await p.remove(_kFilterPronominal);
+  }
+
+  static Future<void> clearAuxiliaryFilter() async {
+    final p = await SharedPreferences.getInstance();
+    await p.remove(_kFilterAuxiliary);
   }
 
   static Future<QuizPrefsState> loadState() async {
@@ -47,8 +82,11 @@ class QuizPrefs {
         persons: p.getStringList(_kPersons) ?? const <String>[],
         showBaseVerb: p.getBool(_kShowBaseVerb) ?? true,
         showAnswers: p.getBool(_kShowAnswers) ?? false,
-        filterRegular: p.getBool(_kFilterRegular) ?? false,
+        showDetails: p.getBool(_kShowDetails) ?? true,
+        filterRegularity: p.getString(_kFilterRegularity),
+        filterPronominal: p.getString(_kFilterPronominal),
         filterGroups: p.getStringList(_kFilterGroups) ?? const <String>[],
+        filterAuxiliary: p.getString(_kFilterAuxiliary),
       );
     } catch (e) {
       // Return defaults if preferences unavailable
@@ -60,8 +98,11 @@ class QuizPrefs {
         persons: <String>[],
         showBaseVerb: true,
         showAnswers: false,
-        filterRegular: false,
+        showDetails: true,
+        filterRegularity: null,
+        filterPronominal: null,
         filterGroups: <String>[],
+        filterAuxiliary: null,
       );
     }
   }
@@ -74,8 +115,11 @@ class QuizPrefsState {
   final List<String> persons;
   final bool showBaseVerb;
   final bool showAnswers;
-  final bool filterRegular;
+  final bool showDetails;
+  final String? filterRegularity;
+  final String? filterPronominal;
   final List<String> filterGroups;
+  final String? filterAuxiliary;
 
   const QuizPrefsState({
     required this.infinitive,
@@ -84,7 +128,10 @@ class QuizPrefsState {
     required this.persons,
     required this.showBaseVerb,
     required this.showAnswers,
-    required this.filterRegular,
+    required this.showDetails,
+    required this.filterRegularity,
+    required this.filterPronominal,
     required this.filterGroups,
+    required this.filterAuxiliary,
   });
 }

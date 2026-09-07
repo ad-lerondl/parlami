@@ -58,6 +58,20 @@
   "coConnecting": "Conectando con {station}...",
   "coPlay": "Reproducir",
   "coStop": "Detener",
+  "coPause": "Pausa",
+  "coResume": "Reanudar",
+  "coRadioGeneral": "Radio generalista italiana",
+  "coMusicEntertainment": "Música y entretenimiento",
+  "coCultureNews": "Cultura y noticias",
+  "coPopNews": "Música pop y noticias",
+  "coRadioNewsMusic": "Noticias y música",
+  "coNational": "Nacional",
+  "ceAnsaDescription": "Agencia de noticias italiana - artículos breves",
+  "ceRepubblicaDescription": "Gran diario nacional italiano",
+  "ceCorriereDescription": "Periódico de referencia",
+  "ceIlPostDescription": "Noticias y análisis",
+  "ceRaiDescription": "Noticias de la RAI",
+  "ceEasyItalianDescription": "Noticias en italiano fácil",
   "eoTitle": "EO - Expresión oral",
   "eoChooseLevel": "Elige el nivel",
   "eoLevel": "Nivel {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Regulares",
   "conjugationSemiRegular": "Semi-regulares",
   "conjugationIrregular": "Irregulares",
+  "conjugationPronominal": "Pronominales",
+  "conjugationGroup": "Grupo {group}",
+  "conjugationAuxiliary": "Auxiliar {auxiliary}",
+  "conjugationShowAnswers": "Mostrar",
+  "conjugationHideAnswers": "Ocultar",
+  "conjugationNonPronominal": "No pronominales",
+  "conjugationDetailsVisibility": "Mostrar características del verbo",
   "conjugationClearFilters": "Borrar todos los filtros",
   "conjugationChooseVerb": "Elige un verbo",
   "conjugationRandomVerb": "Verbo aleatorio",
@@ -240,25 +261,161 @@
   "profilePrivacy": "Política de privacidad",
   "profilePrivacyDescription": "Abrir la política de privacidad",
   "unavailable": "Función aún no disponible.",
-  "@eoLevel": {"placeholders": {"level": {"type": "String"}}},
-  "@numDateExpectedDay": {"placeholders": {"day": {"type": "String"}}},
-  "@answerYourAnswer": {"placeholders": {"answer": {"type": "String"}}},
-  "@answerExpected": {"placeholders": {"answer": {"type": "String"}}},
-  "@conjugationVerb": {"placeholders": {"verb": {"type": "String"}}},
-  "@conjugationTranslation": {"placeholders": {"translation": {"type": "String"}}},
-  "@conjugationMood": {"placeholders": {"mood": {"type": "String"}}},
-  "@conjugationTense": {"placeholders": {"tense": {"type": "String"}}},
-  "@conjugationLoadingError": {"placeholders": {"error": {"type": "String"}}},
-  "@vocabImportError": {"placeholders": {"error": {"type": "String"}}},
-  "@vocabDeleteDescription": {"placeholders": {"word": {"type": "String"}}},
-  "@vocabScore": {"placeholders": {"score": {"type": "String"}}},
-  "@vocabBaseLanguage": {"placeholders": {"language": {"type": "String"}}},
-  "@vocabCategories": {"placeholders": {"categories": {"type": "String"}}},
-  "@vocabSelectedCount": {"placeholders": {"count": {"type": "String"}}},
-  "@ceLevel": {"placeholders": {"level": {"type": "String"}}},
-  "@sampleItem": {"placeholders": {"id": {"type": "String"}}},
-  "@vocabAddCategory": {"placeholders": {"category": {"type": "String"}}},
-  "@vocabStatusImport": {"placeholders": {"count": {"type": "String"}}},
-  "@vocabStatusExport": {"placeholders": {"location": {"type": "String"}}},
-  "@appTitle": {"description": "El título de la aplicación"}
+  "@eoLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@numDateExpectedDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerYourAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@answerExpected": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationVerb": {
+    "placeholders": {
+      "verb": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTranslation": {
+    "placeholders": {
+      "translation": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationMood": {
+    "placeholders": {
+      "mood": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationTense": {
+    "placeholders": {
+      "tense": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationLoadingError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabImportError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabDeleteDescription": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabBaseLanguage": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabCategories": {
+    "placeholders": {
+      "categories": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@ceLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "@sampleItem": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabAddCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusImport": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@vocabStatusExport": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
+      }
+    }
+  },
+  "@appTitle": {
+    "description": "El título de la aplicación"
+  }
 }

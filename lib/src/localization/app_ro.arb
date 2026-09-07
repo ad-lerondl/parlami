@@ -58,6 +58,20 @@
   "coConnecting": "Conectare la {station}...",
   "coPlay": "Redare",
   "coStop": "Stop",
+  "coPause": "Pauză",
+  "coResume": "Reia",
+  "coRadioGeneral": "Radio generalist italian",
+  "coMusicEntertainment": "Muzică și divertisment",
+  "coCultureNews": "Cultură și știri",
+  "coPopNews": "Muzică pop și știri",
+  "coRadioNewsMusic": "Știri și muzică",
+  "coNational": "Național",
+  "ceAnsaDescription": "Agenție de presă italiană - articole scurte",
+  "ceRepubblicaDescription": "Cotidian italian de referință",
+  "ceCorriereDescription": "Ziar de referință",
+  "ceIlPostDescription": "Știri și analize",
+  "ceRaiDescription": "Știri RAI",
+  "ceEasyItalianDescription": "Știri în italiană ușoară",
   "eoTitle": "EO - Expresie orală",
   "eoChooseLevel": "Alege nivelul",
   "eoLevel": "Nivel {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Regulate",
   "conjugationSemiRegular": "Semi-regulate",
   "conjugationIrregular": "Neregulate",
+  "conjugationPronominal": "Pronominale",
+  "conjugationGroup": "Grupul {group}",
+  "conjugationAuxiliary": "Auxiliar {auxiliary}",
+  "conjugationShowAnswers": "Afișează",
+  "conjugationHideAnswers": "Ascunde",
+  "conjugationNonPronominal": "Nepronominale",
+  "conjugationDetailsVisibility": "Afișează caracteristicile verbului",
   "conjugationClearFilters": "Șterge toate filtrele",
   "conjugationChooseVerb": "Alege un verb",
   "conjugationRandomVerb": "Verb aleatoriu",
@@ -377,6 +398,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },

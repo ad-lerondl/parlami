@@ -58,6 +58,20 @@
   "coConnecting": "Подключение к {station}...",
   "coPlay": "Играть",
   "coStop": "Стоп",
+  "coPause": "Пауза",
+  "coResume": "Продолжить",
+  "coRadioGeneral": "Итальянское радио широкого формата",
+  "coMusicEntertainment": "Музыка и развлечения",
+  "coCultureNews": "Культура и новости",
+  "coPopNews": "Поп-музыка и новости",
+  "coRadioNewsMusic": "Новости и музыка",
+  "coNational": "Национальное",
+  "ceAnsaDescription": "Итальянское информационное агентство — короткие статьи",
+  "ceRepubblicaDescription": "Крупная итальянская ежедневная газета",
+  "ceCorriereDescription": "Авторитетное издание",
+  "ceIlPostDescription": "Новости и аналитика",
+  "ceRaiDescription": "Новости RAI",
+  "ceEasyItalianDescription": "Новости на простом итальянском",
   "eoTitle": "EO - Устная речь",
   "eoChooseLevel": "Выберите уровень",
   "eoLevel": "Уровень {level}",
@@ -118,6 +132,13 @@
   "conjugationRegular": "Правильные",
   "conjugationSemiRegular": "Полуправильные",
   "conjugationIrregular": "Неправильные",
+  "conjugationPronominal": "Местоименные",
+  "conjugationGroup": "Группа {group}",
+  "conjugationAuxiliary": "Вспомогательный глагол {auxiliary}",
+  "conjugationShowAnswers": "Показать",
+  "conjugationHideAnswers": "Скрыть",
+  "conjugationNonPronominal": "Неместоименные",
+  "conjugationDetailsVisibility": "Показать характеристики глагола",
   "conjugationClearFilters": "Очистить все фильтры",
   "conjugationChooseVerb": "Выберите глагол",
   "conjugationRandomVerb": "Случайный глагол",
@@ -268,6 +289,20 @@
       }
     }
   },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
+      }
+    }
+  },
   "@conjugationVerb": {
     "placeholders": {
       "verb": {
@@ -377,6 +412,20 @@
     "placeholders": {
       "location": {
         "type": "String"
+      }
+    }
+  },
+  "@conjugationGroup": {
+    "placeholders": {
+      "group": {
+        "type": "Object"
+      }
+    }
+  },
+  "@conjugationAuxiliary": {
+    "placeholders": {
+      "auxiliary": {
+        "type": "Object"
       }
     }
   },
