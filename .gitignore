@@ -54,6 +54,9 @@ android/key.properties
 *.bak
 
 # Python files
-*.py[cod]
+*.py
+*.pyc
+*.pyo
+*.pyd
 # Widget Preview related
 .widget_preview/
