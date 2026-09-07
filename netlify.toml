@@ -13,6 +13,11 @@
   status = 200
 
 [[redirects]]
+  from = "/privacy/:language/"
+  to = "/privacy/:language/index.html"
+  status = 200
+
+[[redirects]]
   from = "/download"
   to = "/download/"
   status = 301
@@ -20,6 +25,11 @@
 [[redirects]]
   from = "/download/"
   to = "/download/fr/"
+  status = 200
+
+[[redirects]]
+  from = "/download/:language/"
+  to = "/download/:language/index.html"
   status = 200
 
 [[redirects]]
