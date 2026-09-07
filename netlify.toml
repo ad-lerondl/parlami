@@ -19,13 +19,18 @@
 
 [[redirects]]
   from = "/download"
-  to = "/download/"
+  to = "/download/fr/"
   status = 301
 
 [[redirects]]
   from = "/download/"
   to = "/download/fr/"
-  status = 200
+  status = 301
+
+[[redirects]]
+  from = "/download/:language"
+  to = "/download/:language/"
+  status = 301
 
 [[redirects]]
   from = "/download/:language/"
