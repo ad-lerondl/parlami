@@ -2,6 +2,23 @@
 
 Application Flutter d'apprentissage de l'italien (mobile/web/desktop) organisee par modules.
 
+## License
+
+Parlami's original source code is licensed under the [PolyForm Perimeter License 1.0.1](https://polyformproject.org/licenses/perimeter/1.0.1).
+
+The license permits use, modification, and distribution of the software, but does not permit using Parlami or derivative works to provide a product that competes with Parlami, including competing products offered free of charge.
+
+For commercial licensing or permissions beyond those granted by the license, contact:
+
+**Adam Lérondel**
+[ad-lerondl.apps@gmx.fr](mailto:ad-lerondl.apps@gmx.fr)
+
+See the [`LICENSE`](LICENSE) file for the complete license terms.
+
+### Third-party components
+
+Parlami may contain third-party software, libraries, fonts, data, images, or other assets that are subject to their own licenses. Such components remain subject to their respective licenses.
+
 ## Quick Start
 
 - Prerequis: Flutter recent compatible avec SDK Dart `^3.5.4`
@@ -55,6 +72,8 @@ Pour un contexte complet architecture + dette technique + priorites d'ameliorati
 - `DEVELOPER_GUIDE.md`
 
 Ce fichier est concu pour etre partage tel quel a un autre LLM pour obtenir des recommandations de refacto, tests et roadmap.
+
+La localisation est maintenue dans `lib/src/localization/app_*.arb`. Les changements doivent respecter les regles de migration controlee de la section "Localisation" de `DEVELOPER_GUIDE.md`.
 
 ## Lien Don
 
