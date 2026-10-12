@@ -54,7 +54,8 @@ class _ProfileViewState extends State<ProfileView> {
       _reminderBusy = false;
     });
     if (enabled && !granted) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Les notifications sont refusées sur cet appareil.')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Les notifications sont refusées sur cet appareil.')));
     }
   }
 
@@ -88,7 +89,9 @@ class _ProfileViewState extends State<ProfileView> {
       ListTile(
         leading: Icon(_remindersEnabled ? Icons.notifications_active_outlined : Icons.notifications_none_outlined),
         title: const Text('Rappels quotidiens'),
-        subtitle: Text(_remindersEnabled ? 'Un rappel est activé pour garder le rythme.' : 'Recevoir un rappel doux pour commencer une session.'),
+        subtitle: Text(_remindersEnabled
+            ? 'Un rappel est activé pour garder le rythme.'
+            : 'Recevoir un rappel doux pour commencer une session.'),
         trailing: _reminderBusy
             ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2))
             : Switch(value: _remindersEnabled, onChanged: _toggleReminders),

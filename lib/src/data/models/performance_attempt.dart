@@ -34,9 +34,8 @@ class PerformanceAttempt {
       correct: json['correct'] as bool?,
       rating: (json['rating'] as num?)?.toInt(),
       durationMs: (json['durationMs'] as num?)?.toInt(),
-      metadata: json['metadata'] is Map
-          ? Map<String, dynamic>.from(json['metadata'] as Map)
-          : const <String, dynamic>{},
+      metadata:
+          json['metadata'] is Map ? Map<String, dynamic>.from(json['metadata'] as Map) : const <String, dynamic>{},
     );
   }
 

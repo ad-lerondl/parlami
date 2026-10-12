@@ -58,7 +58,9 @@ class StudySessionTracker with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
       if (_skill != null && _activeStartedAt == null) _activeStartedAt = DateTime.now();
-    } else if (state == AppLifecycleState.inactive || state == AppLifecycleState.paused || state == AppLifecycleState.detached) {
+    } else if (state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.paused ||
+        state == AppLifecycleState.detached) {
       _commitActiveTime();
       _activeStartedAt = null;
     }

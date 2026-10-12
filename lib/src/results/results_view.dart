@@ -104,7 +104,8 @@ class _ResultsViewState extends State<ResultsView> {
                     _FocusMetricTile(attempts: data.attempts),
                     const SizedBox(height: 8),
                     _ConjugationResultsCard(
-                      attempts: data.attempts.where((attempt) => attempt.skill == 'conjugation').toList(growable: false),
+                      attempts:
+                          data.attempts.where((attempt) => attempt.skill == 'conjugation').toList(growable: false),
                       onStartSession: widget.onStartSession,
                     ),
                     const SizedBox(height: 16),
@@ -113,7 +114,8 @@ class _ResultsViewState extends State<ResultsView> {
                       icon: Icons.extension_outlined,
                       children: [
                         _NumDateResultsCard(
-                          attempts: data.attempts.where((attempt) => attempt.skill == 'numdate').toList(growable: false),
+                          attempts:
+                              data.attempts.where((attempt) => attempt.skill == 'numdate').toList(growable: false),
                         ),
                         _TrainingResultsCard(
                           skill: 'eo',
@@ -225,7 +227,9 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
     final selected = widget.attempts.where((attempt) => attempt.skill == _selectedSkill).toList();
     final answers = selected.where((attempt) => attempt.correct != null).toList();
     final correct = answers.where((attempt) => attempt.correct == true).length;
-    final duration = selected.where((attempt) => attempt.exerciseType == 'study_session').fold<int>(0, (sum, attempt) => sum + (attempt.durationMs ?? 0));
+    final duration = selected
+        .where((attempt) => attempt.exerciseType == 'study_session')
+        .fold<int>(0, (sum, attempt) => sum + (attempt.durationMs ?? 0));
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
@@ -240,7 +244,9 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
                 DropdownButton<String>(
                   value: _selectedSkill,
                   underline: const SizedBox.shrink(),
-                  items: available.map((skill) => DropdownMenuItem(value: skill, child: Text(_labels[skill] ?? skill))).toList(),
+                  items: available
+                      .map((skill) => DropdownMenuItem(value: skill, child: Text(_labels[skill] ?? skill)))
+                      .toList(),
                   onChanged: (skill) => setState(() => _selectedSkill = skill ?? _selectedSkill),
                 ),
               ],
@@ -249,7 +255,8 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _Metric(value: '${answers.isEmpty ? 0 : (correct / answers.length * 100).round()} %', label: 'réussite'),
+                _Metric(
+                    value: '${answers.isEmpty ? 0 : (correct / answers.length * 100).round()} %', label: 'réussite'),
                 _Metric(value: '${answers.length}', label: 'réponses'),
                 _Metric(value: _formatDuration(duration), label: 'temps actif'),
               ],
@@ -275,7 +282,8 @@ class _Header extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Tes résultats', style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
+            Text('Tes résultats',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
             const SizedBox(height: 4),
             const Text('Un aperçu simple pour savoir quoi travailler aujourd’hui.'),
           ],
@@ -293,7 +301,8 @@ class _OverviewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final attempts = reviewed.fold<int>(0, (sum, word) => sum + word.stats.attempts);
     final correct = reviewed.fold<int>(0, (sum, word) => sum + word.stats.correctAttempts);
-    final mastery = reviewed.isEmpty ? 0.0 : reviewed.map((word) => word.masteryScore()).reduce((a, b) => a + b) / reviewed.length;
+    final mastery =
+        reviewed.isEmpty ? 0.0 : reviewed.map((word) => word.masteryScore()).reduce((a, b) => a + b) / reviewed.length;
     final rate = attempts == 0 ? 0.0 : correct / attempts;
     return Card(
       child: Padding(
@@ -311,7 +320,9 @@ class _OverviewCard extends StatelessWidget {
                     children: [
                       Text('Niveau global', style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 4),
-                      Text(reviewed.isEmpty ? 'Commence une première révision.' : 'Ta mémoire progresse à chaque rappel.'),
+                      Text(reviewed.isEmpty
+                          ? 'Commence une première révision.'
+                          : 'Ta mémoire progresse à chaque rappel.'),
                     ],
                   ),
                 ),
@@ -371,7 +382,8 @@ class _RetentionPulseCard extends StatelessWidget {
             .where((attempt) => attempt.exerciseType == 'study_session')
             .fold<int>(0, (sum, attempt) => sum + (attempt.durationMs ?? 0)) /
         60000;
-    final hasConjugation = todayAttempts.any((attempt) => attempt.skill == 'conjugation' && attempt.exerciseType != 'study_session');
+    final hasConjugation =
+        todayAttempts.any((attempt) => attempt.skill == 'conjugation' && attempt.exerciseType != 'study_session');
     final tasks = [
       _RetentionTask('Faire 3 minutes de session', activeMinutes >= 3),
       _RetentionTask('Répondre à 5 questions', answerCount >= 5),
@@ -390,12 +402,19 @@ class _RetentionPulseCard extends StatelessWidget {
               children: [
                 Icon(atRisk ? Icons.local_fire_department_outlined : Icons.favorite_outline),
                 const SizedBox(width: 8),
-                Expanded(child: Text(streak == 0 ? 'Ton rythme commence aujourd’hui' : '$streak jour${streak > 1 ? 's' : ''} de suite', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
+                Expanded(
+                    child: Text(
+                        streak == 0
+                            ? 'Ton rythme commence aujourd’hui'
+                            : '$streak jour${streak > 1 ? 's' : ''} de suite',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
                 Text('$completed/${tasks.length}'),
               ],
             ),
             const SizedBox(height: 4),
-            Text(atRisk ? 'Ta série est encore récupérable : quelques minutes suffisent.' : 'Une petite présence régulière vaut mieux qu’une longue session rare.'),
+            Text(atRisk
+                ? 'Ta série est encore récupérable : quelques minutes suffisent.'
+                : 'Une petite présence régulière vaut mieux qu’une longue session rare.'),
             const SizedBox(height: 8),
             for (final task in tasks)
               Row(
@@ -415,7 +434,10 @@ class _RetentionPulseCard extends StatelessWidget {
             if (onStartSession != null)
               Align(
                 alignment: Alignment.centerLeft,
-                child: FilledButton.icon(onPressed: onStartSession, icon: const Icon(Icons.play_arrow), label: const Text('Commencer maintenant')),
+                child: FilledButton.icon(
+                    onPressed: onStartSession,
+                    icon: const Icon(Icons.play_arrow),
+                    label: const Text('Commencer maintenant')),
               ),
           ],
         ),
@@ -423,7 +445,8 @@ class _RetentionPulseCard extends StatelessWidget {
     );
   }
 
-  static bool _sameDay(DateTime left, DateTime right) => left.year == right.year && left.month == right.month && left.day == right.day;
+  static bool _sameDay(DateTime left, DateTime right) =>
+      left.year == right.year && left.month == right.month && left.day == right.day;
 
   static String _dayKey(DateTime date) => '${date.year}-${date.month}-${date.day}';
 }
@@ -470,7 +493,9 @@ class _ConjugationResultsCard extends StatelessWidget {
               children: [
                 const Icon(Icons.auto_graph_outlined),
                 const SizedBox(width: 8),
-                Expanded(child: Text('Conjugaison', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
+                Expanded(
+                    child: Text('Conjugaison',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
                 if (attempts.isNotEmpty) Text('${(accuracy * 100).round()} %'),
               ],
             ),
@@ -480,12 +505,16 @@ class _ConjugationResultsCard extends StatelessWidget {
               if (onStartSession != null)
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: TextButton.icon(onPressed: onStartSession, icon: const Icon(Icons.play_arrow), label: const Text('S’entraîner maintenant')),
+                  child: TextButton.icon(
+                      onPressed: onStartSession,
+                      icon: const Icon(Icons.play_arrow),
+                      label: const Text('S’entraîner maintenant')),
                 ),
             ] else ...[
               LinearProgressIndicator(value: accuracy, minHeight: 8),
               const SizedBox(height: 8),
-              Text('$correct bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${attempts.length} vérification${attempts.length > 1 ? 's' : ''}.'),
+              Text(
+                  '$correct bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${attempts.length} vérification${attempts.length > 1 ? 's' : ''}.'),
               ExpansionTile(
                 tilePadding: EdgeInsets.zero,
                 title: const Text('Explorer les points à renforcer'),
@@ -494,8 +523,10 @@ class _ConjugationResultsCard extends StatelessWidget {
                   _ConjugationTenseBars(scores: tenseStats),
                   _ConjugationPersonRadar(scores: personStats),
                   if (weakestTenses.isNotEmpty) _StatLine(label: 'Temps à reprendre', value: weakestTenses.join(' · ')),
-                  if (weakestPersons.isNotEmpty) _StatLine(label: 'Personnes les moins sûres', value: weakestPersons.join(', ')),
-                  if (weakestTenses.isEmpty && weakestPersons.isEmpty) const Text('Pas encore assez de données pour dégager une tendance.'),
+                  if (weakestPersons.isNotEmpty)
+                    _StatLine(label: 'Personnes les moins sûres', value: weakestPersons.join(', ')),
+                  if (weakestTenses.isEmpty && weakestPersons.isEmpty)
+                    const Text('Pas encore assez de données pour dégager une tendance.'),
                 ],
               ),
             ],
@@ -518,7 +549,10 @@ class _ConjugationResultsCard extends StatelessWidget {
         final rightRate = right.value[1] / right.value[0];
         return leftRate.compareTo(rightRate);
       });
-    return entries.take(3).map((entry) => '${entry.key} (${(entry.value[1] / entry.value[0] * 100).round()} %)').toList();
+    return entries
+        .take(3)
+        .map((entry) => '${entry.key} (${(entry.value[1] / entry.value[0] * 100).round()} %)')
+        .toList();
   }
 }
 
@@ -560,8 +594,7 @@ class _ConjugationMatrix extends StatelessWidget {
           for (final row in matrix.entries)
             DataRow(cells: [
               DataCell(Text(row.key, style: const TextStyle(fontSize: 12))),
-              for (final person in columns)
-                DataCell(_MatrixCell(score: row.value[person])),
+              for (final person in columns) DataCell(_MatrixCell(score: row.value[person])),
             ]),
         ],
       ),
@@ -576,8 +609,7 @@ class _ConjugationTenseBars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final entries = scores.entries.toList()
-      ..sort((left, right) => (right.value[0]).compareTo(left.value[0]));
+    final entries = scores.entries.toList()..sort((left, right) => (right.value[0]).compareTo(left.value[0]));
     if (entries.isEmpty) return const SizedBox.shrink();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -590,7 +622,9 @@ class _ConjugationTenseBars extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 3),
             child: Row(
               children: [
-                SizedBox(width: 118, child: Text(entry.key, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11))),
+                SizedBox(
+                    width: 118,
+                    child: Text(entry.key, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11))),
                 Expanded(child: LinearProgressIndicator(value: entry.value[1] / entry.value[0], minHeight: 8)),
                 const SizedBox(width: 8),
                 Text('${(entry.value[1] / entry.value[0] * 100).round()} %'),
@@ -616,9 +650,13 @@ class _ConjugationPersonRadar extends StatelessWidget {
       padding: const EdgeInsets.only(top: 12),
       child: Column(
         children: [
-          const Align(alignment: Alignment.centerLeft, child: Text('Radar des personnes', style: TextStyle(fontWeight: FontWeight.bold))),
+          const Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Radar des personnes', style: TextStyle(fontWeight: FontWeight.bold))),
           SizedBox(height: 180, child: CustomPaint(painter: _RadarPainter(values, Theme.of(context).colorScheme))),
-          Wrap(spacing: 10, children: [for (var i = 0; i < entries.length; i++) Text('${entries[i].key}: ${(values[i] * 100).round()} %')]),
+          Wrap(spacing: 10, children: [
+            for (var i = 0; i < entries.length; i++) Text('${entries[i].key}: ${(values[i] * 100).round()} %')
+          ]),
         ],
       ),
     );
@@ -634,7 +672,8 @@ class _MatrixCell extends StatelessWidget {
   Widget build(BuildContext context) {
     if (score == null || score![0] == 0) return const Text('—');
     final rate = score![1] / score![0];
-    final color = Color.lerp(Theme.of(context).colorScheme.errorContainer, Theme.of(context).colorScheme.primaryContainer, rate);
+    final color =
+        Color.lerp(Theme.of(context).colorScheme.errorContainer, Theme.of(context).colorScheme.primaryContainer, rate);
     return Container(
       constraints: const BoxConstraints(minWidth: 44),
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
@@ -687,7 +726,8 @@ class _NumDateResultsCard extends StatelessWidget {
               children: [
                 const Icon(Icons.access_time_outlined),
                 const SizedBox(width: 8),
-                Text('Nombres & dates', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                Text('Nombres & dates',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
               ],
             ),
             const SizedBox(height: 8),
@@ -818,7 +858,9 @@ class _ActivityHeatmap extends StatelessWidget {
       if (age >= 0 && age < counts.length) counts[age]++;
     }
     for (final attempt in attempts) {
-      final age = DateTime(now.year, now.month, now.day).difference(DateTime(attempt.recordedAt.year, attempt.recordedAt.month, attempt.recordedAt.day)).inDays;
+      final age = DateTime(now.year, now.month, now.day)
+          .difference(DateTime(attempt.recordedAt.year, attempt.recordedAt.month, attempt.recordedAt.day))
+          .inDays;
       if (age >= 0 && age < counts.length) counts[age]++;
     }
     final maxCount = counts.fold<int>(0, (max, count) => count > max ? count : max);
@@ -866,7 +908,8 @@ class _StudyTimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final durations = <String, int>{};
     for (final attempt in attempts.where((attempt) => attempt.exerciseType == 'study_session')) {
-      durations.update(attempt.skill, (value) => value + (attempt.durationMs ?? 0), ifAbsent: () => attempt.durationMs ?? 0);
+      durations.update(attempt.skill, (value) => value + (attempt.durationMs ?? 0),
+          ifAbsent: () => attempt.durationMs ?? 0);
     }
     final measured = durations.entries.where((entry) => entry.value > 0).toList();
     if (measured.isEmpty) {
@@ -879,14 +922,24 @@ class _StudyTimeCard extends StatelessWidget {
       );
     }
     final total = measured.fold<int>(0, (sum, entry) => sum + entry.value);
-    final labels = {'vocabulary': 'Vocabulaire', 'conjugation': 'Conjugaison', 'numdate': 'Nombres & dates', 'eo': 'Expression orale', 'ee': 'Expression écrite'};
+    final labels = {
+      'vocabulary': 'Vocabulaire',
+      'conjugation': 'Conjugaison',
+      'numdate': 'Nombres & dates',
+      'eo': 'Expression orale',
+      'ee': 'Expression écrite'
+    };
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(children: [const Icon(Icons.timer_outlined), const SizedBox(width: 8), Text('Temps d’étude mesuré', style: Theme.of(context).textTheme.titleMedium)]),
+            Row(children: [
+              const Icon(Icons.timer_outlined),
+              const SizedBox(width: 8),
+              Text('Temps d’étude mesuré', style: Theme.of(context).textTheme.titleMedium)
+            ]),
             const SizedBox(height: 8),
             for (final entry in measured)
               Padding(
@@ -960,11 +1013,14 @@ class _DifficultyList extends StatelessWidget {
           for (final difficulty in VocabDifficulty.values)
             Builder(builder: (context) {
               final items = words.where((word) => word.difficulty == difficulty && word.stats.attempts > 0).toList();
-              final value = items.isEmpty ? 0.0 : items.map((word) => word.masteryScore()).reduce((a, b) => a + b) / items.length;
+              final value =
+                  items.isEmpty ? 0.0 : items.map((word) => word.masteryScore()).reduce((a, b) => a + b) / items.length;
               return ListTile(
                 dense: true,
                 leading: CircleAvatar(radius: 14, child: Text(difficulty.label)),
-                title: Text(items.isEmpty ? 'Pas encore évalué' : '${items.length} mot${items.length > 1 ? 's' : ''} revu${items.length > 1 ? 's' : ''}'),
+                title: Text(items.isEmpty
+                    ? 'Pas encore évalué'
+                    : '${items.length} mot${items.length > 1 ? 's' : ''} revu${items.length > 1 ? 's' : ''}'),
                 subtitle: LinearProgressIndicator(value: value / 100, minHeight: 6),
                 trailing: Text('${value.round()} %'),
               );
@@ -1016,7 +1072,10 @@ class _EmptyResults extends StatelessWidget {
             const Text('Ton tableau de bord se remplira dès ta première révision.', textAlign: TextAlign.center),
             if (onStartSession != null) ...[
               const SizedBox(height: 12),
-              OutlinedButton.icon(onPressed: onStartSession, icon: const Icon(Icons.play_arrow), label: const Text('Réviser maintenant')),
+              OutlinedButton.icon(
+                  onPressed: onStartSession,
+                  icon: const Icon(Icons.play_arrow),
+                  label: const Text('Réviser maintenant')),
             ],
           ],
         ),
@@ -1032,7 +1091,11 @@ class _SectionTitle extends StatelessWidget {
   final IconData icon;
 
   @override
-  Widget build(BuildContext context) => Row(children: [Icon(icon, size: 20), const SizedBox(width: 8), Text(title, style: Theme.of(context).textTheme.titleMedium)]);
+  Widget build(BuildContext context) => Row(children: [
+        Icon(icon, size: 20),
+        const SizedBox(width: 8),
+        Text(title, style: Theme.of(context).textTheme.titleMedium)
+      ]);
 }
 
 class _Metric extends StatelessWidget {
@@ -1042,7 +1105,11 @@ class _Metric extends StatelessWidget {
   final String label;
 
   @override
-  Widget build(BuildContext context) => Column(children: [Text(value, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)), const SizedBox(height: 2), Text(label, style: Theme.of(context).textTheme.labelSmall)]);
+  Widget build(BuildContext context) => Column(children: [
+        Text(value, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)),
+        const SizedBox(height: 2),
+        Text(label, style: Theme.of(context).textTheme.labelSmall)
+      ]);
 }
 
 class _ScoreRing extends StatelessWidget {
@@ -1052,7 +1119,13 @@ class _ScoreRing extends StatelessWidget {
   final String label;
 
   @override
-  Widget build(BuildContext context) => SizedBox(width: 76, height: 76, child: Stack(alignment: Alignment.center, children: [CircularProgressIndicator(value: value), Text(label, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold))]));
+  Widget build(BuildContext context) => SizedBox(
+      width: 76,
+      height: 76,
+      child: Stack(alignment: Alignment.center, children: [
+        CircularProgressIndicator(value: value),
+        Text(label, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold))
+      ]));
 }
 
 class _RadarPainter extends CustomPainter {
@@ -1065,9 +1138,17 @@ class _RadarPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = size.shortestSide * 0.36;
-    final outline = Paint()..style = PaintingStyle.stroke..strokeWidth = 1..color = colors.outlineVariant;
-    final fill = Paint()..style = PaintingStyle.fill..color = colors.primary.withValues(alpha: 0.24);
-    final line = Paint()..style = PaintingStyle.stroke..strokeWidth = 2..color = colors.primary;
+    final outline = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1
+      ..color = colors.outlineVariant;
+    final fill = Paint()
+      ..style = PaintingStyle.fill
+      ..color = colors.primary.withValues(alpha: 0.24);
+    final line = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2
+      ..color = colors.primary;
     for (var ring = 1; ring <= 4; ring++) {
       canvas.drawPath(_polygon(center, radius * ring / 4, values.length), outline);
     }
@@ -1108,5 +1189,6 @@ class _RadarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _RadarPainter oldDelegate) => oldDelegate.values != values || oldDelegate.colors != colors;
+  bool shouldRepaint(covariant _RadarPainter oldDelegate) =>
+      oldDelegate.values != values || oldDelegate.colors != colors;
 }

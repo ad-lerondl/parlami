@@ -499,7 +499,8 @@ class _ConjugationViewState extends State<ConjugationView> {
                                             ..clear()
                                             ..addAll(partialMatches);
                                         });
-                                        final allCorrect = results.isNotEmpty && results.values.every((result) => result);
+                                        final allCorrect =
+                                            results.isNotEmpty && results.values.every((result) => result);
                                         final now = DateTime.now();
                                         await _performanceRepository.record(
                                           PerformanceAttempt(
@@ -515,7 +516,9 @@ class _ConjugationViewState extends State<ConjugationView> {
                                               'mood': selectedMood,
                                               'tense': selectedTense,
                                               'persons': results,
-                                              'partialPersons': partialMatches.keys.where((person) => partialMatches[person] == true).toList(),
+                                              'partialPersons': partialMatches.keys
+                                                  .where((person) => partialMatches[person] == true)
+                                                  .toList(),
                                             },
                                           ),
                                         );
