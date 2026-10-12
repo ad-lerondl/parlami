@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:parlami/src/data/models/vocab_word.dart';
 import 'package:parlami/src/repositories/vocab_repository.dart';
 import 'package:parlami/src/services/vocab_export_service.dart';
+import 'package:parlami/src/services/study_session_tracker.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 
 enum _VocabMenuAction { exportUserWords, resetOriginalWords }
@@ -62,6 +63,7 @@ class _VocabViewState extends State<VocabView> {
   @override
   void initState() {
     super.initState();
+    StudySessionTracker.instance.start('vocabulary');
     _repo.init().then((_) {
       if (!mounted) return;
       _refreshTrainingPool();
@@ -71,6 +73,7 @@ class _VocabViewState extends State<VocabView> {
 
   @override
   void dispose() {
+    StudySessionTracker.instance.stop();
     _searchController.dispose();
     _addItalianController.dispose();
     _addFrenchController.dispose();

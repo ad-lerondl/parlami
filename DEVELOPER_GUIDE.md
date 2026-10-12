@@ -48,6 +48,10 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 ### Donnees et logique
 - `lib/src/data/models/`: modeles metier
 - `lib/src/repositories/`: acces/indexation des donnees
+- `lib/src/data/models/performance_attempt.dart`: contrat commun d'une tentative d'exercice
+- `lib/src/repositories/performance_repository.dart`: persistance locale des performances par competence
+- `lib/src/services/retention_reminder_service.dart`: rappels quotidiens avec implementations natives/Web conditionnelles
+- `lib/src/services/study_session_tracker.dart`: mesure du temps actif par module, suspendue en arriere-plan
 - `lib/src/services/asset_loader.dart`: chargement JSON + cache
 - `lib/src/services/quiz_prefs.dart`: persistance pref quiz
 - `lib/src/services/radio_player_service.dart`: service radio live
@@ -87,6 +91,40 @@ vers la version française.
 - Quiz multi-pronoms
 - Gestion de formes multiples (string/array/object dans les JSON)
 - Persistance de preferences via `SharedPreferences`
+- Chaque verification est maintenant enregistree dans `performance_attempts` avec la reussite globale,
+  le mode, le temps, le verbe et le detail de reussite par personne.
+
+### 4.2 Performances transverses
+Les resultats des exercices ne sont pas stockes dans `QuizPrefs` ni dans les modeles pedagogiques.
+`PerformanceAttempt` fournit un contrat volontairement generique :
+- `skill`: competence (`conjugation`, `numdate`, `eo`, `ee`, etc.)
+- `exerciseType`: sous-type (`verb_forms`, `number`, `oral`, etc.)
+- `itemId`: identifiant stable de l'element travaille
+- `correct`: resultat objectif nullable
+- `rating`: auto-evaluation qualitative nullable, utile pour EO
+- `durationMs`: duree optionnelle
+- `metadata`: contexte structure comme le mode, le temps, les personnes ou le niveau
+
+Le depot utilise le meme stockage local Sembast que le vocabulaire, dans le store
+`performance_attempts`. Les nouveaux modules doivent enregistrer une tentative au moment
+ou la reponse est validee, et non a la destruction de la vue. Cela preserve les sessions
+interrompues et permet a l'ecran Resultats de rester independant des widgets d'exercice.
+
+Les points d'enregistrement actuels sont :
+- conjugaison : verification multi-personnes, avec agregation par mode/temps/personne ;
+- nombres/dates : corrections separees pour nombres, dates et heures ;
+- EE : correction de traduction ;
+- EO : auto-evaluation sur 0-3, niveau, mode et durees de parole/hesitation.
+
+Les tentatives de nombres portent aussi une bande de difficulte selon la grandeur (`0-99`,
+`100-999`, `1 000-9 999`, `10 000-999 999`, `1 000 000+`). Les temps de reponse des exercices
+conjugaison, nombres/dates et EE alimentent une estimation du temps d'etude par competence.
+Le temps affiche dans Resultats provient des sessions actives du tracker, et non d'un simple
+ecart entre deux clics. Les sessions sont suspendues quand l'application passe en arriere-plan.
+
+L'ecran Resultats conserve une vue synthetique et depliable : les indicateurs generaux restent
+visibles, tandis que les details par temps et personne sont accessibles dans la carte Conjugaison.
+Les nombres/dates, EO et EE peuvent ajouter leurs propres tentatives sans modifier ce contrat.
 
 ### 4.2 CO (radio live)
 - Stations italiennes hardcodees dans `lib/src/train/co/co_view.dart`
@@ -96,7 +134,17 @@ vers la version française.
 - Arret explicite lors de la fermeture/detach app (`AppLifecycleListener` dans `lib/src/app.dart`)
 
 ### 4.3 Resultats / Grammaire / Orthographe
-- Plusieurs ecrans encore en mode placeholder
+- Resultats affiche maintenant les statistiques historiques de vocabulaire et de conjugaison.
+- Resultats affiche une activite globale (vocabulaire et tentatives), le temps mesure par competence,
+  un objectif compare a la veille, des bandes de difficulte numerique et une matrice conjugaison
+  temps/personne. Les details sont regroupes dans des cartes et sections depliees.
+- Le snapshot de Resultats est mis en cache pendant la navigation ; un geste de rafraichissement
+  force la relecture des donnees.
+- Les reglages de notifications appartiennent a Profil, pas a Resultats.
+- Les rappels Android/iOS utilisent `flutter_local_notifications` avec demande de permission.
+  Le Web utilise l'API Notification du navigateur lorsqu'elle est disponible ; un onglet ferme
+  ne permet pas de planifier un rappel fiable sans service worker/PWA.
+- Grammaire et orthographe restent en mode placeholder.
 
 ### 4.4 Se tester (mise en conditions reelles)
 - Scenarios transverses centres vie quotidienne

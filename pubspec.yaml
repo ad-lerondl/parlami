@@ -22,6 +22,7 @@ dependencies:
   sembast_web: any
   universal_html: ^2.2.4
   shared_preferences: ^2.2.2
+  flutter_local_notifications: ^17.2.3
   just_audio: ^0.9.40
   just_audio_background: ^0.0.1-beta.15
   audio_service: ^0.18.13

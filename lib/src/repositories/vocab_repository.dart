@@ -29,6 +29,7 @@ class VocabRepository {
   final Map<String, List<VocabWord>> _byCategory = {};
   bool _initialized = false;
   Database? _database;
+  int revision = 0;
 
   Future<void> init() async {
     if (_initialized) return;
@@ -44,6 +45,7 @@ class VocabRepository {
         records.map((record) => VocabWord.fromJson(record.value, idFallback: record.key)).toList(growable: false);
 
     _rebuildCache(loaded);
+    revision++;
     _initialized = true;
   }
 
@@ -187,6 +189,7 @@ class VocabRepository {
     if (word == null) return null;
     final updated = word.copyWith(stats: word.stats.seen(now ?? DateTime.now()), updatedAt: now ?? DateTime.now());
     await _store.record(updated.id).put(_database!, _recordFor(updated));
+    revision++;
     _replaceInCache(updated);
     return updated;
   }
@@ -197,6 +200,7 @@ class VocabRepository {
     final updated =
         word.copyWith(stats: word.stats.recordReview(known, now ?? DateTime.now()), updatedAt: now ?? DateTime.now());
     await _store.record(updated.id).put(_database!, _recordFor(updated));
+    revision++;
     _replaceInCache(updated);
     return updated;
   }
@@ -209,7 +213,6 @@ class VocabRepository {
   Future<List<VocabWord>> _loadSeedFromAsset() async {
     const files = [
       'assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json',
-      'assets/vocabulaire/vocab_apprendreitalien-expressions.json',
       'assets/vocabulaire/vocab_mistral-slang.json',
     ];
 

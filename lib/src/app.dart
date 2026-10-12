@@ -121,7 +121,7 @@ class _HomeShellState extends State<_HomeShell> {
       case 2:
         return const EvaluateView();
       case 3:
-        return const ResultsView();
+        return ResultsView(onStartSession: () => setState(() => _index = 0));
       case 4:
         return ProfileView(controller: widget.settingsController);
       default:
