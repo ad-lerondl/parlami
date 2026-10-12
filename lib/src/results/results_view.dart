@@ -1,14 +1,90 @@
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart' show kDebugMode, debugPrint;
 
 import '../data/models/vocab_word.dart';
 import '../data/models/performance_attempt.dart';
 import '../localization/app_localizations.dart';
 import '../repositories/performance_repository.dart';
 import '../repositories/vocab_repository.dart';
+import 'dashboard_charts.dart';
+import 'results_analytics.dart';
 
+// ============================================================================
+// 1. PRÉPARATION DES DONNÉES
+// ============================================================================
+// Les vues filtrées sont préparées en un seul passage, sans recopier tout
+// l’historique dans un isolate uniquement pour effectuer des filtres.
+_ResultsData _processResultsData(
+  List<VocabWord> words,
+  List<PerformanceAttempt> attempts,
+) {
+  final reviewedWords = <VocabWord>[];
+  final conjugationAttempts = <PerformanceAttempt>[];
+  final eeAttempts = <PerformanceAttempt>[];
+  final eoAttempts = <PerformanceAttempt>[];
+  final numdateAttempts = <PerformanceAttempt>[];
+
+  // Single pass per collection. Calling compute() here previously copied the
+  // complete object graph into an isolate and copied all words/attempts back,
+  // only to perform several linear filters.
+  for (final word in words) {
+    if (word.stats.attempts > 0) reviewedWords.add(word);
+  }
+  for (final attempt in attempts) {
+    switch (attempt.skill) {
+      case 'conjugation':
+        conjugationAttempts.add(attempt);
+        break;
+      case 'ee':
+        eeAttempts.add(attempt);
+        break;
+      case 'eo':
+        eoAttempts.add(attempt);
+        break;
+      case 'numdate':
+        numdateAttempts.add(attempt);
+        break;
+    }
+  }
+
+  return _ResultsData(
+    words: words,
+    attempts: attempts,
+    reviewedWords: reviewedWords,
+    conjugationAttempts: conjugationAttempts,
+    eeAttempts: eeAttempts,
+    eoAttempts: eoAttempts,
+    numdateAttempts: numdateAttempts,
+    studyDurationSummary: ResultsAnalytics.studyDurations(attempts),
+  );
+}
+
+class _ResultsData {
+  const _ResultsData({
+    required this.words,
+    required this.attempts,
+    required this.reviewedWords,
+    required this.conjugationAttempts,
+    required this.eeAttempts,
+    required this.eoAttempts,
+    required this.numdateAttempts,
+    required this.studyDurationSummary,
+  });
+
+  final List<VocabWord> words;
+  final List<PerformanceAttempt> attempts;
+  final List<VocabWord> reviewedWords;
+  final List<PerformanceAttempt> conjugationAttempts;
+  final List<PerformanceAttempt> eeAttempts;
+  final List<PerformanceAttempt> eoAttempts;
+  final List<PerformanceAttempt> numdateAttempts;
+  final StudyDurationSummary studyDurationSummary;
+}
+
+// ============================================================================
+// 2. VUE PRINCIPALE (DASHBOARD)
+// ============================================================================
 class ResultsView extends StatefulWidget {
   const ResultsView({super.key, this.onStartSession});
 
@@ -22,7 +98,10 @@ class _ResultsViewState extends State<ResultsView> {
   final VocabRepository _repository = VocabRepository();
   final PerformanceRepository _performanceRepository = PerformanceRepository();
   late Future<_ResultsData> _resultsFuture;
-  bool _contractDone = false;
+
+  static Future<_ResultsData>? _cachedResultsFuture;
+  static int? _cachedPerformanceRevision;
+  static int? _cachedVocabRevision;
 
   @override
   void initState() {
@@ -32,31 +111,30 @@ class _ResultsViewState extends State<ResultsView> {
             _cachedVocabRevision == _repository.revision
         ? _cachedResultsFuture!
         : _loadAndCacheResults();
-    _loadContractState();
   }
-
-  Future<void> _loadContractState() async {
-    final preferences = await SharedPreferences.getInstance();
-    final key = 'retention_contract_${_dayKey(DateTime.now())}';
-    if (mounted) setState(() => _contractDone = preferences.getBool(key) ?? false);
-  }
-
-  Future<void> _setContract(bool value) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setBool('retention_contract_${_dayKey(DateTime.now())}', value);
-    if (mounted) setState(() => _contractDone = value);
-  }
-
-  static String _dayKey(DateTime date) => '${date.year}-${date.month}-${date.day}';
-
-  static Future<_ResultsData>? _cachedResultsFuture;
-  static int? _cachedPerformanceRevision;
-  static int? _cachedVocabRevision;
 
   Future<_ResultsData> _loadResults() async {
+    final total = Stopwatch()..start();
+    // These repositories share the same Sembast database. Initialise in a
+    // deterministic order; do not race two open/bootstrap operations here.
+    final vocabTimer = Stopwatch()..start();
     await _repository.init();
+    final vocabMs = vocabTimer.elapsedMilliseconds;
+
+    final performanceTimer = Stopwatch()..start();
     await _performanceRepository.init();
-    return _ResultsData(words: _repository.all(), attempts: _performanceRepository.all());
+    final performanceMs = performanceTimer.elapsedMilliseconds;
+
+    final words = _repository.all();
+    final attempts = _performanceRepository.all();
+    final processingTimer = Stopwatch()..start();
+    final data = _processResultsData(words, attempts);
+    if (kDebugMode) {
+      debugPrint('[Results] vocab init: ${vocabMs}ms; performance init: ${performanceMs}ms; '
+          'partition: ${processingTimer.elapsedMilliseconds}ms; '
+          'words=${words.length}; attempts=${attempts.length}; total=${total.elapsedMilliseconds}ms');
+    }
+    return data;
   }
 
   Future<_ResultsData> _loadAndCacheResults() async {
@@ -70,119 +148,308 @@ class _ResultsViewState extends State<ResultsView> {
   Future<void> _refresh() async {
     final future = _loadAndCacheResults();
     setState(() => _resultsFuture = future);
-    await future;
+    // FutureBuilder renders the error state; avoid an unhandled refresh error.
+    try {
+      await future;
+    } catch (_) {
+      // Intentionally handled by the FutureBuilder attached to _resultsFuture.
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return FutureBuilder<_ResultsData>(
-      future: _resultsFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState != ConnectionState.done) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (snapshot.hasError) {
-          return const Center(child: Text('Impossible de charger tes résultats.'));
-        }
 
-        final data = snapshot.data ?? const _ResultsData(words: [], attempts: []);
-        final words = data.words;
-        final reviewed = words.where((word) => word.stats.attempts > 0).toList(growable: false);
-        return RefreshIndicator(
-          onRefresh: () async => _refresh(),
-          child: CustomScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            slivers: [
-              const SliverToBoxAdapter(child: _Header()),
-              SliverPadding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-                sliver: SliverList(
-                  delegate: SliverChildListDelegate([
-                    _OverviewCard(words: words, reviewed: reviewed),
-                    const SizedBox(height: 16),
-                    _FocusMetricTile(attempts: data.attempts),
-                    const SizedBox(height: 8),
-                    _ConjugationResultsCard(
-                      attempts:
-                          data.attempts.where((attempt) => attempt.skill == 'conjugation').toList(growable: false),
-                      onStartSession: widget.onStartSession,
-                    ),
-                    const SizedBox(height: 16),
-                    _DetailsSection(
-                      title: 'Autres compétences',
-                      icon: Icons.extension_outlined,
-                      children: [
-                        _NumDateResultsCard(
-                          attempts:
-                              data.attempts.where((attempt) => attempt.skill == 'numdate').toList(growable: false),
-                        ),
-                        _TrainingResultsCard(
-                          skill: 'eo',
-                          title: 'Expression orale',
-                          icon: Icons.record_voice_over_outlined,
-                          attempts: data.attempts.where((attempt) => attempt.skill == 'eo').toList(growable: false),
-                        ),
-                        _TrainingResultsCard(
-                          skill: 'ee',
-                          title: 'Expression écrite',
-                          icon: Icons.edit_note_outlined,
-                          attempts: data.attempts.where((attempt) => attempt.skill == 'ee').toList(growable: false),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    _RetentionPulseCard(
-                      words: words,
-                      attempts: data.attempts,
-                      contractDone: _contractDone,
-                      onContractChanged: _setContract,
-                      onStartSession: widget.onStartSession,
-                    ),
-                    const SizedBox(height: 16),
-                    const _SectionTitle(title: 'Activité récente', icon: Icons.calendar_view_week_outlined),
-                    const SizedBox(height: 8),
-                    _ActivityHeatmap(words: words, attempts: data.attempts),
-                    const SizedBox(height: 8),
-                    _StudyTimeCard(attempts: data.attempts),
-                    const SizedBox(height: 16),
-                    _DetailsSection(
-                      title: 'Détails du niveau',
-                      icon: Icons.tune_outlined,
-                      children: [
-                        const _SectionTitle(title: 'Bases par niveau', icon: Icons.radar_outlined),
-                        _SkillRadar(words: words),
-                        const _SectionTitle(title: 'Difficultés actuelles', icon: Icons.flag_outlined),
-                        _DifficultyList(words: words),
-                        if (reviewed.isEmpty)
-                          _EmptyResults(onStartSession: widget.onStartSession)
-                        else
-                          _RecentPriorities(words: reviewed),
-                      ],
-                    ),
-                    const SizedBox(height: 24),
-                    Text(l10n.vocabMastery, style: Theme.of(context).textTheme.labelSmall),
-                  ]),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l10n.vocabMastery, style: const TextStyle(fontWeight: FontWeight.w800)),
+          bottom: const TabBar(
+            indicatorWeight: 4,
+            tabs: [
+              Tab(icon: Icon(Icons.local_fire_department_rounded), text: "Aujourd'hui"),
+              Tab(icon: Icon(Icons.insert_chart_rounded), text: 'Progression'),
+              Tab(icon: Icon(Icons.psychology_rounded), text: 'Compétences'),
+            ],
+          ),
+        ),
+        body: FutureBuilder<_ResultsData>(
+          future: _resultsFuture,
+          builder: (context, snapshot) {
+            // Keep the existing content visible during a refresh.
+            if (snapshot.hasData) return _buildTabs(snapshot.data!);
+            if (snapshot.hasError) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.error_outline, color: Colors.red, size: 48),
+                      const SizedBox(height: 16),
+                      const Text('Impossible de charger tes résultats.'),
+                      TextButton(
+                        onPressed: _refresh,
+                        child: const Text('Réessayer'),
+                      ),
+                    ],
+                  ),
                 ),
+              );
+            }
+            return const Center(child: CircularProgressIndicator());
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabs(_ResultsData data) {
+    return TabBarView(
+      children: [
+        RefreshIndicator(
+          onRefresh: _refresh,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            physics: const AlwaysScrollableScrollPhysics(),
+            children: [
+              _TodayActionTab(
+                words: data.words,
+                attempts: data.attempts,
+                onStartSession: widget.onStartSession,
               ),
             ],
           ),
-        );
-      },
+        ),
+        RefreshIndicator(
+          onRefresh: _refresh,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            physics: const AlwaysScrollableScrollPhysics(),
+            children: [
+              SuccessTrendChart(attempts: data.attempts),
+              const SizedBox(height: 12),
+              _ActivityHeatmap(attempts: data.attempts),
+              const SizedBox(height: 12),
+              StudyTimeTrendChart(attempts: data.attempts),
+              const SizedBox(height: 12),
+              _DetailsSection(
+                title: 'Analyses avancées',
+                icon: Icons.query_stats_outlined,
+                children: [
+                  ProductivityChart(attempts: data.attempts),
+                  CognitiveFluidityMatrix(attempts: data.attempts),
+                  MemoryHealthCard(words: data.words),
+                  _StudyTimeCard(summary: data.studyDurationSummary),
+                ],
+              ),
+            ],
+          ),
+        ),
+        RefreshIndicator(
+          onRefresh: _refresh,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            physics: const AlwaysScrollableScrollPhysics(),
+            children: [
+              _OverviewCard(reviewed: data.reviewedWords),
+              const SizedBox(height: 16),
+              _FocusMetricTile(
+                attempts: data.attempts,
+                studyDurationSummary: data.studyDurationSummary,
+              ),
+              const SizedBox(height: 16),
+              _ConjugationResultsCard(
+                attempts: data.conjugationAttempts,
+                onStartSession: widget.onStartSession,
+              ),
+              const SizedBox(height: 16),
+              _DetailsSection(
+                title: 'Autres compétences',
+                icon: Icons.extension_outlined,
+                children: [
+                  _NumDateResultsCard(attempts: data.numdateAttempts),
+                  _TrainingResultsCard(
+                    skill: 'eo',
+                    title: 'Expression orale',
+                    icon: Icons.record_voice_over_outlined,
+                    attempts: data.eoAttempts,
+                  ),
+                  _TrainingResultsCard(
+                    skill: 'ee',
+                    title: 'Expression écrite',
+                    icon: Icons.edit_note_outlined,
+                    attempts: data.eeAttempts,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              _DetailsSection(
+                title: 'Détails du vocabulaire',
+                icon: Icons.tune_outlined,
+                children: [
+                  const _SectionTitle(title: 'Maîtrise par niveau', icon: Icons.bar_chart_rounded),
+                  _VocabularyLevelBars(words: data.words),
+                  const SizedBox(height: 12),
+                  const _SectionTitle(title: 'Priorités de révision', icon: Icons.flag_outlined),
+                  if (data.reviewedWords.isEmpty)
+                    _EmptyResults(onStartSession: widget.onStartSession)
+                  else
+                    _RecentPriorities(words: data.reviewedWords),
+                ],
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
 
-class _ResultsData {
-  const _ResultsData({required this.words, required this.attempts});
+// ============================================================================
+// 3. WIDGETS PRIVÉS DE L'UI (Anciens et Nouveaux)
+// ============================================================================
+
+class _TodayActionTab extends StatelessWidget {
+  const _TodayActionTab({required this.words, required this.attempts, this.onStartSession});
 
   final List<VocabWord> words;
   final List<PerformanceAttempt> attempts;
+  final VoidCallback? onStartSession;
+
+  static String _dayKey(DateTime date) {
+    final local = date.toLocal();
+    return '${local.year}-${local.month}-${local.day}';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final activeDays = <String>{
+      ...attempts.map((attempt) => _dayKey(attempt.recordedAt.toLocal())),
+      ...words.map((word) => word.stats.lastReviewedAt).whereType<DateTime>().map((date) => _dayKey(date.toLocal())),
+    };
+
+    final todayKey = _dayKey(now);
+    final todayActive = activeDays.contains(todayKey);
+
+    var streak = 0;
+    var cursor = DateTime(now.year, now.month, now.day);
+    if (!todayActive) cursor = cursor.subtract(const Duration(days: 1));
+    while (activeDays.contains(_dayKey(cursor))) {
+      streak++;
+      cursor = cursor.subtract(const Duration(days: 1));
+    }
+
+    final todayAttempts = attempts.where((attempt) {
+      final local = attempt.recordedAt.toLocal();
+      return local.year == now.year && local.month == now.month && local.day == now.day;
+    }).toList(growable: false);
+
+    final activeMs = ResultsAnalytics.studyDurations(todayAttempts).totalMs;
+    final hasTimeTracking = attempts.any((attempt) =>
+        attempt.exerciseType.trim().toLowerCase() == 'study_session' && (attempt.durationMs ?? 0) > 0);
+    final double dailyGoalProgress = (activeMs / 120000.0).clamp(0.0, 1.0).toDouble();
+    final bool goalReached = dailyGoalProgress >= 1.0;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Card(
+          elevation: 0,
+          color: Theme.of(context).colorScheme.primaryContainer,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24),
+            child: Column(
+              children: [
+                Icon(
+                  streak > 0 ? Icons.local_fire_department : Icons.local_fire_department_outlined,
+                  size: 64,
+                  color: streak > 0 ? Colors.orange : Theme.of(context).colorScheme.onPrimaryContainer
+                ),
+                Text(
+                  streak == 0 ? "Commence ta série" : "$streak Jours consécutifs",
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  streak == 0 ? "2 minutes suffisent pour aujourd'hui." : "Ne brise pas ton élan !",
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 24),
+        if (hasTimeTracking)
+          Center(
+            child: SizedBox(
+              height: 180,
+              width: 180,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  CircularProgressIndicator(
+                    value: dailyGoalProgress,
+                    strokeWidth: 16,
+                    backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+                    color: goalReached ? Colors.green : Theme.of(context).colorScheme.primary,
+                    strokeCap: StrokeCap.round,
+                  ),
+                  Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "${(dailyGoalProgress * 100).round()}%",
+                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          goalReached ? 'Objectif atteint !' : 'Objectif : 2 min',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        else
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.timer_off_outlined),
+              title: const Text('Temps d’étude non mesuré'),
+              subtitle: const Text('Le temps restera indisponible tant que les séances ne seront pas enregistrées avec une durée.'),
+            ),
+          ),
+        const SizedBox(height: 32),
+        if (onStartSession != null)
+          FilledButton.icon(
+            onPressed: onStartSession,
+            style: FilledButton.styleFrom(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              backgroundColor: goalReached ? Colors.blueGrey : Theme.of(context).colorScheme.primary,
+            ),
+            icon: Icon(goalReached ? Icons.fitness_center : Icons.play_arrow_rounded),
+            label: Text(
+              goalReached ? 'S\'entraîner encore' : 'Échauffement rapide (2 min)',
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+      ],
+    );
+  }
 }
 
 class _DetailsSection extends StatelessWidget {
   const _DetailsSection({required this.title, required this.icon, required this.children});
-
   final String title;
   final IconData icon;
   final List<Widget> children;
@@ -200,9 +467,12 @@ class _DetailsSection extends StatelessWidget {
 }
 
 class _FocusMetricTile extends StatefulWidget {
-  const _FocusMetricTile({required this.attempts});
-
+  const _FocusMetricTile({
+    required this.attempts,
+    required this.studyDurationSummary,
+  });
   final List<PerformanceAttempt> attempts;
+  final StudyDurationSummary studyDurationSummary;
 
   @override
   State<_FocusMetricTile> createState() => _FocusMetricTileState();
@@ -225,11 +495,10 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
     if (available.isEmpty) available.add('conjugation');
     if (!available.contains(_selectedSkill)) _selectedSkill = available.first;
     final selected = widget.attempts.where((attempt) => attempt.skill == _selectedSkill).toList();
-    final answers = selected.where((attempt) => attempt.correct != null).toList();
+    final answers = selected.where((attempt) => attempt.correct != null && attempt.exerciseType.trim().toLowerCase() != 'study_session').toList(growable: false);
     final correct = answers.where((attempt) => attempt.correct == true).length;
-    final duration = selected
-        .where((attempt) => attempt.exerciseType == 'study_session')
-        .fold<int>(0, (sum, attempt) => sum + (attempt.durationMs ?? 0));
+    final duration = widget.studyDurationSummary.bySkillMs[_selectedSkill] ?? 0;
+    final durationLabel = duration > 0 ? _formatDuration(duration) : '—';
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
@@ -256,9 +525,10 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _Metric(
-                    value: '${answers.isEmpty ? 0 : (correct / answers.length * 100).round()} %', label: 'réussite'),
+                    value: answers.isEmpty ? '—' : '${(correct / answers.length * 100).round()} %',
+                    label: 'réussite'),
                 _Metric(value: '${answers.length}', label: 'réponses'),
-                _Metric(value: _formatDuration(duration), label: 'temps actif'),
+                _Metric(value: durationLabel, label: 'temps actif'),
               ],
             ),
           ],
@@ -268,42 +538,26 @@ class _FocusMetricTileState extends State<_FocusMetricTile> {
   }
 
   static String _formatDuration(int milliseconds) {
-    final minutes = (milliseconds / 60000).round();
-    return minutes == 0 ? '< 1 min' : '$minutes min';
+    if (milliseconds <= 0) return '0 min';
+    if (milliseconds < 60000) return '< 1 min';
+    final minutes = (milliseconds / 60000).floor();
+    return '$minutes min';
   }
 }
 
-class _Header extends StatelessWidget {
-  const _Header();
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Tes résultats',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
-            const SizedBox(height: 4),
-            const Text('Un aperçu simple pour savoir quoi travailler aujourd’hui.'),
-          ],
-        ),
-      );
-}
-
 class _OverviewCard extends StatelessWidget {
-  const _OverviewCard({required this.words, required this.reviewed});
-
-  final List<VocabWord> words;
+  const _OverviewCard({required this.reviewed});
   final List<VocabWord> reviewed;
 
   @override
   Widget build(BuildContext context) {
     final attempts = reviewed.fold<int>(0, (sum, word) => sum + word.stats.attempts);
     final correct = reviewed.fold<int>(0, (sum, word) => sum + word.stats.correctAttempts);
-    final mastery =
-        reviewed.isEmpty ? 0.0 : reviewed.map((word) => word.masteryScore()).reduce((a, b) => a + b) / reviewed.length;
-    final rate = attempts == 0 ? 0.0 : correct / attempts;
+    final now = DateTime.now();
+    final mastery = reviewed.isEmpty
+        ? 0.0
+        : reviewed.map((word) => word.masteryScore(now)).reduce((a, b) => a + b) / reviewed.length;
+    final rate = attempts == 0 ? null : correct / attempts;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -312,13 +566,13 @@ class _OverviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                _ScoreRing(value: mastery / 100, label: '${mastery.round()}'),
+                _ScoreRing(value: mastery / 100, label: reviewed.isEmpty ? '—' : '${mastery.round()}'),
                 const SizedBox(width: 20),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Niveau global', style: Theme.of(context).textTheme.titleMedium),
+                      Text('Niveau vocabulaire', style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 4),
                       Text(reviewed.isEmpty
                           ? 'Commence une première révision.'
@@ -334,8 +588,7 @@ class _OverviewCard extends StatelessWidget {
               children: [
                 _Metric(value: '${reviewed.length}', label: 'mots revus'),
                 _Metric(value: '$attempts', label: 'réponses'),
-                _Metric(value: '${(rate * 100).round()} %', label: 'réussite'),
-                _Metric(value: '${words.length}', label: 'au catalogue'),
+                _Metric(value: rate == null ? '—' : '${(rate * 100).round()} %', label: 'réussite'),
               ],
             ),
           ],
@@ -343,146 +596,37 @@ class _OverviewCard extends StatelessWidget {
       ),
     );
   }
-}
-
-class _RetentionPulseCard extends StatelessWidget {
-  const _RetentionPulseCard({
-    required this.words,
-    required this.attempts,
-    required this.contractDone,
-    required this.onContractChanged,
-    this.onStartSession,
-  });
-
-  final List<VocabWord> words;
-  final List<PerformanceAttempt> attempts;
-  final bool contractDone;
-  final ValueChanged<bool> onContractChanged;
-  final VoidCallback? onStartSession;
-
-  @override
-  Widget build(BuildContext context) {
-    final now = DateTime.now();
-    final activeDays = <String>{
-      ...attempts.map((attempt) => _dayKey(attempt.recordedAt)),
-      ...words.map((word) => word.stats.lastReviewedAt).whereType<DateTime>().map(_dayKey),
-    };
-    final todayKey = _dayKey(now);
-    final todayActive = activeDays.contains(todayKey);
-    var streak = 0;
-    var cursor = DateTime(now.year, now.month, now.day);
-    if (!todayActive) cursor = cursor.subtract(const Duration(days: 1));
-    while (activeDays.contains(_dayKey(cursor))) {
-      streak++;
-      cursor = cursor.subtract(const Duration(days: 1));
-    }
-    final todayAttempts = attempts.where((attempt) => _sameDay(attempt.recordedAt, now)).toList();
-    final answerCount = todayAttempts.where((attempt) => attempt.correct != null || attempt.rating != null).length;
-    final activeMinutes = todayAttempts
-            .where((attempt) => attempt.exerciseType == 'study_session')
-            .fold<int>(0, (sum, attempt) => sum + (attempt.durationMs ?? 0)) /
-        60000;
-    final hasConjugation =
-        todayAttempts.any((attempt) => attempt.skill == 'conjugation' && attempt.exerciseType != 'study_session');
-    final tasks = [
-      _RetentionTask('Faire 3 minutes de session', activeMinutes >= 3),
-      _RetentionTask('Répondre à 5 questions', answerCount >= 5),
-      _RetentionTask('Valider un exercice de conjugaison', hasConjugation),
-    ];
-    final completed = tasks.where((task) => task.done).length;
-    final atRisk = streak > 0 && !todayActive;
-    return Card(
-      color: Theme.of(context).colorScheme.secondaryContainer,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 14, 16, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(atRisk ? Icons.local_fire_department_outlined : Icons.favorite_outline),
-                const SizedBox(width: 8),
-                Expanded(
-                    child: Text(
-                        streak == 0
-                            ? 'Ton rythme commence aujourd’hui'
-                            : '$streak jour${streak > 1 ? 's' : ''} de suite',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
-                Text('$completed/${tasks.length}'),
-              ],
-            ),
-            const SizedBox(height: 4),
-            Text(atRisk
-                ? 'Ta série est encore récupérable : quelques minutes suffisent.'
-                : 'Une petite présence régulière vaut mieux qu’une longue session rare.'),
-            const SizedBox(height: 8),
-            for (final task in tasks)
-              Row(
-                children: [
-                  Icon(task.done ? Icons.check_circle : Icons.radio_button_unchecked, size: 18),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(task.label)),
-                ],
-              ),
-            CheckboxListTile(
-              contentPadding: EdgeInsets.zero,
-              dense: true,
-              value: contractDone,
-              onChanged: (value) => onContractChanged(value ?? false),
-              title: const Text('Je garde ce petit rendez-vous avec moi aujourd’hui.'),
-            ),
-            if (onStartSession != null)
-              Align(
-                alignment: Alignment.centerLeft,
-                child: FilledButton.icon(
-                    onPressed: onStartSession,
-                    icon: const Icon(Icons.play_arrow),
-                    label: const Text('Commencer maintenant')),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  static bool _sameDay(DateTime left, DateTime right) =>
-      left.year == right.year && left.month == right.month && left.day == right.day;
-
-  static String _dayKey(DateTime date) => '${date.year}-${date.month}-${date.day}';
-}
-
-class _RetentionTask {
-  const _RetentionTask(this.label, this.done);
-
-  final String label;
-  final bool done;
 }
 
 class _ConjugationResultsCard extends StatelessWidget {
   const _ConjugationResultsCard({required this.attempts, this.onStartSession});
-
   final List<PerformanceAttempt> attempts;
   final VoidCallback? onStartSession;
 
   @override
   Widget build(BuildContext context) {
-    final correct = attempts.where((attempt) => attempt.correct == true).length;
-    final accuracy = attempts.isEmpty ? 0.0 : correct / attempts.length;
+    final evaluated = attempts.where((attempt) => attempt.correct != null && attempt.exerciseType.trim().toLowerCase() != 'study_session').toList(growable: false);
+    final correct = evaluated.where((attempt) => attempt.correct == true).length;
+    final accuracy = evaluated.isEmpty ? null : correct / evaluated.length;
     final tenseStats = <String, List<int>>{};
     final personStats = <String, List<int>>{};
-    for (final attempt in attempts) {
+
+    for (final attempt in evaluated) {
       final mood = attempt.metadata['mood']?.toString() ?? 'Mode inconnu';
       final tense = attempt.metadata['tense']?.toString() ?? 'Temps inconnu';
       _addScore(tenseStats, '$mood · $tense', attempt.correct == true);
       final persons = attempt.metadata['persons'];
       if (persons is Map) {
         for (final entry in persons.entries) {
-          _addScore(personStats, entry.key.toString(), entry.value == true);
+          final value = _readBool(entry.value);
+          if (value != null) _addScore(personStats, entry.key.toString(), value);
         }
       }
     }
+
     final weakestTenses = _weakest(tenseStats);
     final weakestPersons = _weakest(personStats);
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
@@ -494,39 +638,41 @@ class _ConjugationResultsCard extends StatelessWidget {
                 const Icon(Icons.auto_graph_outlined),
                 const SizedBox(width: 8),
                 Expanded(
-                    child: Text('Conjugaison',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold))),
-                if (attempts.isNotEmpty) Text('${(accuracy * 100).round()} %'),
+                  child: Text('Conjugaison',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                ),
+                if (accuracy != null) Text('${(accuracy * 100).round()} %'),
               ],
             ),
             const SizedBox(height: 10),
-            if (attempts.isEmpty) ...[
-              const Text('Aucune tentative enregistrée pour le moment.'),
+            if (evaluated.isEmpty) ...[
+              const Text('Aucune réponse évaluée pour le moment.'),
+              if (attempts.isNotEmpty)
+                Text('${attempts.length} tentative(s) enregistrée(s), sans résultat exploitable.'),
               if (onStartSession != null)
                 Align(
                   alignment: Alignment.centerLeft,
                   child: TextButton.icon(
-                      onPressed: onStartSession,
-                      icon: const Icon(Icons.play_arrow),
-                      label: const Text('S’entraîner maintenant')),
+                    onPressed: onStartSession,
+                    icon: const Icon(Icons.play_arrow),
+                    label: const Text('S’entraîner maintenant'),
+                  ),
                 ),
             ] else ...[
               LinearProgressIndicator(value: accuracy, minHeight: 8),
               const SizedBox(height: 8),
-              Text(
-                  '$correct bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${attempts.length} vérification${attempts.length > 1 ? 's' : ''}.'),
+              Text('$correct bonne(s) réponse(s) sur ${evaluated.length} réponse(s) évaluée(s).'),
               ExpansionTile(
                 tilePadding: EdgeInsets.zero,
                 title: const Text('Explorer les points à renforcer'),
                 children: [
-                  _ConjugationMatrix(attempts: attempts),
+                  _ConjugationMatrix(attempts: evaluated),
                   _ConjugationTenseBars(scores: tenseStats),
-                  _ConjugationPersonRadar(scores: personStats),
-                  if (weakestTenses.isNotEmpty) _StatLine(label: 'Temps à reprendre', value: weakestTenses.join(' · ')),
+                  _ConjugationPersonBars(scores: personStats),
+                  if (weakestTenses.isNotEmpty)
+                    _StatLine(label: 'Temps à reprendre (au moins 3 réponses)', value: weakestTenses.join(' · ')),
                   if (weakestPersons.isNotEmpty)
-                    _StatLine(label: 'Personnes les moins sûres', value: weakestPersons.join(', ')),
-                  if (weakestTenses.isEmpty && weakestPersons.isEmpty)
-                    const Text('Pas encore assez de données pour dégager une tendance.'),
+                    _StatLine(label: 'Personnes à reprendre', value: weakestPersons.join(', ')),
                 ],
               ),
             ],
@@ -536,6 +682,13 @@ class _ConjugationResultsCard extends StatelessWidget {
     );
   }
 
+  static bool? _readBool(dynamic value) {
+    if (value is bool) return value;
+    if (value == 'true' || value == 1) return true;
+    if (value == 'false' || value == 0) return false;
+    return null;
+  }
+
   static void _addScore(Map<String, List<int>> scores, String key, bool correct) {
     final score = scores.putIfAbsent(key, () => [0, 0]);
     score[0]++;
@@ -543,22 +696,19 @@ class _ConjugationResultsCard extends StatelessWidget {
   }
 
   static List<String> _weakest(Map<String, List<int>> scores) {
-    final entries = scores.entries.where((entry) => entry.value[0] > 0).toList()
+    final entries = scores.entries.where((entry) => entry.value[0] >= 3).toList()
       ..sort((left, right) {
         final leftRate = left.value[1] / left.value[0];
         final rightRate = right.value[1] / right.value[0];
         return leftRate.compareTo(rightRate);
       });
-    return entries
-        .take(3)
-        .map((entry) => '${entry.key} (${(entry.value[1] / entry.value[0] * 100).round()} %)')
-        .toList();
+    return entries.take(3).map((entry) =>
+        '${entry.key} (${(entry.value[1] / entry.value[0] * 100).round()} %, n=${entry.value[0]})').toList();
   }
 }
 
 class _ConjugationMatrix extends StatelessWidget {
   const _ConjugationMatrix({required this.attempts});
-
   final List<PerformanceAttempt> attempts;
 
   @override
@@ -566,16 +716,22 @@ class _ConjugationMatrix extends StatelessWidget {
     final matrix = <String, Map<String, List<int>>>{};
     final persons = <String>{};
     for (final attempt in attempts) {
+      if (attempt.correct == null) continue;
       final key = '${attempt.metadata['mood'] ?? '?'} · ${attempt.metadata['tense'] ?? '?'}';
       final rawPersons = attempt.metadata['persons'];
       if (rawPersons is! Map) continue;
-      final row = matrix.putIfAbsent(key, () => {});
+      Map<String, List<int>>? row;
       for (final entry in rawPersons.entries) {
         final person = entry.key.toString();
+        final rawValue = entry.value;
+        if (rawValue is! bool && rawValue != 'true' && rawValue != 'false' && rawValue != 1 && rawValue != 0) {
+          continue;
+        }
+        row ??= matrix.putIfAbsent(key, () => {});
         persons.add(person);
         final score = row.putIfAbsent(person, () => [0, 0]);
         score[0]++;
-        if (entry.value == true) score[1]++;
+        if (rawValue == true || rawValue == 'true' || rawValue == 1) score[1]++;
       }
     }
     if (matrix.isEmpty) return const SizedBox.shrink();
@@ -604,76 +760,95 @@ class _ConjugationMatrix extends StatelessWidget {
 
 class _ConjugationTenseBars extends StatelessWidget {
   const _ConjugationTenseBars({required this.scores});
-
   final Map<String, List<int>> scores;
 
   @override
   Widget build(BuildContext context) {
-    final entries = scores.entries.toList()..sort((left, right) => (right.value[0]).compareTo(left.value[0]));
-    if (entries.isEmpty) return const SizedBox.shrink();
+    final entries = scores.entries.where((entry) => entry.value[0] >= 3).toList()
+      ..sort((left, right) {
+        final leftRate = left.value[1] / left.value[0];
+        final rightRate = right.value[1] / right.value[0];
+        return leftRate.compareTo(rightRate);
+      });
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 12),
-        const Text('Comparaison des temps', style: TextStyle(fontWeight: FontWeight.bold)),
-        const SizedBox(height: 6),
-        for (final entry in entries.take(6))
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 3),
-            child: Row(
-              children: [
-                SizedBox(
-                    width: 118,
-                    child: Text(entry.key, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11))),
-                Expanded(child: LinearProgressIndicator(value: entry.value[1] / entry.value[0], minHeight: 8)),
-                const SizedBox(width: 8),
-                Text('${(entry.value[1] / entry.value[0] * 100).round()} %'),
-              ],
+        const Text('Temps les moins réussis (minimum 3 réponses)', style: TextStyle(fontWeight: FontWeight.bold)),
+        if (entries.isEmpty)
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            child: Text('Pas assez de réponses pour comparer les temps.'),
+          )
+        else
+          for (final entry in entries.take(6))
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  SizedBox(width: 118, child: Text(entry.key, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 11))),
+                  Expanded(child: LinearProgressIndicator(value: entry.value[1] / entry.value[0], minHeight: 8)),
+                  const SizedBox(width: 8),
+                  Text('${(entry.value[1] / entry.value[0] * 100).round()} % · n=${entry.value[0]}'),
+                ],
+              ),
             ),
-          ),
       ],
     );
   }
+
 }
 
-class _ConjugationPersonRadar extends StatelessWidget {
-  const _ConjugationPersonRadar({required this.scores});
-
+class _ConjugationPersonBars extends StatelessWidget {
+  const _ConjugationPersonBars({required this.scores});
   final Map<String, List<int>> scores;
 
   @override
   Widget build(BuildContext context) {
-    final entries = scores.entries.toList()..sort((left, right) => left.key.compareTo(right.key));
-    if (entries.length < 3) return const SizedBox.shrink();
-    final values = entries.map((entry) => entry.value[1] / entry.value[0]).toList();
-    return Padding(
-      padding: const EdgeInsets.only(top: 12),
-      child: Column(
-        children: [
-          const Align(
-              alignment: Alignment.centerLeft,
-              child: Text('Radar des personnes', style: TextStyle(fontWeight: FontWeight.bold))),
-          SizedBox(height: 180, child: CustomPaint(painter: _RadarPainter(values, Theme.of(context).colorScheme))),
-          Wrap(spacing: 10, children: [
-            for (var i = 0; i < entries.length; i++) Text('${entries[i].key}: ${(values[i] * 100).round()} %')
-          ]),
-        ],
-      ),
+    final entries = scores.entries.where((entry) => entry.value[0] >= 3).toList()
+      ..sort((left, right) {
+        final leftRate = left.value[1] / left.value[0];
+        final rightRate = right.value[1] / right.value[0];
+        return leftRate.compareTo(rightRate);
+      });
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 12),
+        const Text('Réussite par personne (minimum 3 réponses)', style: TextStyle(fontWeight: FontWeight.bold)),
+        if (entries.isEmpty)
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            child: Text('Pas assez de réponses pour comparer les personnes.'),
+          )
+        else
+          for (final entry in entries)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 3),
+              child: Row(
+                children: [
+                  SizedBox(width: 64, child: Text(entry.key, overflow: TextOverflow.ellipsis)),
+                  Expanded(child: LinearProgressIndicator(value: entry.value[1] / entry.value[0], minHeight: 8)),
+                  const SizedBox(width: 8),
+                  Text('${(entry.value[1] / entry.value[0] * 100).round()} % · n=${entry.value[0]}'),
+                ],
+              ),
+            ),
+      ],
     );
   }
+
 }
 
 class _MatrixCell extends StatelessWidget {
   const _MatrixCell({required this.score});
-
   final List<int>? score;
 
   @override
   Widget build(BuildContext context) {
     if (score == null || score![0] == 0) return const Text('—');
     final rate = score![1] / score![0];
-    final color =
-        Color.lerp(Theme.of(context).colorScheme.errorContainer, Theme.of(context).colorScheme.primaryContainer, rate);
+    final color = Color.lerp(Theme.of(context).colorScheme.errorContainer, Theme.of(context).colorScheme.primaryContainer, rate);
     return Container(
       constraints: const BoxConstraints(minWidth: 44),
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
@@ -685,7 +860,6 @@ class _MatrixCell extends StatelessWidget {
 
 class _StatLine extends StatelessWidget {
   const _StatLine({required this.label, required this.value});
-
   final String label;
   final String value;
 
@@ -705,17 +879,44 @@ class _StatLine extends StatelessWidget {
 
 class _NumDateResultsCard extends StatelessWidget {
   const _NumDateResultsCard({required this.attempts});
-
   final List<PerformanceAttempt> attempts;
 
   @override
   Widget build(BuildContext context) {
-    if (attempts.isEmpty) return const SizedBox.shrink();
-    final byType = <String, List<PerformanceAttempt>>{};
-    for (final attempt in attempts) {
-      byType.putIfAbsent(attempt.exerciseType, () => []).add(attempt);
+    if (attempts.isEmpty) {
+      return const Card(
+        child: ListTile(
+          leading: Icon(Icons.access_time_outlined),
+          title: Text('Nombres & dates'),
+          subtitle: Text('Aucun exercice enregistré pour le moment.'),
+        ),
+      );
     }
-    const labels = {'number': 'Nombres', 'date': 'Dates', 'time': 'Heures'};
+    final byType = <String, List<PerformanceAttempt>>{};
+    var unevaluated = 0;
+    for (final attempt in attempts) {
+      if (attempt.exerciseType.trim().toLowerCase() == 'study_session') continue;
+      final category = _categoryFor(attempt);
+      byType.putIfAbsent(category, () => <PerformanceAttempt>[]).add(attempt);
+      if (attempt.correct == null) unevaluated++;
+    }
+    if (byType.isEmpty) {
+      return const Card(
+        child: ListTile(
+          leading: Icon(Icons.access_time_outlined),
+          title: Text('Nombres & dates'),
+          subtitle: Text('Aucune réponse individuelle enregistrée pour le moment.'),
+        ),
+      );
+    }
+    const labels = <String, String>{
+      'number': 'Nombres',
+      'date': 'Dates',
+      'time': 'Heures',
+      'other': 'Autres exercices',
+    };
+    const order = <String>['number', 'date', 'time', 'other'];
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 12),
@@ -726,82 +927,67 @@ class _NumDateResultsCard extends StatelessWidget {
               children: [
                 const Icon(Icons.access_time_outlined),
                 const SizedBox(width: 8),
-                Text('Nombres & dates',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                Text('Nombres & dates', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
               ],
             ),
             const SizedBox(height: 8),
-            for (final type in const ['number', 'date', 'time'])
+            for (final type in order)
               if (byType[type] != null)
                 Builder(builder: (context) {
                   final typeAttempts = byType[type]!;
-                  final correct = typeAttempts.where((attempt) => attempt.correct == true).length;
-                  final rate = correct / typeAttempts.length;
+                  final evaluated = typeAttempts.where((attempt) => attempt.correct != null).toList(growable: false);
+                  final accuracy = ResultsAnalytics.accuracy(evaluated);
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: Row(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(child: Text(labels[type]!)),
-                        SizedBox(width: 110, child: LinearProgressIndicator(value: rate, minHeight: 7)),
-                        const SizedBox(width: 10),
-                        Text('${(rate * 100).round()} %'),
+                        Row(
+                          children: [
+                            Expanded(child: Text(labels[type]!)),
+                            Text(accuracy == null ? '—' : '${(accuracy * 100).round()} %'),
+                            const SizedBox(width: 8),
+                            Text('n=${evaluated.length}', style: Theme.of(context).textTheme.bodySmall),
+                          ],
+                        ),
+                        if (accuracy != null) ...[
+                          const SizedBox(height: 4),
+                          LinearProgressIndicator(value: accuracy, minHeight: 7),
+                        ] else
+                          const Padding(
+                            padding: EdgeInsets.only(top: 3),
+                            child: Text('Aucune réponse évaluée', style: TextStyle(fontSize: 12)),
+                          ),
                       ],
                     ),
                   );
                 }),
-            if (byType['number'] != null) ...[
-              const Divider(height: 20),
-              const Text('Difficulté des nombres', style: TextStyle(fontWeight: FontWeight.bold)),
-              const SizedBox(height: 6),
-              _NumberBandBars(attempts: byType['number']!),
-            ],
+            if (unevaluated > 0)
+              Text('$unevaluated tentative(s) sans résultat évalué.', style: Theme.of(context).textTheme.bodySmall),
           ],
         ),
       ),
     );
   }
-}
 
-class _NumberBandBars extends StatelessWidget {
-  const _NumberBandBars({required this.attempts});
-
-  final List<PerformanceAttempt> attempts;
-
-  @override
-  Widget build(BuildContext context) {
-    final bands = <String, List<PerformanceAttempt>>{};
-    for (final attempt in attempts) {
-      final band = attempt.metadata['difficultyBand']?.toString() ?? 'Inconnu';
-      bands.putIfAbsent(band, () => []).add(attempt);
-    }
-    final orderedBands = ['0–99', '100–999', '1 000–9 999', '10 000–999 999', '1 000 000+'];
-    return Column(
-      children: [
-        for (final band in orderedBands)
-          if (bands[band] != null)
-            Builder(builder: (context) {
-              final bandAttempts = bands[band]!;
-              final rate = bandAttempts.where((attempt) => attempt.correct == true).length / bandAttempts.length;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 3),
-                child: Row(
-                  children: [
-                    SizedBox(width: 105, child: Text(band)),
-                    Expanded(child: LinearProgressIndicator(value: rate, minHeight: 7)),
-                    const SizedBox(width: 8),
-                    Text('${(rate * 100).round()} %'),
-                  ],
-                ),
-              );
-            }),
-      ],
-    );
+  static String _categoryFor(PerformanceAttempt attempt) {
+    final values = <String>[
+      attempt.metadata['category']?.toString() ?? '',
+      attempt.metadata['kind']?.toString() ?? '',
+      attempt.metadata['type']?.toString() ?? '',
+      attempt.metadata['subtype']?.toString() ?? '',
+      attempt.exerciseType,
+    ].join(' ').toLowerCase();
+    if (values.contains('date') || values.contains('calendar')) return 'date';
+    if (values.contains('time') || values.contains('hour') || values.contains('heure')) return 'time';
+    if (values.contains('number') || values.contains('numeric') || values.contains('nombre')) return 'number';
+    return 'other';
   }
+
 }
 
 class _TrainingResultsCard extends StatelessWidget {
   const _TrainingResultsCard({required this.skill, required this.title, required this.icon, required this.attempts});
-
   final String skill;
   final String title;
   final IconData icon;
@@ -809,13 +995,31 @@ class _TrainingResultsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (attempts.isEmpty) return const SizedBox.shrink();
-    final average = skill == 'eo'
-        ? attempts.map((attempt) => attempt.rating ?? 0).reduce((left, right) => left + right) / (attempts.length * 3)
-        : attempts.where((attempt) => attempt.correct == true).length / attempts.length;
-    final detail = skill == 'eo'
-        ? 'Auto-évaluation moyenne : ${(average * 3).toStringAsFixed(1)} / 3'
-        : '${(average * 100).round()} % de traductions réussies';
+    if (attempts.isEmpty) {
+      return Card(
+        child: ListTile(
+          leading: Icon(icon),
+          title: Text(title),
+          subtitle: const Text('Aucune tentative enregistrée pour le moment.'),
+        ),
+      );
+    }
+    final isOral = skill == 'eo';
+    final evaluated = isOral
+        ? attempts.where((attempt) =>
+            attempt.exerciseType.trim().toLowerCase() != 'study_session' &&
+            attempt.rating != null && attempt.rating! >= 0 && attempt.rating! <= 3).toList(growable: false)
+        : attempts.where((attempt) =>
+            attempt.correct != null &&
+            attempt.exerciseType.trim().toLowerCase() != 'study_session').toList(growable: false);
+    final average = isOral
+        ? ResultsAnalytics.meanRatingNormalised(evaluated)
+        : ResultsAnalytics.accuracy(evaluated);
+    final detail = average == null
+        ? 'Aucune évaluation disponible · ${attempts.length} tentative(s)'
+        : isOral
+            ? 'Auto-évaluation : ${(average * 3).toStringAsFixed(1)} / 3 · n=${evaluated.length}'
+            : '${(average * 100).round()} % de réussite · n=${evaluated.length}';
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
@@ -829,106 +1033,140 @@ class _TrainingResultsCard extends StatelessWidget {
                 children: [
                   Text(title, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 6),
-                  Text('$detail · ${attempts.length} session${attempts.length > 1 ? 's' : ''}'),
+                  Text(detail),
                 ],
               ),
             ),
-            SizedBox(width: 54, child: CircularProgressIndicator(value: average)),
+            const SizedBox(width: 12),
+            SizedBox(
+              width: 54,
+              height: 54,
+              child: average == null
+                  ? const Icon(Icons.hourglass_empty_outlined)
+                  : CircularProgressIndicator(value: average),
+            ),
           ],
         ),
       ),
     );
   }
+
 }
 
 class _ActivityHeatmap extends StatelessWidget {
-  const _ActivityHeatmap({required this.words, required this.attempts});
-
-  final List<VocabWord> words;
+  const _ActivityHeatmap({required this.attempts});
   final List<PerformanceAttempt> attempts;
 
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
-    final counts = List<int>.filled(14, 0);
-    for (final word in words) {
-      final date = word.stats.lastReviewedAt;
-      if (date == null) continue;
-      final age = DateTime(now.year, now.month, now.day).difference(DateTime(date.year, date.month, date.day)).inDays;
-      if (age >= 0 && age < counts.length) counts[age]++;
-    }
+    final today = DateTime.utc(now.year, now.month, now.day);
+    const dayCount = 14;
+    final counts = List<int>.filled(dayCount, 0);
     for (final attempt in attempts) {
-      final age = DateTime(now.year, now.month, now.day)
-          .difference(DateTime(attempt.recordedAt.year, attempt.recordedAt.month, attempt.recordedAt.day))
-          .inDays;
-      if (age >= 0 && age < counts.length) counts[age]++;
+      if (attempt.correct == null || attempt.exerciseType.trim().toLowerCase() == 'study_session') continue;
+      final local = attempt.recordedAt.toLocal();
+      final date = DateTime.utc(local.year, local.month, local.day);
+      final age = today.difference(date).inDays;
+      if (age >= 0 && age < dayCount) counts[dayCount - 1 - age]++;
     }
-    final maxCount = counts.fold<int>(0, (max, count) => count > max ? count : max);
+    final maximum = counts.fold<int>(0, (current, value) => value > current ? value : current);
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Les 14 derniers jours', style: Theme.of(context).textTheme.titleSmall),
+            Text('Réponses évaluées · 14 jours', style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 4),
+            Text('Chaque case est un jour ; aujourd’hui se trouve à droite.', style: Theme.of(context).textTheme.bodySmall),
             const SizedBox(height: 12),
             Row(
-              children: List.generate(counts.length, (index) {
-                final intensity = maxCount == 0 ? 0.0 : counts[index] / maxCount;
+              children: List.generate(dayCount, (index) {
+                final age = dayCount - 1 - index;
+                final day = today.subtract(Duration(days: age));
+                final count = counts[index];
+                final intensity = maximum == 0 ? 0.0 : count / maximum;
+                final background = count == 0
+                    ? Theme.of(context).colorScheme.surfaceContainerHighest
+                    : Color.lerp(
+                        Theme.of(context).colorScheme.surfaceContainerHighest,
+                        Theme.of(context).colorScheme.primary,
+                        0.18 + intensity * 0.72,
+                      )!;
                 return Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 2),
-                    child: AspectRatio(
-                      aspectRatio: 1,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.12 + intensity * 0.78),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Center(child: Text('${counts[index]}', style: Theme.of(context).textTheme.labelSmall)),
+                    padding: const EdgeInsets.symmetric(horizontal: 1.5),
+                    child: Tooltip(
+                      message: '${day.day.toString().padLeft(2, '0')}/${day.month.toString().padLeft(2, '0')} : $count réponse(s) évaluée(s)',
+                      child: Column(
+                        children: [
+                          AspectRatio(
+                            aspectRatio: 0.92,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: background,
+                                borderRadius: BorderRadius.circular(4),
+                                border: Border.all(color: Theme.of(context).colorScheme.outlineVariant.withValues(alpha: 0.45)),
+                              ),
+                              child: Center(
+                                child: FittedBox(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(count == 0 ? '—' : '$count', style: Theme.of(context).textTheme.labelSmall),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text('${day.day}', style: Theme.of(context).textTheme.labelSmall),
+                        ],
                       ),
                     ),
                   ),
                 );
               }),
             ),
+            if (maximum == 0)
+              const Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text('Aucune réponse évaluée enregistrée sur cette période.'),
+              ),
           ],
         ),
       ),
     );
   }
+
 }
 
 class _StudyTimeCard extends StatelessWidget {
-  const _StudyTimeCard({required this.attempts});
-
-  final List<PerformanceAttempt> attempts;
+  const _StudyTimeCard({required this.summary});
+  final StudyDurationSummary summary;
 
   @override
   Widget build(BuildContext context) {
-    final durations = <String, int>{};
-    for (final attempt in attempts.where((attempt) => attempt.exerciseType == 'study_session')) {
-      durations.update(attempt.skill, (value) => value + (attempt.durationMs ?? 0),
-          ifAbsent: () => attempt.durationMs ?? 0);
-    }
-    final measured = durations.entries.where((entry) => entry.value > 0).toList();
-    if (measured.isEmpty) {
-      return const Card(
-        child: ListTile(
-          leading: Icon(Icons.timer_outlined),
-          title: Text('Temps d’étude'),
-          subtitle: Text('Le temps sera mesuré dès tes prochaines sessions.'),
-        ),
-      );
-    }
-    final total = measured.fold<int>(0, (sum, entry) => sum + entry.value);
-    final labels = {
+    final labels = <String, String>{
       'vocabulary': 'Vocabulaire',
       'conjugation': 'Conjugaison',
       'numdate': 'Nombres & dates',
       'eo': 'Expression orale',
-      'ee': 'Expression écrite'
+      'ee': 'Expression écrite',
+      'mixed': 'Sessions multi-compétences (non réparties)',
     };
+    final measured = summary.bySkillMs.entries.toList()
+      ..sort((left, right) => right.value.compareTo(left.value));
+    if (summary.totalMs <= 0) {
+      return const Card(
+        child: ListTile(
+          leading: Icon(Icons.timer_outlined),
+          title: Text('Temps d’étude'),
+          subtitle: Text('Aucune durée de session exploitable. Vérifie que les événements study_session enregistrent durationMs.'),
+        ),
+      );
+    }
     return Card(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 12),
@@ -938,23 +1176,38 @@ class _StudyTimeCard extends StatelessWidget {
             Row(children: [
               const Icon(Icons.timer_outlined),
               const SizedBox(width: 8),
-              Text('Temps d’étude mesuré', style: Theme.of(context).textTheme.titleMedium)
+              Text('Temps d’étude mesuré', style: Theme.of(context).textTheme.titleMedium),
             ]),
             const SizedBox(height: 8),
             for (final entry in measured)
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 3),
+                padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Row(
                   children: [
                     Expanded(child: Text(labels[entry.key] ?? entry.key)),
                     Text(_formatDuration(entry.value)),
                     const SizedBox(width: 8),
-                    SizedBox(width: 80, child: LinearProgressIndicator(value: entry.value / total, minHeight: 7)),
+                    SizedBox(
+                      width: 72,
+                      child: LinearProgressIndicator(
+                        value: entry.value / summary.totalMs,
+                        minHeight: 7,
+                      ),
+                    ),
                   ],
                 ),
               ),
             const Divider(),
-            Text('Total : ${_formatDuration(total)}'),
+            Text('Total : ${_formatDuration(summary.totalMs)}', style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              '${summary.sessionCount} session(s) mesurée(s). Les durées répétées avec le même sessionId ne sont comptées qu’une fois.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            if (summary.mixedSessionCount > 0)
+              Text(
+                '${summary.mixedSessionCount} session(s) associée(s) à plusieurs compétences ne sont pas réparties artificiellement.',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
           ],
         ),
       ),
@@ -962,37 +1215,64 @@ class _StudyTimeCard extends StatelessWidget {
   }
 
   static String _formatDuration(int milliseconds) {
-    final minutes = (milliseconds / 60000).round();
+    if (milliseconds <= 0) return '0 min';
+    if (milliseconds < 60000) return '< 1 min';
+    final minutes = (milliseconds / 60000).floor();
     if (minutes < 60) return '$minutes min';
     return '${minutes ~/ 60} h ${minutes % 60} min';
   }
+
 }
 
-class _SkillRadar extends StatelessWidget {
-  const _SkillRadar({required this.words});
-
+class _VocabularyLevelBars extends StatelessWidget {
+  const _VocabularyLevelBars({required this.words});
   final List<VocabWord> words;
 
   @override
   Widget build(BuildContext context) {
-    final values = VocabDifficulty.values.map((difficulty) {
-      final levelWords = words.where((word) => word.difficulty == difficulty && word.stats.attempts > 0).toList();
-      if (levelWords.isEmpty) return 0.0;
-      return levelWords.map((word) => word.masteryScore() / 100).reduce((a, b) => a + b) / levelWords.length;
-    }).toList();
+    final summary = ResultsAnalytics.vocabularyByDifficulty(words);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 240, child: CustomPaint(painter: _RadarPainter(values, Theme.of(context).colorScheme))),
-            Wrap(
-              spacing: 12,
-              children: [
-                for (var index = 0; index < VocabDifficulty.values.length; index++)
-                  Text('${VocabDifficulty.values[index].label}: ${(values[index] * 100).round()} %'),
-              ],
-            ),
+            Text('Maîtrise estimée par niveau', style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 4),
+            Text('La moyenne est calculée uniquement sur les mots déjà révisés.', style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: 10),
+            for (final difficulty in VocabDifficulty.values)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Builder(builder: (context) {
+                  final item = summary[difficulty]!;
+                  final mastery = item.averageMastery;
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(width: 32, child: Text(difficulty.label, style: const TextStyle(fontWeight: FontWeight.w600))),
+                          Expanded(
+                            child: mastery == null
+                                ? Text('Pas encore évalué', style: Theme.of(context).textTheme.bodySmall)
+                                : LinearProgressIndicator(value: mastery / 100, minHeight: 8),
+                          ),
+                          const SizedBox(width: 8),
+                          SizedBox(
+                            width: 42,
+                            child: Text(mastery == null ? '—' : '${mastery.round()} %', textAlign: TextAlign.end),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 32, top: 2),
+                        child: Text('${item.reviewedWords} mot(s) révisé(s)', style: Theme.of(context).textTheme.labelSmall),
+                      ),
+                    ],
+                  );
+                }),
+              ),
           ],
         ),
       ),
@@ -1000,45 +1280,19 @@ class _SkillRadar extends StatelessWidget {
   }
 }
 
-class _DifficultyList extends StatelessWidget {
-  const _DifficultyList({required this.words});
-
-  final List<VocabWord> words;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: [
-          for (final difficulty in VocabDifficulty.values)
-            Builder(builder: (context) {
-              final items = words.where((word) => word.difficulty == difficulty && word.stats.attempts > 0).toList();
-              final value =
-                  items.isEmpty ? 0.0 : items.map((word) => word.masteryScore()).reduce((a, b) => a + b) / items.length;
-              return ListTile(
-                dense: true,
-                leading: CircleAvatar(radius: 14, child: Text(difficulty.label)),
-                title: Text(items.isEmpty
-                    ? 'Pas encore évalué'
-                    : '${items.length} mot${items.length > 1 ? 's' : ''} revu${items.length > 1 ? 's' : ''}'),
-                subtitle: LinearProgressIndicator(value: value / 100, minHeight: 6),
-                trailing: Text('${value.round()} %'),
-              );
-            }),
-        ],
-      ),
-    );
-  }
-}
-
 class _RecentPriorities extends StatelessWidget {
   const _RecentPriorities({required this.words});
-
   final List<VocabWord> words;
 
   @override
   Widget build(BuildContext context) {
-    final priorities = [...words]..sort((a, b) => a.masteryScore().compareTo(b.masteryScore()));
+    final now = DateTime.now();
+    final priorities = <VocabWord>[];
+    for (final word in words) {
+      priorities.add(word);
+      priorities.sort((a, b) => a.masteryScore(now).compareTo(b.masteryScore(now)));
+      if (priorities.length > 3) priorities.removeLast();
+    }
     return Card(
       child: Column(
         children: [
@@ -1047,7 +1301,7 @@ class _RecentPriorities extends StatelessWidget {
               leading: const Icon(Icons.refresh_outlined),
               title: Text(word.labelFor(VocabLanguage.italian)),
               subtitle: Text(word.french),
-              trailing: Text('${word.masteryScore().round()} %'),
+              trailing: Text('${word.masteryScore(now).round()} %'),
             ),
         ],
       ),
@@ -1057,7 +1311,6 @@ class _RecentPriorities extends StatelessWidget {
 
 class _EmptyResults extends StatelessWidget {
   const _EmptyResults({this.onStartSession});
-
   final VoidCallback? onStartSession;
 
   @override
@@ -1086,7 +1339,6 @@ class _EmptyResults extends StatelessWidget {
 
 class _SectionTitle extends StatelessWidget {
   const _SectionTitle({required this.title, required this.icon});
-
   final String title;
   final IconData icon;
 
@@ -1100,7 +1352,6 @@ class _SectionTitle extends StatelessWidget {
 
 class _Metric extends StatelessWidget {
   const _Metric({required this.value, required this.label});
-
   final String value;
   final String label;
 
@@ -1114,7 +1365,6 @@ class _Metric extends StatelessWidget {
 
 class _ScoreRing extends StatelessWidget {
   const _ScoreRing({required this.value, required this.label});
-
   final double value;
   final String label;
 
@@ -1126,69 +1376,4 @@ class _ScoreRing extends StatelessWidget {
         CircularProgressIndicator(value: value),
         Text(label, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold))
       ]));
-}
-
-class _RadarPainter extends CustomPainter {
-  _RadarPainter(this.values, this.colors);
-
-  final List<double> values;
-  final ColorScheme colors;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.shortestSide * 0.36;
-    final outline = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1
-      ..color = colors.outlineVariant;
-    final fill = Paint()
-      ..style = PaintingStyle.fill
-      ..color = colors.primary.withValues(alpha: 0.24);
-    final line = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2
-      ..color = colors.primary;
-    for (var ring = 1; ring <= 4; ring++) {
-      canvas.drawPath(_polygon(center, radius * ring / 4, values.length), outline);
-    }
-    for (var index = 0; index < values.length; index++) {
-      canvas.drawLine(center, _point(center, radius, index, values.length), outline);
-    }
-    final valuePath = Path();
-    for (var index = 0; index < values.length; index++) {
-      final point = _point(center, radius * values[index].clamp(0.08, 1), index, values.length);
-      if (index == 0) {
-        valuePath.moveTo(point.dx, point.dy);
-      } else {
-        valuePath.lineTo(point.dx, point.dy);
-      }
-    }
-    valuePath.close();
-    canvas.drawPath(valuePath, fill);
-    canvas.drawPath(valuePath, line);
-  }
-
-  Path _polygon(Offset center, double radius, int count) {
-    final path = Path();
-    for (var index = 0; index < count; index++) {
-      final point = _point(center, radius, index, count);
-      if (index == 0) {
-        path.moveTo(point.dx, point.dy);
-      } else {
-        path.lineTo(point.dx, point.dy);
-      }
-    }
-    path.close();
-    return path;
-  }
-
-  Offset _point(Offset center, double radius, int index, int count) {
-    final angle = -math.pi / 2 + 2 * math.pi * index / count;
-    return Offset(center.dx + radius * math.cos(angle), center.dy + radius * math.sin(angle));
-  }
-
-  @override
-  bool shouldRepaint(covariant _RadarPainter oldDelegate) =>
-      oldDelegate.values != values || oldDelegate.colors != colors;
 }
