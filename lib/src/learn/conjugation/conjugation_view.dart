@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:parlami/src/data/models/verb_conjugation.dart';
 import 'package:parlami/src/repositories/conjugation_repository.dart';
+import 'package:parlami/src/repositories/performance_repository.dart';
+import 'package:parlami/src/data/models/performance_attempt.dart';
 import 'package:parlami/src/services/quiz_prefs.dart';
+import 'package:parlami/src/services/study_session_tracker.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 
 class ConjugationView extends StatefulWidget {
@@ -13,6 +16,9 @@ class ConjugationView extends StatefulWidget {
 
 class _ConjugationViewState extends State<ConjugationView> {
   final repo = ConjugationRepository();
+  final PerformanceRepository _performanceRepository = PerformanceRepository();
+  final String _sessionId = DateTime.now().microsecondsSinceEpoch.toString();
+  DateTime _exerciseStartedAt = DateTime.now();
   String? selectedInfinitive;
   String? selectedMood;
   String? selectedTense;
@@ -35,6 +41,7 @@ class _ConjugationViewState extends State<ConjugationView> {
   @override
   void initState() {
     super.initState();
+    StudySessionTracker.instance.start('conjugation');
     repo.init().then((_) async {
       final prefs = await QuizPrefs.loadState();
       setState(() {
@@ -68,6 +75,13 @@ class _ConjugationViewState extends State<ConjugationView> {
         );
       }
     });
+  }
+
+  @override
+  void dispose() {
+    StudySessionTracker.instance.stop();
+    _verbSearchController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -450,32 +464,65 @@ class _ConjugationViewState extends State<ConjugationView> {
                                   runSpacing: 8,
                                   children: [
                                     ElevatedButton(
-                                      onPressed: () {
+                                      onPressed: () async {
+                                        final results = <String, bool>{};
+                                        final partialMatches = <String, bool>{};
+                                        for (final p in selectedPersons) {
+                                          final expected = forms?[p]?.trim();
+                                          final input = (userInputs[p] ?? '').trim();
+                                          if (expected != null) {
+                                            final variants = expected
+                                                .split(RegExp(r'[,/]'))
+                                                .map((s) => s.trim().toLowerCase())
+                                                .where((s) => s.isNotEmpty)
+                                                .toSet();
+                                            final entered = input
+                                                .split(RegExp(r'[,/]'))
+                                                .map((s) => s.trim().toLowerCase())
+                                                .where((s) => s.isNotEmpty)
+                                                .toSet();
+                                            final isCorrect = matchesConjugationAnswer(input, expected);
+                                            results[p] = isCorrect;
+                                            partialMatches[p] = isCorrect && entered.length < variants.length;
+                                          } else {
+                                            results[p] = false;
+                                            partialMatches[p] = false;
+                                          }
+                                        }
+                                        if (!mounted) return;
                                         setState(() {
                                           hasVerified = true;
-                                          for (final p in selectedPersons) {
-                                            final expected = forms?[p]?.trim();
-                                            final input = (userInputs[p] ?? '').trim();
-                                            if (expected != null) {
-                                              final variants = expected
-                                                  .split(RegExp(r'[,/]'))
-                                                  .map((s) => s.trim().toLowerCase())
-                                                  .where((s) => s.isNotEmpty)
-                                                  .toSet();
-                                              final entered = input
-                                                  .split(RegExp(r'[,/]'))
-                                                  .map((s) => s.trim().toLowerCase())
-                                                  .where((s) => s.isNotEmpty)
-                                                  .toSet();
-                                              final isCorrect = matchesConjugationAnswer(input, expected);
-                                              checkResults[p] = isCorrect;
-                                              isPartialMatch[p] = isCorrect && entered.length < variants.length;
-                                            } else {
-                                              checkResults[p] = false;
-                                              isPartialMatch[p] = false;
-                                            }
-                                          }
+                                          checkResults
+                                            ..clear()
+                                            ..addAll(results);
+                                          isPartialMatch
+                                            ..clear()
+                                            ..addAll(partialMatches);
                                         });
+                                        final allCorrect =
+                                            results.isNotEmpty && results.values.every((result) => result);
+                                        final now = DateTime.now();
+                                        await _performanceRepository.record(
+                                          PerformanceAttempt(
+                                            id: '${_sessionId}_${now.microsecondsSinceEpoch}',
+                                            sessionId: _sessionId,
+                                            skill: 'conjugation',
+                                            exerciseType: 'verb_forms',
+                                            itemId: selectedInfinitive ?? 'unknown',
+                                            recordedAt: now,
+                                            correct: allCorrect,
+                                            durationMs: now.difference(_exerciseStartedAt).inMilliseconds,
+                                            metadata: {
+                                              'mood': selectedMood,
+                                              'tense': selectedTense,
+                                              'persons': results,
+                                              'partialPersons': partialMatches.keys
+                                                  .where((person) => partialMatches[person] == true)
+                                                  .toList(),
+                                            },
+                                          ),
+                                        );
+                                        _exerciseStartedAt = now;
                                       },
                                       child: Text(l10n.conjugationCheck),
                                     ),

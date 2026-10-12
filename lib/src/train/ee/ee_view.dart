@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../data/models/performance_attempt.dart';
 import '../../localization/app_localizations.dart';
 import 'package:parlami/src/repositories/ee_repository.dart';
+import 'package:parlami/src/repositories/performance_repository.dart';
+import 'package:parlami/src/services/study_session_tracker.dart';
 
 class EEView extends StatefulWidget {
   const EEView({super.key});
@@ -11,9 +14,13 @@ class EEView extends StatefulWidget {
 
 class _EEViewState extends State<EEView> {
   final repo = EERepository();
+  final PerformanceRepository _performanceRepository = PerformanceRepository();
+  final String _sessionId = DateTime.now().microsecondsSinceEpoch.toString();
+  DateTime _exerciseStartedAt = DateTime.now();
   final answerController = TextEditingController();
   String? currentFrench;
   String? correctItalian;
+  String? currentLevel;
   bool showCorrection = false;
   int correct = 0;
   int total = 0;
@@ -21,11 +28,13 @@ class _EEViewState extends State<EEView> {
   @override
   void initState() {
     super.initState();
+    StudySessionTracker.instance.start('ee');
     repo.init().then((_) => _loadSentence());
   }
 
   @override
   void dispose() {
+    StudySessionTracker.instance.stop();
     answerController.dispose();
     super.dispose();
   }
@@ -36,23 +45,41 @@ class _EEViewState extends State<EEView> {
       setState(() {
         currentFrench = s.french;
         correctItalian = s.italian;
+        currentLevel = s.level;
+        _exerciseStartedAt = DateTime.now();
         showCorrection = false;
         answerController.clear();
       });
     }
   }
 
-  void _checkAnswer() {
+  Future<void> _checkAnswer() async {
+    final userAnswer = answerController.text.trim().toLowerCase();
+    final expectedAnswer = correctItalian!.toLowerCase();
+    final isCorrect = userAnswer == expectedAnswer;
     setState(() {
       showCorrection = true;
       total++;
-      final userAnswer = answerController.text.trim().toLowerCase();
-      final correct = correctItalian!.toLowerCase();
       // Simple comparison - could be enhanced with fuzzy matching
-      if (userAnswer == correct) {
-        this.correct++;
+      if (isCorrect) {
+        correct++;
       }
     });
+    final now = DateTime.now();
+    await _performanceRepository.record(
+      PerformanceAttempt(
+        id: '${_sessionId}_${now.microsecondsSinceEpoch}',
+        sessionId: _sessionId,
+        skill: 'ee',
+        exerciseType: 'translation',
+        itemId: currentFrench ?? 'unknown',
+        recordedAt: now,
+        correct: isCorrect,
+        durationMs: now.difference(_exerciseStartedAt).inMilliseconds,
+        metadata: {'level': currentLevel},
+      ),
+    );
+    _exerciseStartedAt = now;
   }
 
   double get accuracy => total == 0 ? 0 : (correct / total * 100);

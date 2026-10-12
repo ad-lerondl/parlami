@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:parlami/src/data/models/performance_attempt.dart';
 import 'package:parlami/src/data/models/eo_question.dart';
 import 'package:parlami/src/repositories/eo_repository.dart';
+import 'package:parlami/src/repositories/performance_repository.dart';
+import 'package:parlami/src/services/study_session_tracker.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 
 enum EODifficulty {
@@ -20,6 +23,8 @@ class EOView extends StatefulWidget {
 
 class _EOViewState extends State<EOView> {
   final repo = EORepository();
+  final PerformanceRepository _performanceRepository = PerformanceRepository();
+  final String _sessionId = DateTime.now().microsecondsSinceEpoch.toString();
   EODifficulty difficulty = EODifficulty.free;
   EOQuestion? current;
   bool showTip = false;
@@ -41,11 +46,13 @@ class _EOViewState extends State<EOView> {
   @override
   void initState() {
     super.initState();
+    StudySessionTracker.instance.start('eo');
     repo.init().then((_) => _loadQuestion());
   }
 
   @override
   void dispose() {
+    StudySessionTracker.instance.stop();
     _stopTimer();
     _autoStartTimer?.cancel();
     super.dispose();
@@ -203,7 +210,7 @@ class _EOViewState extends State<EOView> {
     _segmentStart = now;
   }
 
-  void _onEvaluate(int rating) {
+  Future<void> _onEvaluate(int rating) async {
     setState(() {
       selfRating = rating;
     });
@@ -220,6 +227,23 @@ class _EOViewState extends State<EOView> {
     } else if (rating == 3 && idx < levels.length - 1 && rng.nextDouble() < 0.6) {
       currentLevel = levels[idx + 1];
     }
+    await _performanceRepository.record(
+      PerformanceAttempt(
+        id: '${_sessionId}_${DateTime.now().microsecondsSinceEpoch}',
+        sessionId: _sessionId,
+        skill: 'eo',
+        exerciseType: difficulty.name,
+        itemId: current?.id ?? 'unknown',
+        recordedAt: DateTime.now(),
+        rating: rating,
+        durationMs: totalElapsed.inMilliseconds,
+        metadata: {
+          'level': current?.level,
+          'talkDurationMs': talkElapsed.inMilliseconds,
+          'hesitationDurationMs': hesitateElapsed.inMilliseconds,
+        },
+      ),
+    );
   }
 
   void _selectLevel(String level) {

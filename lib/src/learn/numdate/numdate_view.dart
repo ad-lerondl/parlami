@@ -1,7 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../../data/models/performance_attempt.dart';
 import '../../localization/app_localizations.dart';
+import '../../repositories/performance_repository.dart';
+import '../../services/study_session_tracker.dart';
 
 import 'date_words.dart';
 import 'number_words.dart';
@@ -20,6 +23,9 @@ enum _AnswerState { idle, correct, incorrect }
 
 class _NumDateViewState extends State<NumDateView> {
   late final Random _random = widget.random ?? Random();
+  final PerformanceRepository _performanceRepository = PerformanceRepository();
+  final String _sessionId = DateTime.now().microsecondsSinceEpoch.toString();
+  DateTime _exerciseStartedAt = DateTime.now();
 
   final TextEditingController _numberPreviewController = TextEditingController();
   final TextEditingController _numberTargetController = TextEditingController();
@@ -42,6 +48,7 @@ class _NumDateViewState extends State<NumDateView> {
   @override
   void initState() {
     super.initState();
+    StudySessionTracker.instance.start('numdate');
     _numberPreviewController.text = _initialNumberTarget().toString();
     _numberTargetController.text = _initialNumberTarget().toString();
     _previewDate = _initialDateTarget();
@@ -52,6 +59,7 @@ class _NumDateViewState extends State<NumDateView> {
 
   @override
   void dispose() {
+    StudySessionTracker.instance.stop();
     _numberPreviewController.dispose();
     _numberTargetController.dispose();
     _numberAnswerController.dispose();
@@ -60,7 +68,7 @@ class _NumDateViewState extends State<NumDateView> {
     super.dispose();
   }
 
-  int _initialNumberTarget() => _random.nextInt(1000);
+  int _initialNumberTarget() => _random.nextInt(1000000);
 
   DateTime _initialDateTarget() {
     final year = 1950 + _random.nextInt(151);
@@ -121,33 +129,73 @@ class _NumDateViewState extends State<NumDateView> {
   String _timeLabel(TimeOfDay time) =>
       '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
 
-  void _checkNumberAnswer() {
+  Future<void> _checkNumberAnswer() async {
     final target = _parseNumberTarget();
     final expected = target == null ? '' : numberToItalian(target);
     final attempt = _numberAnswerController.text.trim();
+    final correct = target != null && _normalize(attempt) == _normalize(expected);
     setState(() {
       _numberAttempt = attempt;
-      _numberState =
-          target != null && _normalize(attempt) == _normalize(expected) ? _AnswerState.correct : _AnswerState.incorrect;
+      _numberState = correct ? _AnswerState.correct : _AnswerState.incorrect;
     });
+    await _recordAttempt('number', target?.toString() ?? 'invalid', attempt, correct);
   }
 
-  void _checkDateAnswer() {
+  Future<void> _checkDateAnswer() async {
     final expected = italianDateWords(_exerciseDate);
     final attempt = _dateAnswerController.text.trim();
+    final correct = _normalize(attempt) == _normalize(expected);
     setState(() {
       _dateAttempt = attempt;
-      _dateState = _normalize(attempt) == _normalize(expected) ? _AnswerState.correct : _AnswerState.incorrect;
+      _dateState = correct ? _AnswerState.correct : _AnswerState.incorrect;
     });
+    await _recordAttempt('date', _exerciseDate.toIso8601String(), attempt, correct);
   }
 
-  void _checkTimeAnswer() {
+  Future<void> _checkTimeAnswer() async {
     final expected = italianTimeWords(_exerciseTime);
     final attempt = _timeAnswerController.text.trim();
+    final correct = _normalize(attempt) == _normalize(expected);
     setState(() {
       _timeAttempt = attempt;
-      _timeState = _normalize(attempt) == _normalize(expected) ? _AnswerState.correct : _AnswerState.incorrect;
+      _timeState = correct ? _AnswerState.correct : _AnswerState.incorrect;
     });
+    await _recordAttempt('time', _timeLabel(_exerciseTime), attempt, correct);
+  }
+
+  Future<void> _recordAttempt(String exerciseType, String itemId, String answer, bool correct) async {
+    final targetValue = exerciseType == 'number' ? int.tryParse(itemId) : null;
+    final now = DateTime.now();
+    await _performanceRepository.record(
+      PerformanceAttempt(
+        id: '${_sessionId}_${now.microsecondsSinceEpoch}',
+        sessionId: _sessionId,
+        skill: 'numdate',
+        exerciseType: exerciseType,
+        itemId: itemId,
+        recordedAt: now,
+        correct: correct,
+        durationMs: now.difference(_exerciseStartedAt).inMilliseconds,
+        metadata: {
+          'answer': answer,
+          if (targetValue != null) ...{
+            'targetValue': targetValue,
+            'magnitude': targetValue.abs().toString().length,
+            'difficultyBand': _numberDifficultyBand(targetValue),
+          },
+        },
+      ),
+    );
+    _exerciseStartedAt = now;
+  }
+
+  String _numberDifficultyBand(int value) {
+    final magnitude = value.abs();
+    if (magnitude < 100) return '0–99';
+    if (magnitude < 1000) return '100–999';
+    if (magnitude < 10000) return '1 000–9 999';
+    if (magnitude < 1000000) return '10 000–999 999';
+    return '1 000 000+';
   }
 
   Future<void> _pickPreviewDate() async {

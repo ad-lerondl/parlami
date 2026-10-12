@@ -5,9 +5,11 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'src/app.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_service.dart';
+import 'src/services/retention_reminder_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeRetentionReminders();
 
   if (!kIsWeb) {
     await JustAudioBackground.init(
