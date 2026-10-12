@@ -566,14 +566,15 @@ class _VocabViewState extends State<VocabView> {
               secondChild: Text(hidden, style: Theme.of(context).textTheme.titleLarge),
             ),
             const SizedBox(height: 16),
+            FilledButton.tonal(
+              onPressed: () => setState(() => _showAnswer = !_showAnswer),
+              child: Text(_showAnswer ? l10n.vocabHideAnswer : l10n.vocabShowAnswer),
+            ),
+            const SizedBox(height: 8),
             Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
-                FilledButton.tonal(
-                  onPressed: () => setState(() => _showAnswer = !_showAnswer),
-                  child: Text(_showAnswer ? l10n.vocabHideAnswer : l10n.vocabShowAnswer),
-                ),
                 OutlinedButton(
                   onPressed: () => _classifyCurrent(true),
                   child: Text(l10n.vocabKnown),
@@ -582,11 +583,12 @@ class _VocabViewState extends State<VocabView> {
                   onPressed: () => _classifyCurrent(false),
                   child: Text(l10n.vocabUnknown),
                 ),
-                FilledButton(
-                  onPressed: _advanceTrainingPool,
-                  child: Text(l10n.vocabNextWord),
-                ),
               ],
+            ),
+            const SizedBox(height: 8),
+            FilledButton(
+              onPressed: _advanceTrainingPool,
+              child: Text(l10n.vocabNextWord),
             ),
             const SizedBox(height: 12),
             Text(l10n.vocabCategories(word.categories.join(', '))),

@@ -144,14 +144,6 @@
     "article": "l'"
   },
   {
-    "it": "masturbazione",
-    "fr": "masturbation",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
     "it": "preservativo",
     "fr": "préservatif",
     "categories": ["Sexe", "Pratiques"],
@@ -232,14 +224,6 @@
     "article": "il"
   },
   {
-    "it": "fantasia erotica",
-    "fr": "fantasme érotique",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase",
-    "article": "la"
-  },
-  {
     "it": "rapporto sessuale",
     "fr": "rapport sexuel",
     "categories": ["Sexe", "Pratiques"],
@@ -290,99 +274,8 @@
     "partOfSpeech": "verb"
   },
   {
-    "it": "penetrare",
-    "fr": "pénétrer",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "verb"
-  },
-  {
-    "it": "sesso orale",
-    "fr": "sexe oral",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase"
-  },
-  {
-    "it": "sesso anale",
-    "fr": "sexe anal",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase"
-  },
-  {
-    "it": "sesso di gruppo",
-    "fr": "partouze",
-    "categories": ["Sexe", "Pratiques", "Slang"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun phrase"
-  },
-  {
-    "it": "sesso virtuale",
-    "fr": "sexe virtuel",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase"
-  },
-  {
-    "it": "giocattolo erotico",
-    "fr": "jouet érotique",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase",
-    "article": "il"
-  },
-  {
-    "it": "vibratore",
-    "fr": "vibromasseur",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
-    "it": "dildo",
-    "fr": "gode",
-    "categories": ["Sexe", "Pratiques", "Slang"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
     "it": "lubrificante",
     "fr": "lubrifiant",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
-    "it": "BDSM",
-    "fr": "BDSM",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
-    "it": "dominazione",
-    "fr": "domination",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
-    "it": "sottomissione",
-    "fr": "soumission",
-    "categories": ["Sexe", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
-    "it": "feticismo",
-    "fr": "fétichisme",
     "categories": ["Sexe", "Pratiques"],
     "difficulty": "B2",
     "partOfSpeech": "noun",
@@ -490,34 +383,11 @@
     "partOfSpeech": "verb"
   },
   {
-    "it": "trombare",
-    "fr": "baiser (familier)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "verb"
-  },
-  {
     "it": "spompinare",
     "fr": "faire une pipe (vulgaire)",
     "categories": ["Sexe", "Slang", "Pratiques", "Insultes"],
     "difficulty": "C1",
     "partOfSpeech": "verb"
-  },
-  {
-    "it": "pompa",
-    "fr": "pipe (familier)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
-    "it": "segaiolo",
-    "fr": "branleur (vulgaire)",
-    "categories": ["Slang", "Insultes"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "il"
   },
   {
     "it": "figa",
@@ -592,28 +462,6 @@
     "article": "la"
   },
   {
-    "it": "porno",
-    "fr": "porno",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "B1",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
-    "it": "hard",
-    "fr": "hard (porno dur)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "adjective"
-  },
-  {
-    "it": "soft",
-    "fr": "soft (porno léger)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "adjective"
-  },
-  {
     "it": "culattone",
     "fr": "pédé (vulgaire)",
     "categories": ["Slang", "Insultes", "LGBTQ+"],
@@ -678,48 +526,10 @@
     "article": "il/la"
   },
   {
-    "it": "sesso a tre",
-    "fr": "plan à trois",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun phrase"
-  },
-  {
-    "it": "scambista",
-    "fr": "échangiste",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "il/la"
-  },
-  {
-    "it": "ornitologia",
-    "fr": "plan cul (litt. 'ornithologie', argot)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "l'"
-  },
-  {
-    "it": "rimorchio",
-    "fr": "drague",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "il"
-  },
-  {
     "it": "rimorchiare",
     "fr": "draguer",
     "categories": ["Sexe", "Slang", "Pratiques"],
     "difficulty": "B2",
-    "partOfSpeech": "verb"
-  },
-  {
-    "it": "ciavare",
-    "fr": "baiser (argot, régional)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
     "partOfSpeech": "verb"
   },
   {
@@ -738,14 +548,6 @@
     "article": "la"
   },
   {
-    "it": "sgorbia",
-    "fr": "branlette (vulgaire, régional)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
     "it": "sega",
     "fr": "branlette (familier)",
     "categories": ["Sexe", "Slang", "Pratiques"],
@@ -754,24 +556,10 @@
     "article": "la"
   },
   {
-    "it": "farsi una sega",
-    "fr": "se faire une branlette",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "C1",
-    "partOfSpeech": "verb phrase"
-  },
-  {
     "it": "godere",
     "fr": "jouir",
     "categories": ["Sexe", "Slang", "Pratiques"],
     "difficulty": "B2",
-    "partOfSpeech": "verb"
-  },
-  {
-    "it": "venire",
-    "fr": "venir (orgasme)",
-    "categories": ["Sexe", "Slang", "Pratiques"],
-    "difficulty": "B1",
     "partOfSpeech": "verb"
   },
   {
@@ -850,14 +638,6 @@
     "fr": "nana (familier)",
     "categories": ["Slang"],
     "difficulty": "B2",
-    "partOfSpeech": "noun",
-    "article": "la"
-  },
-  {
-    "it": "bocchinara",
-    "fr": "pipeuse (vulgaire)",
-    "categories": ["Slang", "Insultes", "Pratiques"],
-    "difficulty": "C1",
     "partOfSpeech": "noun",
     "article": "la"
   }
