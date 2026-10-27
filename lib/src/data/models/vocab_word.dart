@@ -116,6 +116,25 @@ extension VocabPartOfSpeechX on VocabPartOfSpeech {
 
 extension VocabLanguageX on VocabLanguage {
   String get label => this == VocabLanguage.italian ? 'Italien' : 'Français';
+
+  String get code => this == VocabLanguage.italian ? 'it' : 'fr';
+
+  static VocabLanguage? parseCode(String? raw) {
+    switch (raw?.trim().toLowerCase()) {
+      case 'it':
+      case 'ita':
+      case 'italian':
+      case 'italien':
+        return VocabLanguage.italian;
+      case 'fr':
+      case 'fra':
+      case 'french':
+      case 'français':
+        return VocabLanguage.french;
+      default:
+        return null;
+    }
+  }
 }
 
 String normalizeVocabText(String input) {
@@ -321,6 +340,9 @@ class VocabWord {
   final String italian;
   final String french;
   final List<String> translations;
+  final List<String> glosses;
+  final String? sourceLanguage;
+  final String? targetLanguage;
   final VocabDifficulty difficulty;
   final List<String> categories;
   final VocabPartOfSpeech partOfSpeech;
@@ -336,6 +358,9 @@ class VocabWord {
     required this.italian,
     required this.french,
     this.translations = const [],
+    this.glosses = const [],
+    this.sourceLanguage,
+    this.targetLanguage,
     required this.difficulty,
     required this.categories,
     required this.partOfSpeech,
@@ -354,25 +379,27 @@ class VocabWord {
     }.toList(growable: false);
     final italian = (json['it'] ?? json['italian'] ?? json['lemma'] ?? '') as String;
     final translationValues = <String>[];
-    void addTranslations(dynamic value) {
+    void addValues(List<String> target, dynamic value) {
       if (value is List) {
-        translationValues.addAll(value.map((item) => item.toString().trim()));
+        target.addAll(value.map((item) => item.toString().trim()));
       } else if (value is String) {
-        translationValues.add(value.trim());
+        target.add(value.trim());
       }
     }
 
     final rawTranslations = json['translations'];
     if (rawTranslations is Map) {
-      addTranslations(rawTranslations['fr'] ?? rawTranslations['to'] ?? rawTranslations['target']);
+      final targetCode = json['targetLanguage']?.toString() ?? json['to']?.toString() ?? 'fr';
+      addValues(translationValues, rawTranslations[targetCode] ?? rawTranslations['fr'] ?? rawTranslations['to'] ?? rawTranslations['target']);
     } else {
-      addTranslations(rawTranslations);
+      addValues(translationValues, rawTranslations);
     }
-    addTranslations(json['fr'] ?? json['french'] ?? json['translation']);
+    addValues(translationValues, json['fr'] ?? json['french'] ?? json['translation']);
     final translations = translationValues.where((value) => value.isNotEmpty).toSet().toList(growable: false);
-    final french = translations.isNotEmpty
-        ? translations.first
-        : (json['meaning'] ?? json['definition'] ?? json['hint'] ?? '').toString();
+    final glossValues = <String>[];
+    addValues(glossValues, json['glosses'] ?? json['gloss'] ?? json['definitions'] ?? json['definition'] ?? json['hint']);
+    final glosses = glossValues.where((value) => value.isNotEmpty).toSet().toList(growable: false);
+    final french = translations.isNotEmpty ? translations.first : '';
     final difficulty = VocabDifficultyX.parse(json['difficulty']?.toString(),
         fallback: VocabDifficultyX.parse(json['level']?.toString(),
             fallback: VocabDifficultyX.parse(json['cefr']?.toString())));
@@ -397,6 +424,9 @@ class VocabWord {
       italian: italian,
       french: french,
       translations: translations,
+      glosses: glosses,
+      sourceLanguage: json['sourceLanguage']?.toString() ?? json['from']?.toString(),
+      targetLanguage: json['targetLanguage']?.toString() ?? json['to']?.toString(),
       difficulty: difficulty,
       categories: categories,
       partOfSpeech: partOfSpeech,
@@ -414,6 +444,9 @@ class VocabWord {
         'it': italian,
         'fr': french,
         'translations': translations,
+        'glosses': glosses,
+        'sourceLanguage': sourceLanguage,
+        'targetLanguage': targetLanguage,
         'difficulty': difficulty.label,
         'level': difficulty.label,
         'categories': categories,
@@ -431,6 +464,9 @@ class VocabWord {
     String? italian,
     String? french,
     List<String>? translations,
+    List<String>? glosses,
+    String? sourceLanguage,
+    String? targetLanguage,
     VocabDifficulty? difficulty,
     List<String>? categories,
     VocabPartOfSpeech? partOfSpeech,
@@ -446,6 +482,9 @@ class VocabWord {
       italian: italian ?? this.italian,
       french: french ?? this.french,
       translations: translations ?? this.translations,
+      glosses: glosses ?? this.glosses,
+      sourceLanguage: sourceLanguage ?? this.sourceLanguage,
+      targetLanguage: targetLanguage ?? this.targetLanguage,
       difficulty: difficulty ?? this.difficulty,
       categories: categories ?? this.categories,
       partOfSpeech: partOfSpeech ?? this.partOfSpeech,
@@ -473,6 +512,16 @@ class VocabWord {
     return word;
   }
 
+  String get sourceText => italian;
+
+  String get targetText => translations.isEmpty ? french : translations.join(', ');
+
+  String labelForCode(String code) {
+    if (sourceLanguage?.toLowerCase() == code.toLowerCase()) return sourceText;
+    if (targetLanguage?.toLowerCase() == code.toLowerCase()) return targetText;
+    return targetText;
+  }
+
   String get searchText => normalizeVocabText([
         id,
         italian,
@@ -481,6 +530,8 @@ class VocabWord {
         partOfSpeech.label,
         article ?? '',
         ...categories,
+        ...translations,
+        ...glosses,
       ].join(' '));
 
   bool matchesQuery(String query, {required bool regex}) {

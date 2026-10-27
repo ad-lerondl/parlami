@@ -13,7 +13,8 @@ void main() {
     });
 
     expect(word.italian, 'cibo');
-    expect(word.french, 'ce que l’on mange');
+    expect(word.french, isEmpty);
+    expect(word.glosses, ['ce que l’on mange']);
     expect(word.difficulty, VocabDifficulty.a1);
     expect(word.partOfSpeech, VocabPartOfSpeech.noun);
   });
@@ -30,6 +31,15 @@ void main() {
     expect(word.labelFor(VocabLanguage.french), 'maison, demeure');
   });
 
+  test('accepts a direct translation list', () {
+    final word = VocabWord.fromJson({
+      'lemma': 'acqua',
+      'translation': ['eau', 'eaux'],
+    });
+
+    expect(word.targetText, 'eau, eaux');
+  });
+
   test('parses pack summaries from the remote index shape', () {
     final pack = VocabPackSummary.fromJson({
       'id': 'it-ristorante-a1',
@@ -40,6 +50,7 @@ void main() {
       'theme_tags': ['restaurant'],
       'display_level': 'A2',
       'word_count': 18,
+      'registry_version': 'a00a63c241af2af7',
       'level_distribution': {'A1': 3, 'A2': 11, 'B1': 1, 'B2': 2, 'C1': 1},
     });
 
@@ -49,5 +60,6 @@ void main() {
     expect(pack.toLanguage, 'fr');
     expect(pack.averageCefr, closeTo(2.27, 0.01));
     expect(pack.wordCount, 18);
+    expect(pack.registryVersion, 'a00a63c241af2af7');
   });
 }

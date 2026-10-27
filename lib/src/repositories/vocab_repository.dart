@@ -34,11 +34,17 @@ class VocabRepository {
 
   static const _schemaVersion = 2;
 
-  static Future<List<VocabWord>>? _seedCache;
-
   final StoreRef<String, Map<String, dynamic>> _store = stringMapStoreFactory.store(_storeName);
 
   final StoreRef<String, Map<String, dynamic>> _metaStore = stringMapStoreFactory.store(_metaStoreName);
+
+  final StoreRef<String, Map<String, dynamic>> _wordsStore = stringMapStoreFactory.store('words');
+  final StoreRef<String, Map<String, dynamic>> _sensesStore = stringMapStoreFactory.store('senses');
+  final StoreRef<String, Map<String, dynamic>> _examplesStore = stringMapStoreFactory.store('examples');
+  final StoreRef<String, Map<String, dynamic>> _packsStore = stringMapStoreFactory.store('packs');
+  final StoreRef<String, Map<String, dynamic>> _packWordsStore = stringMapStoreFactory.store('pack_words');
+  final StoreRef<String, Map<String, dynamic>> _cardsStore = stringMapStoreFactory.store('cards');
+  final StoreRef<String, Map<String, dynamic>> _reviewLogStore = stringMapStoreFactory.store('review_log');
 
   final List<VocabWord> _items = [];
   late final List<VocabWord> _allView = UnmodifiableListView<VocabWord>(_items);
@@ -176,36 +182,185 @@ class VocabRepository {
 
   VocabWord? byId(String id) => _byId[id];
 
-  List<VocabWord> userWords() => _items.where((word) => word.source == VocabWordSource.user).toList(growable: false);
+  List<VocabWord> userWords() => _items.where((word) => word.source != VocabWordSource.original).toList(growable: false);
 
   Future<int> importPack(VocabPack pack) async {
     if (!_initialized) await init();
     final now = DateTime.now();
-    final imported = pack.words.map((item) {
-      final itemCategories = item['categories'] is List
-          ? (item['categories'] as List).map((value) => value.toString()).toList()
-          : const <String>[];
-      final word = VocabWord.fromJson({
-        ...item,
-        'id': '${pack.summary.id}:${item['sense_id'] ?? item['word_id'] ?? item['lemma']}',
-        'categories': [...pack.summary.themeTags, ...itemCategories],
-        'source': VocabWordSource.remotePack.name,
-        'packId': pack.summary.id,
-        'createdAt': now.toIso8601String(),
-        'updatedAt': now.toIso8601String(),
+    final imported = <VocabWord>[];
+    await _database!.transaction((transaction) async {
+      await _upsertRegistry(pack.registry, transaction);
+      await _packsStore.record(pack.summary.id).put(transaction, {
+        'id': pack.summary.id,
+        'json_content': pack.content,
+        'registry_version': pack.registry.version,
       });
-      final existing = _byId[word.id];
-      return word.copyWith(
-        source: VocabWordSource.remotePack,
-        packId: pack.summary.id,
-        createdAt: existing?.createdAt,
-        stats: existing?.stats,
-      );
-    }).toList(growable: false);
+      for (final item in pack.words) {
+        final senseId = item['sense_id']?.toString() ?? '';
+        final sense = pack.registry.senses[senseId];
+        if (sense == null) {
+          throw FormatException('Le sens $senseId est absent du registre.');
+        }
+        final packWordKey = '${pack.summary.id}:$senseId';
+        await _packWordsStore.record(packWordKey).put(transaction, {
+          'pack_id': pack.summary.id,
+          'sense_id': senseId,
+          'hint': item['hint'],
+        });
+        for (final direction in const ['IT_FR', 'FR_IT', 'LISTEN']) {
+          final cardId = '$senseId#$direction';
+          await _cardsStore.record(cardId).put(transaction, {
+            'id': cardId,
+            'sense_id': senseId,
+            'direction': direction,
+            'fsrs_state': VocabReviewStats.initial().toJson(),
+            'due_at': null,
+          }, merge: true);
+        }
+        final word = pack.registry.words[sense.wordId];
+        if (word == null) continue;
+        imported.add(_wordFromRegistry(pack, item, word, sense, now));
+      }
+    });
     for (final word in imported) {
       await upsert(word);
     }
     return imported.length;
+  }
+
+  Future<void> _upsertRegistry(VocabRegistry registry, Transaction transaction) async {
+    for (final word in registry.words.values) {
+      await _wordsStore.record(word.wordId).put(transaction, {
+        'word_id': word.wordId,
+        'lemma': word.lemma,
+        'pos': word.pos,
+        'gender': word.gender,
+        'ipa': word.ipa,
+        'cefr': word.cefr,
+        'freq_rank': word.freqRank,
+      });
+    }
+    for (final sense in registry.senses.values) {
+      await _sensesStore.record(sense.senseId).put(transaction, {
+        'sense_id': sense.senseId,
+        'word_id': sense.wordId,
+        'gloss': sense.gloss,
+        'translations': sense.translations,
+      });
+      for (final example in sense.examples) {
+        final exampleId = example['id']?.toString();
+        if (exampleId != null && exampleId.isNotEmpty) {
+          await _examplesStore.record(exampleId).put(transaction, {
+            ...example,
+            'sense_id': sense.senseId,
+          });
+        }
+      }
+    }
+  }
+
+  VocabWord _wordFromRegistry(
+    VocabPack pack,
+    Map<String, dynamic> item,
+    VocabRegistryWord word,
+    VocabRegistrySense sense,
+    DateTime now,
+  ) {
+    final existing = _byId[sense.senseId];
+    return VocabWord.fromJson({
+      'id': sense.senseId,
+      'lemma': word.lemma,
+      'pos': word.pos,
+      'gender': word.gender,
+      'ipa': word.ipa,
+      'cefr': item['cefr'] ?? word.cefr,
+      'translations': {pack.summary.toLanguage: sense.translations},
+      'glosses': [sense.gloss],
+      'from': pack.summary.fromLanguage,
+      'to': pack.summary.toLanguage,
+      'categories': pack.summary.themeTags,
+      'source': VocabWordSource.remotePack.name,
+      'packId': pack.summary.id,
+      'createdAt': existing?.createdAt.toIso8601String() ?? now.toIso8601String(),
+      'updatedAt': now.toIso8601String(),
+      'stats': existing?.stats.toJson(),
+    }).copyWith(
+      source: VocabWordSource.remotePack,
+      packId: pack.summary.id,
+      createdAt: existing?.createdAt,
+      stats: existing?.stats,
+    );
+  }
+
+  bool hasPack(String packId) => _items.any(
+        (word) => word.source == VocabWordSource.remotePack &&
+            (word.packId == packId || word.id.startsWith('$packId:')),
+      );
+
+  Future<int> removePack(String packId) async {
+    if (!_initialized) await init();
+    final records = await _packWordsStore.find(_database!);
+    final senseIds = records
+        .where((record) => record.value['pack_id']?.toString() == packId)
+        .map((record) => record.value['sense_id']?.toString() ?? '')
+        .where((senseId) => senseId.isNotEmpty)
+        .toSet();
+    var removed = 0;
+    await _database!.transaction((transaction) async {
+      for (final record in records) {
+        if (record.value['pack_id']?.toString() == packId) {
+          await _store.record(record.key).delete(transaction);
+          await _packWordsStore.record(record.key).delete(transaction);
+          removed++;
+        }
+      }
+      await _packsStore.record(packId).delete(transaction);
+    });
+    if (removed == 0) return 0;
+    for (final senseId in senseIds) {
+      final remaining = await _packWordsStore.find(
+        _database!,
+        finder: Finder(filter: Filter.equals('sense_id', senseId)),
+      );
+      if (remaining.isEmpty) await _store.record(senseId).delete(_database!);
+    }
+    await _removeLegacyPackFacades(packId);
+    await _reloadFromDatabase();
+    return removed;
+  }
+
+  Future<int> removeAllPacks() async {
+    if (!_initialized) await init();
+    final records = await _packWordsStore.find(_database!);
+    var removed = 0;
+    await _database!.transaction((transaction) async {
+      for (final record in records) {
+        await _packWordsStore.record(record.key).delete(transaction);
+        removed++;
+      }
+      final packs = await _packsStore.find(transaction);
+      for (final pack in packs) {
+        await _packsStore.record(pack.key).delete(transaction);
+      }
+    });
+    if (removed == 0) return 0;
+    final facades = await _store.find(_database!);
+    await _database!.transaction((transaction) async {
+      for (final record in facades) {
+        if (record.value['source']?.toString().trim().toLowerCase() == VocabWordSource.remotePack.name) {
+          await _store.record(record.key).delete(transaction);
+        }
+      }
+    });
+    await _reloadFromDatabase();
+    return removed;
+  }
+
+  Future<void> _removeLegacyPackFacades(String packId) async {
+    final facades = await _store.find(_database!);
+    for (final record in facades) {
+      if (record.key.startsWith('$packId:')) await _store.record(record.key).delete(_database!);
+    }
   }
 
   Future<String> exportUserWordsJson() async {
@@ -214,65 +369,11 @@ class VocabRepository {
     return const JsonEncoder.withIndent('  ').convert(payload);
   }
 
-  Future<List<VocabWord>> importWordsFromJsonString(String sourceJson) async {
-    final decoded = jsonDecode(sourceJson);
-
-    final rawItems = switch (decoded) {
-      List<dynamic> list => list,
-      Map<String, dynamic> map when map['words'] is List => map['words'] as List<dynamic>,
-      _ => throw const FormatException('Le JSON doit être une liste de mots ou un objet contenant la clé "words".'),
-    };
-
-    final imported = rawItems.map((item) {
-      if (item is! Map) {
-        throw const FormatException('Chaque mot importé doit être un objet JSON.');
-      }
-
-      return VocabWord.fromJson(Map<String, dynamic>.from(item), idFallback: null)
-          .copyWith(source: VocabWordSource.user);
-    }).toList(growable: false);
-
-    for (final word in imported) {
-      await upsert(word);
-    }
-
-    return imported;
-  }
-
-  Future<void> resetOriginalWords() async {
-    if (!_initialized) await init();
-
-    final seeded = await _seedFromAsset();
-
-    final records = await _store.find(_database!);
-
-    await _database!.transaction((transaction) async {
-      for (final record in records) {
-        final source = record.value['source']?.toString().trim().toLowerCase();
-
-        if (source == VocabWordSource.original.name) {
-          await _store.record(record.key).delete(transaction);
-        }
-      }
-
-      for (final seed in seeded) {
-        await _store.record(seed.id).put(
-              transaction,
-              _recordFor(seed.copyWith(
-                source: VocabWordSource.original,
-                stats: VocabReviewStats.initial(),
-                updatedAt: DateTime.now(),
-              )),
-            );
-      }
-    });
-
+  Future<void> _reloadFromDatabase() async {
     final refreshed = await _store.find(_database!);
-
-    final reloaded =
-        refreshed.map((record) => VocabWord.fromJson(record.value, idFallback: record.key)).toList(growable: false);
-
-    _rebuildCache(reloaded);
+    _rebuildCache(
+      refreshed.map((record) => VocabWord.fromJson(record.value, idFallback: record.key)).toList(growable: false),
+    );
     revision++;
   }
 
@@ -331,20 +432,25 @@ class VocabRepository {
         word.copyWith(stats: word.stats.recordReview(known, now ?? DateTime.now()), updatedAt: now ?? DateTime.now());
 
     await _store.record(updated.id).put(_database!, _recordFor(updated));
+    final reviewedAt = now ?? DateTime.now();
+    final cardId = '${updated.id}#IT_FR';
+    await _cardsStore.record(cardId).put(_database!, {
+      'id': cardId,
+      'sense_id': updated.id,
+      'direction': 'IT_FR',
+      'fsrs_state': updated.stats.toJson(),
+      'due_at': null,
+    });
+    await _reviewLogStore.record('${updated.id}:$reviewedAt').put(_database!, {
+      'sense_id': updated.id,
+      'direction': 'IT_FR',
+      'known': known,
+      'reviewed_at': reviewedAt.toIso8601String(),
+    });
 
     _replaceInCache(updated);
 
     return updated;
-  }
-
-  Future<List<VocabWord>> _seedFromAsset() async {
-    _seedCache ??= _loadSeedFromAsset();
-
-    return _seedCache!;
-  }
-
-  Future<List<VocabWord>> _loadSeedFromAsset() async {
-    return const [];
   }
 
   Future<int?> _readBootstrapVersion() async {
@@ -356,41 +462,15 @@ class VocabRepository {
   }
 
   Future<void> _bootstrapDatabase() async {
-    final seeded = await _seedFromAsset();
-
     final records = await _store.find(_database!);
-
-    if (records.isEmpty) {
-      await _database!.transaction((transaction) async {
-        for (final seed in seeded) {
-          await _store.record(seed.id).put(transaction, _recordFor(seed));
-        }
-      });
-
-      return;
-    }
-
-    final seededById = {for (final word in seeded) word.id: word};
-
-    final loadedById = <String>{};
 
     await _database!.transaction((transaction) async {
       for (final record in records) {
         final value = Map<String, dynamic>.from(record.value);
-        final rawId = value['id']?.toString().trim();
-        final id = (rawId != null && rawId.isNotEmpty) ? rawId : record.key;
-        loadedById.add(id);
         if (!value.containsKey('source')) {
-          final normalizedSource = seededById.containsKey(id) ? VocabWordSource.original : VocabWordSource.user;
-          value['source'] = normalizedSource.name;
+          value['source'] = VocabWordSource.user.name;
           value['schemaVersion'] = _schemaVersion;
           await _store.record(record.key).put(transaction, value);
-        }
-      }
-
-      for (final seed in seeded) {
-        if (!loadedById.contains(seed.id)) {
-          await _store.record(seed.id).put(transaction, _recordFor(seed));
         }
       }
     });
@@ -430,10 +510,6 @@ class VocabRepository {
         (_byCategory[normalizeVocabText(category)] ??= []).add(word);
       }
     }
-  }
-
-  Future<void> replaceWithOriginalSeed() async {
-    await resetOriginalWords();
   }
 
   void _replaceInCache(VocabWord word) {
