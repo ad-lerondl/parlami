@@ -534,6 +534,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get vocabImport => '単語をインポート';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => '単語をエクスポート';
 
   @override

@@ -552,6 +552,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get vocabImport => 'Importera ord';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'Exportera mina ord';
 
   @override

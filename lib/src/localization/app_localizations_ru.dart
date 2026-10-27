@@ -555,6 +555,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get vocabImport => 'Импорт слов';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'Экспорт моих слов';
 
   @override

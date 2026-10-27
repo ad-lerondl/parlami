@@ -1110,6 +1110,12 @@ abstract class AppLocalizations {
   /// **'Import words'**
   String get vocabImport;
 
+  /// No description provided for @vocabOnlinePacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Online packs'**
+  String get vocabOnlinePacks;
+
   /// No description provided for @vocabExport.
   ///
   /// In en, this message translates to:

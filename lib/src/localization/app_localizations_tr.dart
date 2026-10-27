@@ -553,6 +553,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get vocabImport => 'Kelimeleri içe aktar';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'Kelimelerimi dışa aktar';
 
   @override

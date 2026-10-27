@@ -553,6 +553,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get vocabImport => 'Importer des mots';
 
   @override
+  String get vocabOnlinePacks => 'Packs en ligne';
+
+  @override
   String get vocabExport => 'Exporter mes mots';
 
   @override

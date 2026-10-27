@@ -556,6 +556,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get vocabImport => 'Importă cuvinte';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'Exportă cuvintele mele';
 
   @override

@@ -545,6 +545,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get vocabImport => 'استيراد الكلمات';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'تصدير كلماتي';
 
   @override

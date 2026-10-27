@@ -553,6 +553,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get vocabImport => 'Importar palavras';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'Exportar minhas palavras';
 
   @override

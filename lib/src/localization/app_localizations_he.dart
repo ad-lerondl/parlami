@@ -543,6 +543,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get vocabImport => 'ייבוא מילים';
 
   @override
+  String get vocabOnlinePacks => 'Online packs';
+
+  @override
   String get vocabExport => 'ייצוא המילים שלי';
 
   @override

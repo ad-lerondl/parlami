@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:parlami/src/data/models/vocab_word.dart';
 import 'package:parlami/src/repositories/vocab_repository.dart';
 import 'package:parlami/src/services/vocab_export_service.dart';
+import 'package:parlami/src/services/vocab_pack_service.dart';
 import 'package:parlami/src/services/study_session_tracker.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 
-enum _VocabMenuAction { exportUserWords, resetOriginalWords }
+enum _VocabMenuAction { importWords, exportUserWords, resetOriginalWords }
 
 class VocabView extends StatefulWidget {
   const VocabView({super.key});
@@ -17,6 +18,7 @@ class VocabView extends StatefulWidget {
 
 class _VocabViewState extends State<VocabView> {
   final VocabRepository _repo = VocabRepository();
+  final VocabPackService _packService = const VocabPackService();
   final TextEditingController _searchController = TextEditingController();
   final TextEditingController _addItalianController = TextEditingController();
   final TextEditingController _addFrenchController = TextEditingController();
@@ -42,6 +44,13 @@ class _VocabViewState extends State<VocabView> {
   VocabWord? _activeWord;
   String? _statusMessage;
   List<VocabWord> _trainingPool = const [];
+  Future<List<VocabPackSummary>>? _packsFuture;
+  String _packQuery = '';
+  String _packFrom = '';
+  String _packTo = '';
+  String _packLevel = '';
+  String _packTheme = '';
+  RangeValues _packWordRange = const RangeValues(0, 10000);
 
   String _languageLabel(VocabLanguage language, AppLocalizations l10n) =>
       language == VocabLanguage.italian ? l10n.vocabItalian : l10n.vocabFrench;
@@ -184,7 +193,7 @@ class _VocabViewState extends State<VocabView> {
     final imported = await showDialog<List<VocabWord>>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.vocabImport),
+        title: Text(l10n.vocabOnlinePacks),
         content: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
@@ -254,6 +263,132 @@ class _VocabViewState extends State<VocabView> {
     final exportLocation = await exportVocabJson(fileName, json);
     if (!mounted) return;
     setState(() => _statusMessage = l10n.vocabStatusExport(exportLocation));
+  }
+
+  Future<void> _downloadPack(VocabPackSummary pack) async {
+    final l10n = AppLocalizations.of(context)!;
+    try {
+      final downloaded = await _packService.downloadPack(pack);
+      final count = await _repo.importPack(downloaded);
+      if (!mounted) return;
+      setState(() {
+        _refreshTrainingPool();
+        _statusMessage = l10n.vocabStatusImport(count.toString());
+      });
+    } catch (error) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.vocabImportError(error.toString()))),
+        );
+      }
+    }
+  }
+
+  Widget _buildPacksTab() {
+    final l10n = AppLocalizations.of(context)!;
+    _packsFuture ??= _packService.listPacks();
+    return FutureBuilder<List<VocabPackSummary>>(
+      future: _packsFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) return Center(child: Text(l10n.vocabImportError(snapshot.error.toString())));
+        final allPacks = snapshot.data ?? const <VocabPackSummary>[];
+        final maxWords = allPacks.fold<int>(0, (max, pack) => pack.wordCount > max ? pack.wordCount : max);
+        final maxRange = maxWords == 0 ? 1.0 : maxWords.toDouble();
+        final selectedMax = _packWordRange.end.clamp(0, maxRange).toDouble();
+        final filtered = allPacks.where((pack) {
+          final query = normalizeVocabText(_packQuery);
+          final text = normalizeVocabText('${pack.id} ${pack.title} ${pack.themeTags.join(' ')}');
+          return (query.isEmpty || text.contains(query)) &&
+              (_packFrom.isEmpty || pack.fromLanguage == _packFrom) &&
+              (_packTo.isEmpty || pack.toLanguage == _packTo) &&
+              (_packLevel.isEmpty || pack.displayLevel == _packLevel) &&
+              (_packTheme.isEmpty || pack.themeTags.contains(_packTheme)) &&
+              pack.wordCount >= _packWordRange.start &&
+              pack.wordCount <= selectedMax;
+        }).toList(growable: false);
+        final fromValues = allPacks.map((pack) => pack.fromLanguage).where((value) => value.isNotEmpty).toSet().toList()
+          ..sort();
+        final toValues = allPacks.map((pack) => pack.toLanguage).where((value) => value.isNotEmpty).toSet().toList()
+          ..sort();
+        final levels = allPacks.map((pack) => pack.displayLevel).where((value) => value.isNotEmpty).toSet().toList()
+          ..sort();
+        final themes = allPacks.expand((pack) => pack.themeTags).toSet().toList()..sort();
+        return ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            TextField(
+              decoration: InputDecoration(labelText: l10n.vocabSearchWord, prefixIcon: const Icon(Icons.search)),
+              onChanged: (value) => setState(() => _packQuery = value),
+            ),
+            const SizedBox(height: 12),
+            _buildPackDropdown(
+                'Langue de départ', _packFrom, fromValues, (value) => setState(() => _packFrom = value ?? '')),
+            _buildPackDropdown('Langue d’arrivée', _packTo, toValues, (value) => setState(() => _packTo = value ?? '')),
+            _buildPackDropdown(
+                'Niveau CEFR moyen', _packLevel, levels, (value) => setState(() => _packLevel = value ?? '')),
+            if (themes.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              _buildHorizontalFilterChips<String>(
+                title: 'Thème',
+                options: themes,
+                selected: {_packTheme},
+                labelOf: (value) => value,
+                onChanged: (value, checked) => setState(() => _packTheme = checked ? value : ''),
+              ),
+            ],
+            if (maxWords > 0) ...[
+              const SizedBox(height: 8),
+              Text('Nombre de mots : ${_packWordRange.start.round()} - ${selectedMax.round()}'),
+              RangeSlider(
+                min: 0,
+                max: maxRange,
+                values: RangeValues(_packWordRange.start.clamp(0, maxRange).toDouble(), selectedMax),
+                onChanged: (value) => setState(() => _packWordRange = value),
+              ),
+            ],
+            const SizedBox(height: 12),
+            Text('${filtered.length} pack(s)'),
+            const SizedBox(height: 8),
+            ...filtered.map((pack) => Card(
+                  child: ListTile(
+                    title: Text(pack.title),
+                    subtitle: Text(
+                        '${pack.fromLanguage.isEmpty ? '?' : pack.fromLanguage} → ${pack.toLanguage.isEmpty ? '?' : pack.toLanguage}  •  CEFR moyen ${pack.averageCefr.toStringAsFixed(1)}  •  ${pack.wordCount} mots\n${pack.themeTags.join(', ')}'),
+                    isThreeLine: true,
+                    trailing: IconButton(
+                      tooltip: l10n.vocabImport,
+                      icon: const Icon(Icons.download),
+                      onPressed: () => _downloadPack(pack),
+                    ),
+                  ),
+                )),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildPackDropdown(
+    String label,
+    String value,
+    List<String> options,
+    ValueChanged<String?> onChanged,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: DropdownButtonFormField<String>(
+        initialValue: value.isEmpty ? null : value,
+        decoration: InputDecoration(labelText: label),
+        items: [
+          const DropdownMenuItem<String>(value: '', child: Text('Tous')),
+          ...options.map((option) => DropdownMenuItem(value: option, child: Text(option))),
+        ],
+        onChanged: onChanged,
+      ),
+    );
   }
 
   Future<void> _resetOriginalWords() async {
@@ -524,6 +659,12 @@ class _VocabViewState extends State<VocabView> {
               onTap: () => setState(() => _statusMessage =
                   '${word.labelFor(_baseLanguage)} • ${word.difficulty.label} • ${_partLabel(word.partOfSpeech, l10n)}'),
               onDelete: () => _deleteWord(word))),
+        const SizedBox(height: 24),
+        const Divider(),
+        const SizedBox(height: 12),
+        Text(l10n.vocabAdd, style: Theme.of(context).textTheme.titleLarge),
+        const SizedBox(height: 8),
+        _buildManualAddForm(),
       ],
     );
   }
@@ -815,10 +956,10 @@ class _VocabViewState extends State<VocabView> {
     );
   }
 
-  Widget _buildAddTab() {
+  Widget _buildManualAddForm() {
     final l10n = AppLocalizations.of(context)!;
-    return ListView(
-      padding: const EdgeInsets.all(16),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(controller: _addItalianController, decoration: InputDecoration(labelText: l10n.vocabItalianWord)),
         const SizedBox(height: 12),
@@ -890,6 +1031,9 @@ class _VocabViewState extends State<VocabView> {
               enabled: _repoReady,
               onSelected: (action) async {
                 switch (action) {
+                  case _VocabMenuAction.importWords:
+                    await _importWords();
+                    break;
                   case _VocabMenuAction.exportUserWords:
                     await _exportUserWords();
                     break;
@@ -900,6 +1044,10 @@ class _VocabViewState extends State<VocabView> {
               },
               itemBuilder: (context) => [
                 PopupMenuItem(
+                  value: _VocabMenuAction.importWords,
+                  child: Text(l10n.vocabImport),
+                ),
+                PopupMenuItem(
                   value: _VocabMenuAction.exportUserWords,
                   child: Text(l10n.vocabExport),
                 ),
@@ -909,17 +1057,12 @@ class _VocabViewState extends State<VocabView> {
                 ),
               ],
             ),
-            IconButton(
-              tooltip: l10n.vocabImport,
-              onPressed: _repoReady ? _importWords : null,
-              icon: const Icon(Icons.file_upload_outlined),
-            ),
           ],
           bottom: TabBar(
             tabs: [
               Tab(text: l10n.vocabReview),
               Tab(text: l10n.vocabCatalog),
-              Tab(text: l10n.vocabAdd),
+              Tab(text: l10n.vocabOnlinePacks),
             ],
           ),
         ),
@@ -927,7 +1070,7 @@ class _VocabViewState extends State<VocabView> {
           children: [
             _buildTrainingTab(),
             _buildCatalogTab(),
-            _buildAddTab(),
+            _buildPacksTab(),
           ],
         ),
       ),

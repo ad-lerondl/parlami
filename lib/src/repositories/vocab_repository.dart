@@ -9,9 +9,8 @@ import 'package:sembast/sembast.dart';
 
 import 'package:parlami/src/data/models/vocab_word.dart';
 
-import 'package:parlami/src/services/asset_loader.dart';
-
 import 'package:parlami/src/services/vocab_database.dart';
+import 'package:parlami/src/services/vocab_pack_service.dart';
 
 List<VocabWord> _decodeVocabRecords(List<Map<String, dynamic>> payload) {
   return payload.map((entry) {
@@ -21,7 +20,6 @@ List<VocabWord> _decodeVocabRecords(List<Map<String, dynamic>> payload) {
 }
 
 class VocabRepository {
-
   VocabRepository._internal();
 
   static final VocabRepository _instance = VocabRepository._internal();
@@ -81,10 +79,12 @@ class VocabRepository {
     final queryTimer = Stopwatch()..start();
     final records = await _store.find(_database!);
     final queryMs = queryTimer.elapsedMilliseconds;
-    final payload = records.map((record) => <String, dynamic>{
-      'key': record.key,
-      'value': record.value,
-    }).toList(growable: false);
+    final payload = records
+        .map((record) => <String, dynamic>{
+              'key': record.key,
+              'value': record.value,
+            })
+        .toList(growable: false);
     // Large record sets are decoded off the UI isolate on native Flutter.
     // On web compute runs on the current isolate, so avoid its extra overhead.
     final List<VocabWord> loaded = !kIsWeb && payload.length >= 1000
@@ -107,51 +107,38 @@ class VocabRepository {
   List<VocabWord> all() => _allView;
 
   List<VocabWord> filter(VocabFilter filter, {DateTime? now}) {
-
     final reference = now ?? DateTime.now();
 
     Iterable<VocabWord> candidates = _items;
 
     if (filter.categories.isNotEmpty) {
-
       final categoryMatches = <VocabWord>{};
 
       for (final category in filter.categories) {
-
         categoryMatches.addAll(_byCategory[normalizeVocabText(category)] ?? const []);
-
       }
 
       candidates = categoryMatches;
-
     }
 
     if (filter.difficulties.isNotEmpty) {
-
       final difficultyMatches = <VocabWord>{};
 
       for (final difficulty in filter.difficulties) {
-
         difficultyMatches.addAll(_byDifficulty[difficulty] ?? const []);
-
       }
 
       candidates = candidates.where(difficultyMatches.contains);
-
     }
 
     if (filter.partsOfSpeech.isNotEmpty) {
-
       final partMatches = <VocabWord>{};
 
       for (final partOfSpeech in filter.partsOfSpeech) {
-
         partMatches.addAll(_byPartOfSpeech[partOfSpeech] ?? const []);
-
       }
 
       candidates = candidates.where(partMatches.contains);
-
     }
 
     candidates = candidates.where(filter.matches);
@@ -159,9 +146,7 @@ class VocabRepository {
     final result = candidates.toList(growable: false);
 
     if (filter.masteryOrder) {
-
       result.sort((left, right) {
-
         final masteryCompare = left.masteryScore(reference).compareTo(right.masteryScore(reference));
 
         if (masteryCompare != 0) return masteryCompare;
@@ -171,25 +156,18 @@ class VocabRepository {
         final reviewRight = right.stats.lastReviewedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
 
         return reviewLeft.compareTo(reviewRight);
-
       });
-
     } else {
-
       result.shuffle(Random());
-
     }
 
     return result;
-
   }
 
   List<String> allCategories() {
-
     final categories = _byCategory.keys.toList(growable: false)..sort();
 
     return categories;
-
   }
 
   List<VocabDifficulty> allDifficulties() => VocabDifficulty.values;
@@ -200,50 +178,65 @@ class VocabRepository {
 
   List<VocabWord> userWords() => _items.where((word) => word.source == VocabWordSource.user).toList(growable: false);
 
-  Future<String> exportUserWordsJson() async {
+  Future<int> importPack(VocabPack pack) async {
+    if (!_initialized) await init();
+    final now = DateTime.now();
+    final imported = pack.words.map((item) {
+      final itemCategories = item['categories'] is List
+          ? (item['categories'] as List).map((value) => value.toString()).toList()
+          : const <String>[];
+      final word = VocabWord.fromJson({
+        ...item,
+        'id': '${pack.summary.id}:${item['sense_id'] ?? item['word_id'] ?? item['lemma']}',
+        'categories': [...pack.summary.themeTags, ...itemCategories],
+        'source': VocabWordSource.remotePack.name,
+        'packId': pack.summary.id,
+        'createdAt': now.toIso8601String(),
+        'updatedAt': now.toIso8601String(),
+      });
+      final existing = _byId[word.id];
+      return word.copyWith(
+        source: VocabWordSource.remotePack,
+        packId: pack.summary.id,
+        createdAt: existing?.createdAt,
+        stats: existing?.stats,
+      );
+    }).toList(growable: false);
+    for (final word in imported) {
+      await upsert(word);
+    }
+    return imported.length;
+  }
 
+  Future<String> exportUserWordsJson() async {
     final payload = userWords().map((word) => word.toJson()).toList(growable: false);
 
     return const JsonEncoder.withIndent('  ').convert(payload);
-
   }
 
   Future<List<VocabWord>> importWordsFromJsonString(String sourceJson) async {
-
     final decoded = jsonDecode(sourceJson);
 
     final rawItems = switch (decoded) {
-
       List<dynamic> list => list,
-
       Map<String, dynamic> map when map['words'] is List => map['words'] as List<dynamic>,
-
       _ => throw const FormatException('Le JSON doit être une liste de mots ou un objet contenant la clé "words".'),
-
     };
 
     final imported = rawItems.map((item) {
-
       if (item is! Map) {
-
         throw const FormatException('Chaque mot importé doit être un objet JSON.');
-
       }
 
       return VocabWord.fromJson(Map<String, dynamic>.from(item), idFallback: null)
-
           .copyWith(source: VocabWordSource.user);
-
     }).toList(growable: false);
 
     for (final word in imported) {
-
       await upsert(word);
-
     }
 
     return imported;
-
   }
 
   Future<void> resetOriginalWords() async {
@@ -254,71 +247,46 @@ class VocabRepository {
     final records = await _store.find(_database!);
 
     await _database!.transaction((transaction) async {
-
       for (final record in records) {
-
         final source = record.value['source']?.toString().trim().toLowerCase();
 
         if (source == VocabWordSource.original.name) {
-
           await _store.record(record.key).delete(transaction);
-
         }
-
       }
 
       for (final seed in seeded) {
-
         await _store.record(seed.id).put(
-
               transaction,
-
               _recordFor(seed.copyWith(
-
                 source: VocabWordSource.original,
-
                 stats: VocabReviewStats.initial(),
-
                 updatedAt: DateTime.now(),
-
               )),
-
             );
-
       }
-
     });
 
     final refreshed = await _store.find(_database!);
 
     final reloaded =
-
         refreshed.map((record) => VocabWord.fromJson(record.value, idFallback: record.key)).toList(growable: false);
 
     _rebuildCache(reloaded);
     revision++;
-
   }
 
   Future<VocabWord> upsert(VocabWord word) async {
     if (!_initialized) await init();
 
     final cleaned = word.copyWith(
-
       categories: word.categories
-
           .map((category) => category.trim().toLowerCase())
-
           .where((category) => category.isNotEmpty)
-
           .toSet()
-
           .toList(growable: false),
-
       updatedAt: DateTime.now(),
-
       source: word.source,
-
     );
 
     await _store.record(cleaned.id).put(_database!, _recordFor(cleaned));
@@ -326,7 +294,6 @@ class VocabRepository {
     _replaceInCache(cleaned);
 
     return cleaned;
-
   }
 
   Future<void> remove(String id) async {
@@ -335,7 +302,6 @@ class VocabRepository {
     await _store.record(id).delete(_database!);
 
     _removeFromCache(id);
-
   }
 
   Future<VocabWord?> markSeen(String id, {DateTime? now}) async {
@@ -352,7 +318,6 @@ class VocabRepository {
     _replaceInCache(updated);
 
     return updated;
-
   }
 
   Future<VocabWord?> review(String id, {required bool known, DateTime? now}) async {
@@ -363,7 +328,6 @@ class VocabRepository {
     if (word == null) return null;
 
     final updated =
-
         word.copyWith(stats: word.stats.recordReview(known, now ?? DateTime.now()), updatedAt: now ?? DateTime.now());
 
     await _store.record(updated.id).put(_database!, _recordFor(updated));
@@ -371,77 +335,39 @@ class VocabRepository {
     _replaceInCache(updated);
 
     return updated;
-
   }
 
   Future<List<VocabWord>> _seedFromAsset() async {
-
     _seedCache ??= _loadSeedFromAsset();
 
     return _seedCache!;
-
   }
 
   Future<List<VocabWord>> _loadSeedFromAsset() async {
-
-    const files = [
-
-      'assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json',
-
-      'assets/vocabulaire/vocab_mistral-slang.json',
-
-    ];
-
-    final allItems = <Map<String, dynamic>>[];
-
-    for (final file in files) {
-
-      allItems.addAll(await AssetLoader.loadJsonListFast(file));
-
-    }
-
-    return allItems
-
-        .map((item) => VocabWord.fromJson(item).copyWith(
-
-              source: VocabWordSource.original,
-
-            ))
-
-        .toList(growable: false);
-
+    return const [];
   }
 
   Future<int?> _readBootstrapVersion() async {
-
     final metadata = await _metaStore.record(_bootstrapVersionKey).get(_database!);
 
     if (metadata is! Map<String, dynamic>) return null;
 
     return (metadata['version'] as num?)?.toInt();
-
   }
 
   Future<void> _bootstrapDatabase() async {
-
     final seeded = await _seedFromAsset();
 
     final records = await _store.find(_database!);
 
     if (records.isEmpty) {
-
       await _database!.transaction((transaction) async {
-
         for (final seed in seeded) {
-
           await _store.record(seed.id).put(transaction, _recordFor(seed));
-
         }
-
       });
 
       return;
-
     }
 
     final seededById = {for (final word in seeded) word.id: word};
@@ -449,16 +375,13 @@ class VocabRepository {
     final loadedById = <String>{};
 
     await _database!.transaction((transaction) async {
-
       for (final record in records) {
         final value = Map<String, dynamic>.from(record.value);
         final rawId = value['id']?.toString().trim();
         final id = (rawId != null && rawId.isNotEmpty) ? rawId : record.key;
         loadedById.add(id);
         if (!value.containsKey('source')) {
-          final normalizedSource = seededById.containsKey(id)
-              ? VocabWordSource.original
-              : VocabWordSource.user;
+          final normalizedSource = seededById.containsKey(id) ? VocabWordSource.original : VocabWordSource.user;
           value['source'] = normalizedSource.name;
           value['schemaVersion'] = _schemaVersion;
           await _store.record(record.key).put(transaction, value);
@@ -466,37 +389,26 @@ class VocabRepository {
       }
 
       for (final seed in seeded) {
-
         if (!loadedById.contains(seed.id)) {
-
           await _store.record(seed.id).put(transaction, _recordFor(seed));
-
         }
-
       }
-
     });
-
   }
 
   Map<String, dynamic> _recordFor(VocabWord word) {
-
     final record = word.toJson();
 
     record['schemaVersion'] = _schemaVersion;
 
     return record;
-
   }
 
   void _rebuildCache(List<VocabWord> items) {
-
     final snapshot = List<VocabWord>.from(items, growable: false);
 
     _items
-
       ..clear()
-
       ..addAll(snapshot);
 
     _byId.clear();
@@ -508,7 +420,6 @@ class VocabRepository {
     _byCategory.clear();
 
     for (final word in snapshot) {
-
       _byId[word.id] = word;
 
       (_byDifficulty[word.difficulty] ??= []).add(word);
@@ -516,19 +427,13 @@ class VocabRepository {
       (_byPartOfSpeech[word.partOfSpeech] ??= []).add(word);
 
       for (final category in word.categories) {
-
         (_byCategory[normalizeVocabText(category)] ??= []).add(word);
-
       }
-
     }
-
   }
 
   Future<void> replaceWithOriginalSeed() async {
-
     await resetOriginalWords();
-
   }
 
   void _replaceInCache(VocabWord word) {
@@ -586,5 +491,4 @@ class VocabRepository {
       }
     }
   }
-
 }

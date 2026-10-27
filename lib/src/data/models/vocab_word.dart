@@ -18,10 +18,14 @@ enum VocabPartOfSpeech {
 
 enum VocabLanguage { italian, french }
 
-enum VocabWordSource { original, user }
+enum VocabWordSource { original, user, remotePack }
 
 extension VocabWordSourceX on VocabWordSource {
-  String get label => this == VocabWordSource.original ? 'Original' : 'Utilisateur';
+  String get label => switch (this) {
+        VocabWordSource.original => 'Original',
+        VocabWordSource.user => 'Utilisateur',
+        VocabWordSource.remotePack => 'Pack téléchargé',
+      };
 }
 
 extension VocabDifficultyX on VocabDifficulty {
@@ -73,15 +77,19 @@ extension VocabPartOfSpeechX on VocabPartOfSpeech {
     switch ((raw ?? '').trim().toLowerCase()) {
       case 'noun':
       case 'nom':
+      case 'n':
         return VocabPartOfSpeech.noun;
       case 'verb':
       case 'verbe':
+      case 'v':
         return VocabPartOfSpeech.verb;
       case 'adjective':
       case 'adjectif':
+      case 'adj':
         return VocabPartOfSpeech.adjective;
       case 'adverb':
       case 'adverbe':
+      case 'adv':
         return VocabPartOfSpeech.adverb;
       case 'pronoun':
       case 'pronom':
@@ -312,11 +320,13 @@ class VocabWord {
   final String id;
   final String italian;
   final String french;
+  final List<String> translations;
   final VocabDifficulty difficulty;
   final List<String> categories;
   final VocabPartOfSpeech partOfSpeech;
   final String? article;
   final VocabWordSource source;
+  final String? packId;
   final DateTime createdAt;
   final DateTime updatedAt;
   final VocabReviewStats stats;
@@ -325,11 +335,13 @@ class VocabWord {
     required this.id,
     required this.italian,
     required this.french,
+    this.translations = const [],
     required this.difficulty,
     required this.categories,
     required this.partOfSpeech,
     required this.article,
     required this.source,
+    this.packId,
     required this.createdAt,
     required this.updatedAt,
     required this.stats,
@@ -340,12 +352,34 @@ class VocabWord {
       ..._normalizeCategories(json['categories']),
       ..._normalizeCategories(json['themes']),
     }.toList(growable: false);
-    final italian = (json['it'] ?? json['italian'] ?? '') as String;
-    final french = (json['fr'] ?? json['french'] ?? '') as String;
+    final italian = (json['it'] ?? json['italian'] ?? json['lemma'] ?? '') as String;
+    final translationValues = <String>[];
+    void addTranslations(dynamic value) {
+      if (value is List) {
+        translationValues.addAll(value.map((item) => item.toString().trim()));
+      } else if (value is String) {
+        translationValues.add(value.trim());
+      }
+    }
+
+    final rawTranslations = json['translations'];
+    if (rawTranslations is Map) {
+      addTranslations(rawTranslations['fr'] ?? rawTranslations['to'] ?? rawTranslations['target']);
+    } else {
+      addTranslations(rawTranslations);
+    }
+    addTranslations(json['fr'] ?? json['french'] ?? json['translation']);
+    final translations = translationValues.where((value) => value.isNotEmpty).toSet().toList(growable: false);
+    final french = translations.isNotEmpty
+        ? translations.first
+        : (json['meaning'] ?? json['definition'] ?? json['hint'] ?? '').toString();
     final difficulty = VocabDifficultyX.parse(json['difficulty']?.toString(),
-        fallback: VocabDifficultyX.parse(json['level']?.toString()));
-    final partOfSpeech = VocabPartOfSpeechX.parse(
-        json['partOfSpeech']?.toString() ?? json['genre']?.toString() ?? json['type']?.toString());
+        fallback: VocabDifficultyX.parse(json['level']?.toString(),
+            fallback: VocabDifficultyX.parse(json['cefr']?.toString())));
+    final partOfSpeech = VocabPartOfSpeechX.parse(json['partOfSpeech']?.toString() ??
+        json['genre']?.toString() ??
+        json['type']?.toString() ??
+        json['pos']?.toString());
     final now = DateTime.now();
     final createdAt = DateTime.tryParse(json['createdAt']?.toString() ?? '') ?? now;
     final updatedAt = DateTime.tryParse(json['updatedAt']?.toString() ?? '') ?? createdAt;
@@ -353,6 +387,7 @@ class VocabWord {
     final source = switch ((json['source'] ?? json['origin'])?.toString().trim().toLowerCase()) {
       'user' => VocabWordSource.user,
       'original' => VocabWordSource.original,
+      'remotepack' || 'remote_pack' || 'pack' => VocabWordSource.remotePack,
       _ => VocabWordSource.original,
     };
     return VocabWord(
@@ -361,11 +396,13 @@ class VocabWord {
           : (idFallback ?? _slugify('$italian-$french')),
       italian: italian,
       french: french,
+      translations: translations,
       difficulty: difficulty,
       categories: categories,
       partOfSpeech: partOfSpeech,
       article: article == null || article.isEmpty ? null : article,
       source: source,
+      packId: json['packId']?.toString(),
       createdAt: createdAt,
       updatedAt: updatedAt,
       stats: VocabReviewStats.fromJson(json['stats'] is Map ? Map<String, dynamic>.from(json['stats'] as Map) : null),
@@ -376,12 +413,14 @@ class VocabWord {
         'id': id,
         'it': italian,
         'fr': french,
+        'translations': translations,
         'difficulty': difficulty.label,
         'level': difficulty.label,
         'categories': categories,
         'partOfSpeech': partOfSpeech.name,
         'article': article,
         'source': source.name,
+        'packId': packId,
         'createdAt': createdAt.toIso8601String(),
         'updatedAt': updatedAt.toIso8601String(),
         'stats': stats.toJson(),
@@ -391,11 +430,13 @@ class VocabWord {
     String? id,
     String? italian,
     String? french,
+    List<String>? translations,
     VocabDifficulty? difficulty,
     List<String>? categories,
     VocabPartOfSpeech? partOfSpeech,
     String? article,
     VocabWordSource? source,
+    String? packId,
     DateTime? createdAt,
     DateTime? updatedAt,
     VocabReviewStats? stats,
@@ -404,11 +445,13 @@ class VocabWord {
       id: id ?? this.id,
       italian: italian ?? this.italian,
       french: french ?? this.french,
+      translations: translations ?? this.translations,
       difficulty: difficulty ?? this.difficulty,
       categories: categories ?? this.categories,
       partOfSpeech: partOfSpeech ?? this.partOfSpeech,
       article: article ?? this.article,
       source: source ?? this.source,
+      packId: packId ?? this.packId,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       stats: stats ?? this.stats,
@@ -416,7 +459,11 @@ class VocabWord {
   }
 
   String labelFor(VocabLanguage language) {
-    final word = language == VocabLanguage.italian ? italian : french;
+    final word = language == VocabLanguage.italian
+        ? italian
+        : translations.isEmpty
+            ? french
+            : translations.join(', ');
     if (language == VocabLanguage.italian &&
         article != null &&
         article!.trim().isNotEmpty &&
