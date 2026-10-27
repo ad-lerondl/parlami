@@ -182,7 +182,8 @@ class VocabRepository {
 
   VocabWord? byId(String id) => _byId[id];
 
-  List<VocabWord> userWords() => _items.where((word) => word.source != VocabWordSource.original).toList(growable: false);
+  List<VocabWord> userWords() =>
+      _items.where((word) => word.source != VocabWordSource.original).toList(growable: false);
 
   Future<int> importPack(VocabPack pack) async {
     if (!_initialized) await init();
@@ -209,13 +210,16 @@ class VocabRepository {
         });
         for (final direction in const ['IT_FR', 'FR_IT', 'LISTEN']) {
           final cardId = '$senseId#$direction';
-          await _cardsStore.record(cardId).put(transaction, {
-            'id': cardId,
-            'sense_id': senseId,
-            'direction': direction,
-            'fsrs_state': VocabReviewStats.initial().toJson(),
-            'due_at': null,
-          }, merge: true);
+          await _cardsStore.record(cardId).put(
+              transaction,
+              {
+                'id': cardId,
+                'sense_id': senseId,
+                'direction': direction,
+                'fsrs_state': VocabReviewStats.initial().toJson(),
+                'due_at': null,
+              },
+              merge: true);
         }
         final word = pack.registry.words[sense.wordId];
         if (word == null) continue;
@@ -293,8 +297,8 @@ class VocabRepository {
   }
 
   bool hasPack(String packId) => _items.any(
-        (word) => word.source == VocabWordSource.remotePack &&
-            (word.packId == packId || word.id.startsWith('$packId:')),
+        (word) =>
+            word.source == VocabWordSource.remotePack && (word.packId == packId || word.id.startsWith('$packId:')),
       );
 
   Future<int> removePack(String packId) async {

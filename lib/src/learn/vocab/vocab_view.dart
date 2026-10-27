@@ -574,15 +574,15 @@ class _VocabViewState extends State<VocabView> {
     }
     final usesPackLanguages = word.sourceLanguage != null && word.targetLanguage != null;
     final prompt = usesPackLanguages
-      ? word.sourceText
-      : _trainingBaseLanguage == VocabLanguage.italian
-        ? word.labelFor(VocabLanguage.italian)
-        : word.labelFor(VocabLanguage.french);
+        ? word.sourceText
+        : _trainingBaseLanguage == VocabLanguage.italian
+            ? word.labelFor(VocabLanguage.italian)
+            : word.labelFor(VocabLanguage.french);
     final hidden = usesPackLanguages
-      ? word.targetText
-      : _trainingBaseLanguage == VocabLanguage.italian
-        ? word.labelFor(VocabLanguage.french)
-        : word.labelFor(VocabLanguage.italian);
+        ? word.targetText
+        : _trainingBaseLanguage == VocabLanguage.italian
+            ? word.labelFor(VocabLanguage.french)
+            : word.labelFor(VocabLanguage.italian);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -601,9 +601,9 @@ class _VocabViewState extends State<VocabView> {
             ),
             const SizedBox(height: 16),
             Text(
-              l10n.vocabBaseLanguage(usesPackLanguages
-                ? '${word.sourceLanguage} → ${word.targetLanguage}'
-                : _languageLabel(_trainingBaseLanguage, l10n)),
+                l10n.vocabBaseLanguage(usesPackLanguages
+                    ? '${word.sourceLanguage} → ${word.targetLanguage}'
+                    : _languageLabel(_trainingBaseLanguage, l10n)),
                 style: Theme.of(context).textTheme.titleSmall),
             const SizedBox(height: 8),
             Text(prompt, style: Theme.of(context).textTheme.headlineMedium),
@@ -1102,7 +1102,7 @@ class _VocabWordCard extends StatelessWidget {
         onTap: onTap,
         title: Text(word.labelFor(baseLanguage)),
         subtitle: Text(
-          '${word.labelFor(baseLanguage == VocabLanguage.italian ? VocabLanguage.french : VocabLanguage.italian)} • ${word.categories.join(', ')} • $languagePair$gloss'),
+            '${word.labelFor(baseLanguage == VocabLanguage.italian ? VocabLanguage.french : VocabLanguage.italian)} • ${word.categories.join(', ')} • $languagePair$gloss'),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [

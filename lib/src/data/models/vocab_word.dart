@@ -390,14 +390,16 @@ class VocabWord {
     final rawTranslations = json['translations'];
     if (rawTranslations is Map) {
       final targetCode = json['targetLanguage']?.toString() ?? json['to']?.toString() ?? 'fr';
-      addValues(translationValues, rawTranslations[targetCode] ?? rawTranslations['fr'] ?? rawTranslations['to'] ?? rawTranslations['target']);
+      addValues(translationValues,
+          rawTranslations[targetCode] ?? rawTranslations['fr'] ?? rawTranslations['to'] ?? rawTranslations['target']);
     } else {
       addValues(translationValues, rawTranslations);
     }
     addValues(translationValues, json['fr'] ?? json['french'] ?? json['translation']);
     final translations = translationValues.where((value) => value.isNotEmpty).toSet().toList(growable: false);
     final glossValues = <String>[];
-    addValues(glossValues, json['glosses'] ?? json['gloss'] ?? json['definitions'] ?? json['definition'] ?? json['hint']);
+    addValues(
+        glossValues, json['glosses'] ?? json['gloss'] ?? json['definitions'] ?? json['definition'] ?? json['hint']);
     final glosses = glossValues.where((value) => value.isNotEmpty).toSet().toList(growable: false);
     final french = translations.isNotEmpty ? translations.first : '';
     final difficulty = VocabDifficultyX.parse(json['difficulty']?.toString(),

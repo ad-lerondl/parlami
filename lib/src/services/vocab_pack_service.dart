@@ -189,10 +189,10 @@ class VocabPackService {
     final json = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
     final registryVersion = json['registry_version']?.toString() ?? '';
     return (json['packs'] as List? ?? const [])
-      .map((item) => VocabPackSummary.fromJson({
-          ...Map<String, dynamic>.from(item as Map),
-          'registry_version': registryVersion,
-        }))
+        .map((item) => VocabPackSummary.fromJson({
+              ...Map<String, dynamic>.from(item as Map),
+              'registry_version': registryVersion,
+            }))
         .where((pack) => pack.id.isNotEmpty && pack.path.isNotEmpty)
         .toList(growable: false);
   }
