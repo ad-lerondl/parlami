@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Bem-vindo ao Parlami",
+  "authWelcomeSubtitle": "Inicia sessão para guardar e sincronizar o teu progresso.",
+  "authEmail": "Endereço de e-mail",
+  "authPassword": "Palavra-passe",
+  "authDisplayName": "Nome (opcional)",
+  "authPasswordRule": "Pelo menos 6 caracteres",
+  "authSignIn": "Iniciar sessão",
+  "authSignUp": "Criar conta",
+  "authSwitchToSignUp": "Ainda não tens conta? Cria uma",
+  "authSwitchToSignIn": "Já tens conta? Inicia sessão",
+  "authForgotPassword": "Esqueceste a palavra-passe?",
+  "authConfirmEmailSent": "Conta criada! Verifica a tua caixa de entrada para confirmar o teu e-mail.",
+  "authResetEmailSent": "E-mail de redefinição enviado.",
+  "authAccountSection": "Conta",
+  "authSignOut": "Terminar sessão",
+  "authErrorInvalidCredentials": "E-mail ou palavra-passe incorretos.",
+  "authErrorEmailNotConfirmed": "Confirma primeiro o teu e-mail com a ligação recebida.",
+  "authErrorEmailUsed": "Já existe uma conta com este e-mail.",
+  "authErrorWeakPassword": "Palavra-passe demasiado fraca (pelo menos 6 caracteres).",
+  "authErrorRateLimited": "Demasiadas tentativas. Tenta novamente dentro de alguns minutos.",
+  "authErrorNetwork": "Não foi possível ligar. Verifica a tua ligação à internet.",
+  "authErrorGeneric": "Ocorreu um erro. Tenta novamente.",
+  "authContinueWithoutAccount": "Continuar sem conta",
+  "authNotSignedIn": "Sessão não iniciada"
 }

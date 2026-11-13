@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Witaj w Parlami",
+  "authWelcomeSubtitle": "Zaloguj się, aby zapisywać i synchronizować swoje postępy.",
+  "authEmail": "Adres e-mail",
+  "authPassword": "Hasło",
+  "authDisplayName": "Imię (opcjonalnie)",
+  "authPasswordRule": "Co najmniej 6 znaków",
+  "authSignIn": "Zaloguj się",
+  "authSignUp": "Utwórz konto",
+  "authSwitchToSignUp": "Nie masz jeszcze konta? Utwórz je",
+  "authSwitchToSignIn": "Masz już konto? Zaloguj się",
+  "authForgotPassword": "Nie pamiętasz hasła?",
+  "authConfirmEmailSent": "Konto utworzone! Sprawdź skrzynkę, aby potwierdzić swój adres e-mail.",
+  "authResetEmailSent": "Wysłano e-mail do resetowania hasła.",
+  "authAccountSection": "Konto",
+  "authSignOut": "Wyloguj się",
+  "authErrorInvalidCredentials": "Nieprawidłowy e-mail lub hasło.",
+  "authErrorEmailNotConfirmed": "Najpierw potwierdź swój adres e-mail linkiem, który otrzymałeś.",
+  "authErrorEmailUsed": "Konto z tym adresem e-mail już istnieje.",
+  "authErrorWeakPassword": "Hasło zbyt słabe (co najmniej 6 znaków).",
+  "authErrorRateLimited": "Zbyt wiele prób. Spróbuj ponownie za kilka minut.",
+  "authErrorNetwork": "Nie udało się połączyć. Sprawdź połączenie z internetem.",
+  "authErrorGeneric": "Wystąpił błąd. Spróbuj ponownie.",
+  "authContinueWithoutAccount": "Kontynuuj bez konta",
+  "authNotSignedIn": "Nie zalogowano"
 }

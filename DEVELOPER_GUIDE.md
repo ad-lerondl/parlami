@@ -21,6 +21,7 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 - `audio_session` pour config session audio
 - `shared_preferences` pour persistance locale
 - `rxdart` (BehaviorSubject) pour etat reactif simple
+- `supabase_flutter` pour les comptes utilisateurs (optionnel a la compilation)
 
 ## 3. Arborescence Utile
 
@@ -44,6 +45,15 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 ### Module "Se tester"
 - `lib/src/evaluate/evaluate_view.dart`: scenarios de mise en condition reelle
 - Principe: combiner plusieurs competences simultanement (ex: CO + EO, CE + EE)
+
+### Comptes utilisateurs (Supabase)
+- `lib/src/auth/supabase_config.dart`: URL + cle publishable integrees (surchargables via dart-define)
+- `lib/src/auth/auth_service.dart`: singleton d'authentification (connexion, inscription, deconnexion, mode invite, synchronisation des reglages)
+- `lib/src/auth/auth_gate.dart`: ecran de connexion tant qu'il n'y a ni session ni mode invite
+- `lib/src/auth/login_view.dart`: connexion / inscription / mot de passe oublie / choix de langue / continuer sans compte
+- `lib/src/settings/language_names.dart`: noms des langues partages
+- `scripts/supabase_schema.sql`: table `profiles` (nom, langue, theme) + RLS + trigger
+- Guide complet: `docs/supabase_setup.md`. La session persiste entre les lancements; en mode invite tout reste local.
 
 ### Donnees et logique
 - `lib/src/data/models/`: modeles metier

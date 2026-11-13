@@ -1,25 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:parlami/src/settings/settings_controller.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 import 'package:parlami/src/services/retention_reminder_service.dart';
-
-const _languageNames = <String, String>{
-  'fr': 'Français',
-  'en': 'English',
-  'es': 'Español',
-  'de': 'Deutsch',
-  'pt': 'Português',
-  'ar': 'العربية',
-  'ru': 'Русский',
-  'ja': '日本語',
-  'he': 'עברית',
-  'pl': 'Polski',
-  'ro': 'Română',
-  'sv': 'Svenska',
-  'tr': 'Türkçe',
-};
+import 'package:parlami/src/auth/auth_service.dart';
+import 'package:parlami/src/auth/login_view.dart';
+import 'package:parlami/src/settings/language_names.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key, required this.controller});
@@ -32,6 +22,9 @@ class ProfileView extends StatefulWidget {
 class _ProfileViewState extends State<ProfileView> {
   bool _remindersEnabled = false;
   bool _reminderBusy = false;
+  bool _signingOut = false;
+  String? _displayName;
+  StreamSubscription<AuthState>? _authSubscription;
 
   @override
   void initState() {
@@ -39,6 +32,45 @@ class _ProfileViewState extends State<ProfileView> {
     SharedPreferences.getInstance().then((preferences) {
       if (mounted) setState(() => _remindersEnabled = preferences.getBool('retention_reminders_enabled') ?? false);
     });
+    AuthService.instance.fetchDisplayName().then((name) {
+      if (mounted) setState(() => _displayName = name);
+    });
+    _authSubscription = AuthService.instance.authStateStream.listen((_) {
+      if (!mounted) return;
+      setState(() => _displayName = null);
+      AuthService.instance.fetchDisplayName().then((name) {
+        if (mounted) setState(() => _displayName = name);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _authSubscription?.cancel();
+    super.dispose();
+  }
+
+  Future<void> _signOut() async {
+    if (_signingOut) return;
+    setState(() => _signingOut = true);
+    await AuthService.instance.signOut();
+    if (!mounted) return;
+    setState(() => _signingOut = false);
+  }
+
+  void _openLogin() {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => LoginView(settingsController: widget.controller)),
+    );
+  }
+
+  String _accountSubtitle(AppLocalizations l10n) {
+    final user = AuthService.instance.currentUser;
+    if (user == null) return l10n.authNotSignedIn;
+    final email = user.email ?? '';
+    final name = _displayName;
+    if (name != null && name.isNotEmpty) return '$name \u00b7 $email';
+    return email;
   }
 
   Future<void> _toggleReminders(bool enabled) async {
@@ -62,18 +94,38 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final user = AuthService.instance.currentUser;
 
     return ListView(children: [
       ListTile(
+        leading: const Icon(Icons.account_circle_outlined),
+        title: Text(l10n.authAccountSection),
+        subtitle: Text(_accountSubtitle(l10n)),
+      ),
+      if (user == null)
+        ListTile(
+          leading: const Icon(Icons.login),
+          title: Text(l10n.authSignIn),
+          onTap: _openLogin,
+        )
+      else
+        ListTile(
+          leading: _signingOut
+              ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2))
+              : const Icon(Icons.logout),
+          title: Text(l10n.authSignOut),
+          onTap: _signingOut ? null : _signOut,
+        ),
+      ListTile(
         title: Text(l10n.profileLanguage),
-        subtitle: Text(_languageNames[widget.controller.locale.languageCode] ?? widget.controller.locale.languageCode),
+        subtitle: Text(languageNames[widget.controller.locale.languageCode] ?? widget.controller.locale.languageCode),
         trailing: DropdownButton<Locale>(
           value: widget.controller.locale,
           onChanged: widget.controller.updateLocale,
           items: AppLocalizations.supportedLocales
               .map((locale) => DropdownMenuItem(
                     value: locale,
-                    child: Text(_languageNames[locale.languageCode] ?? locale.languageCode),
+                    child: Text(languageNames[locale.languageCode] ?? locale.languageCode),
                   ))
               .toList(),
         ),

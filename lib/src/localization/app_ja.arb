@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Parlamiへようこそ",
+  "authWelcomeSubtitle": "ログインして進捗を保存・同期しましょう。",
+  "authEmail": "メールアドレス",
+  "authPassword": "パスワード",
+  "authDisplayName": "名前（任意）",
+  "authPasswordRule": "6文字以上",
+  "authSignIn": "ログイン",
+  "authSignUp": "アカウント作成",
+  "authSwitchToSignUp": "アカウントをお持ちでない方は作成してください",
+  "authSwitchToSignIn": "すでにアカウントをお持ちですか？ログイン",
+  "authForgotPassword": "パスワードをお忘れですか？",
+  "authConfirmEmailSent": "アカウントを作成しました！届いたメールからメールアドレスを確認してください。",
+  "authResetEmailSent": "パスワード再設定メールを送信しました。",
+  "authAccountSection": "アカウント",
+  "authSignOut": "ログアウト",
+  "authErrorInvalidCredentials": "メールアドレスまたはパスワードが違います。",
+  "authErrorEmailNotConfirmed": "まず届いたリンクからメールアドレスを確認してください。",
+  "authErrorEmailUsed": "このメールアドレスのアカウントはすでに存在します。",
+  "authErrorWeakPassword": "パスワードが弱すぎます（6文字以上）。",
+  "authErrorRateLimited": "試行回数が多すぎます。数分後に再試行してください。",
+  "authErrorNetwork": "接続できませんでした。インターネット接続を確認してください。",
+  "authErrorGeneric": "エラーが発生しました。もう一度お試しください。",
+  "authContinueWithoutAccount": "アカウントなしで続ける",
+  "authNotSignedIn": "未ログイン"
 }

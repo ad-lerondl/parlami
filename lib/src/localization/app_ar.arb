@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "مرحبًا بك في Parlami",
+  "authWelcomeSubtitle": "سجّل الدخول لحفظ تقدمك ومزامنته.",
+  "authEmail": "البريد الإلكتروني",
+  "authPassword": "كلمة المرور",
+  "authDisplayName": "الاسم (اختياري)",
+  "authPasswordRule": "6 أحرف على الأقل",
+  "authSignIn": "تسجيل الدخول",
+  "authSignUp": "إنشاء حساب",
+  "authSwitchToSignUp": "ليس لديك حساب؟ أنشئ واحداً",
+  "authSwitchToSignIn": "لديك حساب بالفعل؟ سجّل الدخول",
+  "authForgotPassword": "هل نسيت كلمة المرور؟",
+  "authConfirmEmailSent": "تم إنشاء الحساب! تحقق من بريدك لتأكيد عنوان بريدك الإلكتروني.",
+  "authResetEmailSent": "تم إرسال بريد إعادة تعيين كلمة المرور.",
+  "authAccountSection": "الحساب",
+  "authSignOut": "تسجيل الخروج",
+  "authErrorInvalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "authErrorEmailNotConfirmed": "أكّد أولاً بريدك الإلكتروني عبر الرابط الذي وصلك.",
+  "authErrorEmailUsed": "يوجد حساب بالفعل بهذا البريد الإلكتروني.",
+  "authErrorWeakPassword": "كلمة المرور ضعيفة جداً (6 أحرف على الأقل).",
+  "authErrorRateLimited": "محاولات كثيرة جداً. أعد المحاولة بعد بضع دقائق.",
+  "authErrorNetwork": "تعذر الاتصال. تحقق من اتصالك بالإنترنت.",
+  "authErrorGeneric": "حدث خطأ. أعد المحاولة.",
+  "authContinueWithoutAccount": "المتابعة بدون حساب",
+  "authNotSignedIn": "غير مسجل الدخول"
 }

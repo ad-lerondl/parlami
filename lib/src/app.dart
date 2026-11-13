@@ -7,6 +7,7 @@ import 'train/train_view.dart';
 import 'evaluate/evaluate_view.dart';
 import 'results/results_view.dart';
 import 'profile/profile_view.dart';
+import 'auth/auth_gate.dart';
 import 'settings/settings_controller.dart';
 import 'services/radio_player_service.dart';
 
@@ -77,7 +78,10 @@ class MyApp extends StatelessWidget {
 
           // Define a function to handle named routes in order to support
           // Flutter web url navigation and deep linking.
-          home: _HomeShell(settingsController: settingsController),
+          home: AuthGate(
+            settingsController: settingsController,
+            child: _HomeShell(settingsController: settingsController),
+          ),
         );
       },
     );

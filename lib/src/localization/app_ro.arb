@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Bun venit la Parlami",
+  "authWelcomeSubtitle": "Autentifică-te pentru a-ți salva și sincroniza progresul.",
+  "authEmail": "Adresă de e-mail",
+  "authPassword": "Parolă",
+  "authDisplayName": "Nume (opțional)",
+  "authPasswordRule": "Cel puțin 6 caractere",
+  "authSignIn": "Autentificare",
+  "authSignUp": "Creare cont",
+  "authSwitchToSignUp": "Încă nu ai cont? Creează unul",
+  "authSwitchToSignIn": "Ai deja un cont? Autentifică-te",
+  "authForgotPassword": "Ai uitat parola?",
+  "authConfirmEmailSent": "Cont creat! Verifică-ți căsuța de e-mail pentru a-ți confirma adresa.",
+  "authResetEmailSent": "E-mail de resetare a parolei trimis.",
+  "authAccountSection": "Cont",
+  "authSignOut": "Deconectare",
+  "authErrorInvalidCredentials": "E-mail sau parolă incorectă.",
+  "authErrorEmailNotConfirmed": "Confirmă mai întâi adresa de e-mail folosind linkul primit.",
+  "authErrorEmailUsed": "Există deja un cont cu acest e-mail.",
+  "authErrorWeakPassword": "Parolă prea slabă (cel puțin 6 caractere).",
+  "authErrorRateLimited": "Prea multe încercări. Reîncearcă în câteva minute.",
+  "authErrorNetwork": "Conectare eșuată. Verifică-ți conexiunea la internet.",
+  "authErrorGeneric": "A apărut o eroare. Încearcă din nou.",
+  "authContinueWithoutAccount": "Continuă fără cont",
+  "authNotSignedIn": "Neconectat"
 }

@@ -431,5 +431,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Добро пожаловать в Parlami",
+  "authWelcomeSubtitle": "Войдите, чтобы сохранять и синхронизировать свой прогресс.",
+  "authEmail": "Электронная почта",
+  "authPassword": "Пароль",
+  "authDisplayName": "Имя (необязательно)",
+  "authPasswordRule": "Минимум 6 символов",
+  "authSignIn": "Войти",
+  "authSignUp": "Создать аккаунт",
+  "authSwitchToSignUp": "Ещё нет аккаунта? Создайте его",
+  "authSwitchToSignIn": "Уже есть аккаунт? Войдите",
+  "authForgotPassword": "Забыли пароль?",
+  "authConfirmEmailSent": "Аккаунт создан! Проверьте почту, чтобы подтвердить свой адрес.",
+  "authResetEmailSent": "Письмо для сброса пароля отправлено.",
+  "authAccountSection": "Аккаунт",
+  "authSignOut": "Выйти",
+  "authErrorInvalidCredentials": "Неверная почта или пароль.",
+  "authErrorEmailNotConfirmed": "Сначала подтвердите свою почту по полученной ссылке.",
+  "authErrorEmailUsed": "Аккаунт с этой почтой уже существует.",
+  "authErrorWeakPassword": "Слишком простой пароль (минимум 6 символов).",
+  "authErrorRateLimited": "Слишком много попыток. Повторите через несколько минут.",
+  "authErrorNetwork": "Не удалось подключиться. Проверьте интернет-соединение.",
+  "authErrorGeneric": "Произошла ошибка. Попробуйте ещё раз.",
+  "authContinueWithoutAccount": "Продолжить без аккаунта",
+  "authNotSignedIn": "Не выполнен вход"
 }

@@ -417,5 +417,29 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "ברוך הבא ל-Parlami",
+  "authWelcomeSubtitle": "התחבר כדי לשמור ולסנכרן את ההתקדמות שלך.",
+  "authEmail": "כתובת אימייל",
+  "authPassword": "סיסמה",
+  "authDisplayName": "שם (אופציונלי)",
+  "authPasswordRule": "לפחות 6 תווים",
+  "authSignIn": "התחברות",
+  "authSignUp": "יצירת חשבון",
+  "authSwitchToSignUp": "אין לך עדיין חשבון? צור אחד",
+  "authSwitchToSignIn": "כבר יש לך חשבון? התחבר",
+  "authForgotPassword": "שכחת את הסיסמה?",
+  "authConfirmEmailSent": "החשבון נוצר! בדוק את תיבת הדואר שלך כדי לאשר את כתובת האימייל.",
+  "authResetEmailSent": "אימייל לאיפוס סיסמה נשלח.",
+  "authAccountSection": "חשבון",
+  "authSignOut": "התנתקות",
+  "authErrorInvalidCredentials": "אימייל או סיסמה שגויים.",
+  "authErrorEmailNotConfirmed": "קודם אשר את כתובת האימייל באמצעות הקישור שקיבלת.",
+  "authErrorEmailUsed": "כבר קיים חשבון עם האימייל הזה.",
+  "authErrorWeakPassword": "סיסמה חלשה מדי (לפחות 6 תווים).",
+  "authErrorRateLimited": "יותר מדי ניסיונות. נסה שוב בעוד כמה דקות.",
+  "authErrorNetwork": "ההתחברות נכשלה. בדוק את חיבור האינטרנט שלך.",
+  "authErrorGeneric": "אירעה שגיאה. נסה שוב.",
+  "authContinueWithoutAccount": "המשך ללא חשבון",
+  "authNotSignedIn": "לא מחובר"
 }
