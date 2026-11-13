@@ -417,5 +417,27 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Välkommen till Parlami",
+  "authWelcomeSubtitle": "Logga in för att spara och synkronisera dina framsteg.",
+  "authEmail": "E-postadress",
+  "authPassword": "Lösenord",
+  "authDisplayName": "Namn (valfritt)",
+  "authPasswordRule": "Minst 6 tecken",
+  "authSignIn": "Logga in",
+  "authSignUp": "Skapa konto",
+  "authSwitchToSignUp": "Inget konto än? Skapa ett",
+  "authSwitchToSignIn": "Har du redan ett konto? Logga in",
+  "authForgotPassword": "Glömt lösenordet?",
+  "authConfirmEmailSent": "Kontot är skapat! Kolla din inkorg för att bekräfta din e-postadress.",
+  "authResetEmailSent": "E-post för återställning av lösenord skickat.",
+  "authAccountSection": "Konto",
+  "authSignOut": "Logga ut",
+  "authErrorInvalidCredentials": "Fel e-post eller lösenord.",
+  "authErrorEmailNotConfirmed": "Bekräfta först din e-postadress via länken du fick.",
+  "authErrorEmailUsed": "Det finns redan ett konto med den här e-postadressen.",
+  "authErrorWeakPassword": "Lösenordet är för svagt (minst 6 tecken).",
+  "authErrorRateLimited": "För många försök. Försök igen om några minuter.",
+  "authErrorNetwork": "Kunde inte ansluta. Kontrollera din internetanslutning.",
+  "authErrorGeneric": "Ett fel uppstod. Försök igen."
 }

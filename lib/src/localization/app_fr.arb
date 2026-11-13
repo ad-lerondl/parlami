@@ -417,5 +417,27 @@
   },
   "@appTitle": {
     "description": "Le titre de l'application"
-  }
+  },
+  "authWelcomeTitle": "Bienvenue sur Parlami",
+  "authWelcomeSubtitle": "Connecte-toi pour sauvegarder et synchroniser ta progression.",
+  "authEmail": "Adresse e-mail",
+  "authPassword": "Mot de passe",
+  "authDisplayName": "Prénom (optionnel)",
+  "authPasswordRule": "6 caractères minimum",
+  "authSignIn": "Se connecter",
+  "authSignUp": "Créer un compte",
+  "authSwitchToSignUp": "Pas encore de compte ? Crée-le",
+  "authSwitchToSignIn": "Déjà un compte ? Connecte-toi",
+  "authForgotPassword": "Mot de passe oublié ?",
+  "authConfirmEmailSent": "Compte créé ! Vérifie ta boîte mail pour confirmer ton adresse e-mail.",
+  "authResetEmailSent": "E-mail de réinitialisation envoyé.",
+  "authAccountSection": "Compte",
+  "authSignOut": "Se déconnecter",
+  "authErrorInvalidCredentials": "E-mail ou mot de passe incorrect.",
+  "authErrorEmailNotConfirmed": "Confirme d'abord ton adresse e-mail avec le lien reçu.",
+  "authErrorEmailUsed": "Un compte existe déjà avec cet e-mail.",
+  "authErrorWeakPassword": "Mot de passe trop faible (6 caractères minimum).",
+  "authErrorRateLimited": "Trop de tentatives. Réessaie dans quelques minutes.",
+  "authErrorNetwork": "Connexion impossible. Vérifie ta connexion internet.",
+  "authErrorGeneric": "Une erreur est survenue. Réessaie."
 }

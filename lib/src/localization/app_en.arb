@@ -417,5 +417,27 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Welcome to Parlami",
+  "authWelcomeSubtitle": "Sign in to save and sync your progress.",
+  "authEmail": "Email address",
+  "authPassword": "Password",
+  "authDisplayName": "Name (optional)",
+  "authPasswordRule": "At least 6 characters",
+  "authSignIn": "Sign in",
+  "authSignUp": "Sign up",
+  "authSwitchToSignUp": "No account yet? Create one",
+  "authSwitchToSignIn": "Already have an account? Sign in",
+  "authForgotPassword": "Forgot password?",
+  "authConfirmEmailSent": "Account created! Check your inbox to confirm your email address.",
+  "authResetEmailSent": "Password reset email sent.",
+  "authAccountSection": "Account",
+  "authSignOut": "Sign out",
+  "authErrorInvalidCredentials": "Incorrect email or password.",
+  "authErrorEmailNotConfirmed": "Please confirm your email address using the link you received.",
+  "authErrorEmailUsed": "An account already exists with this email.",
+  "authErrorWeakPassword": "Password too weak (at least 6 characters).",
+  "authErrorRateLimited": "Too many attempts. Try again in a few minutes.",
+  "authErrorNetwork": "Connection failed. Check your internet connection.",
+  "authErrorGeneric": "Something went wrong. Please try again."
 }

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:parlami/src/settings/settings_controller.dart';
 import 'package:parlami/src/localization/app_localizations.dart';
 import 'package:parlami/src/services/retention_reminder_service.dart';
+import 'package:parlami/src/auth/auth_service.dart';
 
 const _languageNames = <String, String>{
   'fr': 'Français',
@@ -32,6 +33,8 @@ class ProfileView extends StatefulWidget {
 class _ProfileViewState extends State<ProfileView> {
   bool _remindersEnabled = false;
   bool _reminderBusy = false;
+  bool _signingOut = false;
+  String? _displayName;
 
   @override
   void initState() {
@@ -39,6 +42,26 @@ class _ProfileViewState extends State<ProfileView> {
     SharedPreferences.getInstance().then((preferences) {
       if (mounted) setState(() => _remindersEnabled = preferences.getBool('retention_reminders_enabled') ?? false);
     });
+    if (AuthService.instance.isConfigured) {
+      AuthService.instance.fetchDisplayName().then((name) {
+        if (mounted) setState(() => _displayName = name);
+      });
+    }
+  }
+
+  Future<void> _signOut() async {
+    if (_signingOut) return;
+    setState(() => _signingOut = true);
+    await AuthService.instance.signOut();
+    if (!mounted) return;
+    setState(() => _signingOut = false);
+  }
+
+  String get _accountSubtitle {
+    final email = AuthService.instance.currentUser?.email ?? '';
+    final name = _displayName;
+    if (name != null && name.isNotEmpty) return '$name \u00b7 $email';
+    return email;
   }
 
   Future<void> _toggleReminders(bool enabled) async {
@@ -64,6 +87,20 @@ class _ProfileViewState extends State<ProfileView> {
     final l10n = AppLocalizations.of(context)!;
 
     return ListView(children: [
+      if (AuthService.instance.isConfigured) ...[
+        ListTile(
+          leading: const Icon(Icons.account_circle_outlined),
+          title: Text(l10n.authAccountSection),
+          subtitle: Text(_accountSubtitle),
+        ),
+        ListTile(
+          leading: _signingOut
+              ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2))
+              : const Icon(Icons.logout),
+          title: Text(l10n.authSignOut),
+          onTap: _signingOut ? null : _signOut,
+        ),
+      ],
       ListTile(
         title: Text(l10n.profileLanguage),
         subtitle: Text(_languageNames[widget.controller.locale.languageCode] ?? widget.controller.locale.languageCode),

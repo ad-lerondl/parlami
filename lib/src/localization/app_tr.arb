@@ -417,5 +417,27 @@
   },
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "authWelcomeTitle": "Parlami'ye hoş geldin",
+  "authWelcomeSubtitle": "İlerlemeni kaydetmek ve eşitlemek için giriş yap.",
+  "authEmail": "E-posta adresi",
+  "authPassword": "Şifre",
+  "authDisplayName": "İsim (isteğe bağlı)",
+  "authPasswordRule": "En az 6 karakter",
+  "authSignIn": "Giriş yap",
+  "authSignUp": "Hesap oluştur",
+  "authSwitchToSignUp": "Hesabın yok mu? Oluştur",
+  "authSwitchToSignIn": "Zaten hesabın var mı? Giriş yap",
+  "authForgotPassword": "Şifreni mi unuttun?",
+  "authConfirmEmailSent": "Hesap oluşturuldu! E-posta adresini onaylamak için kutunu kontrol et.",
+  "authResetEmailSent": "Şifre sıfırlama e-postası gönderildi.",
+  "authAccountSection": "Hesap",
+  "authSignOut": "Çıkış yap",
+  "authErrorInvalidCredentials": "E-posta veya şifre hatalı.",
+  "authErrorEmailNotConfirmed": "Önce gelen bağlantıyla e-posta adresini doğrula.",
+  "authErrorEmailUsed": "Bu e-posta ile bir hesap zaten var.",
+  "authErrorWeakPassword": "Şifre çok zayıf (en az 6 karakter).",
+  "authErrorRateLimited": "Çok fazla deneme. Birkaç dakika sonra tekrar dene.",
+  "authErrorNetwork": "Bağlanılamadı. İnternet bağlantını kontrol et.",
+  "authErrorGeneric": "Bir hata oluştu. Tekrar dene."
 }

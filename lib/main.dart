@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio_background/just_audio_background.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'src/app.dart';
+import 'src/auth/supabase_config.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_service.dart';
 import 'src/services/retention_reminder_service.dart';
@@ -10,6 +12,10 @@ import 'src/services/retention_reminder_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeRetentionReminders();
+
+  if (isSupabaseConfigured) {
+    await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
+  }
 
   if (!kIsWeb) {
     await JustAudioBackground.init(
