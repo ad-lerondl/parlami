@@ -5,6 +5,8 @@
 create table public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
   display_name text,
+  locale text,
+  theme_mode text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -44,3 +46,8 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row
   execute function public.handle_new_user();
+
+-- 4. Reglages utilisateur synchronises (langue, theme).
+-- Idempotent : sans effet si les colonnes existent deja.
+alter table public.profiles add column if not exists locale text;
+alter table public.profiles add column if not exists theme_mode text;

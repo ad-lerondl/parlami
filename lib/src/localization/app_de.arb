@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Passwort zu schwach (mindestens 6 Zeichen).",
   "authErrorRateLimited": "Zu viele Versuche. Versuche es in ein paar Minuten erneut.",
   "authErrorNetwork": "Verbindung fehlgeschlagen. Prüfe deine Internetverbindung.",
-  "authErrorGeneric": "Ein Fehler ist aufgetreten. Versuche es erneut."
+  "authErrorGeneric": "Ein Fehler ist aufgetreten. Versuche es erneut.",
+  "authContinueWithoutAccount": "Ohne Konto fortfahren",
+  "authNotSignedIn": "Nicht angemeldet"
 }

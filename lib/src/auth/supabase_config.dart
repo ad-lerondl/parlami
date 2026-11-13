@@ -1,11 +1,15 @@
-/// Configuration Supabase injectee au moment de la compilation.
+/// Configuration Supabase de Parlami.
 ///
-/// Lancer l'application avec :
-/// `flutter run --dart-define=SUPABASE_URL=... --dart-define=SUPABASE_ANON_KEY=...`
-///
-/// Sans ces deux variables, l'application demarre en mode local sans ecran
-/// de connexion (comportement identique aux versions precedentes).
-const String supabaseUrl = String.fromEnvironment('SUPABASE_URL');
-const String supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
+/// La cle `anon`/publishable est concue par Supabase pour etre embarquee dans
+/// une application cliente : elle n'ouvre aucun acces sans les policies RLS
+/// cote base. Les variables `--dart-define` restent disponibles pour pointer
+/// vers un autre projet (tests, staging) sans modifier le code.
+const String supabaseUrl = String.fromEnvironment(
+  'SUPABASE_URL',
+  defaultValue: 'https://ipsjvcoguyrxeqebdvbs.supabase.co',
+);
 
-bool get isSupabaseConfigured => supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
+const String supabaseAnonKey = String.fromEnvironment(
+  'SUPABASE_ANON_KEY',
+  defaultValue: 'sb_publishable_jtSrxdusw1isMgjfgFTuag_ve7Oqy8I',
+);

@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "סיסמה חלשה מדי (לפחות 6 תווים).",
   "authErrorRateLimited": "יותר מדי ניסיונות. נסה שוב בעוד כמה דקות.",
   "authErrorNetwork": "ההתחברות נכשלה. בדוק את חיבור האינטרנט שלך.",
-  "authErrorGeneric": "אירעה שגיאה. נסה שוב."
+  "authErrorGeneric": "אירעה שגיאה. נסה שוב.",
+  "authContinueWithoutAccount": "המשך ללא חשבון",
+  "authNotSignedIn": "לא מחובר"
 }

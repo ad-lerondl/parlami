@@ -453,5 +453,7 @@
   "authErrorWeakPassword": "Слишком простой пароль (минимум 6 символов).",
   "authErrorRateLimited": "Слишком много попыток. Повторите через несколько минут.",
   "authErrorNetwork": "Не удалось подключиться. Проверьте интернет-соединение.",
-  "authErrorGeneric": "Произошла ошибка. Попробуйте ещё раз."
+  "authErrorGeneric": "Произошла ошибка. Попробуйте ещё раз.",
+  "authContinueWithoutAccount": "Продолжить без аккаунта",
+  "authNotSignedIn": "Не выполнен вход"
 }

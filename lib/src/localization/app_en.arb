@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Password too weak (at least 6 characters).",
   "authErrorRateLimited": "Too many attempts. Try again in a few minutes.",
   "authErrorNetwork": "Connection failed. Check your internet connection.",
-  "authErrorGeneric": "Something went wrong. Please try again."
+  "authErrorGeneric": "Something went wrong. Please try again.",
+  "authContinueWithoutAccount": "Continue without an account",
+  "authNotSignedIn": "Not signed in"
 }

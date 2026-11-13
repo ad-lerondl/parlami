@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Lösenordet är för svagt (minst 6 tecken).",
   "authErrorRateLimited": "För många försök. Försök igen om några minuter.",
   "authErrorNetwork": "Kunde inte ansluta. Kontrollera din internetanslutning.",
-  "authErrorGeneric": "Ett fel uppstod. Försök igen."
+  "authErrorGeneric": "Ett fel uppstod. Försök igen.",
+  "authContinueWithoutAccount": "Fortsätt utan konto",
+  "authNotSignedIn": "Ej inloggad"
 }

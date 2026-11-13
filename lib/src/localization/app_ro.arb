@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Parolă prea slabă (cel puțin 6 caractere).",
   "authErrorRateLimited": "Prea multe încercări. Reîncearcă în câteva minute.",
   "authErrorNetwork": "Conectare eșuată. Verifică-ți conexiunea la internet.",
-  "authErrorGeneric": "A apărut o eroare. Încearcă din nou."
+  "authErrorGeneric": "A apărut o eroare. Încearcă din nou.",
+  "authContinueWithoutAccount": "Continuă fără cont",
+  "authNotSignedIn": "Neconectat"
 }

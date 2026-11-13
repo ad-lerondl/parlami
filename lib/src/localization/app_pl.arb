@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Hasło zbyt słabe (co najmniej 6 znaków).",
   "authErrorRateLimited": "Zbyt wiele prób. Spróbuj ponownie za kilka minut.",
   "authErrorNetwork": "Nie udało się połączyć. Sprawdź połączenie z internetem.",
-  "authErrorGeneric": "Wystąpił błąd. Spróbuj ponownie."
+  "authErrorGeneric": "Wystąpił błąd. Spróbuj ponownie.",
+  "authContinueWithoutAccount": "Kontynuuj bez konta",
+  "authNotSignedIn": "Nie zalogowano"
 }

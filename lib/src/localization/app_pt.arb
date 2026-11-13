@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Palavra-passe demasiado fraca (pelo menos 6 caracteres).",
   "authErrorRateLimited": "Demasiadas tentativas. Tenta novamente dentro de alguns minutos.",
   "authErrorNetwork": "Não foi possível ligar. Verifica a tua ligação à internet.",
-  "authErrorGeneric": "Ocorreu um erro. Tenta novamente."
+  "authErrorGeneric": "Ocorreu um erro. Tenta novamente.",
+  "authContinueWithoutAccount": "Continuar sem conta",
+  "authNotSignedIn": "Sessão não iniciada"
 }

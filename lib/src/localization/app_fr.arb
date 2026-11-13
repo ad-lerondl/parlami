@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Mot de passe trop faible (6 caractères minimum).",
   "authErrorRateLimited": "Trop de tentatives. Réessaie dans quelques minutes.",
   "authErrorNetwork": "Connexion impossible. Vérifie ta connexion internet.",
-  "authErrorGeneric": "Une erreur est survenue. Réessaie."
+  "authErrorGeneric": "Une erreur est survenue. Réessaie.",
+  "authContinueWithoutAccount": "Continuer sans compte",
+  "authNotSignedIn": "Non connecté"
 }

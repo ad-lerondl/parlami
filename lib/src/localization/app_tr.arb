@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Şifre çok zayıf (en az 6 karakter).",
   "authErrorRateLimited": "Çok fazla deneme. Birkaç dakika sonra tekrar dene.",
   "authErrorNetwork": "Bağlanılamadı. İnternet bağlantını kontrol et.",
-  "authErrorGeneric": "Bir hata oluştu. Tekrar dene."
+  "authErrorGeneric": "Bir hata oluştu. Tekrar dene.",
+  "authContinueWithoutAccount": "Hesapsız devam et",
+  "authNotSignedIn": "Giriş yapılmadı"
 }

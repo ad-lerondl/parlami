@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "Contraseña demasiado débil (al menos 6 caracteres).",
   "authErrorRateLimited": "Demasiados intentos. Inténtalo de nuevo en unos minutos.",
   "authErrorNetwork": "No se pudo conectar. Comprueba tu conexión a internet.",
-  "authErrorGeneric": "Se produjo un error. Inténtalo de nuevo."
+  "authErrorGeneric": "Se produjo un error. Inténtalo de nuevo.",
+  "authContinueWithoutAccount": "Continuar sin cuenta",
+  "authNotSignedIn": "Sin sesión iniciada"
 }

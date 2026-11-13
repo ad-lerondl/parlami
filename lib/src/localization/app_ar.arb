@@ -439,5 +439,7 @@
   "authErrorWeakPassword": "كلمة المرور ضعيفة جداً (6 أحرف على الأقل).",
   "authErrorRateLimited": "محاولات كثيرة جداً. أعد المحاولة بعد بضع دقائق.",
   "authErrorNetwork": "تعذر الاتصال. تحقق من اتصالك بالإنترنت.",
-  "authErrorGeneric": "حدث خطأ. أعد المحاولة."
+  "authErrorGeneric": "حدث خطأ. أعد المحاولة.",
+  "authContinueWithoutAccount": "المتابعة بدون حساب",
+  "authNotSignedIn": "غير مسجل الدخول"
 }
