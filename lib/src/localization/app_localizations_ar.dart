@@ -857,4 +857,81 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unavailable => 'الميزة غير متاحة بعد.';
+
+  @override
+  String get authWelcomeTitle => 'مرحبًا بك في Parlami';
+
+  @override
+  String get authWelcomeSubtitle => 'سجّل الدخول لحفظ تقدمك ومزامنته.';
+
+  @override
+  String get authEmail => 'البريد الإلكتروني';
+
+  @override
+  String get authPassword => 'كلمة المرور';
+
+  @override
+  String get authDisplayName => 'الاسم (اختياري)';
+
+  @override
+  String get authPasswordRule => '6 أحرف على الأقل';
+
+  @override
+  String get authSignIn => 'تسجيل الدخول';
+
+  @override
+  String get authSignUp => 'إنشاء حساب';
+
+  @override
+  String get authSwitchToSignUp => 'ليس لديك حساب؟ أنشئ واحداً';
+
+  @override
+  String get authSwitchToSignIn => 'لديك حساب بالفعل؟ سجّل الدخول';
+
+  @override
+  String get authForgotPassword => 'هل نسيت كلمة المرور؟';
+
+  @override
+  String get authConfirmEmailSent =>
+      'تم إنشاء الحساب! تحقق من بريدك لتأكيد عنوان بريدك الإلكتروني.';
+
+  @override
+  String get authResetEmailSent => 'تم إرسال بريد إعادة تعيين كلمة المرور.';
+
+  @override
+  String get authAccountSection => 'الحساب';
+
+  @override
+  String get authSignOut => 'تسجيل الخروج';
+
+  @override
+  String get authErrorInvalidCredentials =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'أكّد أولاً بريدك الإلكتروني عبر الرابط الذي وصلك.';
+
+  @override
+  String get authErrorEmailUsed => 'يوجد حساب بالفعل بهذا البريد الإلكتروني.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'كلمة المرور ضعيفة جداً (6 أحرف على الأقل).';
+
+  @override
+  String get authErrorRateLimited =>
+      'محاولات كثيرة جداً. أعد المحاولة بعد بضع دقائق.';
+
+  @override
+  String get authErrorNetwork => 'تعذر الاتصال. تحقق من اتصالك بالإنترنت.';
+
+  @override
+  String get authErrorGeneric => 'حدث خطأ. أعد المحاولة.';
+
+  @override
+  String get authContinueWithoutAccount => 'المتابعة بدون حساب';
+
+  @override
+  String get authNotSignedIn => 'غير مسجل الدخول';
 }

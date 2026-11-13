@@ -875,4 +875,82 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get unavailable => 'Funcția nu este încă disponibilă.';
+
+  @override
+  String get authWelcomeTitle => 'Bun venit la Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Autentifică-te pentru a-ți salva și sincroniza progresul.';
+
+  @override
+  String get authEmail => 'Adresă de e-mail';
+
+  @override
+  String get authPassword => 'Parolă';
+
+  @override
+  String get authDisplayName => 'Nume (opțional)';
+
+  @override
+  String get authPasswordRule => 'Cel puțin 6 caractere';
+
+  @override
+  String get authSignIn => 'Autentificare';
+
+  @override
+  String get authSignUp => 'Creare cont';
+
+  @override
+  String get authSwitchToSignUp => 'Încă nu ai cont? Creează unul';
+
+  @override
+  String get authSwitchToSignIn => 'Ai deja un cont? Autentifică-te';
+
+  @override
+  String get authForgotPassword => 'Ai uitat parola?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Cont creat! Verifică-ți căsuța de e-mail pentru a-ți confirma adresa.';
+
+  @override
+  String get authResetEmailSent => 'E-mail de resetare a parolei trimis.';
+
+  @override
+  String get authAccountSection => 'Cont';
+
+  @override
+  String get authSignOut => 'Deconectare';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-mail sau parolă incorectă.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Confirmă mai întâi adresa de e-mail folosind linkul primit.';
+
+  @override
+  String get authErrorEmailUsed => 'Există deja un cont cu acest e-mail.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Parolă prea slabă (cel puțin 6 caractere).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Prea multe încercări. Reîncearcă în câteva minute.';
+
+  @override
+  String get authErrorNetwork =>
+      'Conectare eșuată. Verifică-ți conexiunea la internet.';
+
+  @override
+  String get authErrorGeneric => 'A apărut o eroare. Încearcă din nou.';
+
+  @override
+  String get authContinueWithoutAccount => 'Continuă fără cont';
+
+  @override
+  String get authNotSignedIn => 'Neconectat';
 }

@@ -871,4 +871,82 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get unavailable => 'Fonctionnalité encore indisponible.';
+
+  @override
+  String get authWelcomeTitle => 'Bienvenue sur Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Connecte-toi pour sauvegarder et synchroniser ta progression.';
+
+  @override
+  String get authEmail => 'Adresse e-mail';
+
+  @override
+  String get authPassword => 'Mot de passe';
+
+  @override
+  String get authDisplayName => 'Prénom (optionnel)';
+
+  @override
+  String get authPasswordRule => '6 caractères minimum';
+
+  @override
+  String get authSignIn => 'Se connecter';
+
+  @override
+  String get authSignUp => 'Créer un compte';
+
+  @override
+  String get authSwitchToSignUp => 'Pas encore de compte ? Crée-le';
+
+  @override
+  String get authSwitchToSignIn => 'Déjà un compte ? Connecte-toi';
+
+  @override
+  String get authForgotPassword => 'Mot de passe oublié ?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Compte créé ! Vérifie ta boîte mail pour confirmer ton adresse e-mail.';
+
+  @override
+  String get authResetEmailSent => 'E-mail de réinitialisation envoyé.';
+
+  @override
+  String get authAccountSection => 'Compte';
+
+  @override
+  String get authSignOut => 'Se déconnecter';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-mail ou mot de passe incorrect.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Confirme d\'abord ton adresse e-mail avec le lien reçu.';
+
+  @override
+  String get authErrorEmailUsed => 'Un compte existe déjà avec cet e-mail.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Mot de passe trop faible (6 caractères minimum).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Trop de tentatives. Réessaie dans quelques minutes.';
+
+  @override
+  String get authErrorNetwork =>
+      'Connexion impossible. Vérifie ta connexion internet.';
+
+  @override
+  String get authErrorGeneric => 'Une erreur est survenue. Réessaie.';
+
+  @override
+  String get authContinueWithoutAccount => 'Continuer sans compte';
+
+  @override
+  String get authNotSignedIn => 'Non connecté';
 }

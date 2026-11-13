@@ -863,4 +863,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unavailable => 'Feature not available yet.';
+
+  @override
+  String get authWelcomeTitle => 'Welcome to Parlami';
+
+  @override
+  String get authWelcomeSubtitle => 'Sign in to save and sync your progress.';
+
+  @override
+  String get authEmail => 'Email address';
+
+  @override
+  String get authPassword => 'Password';
+
+  @override
+  String get authDisplayName => 'Name (optional)';
+
+  @override
+  String get authPasswordRule => 'At least 6 characters';
+
+  @override
+  String get authSignIn => 'Sign in';
+
+  @override
+  String get authSignUp => 'Sign up';
+
+  @override
+  String get authSwitchToSignUp => 'No account yet? Create one';
+
+  @override
+  String get authSwitchToSignIn => 'Already have an account? Sign in';
+
+  @override
+  String get authForgotPassword => 'Forgot password?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Account created! Check your inbox to confirm your email address.';
+
+  @override
+  String get authResetEmailSent => 'Password reset email sent.';
+
+  @override
+  String get authAccountSection => 'Account';
+
+  @override
+  String get authSignOut => 'Sign out';
+
+  @override
+  String get authErrorInvalidCredentials => 'Incorrect email or password.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Please confirm your email address using the link you received.';
+
+  @override
+  String get authErrorEmailUsed => 'An account already exists with this email.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Password too weak (at least 6 characters).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Too many attempts. Try again in a few minutes.';
+
+  @override
+  String get authErrorNetwork =>
+      'Connection failed. Check your internet connection.';
+
+  @override
+  String get authErrorGeneric => 'Something went wrong. Please try again.';
+
+  @override
+  String get authContinueWithoutAccount => 'Continue without an account';
+
+  @override
+  String get authNotSignedIn => 'Not signed in';
 }

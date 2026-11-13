@@ -855,4 +855,79 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get unavailable => 'התכונה עדיין אינה זמינה.';
+
+  @override
+  String get authWelcomeTitle => 'ברוך הבא ל-Parlami';
+
+  @override
+  String get authWelcomeSubtitle => 'התחבר כדי לשמור ולסנכרן את ההתקדמות שלך.';
+
+  @override
+  String get authEmail => 'כתובת אימייל';
+
+  @override
+  String get authPassword => 'סיסמה';
+
+  @override
+  String get authDisplayName => 'שם (אופציונלי)';
+
+  @override
+  String get authPasswordRule => 'לפחות 6 תווים';
+
+  @override
+  String get authSignIn => 'התחברות';
+
+  @override
+  String get authSignUp => 'יצירת חשבון';
+
+  @override
+  String get authSwitchToSignUp => 'אין לך עדיין חשבון? צור אחד';
+
+  @override
+  String get authSwitchToSignIn => 'כבר יש לך חשבון? התחבר';
+
+  @override
+  String get authForgotPassword => 'שכחת את הסיסמה?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'החשבון נוצר! בדוק את תיבת הדואר שלך כדי לאשר את כתובת האימייל.';
+
+  @override
+  String get authResetEmailSent => 'אימייל לאיפוס סיסמה נשלח.';
+
+  @override
+  String get authAccountSection => 'חשבון';
+
+  @override
+  String get authSignOut => 'התנתקות';
+
+  @override
+  String get authErrorInvalidCredentials => 'אימייל או סיסמה שגויים.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'קודם אשר את כתובת האימייל באמצעות הקישור שקיבלת.';
+
+  @override
+  String get authErrorEmailUsed => 'כבר קיים חשבון עם האימייל הזה.';
+
+  @override
+  String get authErrorWeakPassword => 'סיסמה חלשה מדי (לפחות 6 תווים).';
+
+  @override
+  String get authErrorRateLimited =>
+      'יותר מדי ניסיונות. נסה שוב בעוד כמה דקות.';
+
+  @override
+  String get authErrorNetwork => 'ההתחברות נכשלה. בדוק את חיבור האינטרנט שלך.';
+
+  @override
+  String get authErrorGeneric => 'אירעה שגיאה. נסה שוב.';
+
+  @override
+  String get authContinueWithoutAccount => 'המשך ללא חשבון';
+
+  @override
+  String get authNotSignedIn => 'לא מחובר';
 }

@@ -870,4 +870,82 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get unavailable => 'Función aún no disponible.';
+
+  @override
+  String get authWelcomeTitle => 'Bienvenido a Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Inicia sesión para guardar y sincronizar tu progreso.';
+
+  @override
+  String get authEmail => 'Correo electrónico';
+
+  @override
+  String get authPassword => 'Contraseña';
+
+  @override
+  String get authDisplayName => 'Nombre (opcional)';
+
+  @override
+  String get authPasswordRule => 'Al menos 6 caracteres';
+
+  @override
+  String get authSignIn => 'Iniciar sesión';
+
+  @override
+  String get authSignUp => 'Crear cuenta';
+
+  @override
+  String get authSwitchToSignUp => '¿Todavía no tienes cuenta? Créala';
+
+  @override
+  String get authSwitchToSignIn => '¿Ya tienes una cuenta? Inicia sesión';
+
+  @override
+  String get authForgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get authConfirmEmailSent =>
+      '¡Cuenta creada! Revisa tu bandeja para confirmar tu correo electrónico.';
+
+  @override
+  String get authResetEmailSent => 'Correo de restablecimiento enviado.';
+
+  @override
+  String get authAccountSection => 'Cuenta';
+
+  @override
+  String get authSignOut => 'Cerrar sesión';
+
+  @override
+  String get authErrorInvalidCredentials => 'Correo o contraseña incorrectos.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Primero confirma tu correo electrónico con el enlace recibido.';
+
+  @override
+  String get authErrorEmailUsed => 'Ya existe una cuenta con este correo.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Contraseña demasiado débil (al menos 6 caracteres).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Demasiados intentos. Inténtalo de nuevo en unos minutos.';
+
+  @override
+  String get authErrorNetwork =>
+      'No se pudo conectar. Comprueba tu conexión a internet.';
+
+  @override
+  String get authErrorGeneric => 'Se produjo un error. Inténtalo de nuevo.';
+
+  @override
+  String get authContinueWithoutAccount => 'Continuar sin cuenta';
+
+  @override
+  String get authNotSignedIn => 'Sin sesión iniciada';
 }

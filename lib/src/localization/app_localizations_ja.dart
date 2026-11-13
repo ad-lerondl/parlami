@@ -846,4 +846,76 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get unavailable => 'この機能はまだ利用できません。';
+
+  @override
+  String get authWelcomeTitle => 'Parlamiへようこそ';
+
+  @override
+  String get authWelcomeSubtitle => 'ログインして進捗を保存・同期しましょう。';
+
+  @override
+  String get authEmail => 'メールアドレス';
+
+  @override
+  String get authPassword => 'パスワード';
+
+  @override
+  String get authDisplayName => '名前（任意）';
+
+  @override
+  String get authPasswordRule => '6文字以上';
+
+  @override
+  String get authSignIn => 'ログイン';
+
+  @override
+  String get authSignUp => 'アカウント作成';
+
+  @override
+  String get authSwitchToSignUp => 'アカウントをお持ちでない方は作成してください';
+
+  @override
+  String get authSwitchToSignIn => 'すでにアカウントをお持ちですか？ログイン';
+
+  @override
+  String get authForgotPassword => 'パスワードをお忘れですか？';
+
+  @override
+  String get authConfirmEmailSent => 'アカウントを作成しました！届いたメールからメールアドレスを確認してください。';
+
+  @override
+  String get authResetEmailSent => 'パスワード再設定メールを送信しました。';
+
+  @override
+  String get authAccountSection => 'アカウント';
+
+  @override
+  String get authSignOut => 'ログアウト';
+
+  @override
+  String get authErrorInvalidCredentials => 'メールアドレスまたはパスワードが違います。';
+
+  @override
+  String get authErrorEmailNotConfirmed => 'まず届いたリンクからメールアドレスを確認してください。';
+
+  @override
+  String get authErrorEmailUsed => 'このメールアドレスのアカウントはすでに存在します。';
+
+  @override
+  String get authErrorWeakPassword => 'パスワードが弱すぎます（6文字以上）。';
+
+  @override
+  String get authErrorRateLimited => '試行回数が多すぎます。数分後に再試行してください。';
+
+  @override
+  String get authErrorNetwork => '接続できませんでした。インターネット接続を確認してください。';
+
+  @override
+  String get authErrorGeneric => 'エラーが発生しました。もう一度お試しください。';
+
+  @override
+  String get authContinueWithoutAccount => 'アカウントなしで続ける';
+
+  @override
+  String get authNotSignedIn => '未ログイン';
 }
