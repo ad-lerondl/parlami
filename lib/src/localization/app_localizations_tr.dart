@@ -867,4 +867,81 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get unavailable => 'Özellik henüz mevcut değil.';
+
+  @override
+  String get authWelcomeTitle => 'Parlami\'ye hoş geldin';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'İlerlemeni kaydetmek ve eşitlemek için giriş yap.';
+
+  @override
+  String get authEmail => 'E-posta adresi';
+
+  @override
+  String get authPassword => 'Şifre';
+
+  @override
+  String get authDisplayName => 'İsim (isteğe bağlı)';
+
+  @override
+  String get authPasswordRule => 'En az 6 karakter';
+
+  @override
+  String get authSignIn => 'Giriş yap';
+
+  @override
+  String get authSignUp => 'Hesap oluştur';
+
+  @override
+  String get authSwitchToSignUp => 'Hesabın yok mu? Oluştur';
+
+  @override
+  String get authSwitchToSignIn => 'Zaten hesabın var mı? Giriş yap';
+
+  @override
+  String get authForgotPassword => 'Şifreni mi unuttun?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Hesap oluşturuldu! E-posta adresini onaylamak için kutunu kontrol et.';
+
+  @override
+  String get authResetEmailSent => 'Şifre sıfırlama e-postası gönderildi.';
+
+  @override
+  String get authAccountSection => 'Hesap';
+
+  @override
+  String get authSignOut => 'Çıkış yap';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-posta veya şifre hatalı.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Önce gelen bağlantıyla e-posta adresini doğrula.';
+
+  @override
+  String get authErrorEmailUsed => 'Bu e-posta ile bir hesap zaten var.';
+
+  @override
+  String get authErrorWeakPassword => 'Şifre çok zayıf (en az 6 karakter).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Çok fazla deneme. Birkaç dakika sonra tekrar dene.';
+
+  @override
+  String get authErrorNetwork =>
+      'Bağlanılamadı. İnternet bağlantını kontrol et.';
+
+  @override
+  String get authErrorGeneric => 'Bir hata oluştu. Tekrar dene.';
+
+  @override
+  String get authContinueWithoutAccount => 'Hesapsız devam et';
+
+  @override
+  String get authNotSignedIn => 'Giriş yapılmadı';
 }

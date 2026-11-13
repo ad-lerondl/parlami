@@ -866,4 +866,84 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get unavailable => 'Funktionen är ännu inte tillgänglig.';
+
+  @override
+  String get authWelcomeTitle => 'Välkommen till Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Logga in för att spara och synkronisera dina framsteg.';
+
+  @override
+  String get authEmail => 'E-postadress';
+
+  @override
+  String get authPassword => 'Lösenord';
+
+  @override
+  String get authDisplayName => 'Namn (valfritt)';
+
+  @override
+  String get authPasswordRule => 'Minst 6 tecken';
+
+  @override
+  String get authSignIn => 'Logga in';
+
+  @override
+  String get authSignUp => 'Skapa konto';
+
+  @override
+  String get authSwitchToSignUp => 'Inget konto än? Skapa ett';
+
+  @override
+  String get authSwitchToSignIn => 'Har du redan ett konto? Logga in';
+
+  @override
+  String get authForgotPassword => 'Glömt lösenordet?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Kontot är skapat! Kolla din inkorg för att bekräfta din e-postadress.';
+
+  @override
+  String get authResetEmailSent =>
+      'E-post för återställning av lösenord skickat.';
+
+  @override
+  String get authAccountSection => 'Konto';
+
+  @override
+  String get authSignOut => 'Logga ut';
+
+  @override
+  String get authErrorInvalidCredentials => 'Fel e-post eller lösenord.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Bekräfta först din e-postadress via länken du fick.';
+
+  @override
+  String get authErrorEmailUsed =>
+      'Det finns redan ett konto med den här e-postadressen.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Lösenordet är för svagt (minst 6 tecken).';
+
+  @override
+  String get authErrorRateLimited =>
+      'För många försök. Försök igen om några minuter.';
+
+  @override
+  String get authErrorNetwork =>
+      'Kunde inte ansluta. Kontrollera din internetanslutning.';
+
+  @override
+  String get authErrorGeneric => 'Ett fel uppstod. Försök igen.';
+
+  @override
+  String get authContinueWithoutAccount => 'Fortsätt utan konto';
+
+  @override
+  String get authNotSignedIn => 'Ej inloggad';
 }

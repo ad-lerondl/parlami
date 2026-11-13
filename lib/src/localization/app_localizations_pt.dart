@@ -868,4 +868,83 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unavailable => 'Recurso ainda não disponível.';
+
+  @override
+  String get authWelcomeTitle => 'Bem-vindo ao Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Inicia sessão para guardar e sincronizar o teu progresso.';
+
+  @override
+  String get authEmail => 'Endereço de e-mail';
+
+  @override
+  String get authPassword => 'Palavra-passe';
+
+  @override
+  String get authDisplayName => 'Nome (opcional)';
+
+  @override
+  String get authPasswordRule => 'Pelo menos 6 caracteres';
+
+  @override
+  String get authSignIn => 'Iniciar sessão';
+
+  @override
+  String get authSignUp => 'Criar conta';
+
+  @override
+  String get authSwitchToSignUp => 'Ainda não tens conta? Cria uma';
+
+  @override
+  String get authSwitchToSignIn => 'Já tens conta? Inicia sessão';
+
+  @override
+  String get authForgotPassword => 'Esqueceste a palavra-passe?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Conta criada! Verifica a tua caixa de entrada para confirmar o teu e-mail.';
+
+  @override
+  String get authResetEmailSent => 'E-mail de redefinição enviado.';
+
+  @override
+  String get authAccountSection => 'Conta';
+
+  @override
+  String get authSignOut => 'Terminar sessão';
+
+  @override
+  String get authErrorInvalidCredentials =>
+      'E-mail ou palavra-passe incorretos.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Confirma primeiro o teu e-mail com a ligação recebida.';
+
+  @override
+  String get authErrorEmailUsed => 'Já existe uma conta com este e-mail.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Palavra-passe demasiado fraca (pelo menos 6 caracteres).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Demasiadas tentativas. Tenta novamente dentro de alguns minutos.';
+
+  @override
+  String get authErrorNetwork =>
+      'Não foi possível ligar. Verifica a tua ligação à internet.';
+
+  @override
+  String get authErrorGeneric => 'Ocorreu um erro. Tenta novamente.';
+
+  @override
+  String get authContinueWithoutAccount => 'Continuar sem conta';
+
+  @override
+  String get authNotSignedIn => 'Sessão não iniciada';
 }

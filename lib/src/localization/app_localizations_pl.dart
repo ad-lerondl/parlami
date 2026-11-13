@@ -869,4 +869,82 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get unavailable => 'Funkcja jeszcze niedostępna.';
+
+  @override
+  String get authWelcomeTitle => 'Witaj w Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Zaloguj się, aby zapisywać i synchronizować swoje postępy.';
+
+  @override
+  String get authEmail => 'Adres e-mail';
+
+  @override
+  String get authPassword => 'Hasło';
+
+  @override
+  String get authDisplayName => 'Imię (opcjonalnie)';
+
+  @override
+  String get authPasswordRule => 'Co najmniej 6 znaków';
+
+  @override
+  String get authSignIn => 'Zaloguj się';
+
+  @override
+  String get authSignUp => 'Utwórz konto';
+
+  @override
+  String get authSwitchToSignUp => 'Nie masz jeszcze konta? Utwórz je';
+
+  @override
+  String get authSwitchToSignIn => 'Masz już konto? Zaloguj się';
+
+  @override
+  String get authForgotPassword => 'Nie pamiętasz hasła?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Konto utworzone! Sprawdź skrzynkę, aby potwierdzić swój adres e-mail.';
+
+  @override
+  String get authResetEmailSent => 'Wysłano e-mail do resetowania hasła.';
+
+  @override
+  String get authAccountSection => 'Konto';
+
+  @override
+  String get authSignOut => 'Wyloguj się';
+
+  @override
+  String get authErrorInvalidCredentials => 'Nieprawidłowy e-mail lub hasło.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Najpierw potwierdź swój adres e-mail linkiem, który otrzymałeś.';
+
+  @override
+  String get authErrorEmailUsed => 'Konto z tym adresem e-mail już istnieje.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Hasło zbyt słabe (co najmniej 6 znaków).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Zbyt wiele prób. Spróbuj ponownie za kilka minut.';
+
+  @override
+  String get authErrorNetwork =>
+      'Nie udało się połączyć. Sprawdź połączenie z internetem.';
+
+  @override
+  String get authErrorGeneric => 'Wystąpił błąd. Spróbuj ponownie.';
+
+  @override
+  String get authContinueWithoutAccount => 'Kontynuuj bez konta';
+
+  @override
+  String get authNotSignedIn => 'Nie zalogowano';
 }

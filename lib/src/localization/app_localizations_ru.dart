@@ -869,4 +869,82 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get unavailable => 'Функция пока недоступна.';
+
+  @override
+  String get authWelcomeTitle => 'Добро пожаловать в Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Войдите, чтобы сохранять и синхронизировать свой прогресс.';
+
+  @override
+  String get authEmail => 'Электронная почта';
+
+  @override
+  String get authPassword => 'Пароль';
+
+  @override
+  String get authDisplayName => 'Имя (необязательно)';
+
+  @override
+  String get authPasswordRule => 'Минимум 6 символов';
+
+  @override
+  String get authSignIn => 'Войти';
+
+  @override
+  String get authSignUp => 'Создать аккаунт';
+
+  @override
+  String get authSwitchToSignUp => 'Ещё нет аккаунта? Создайте его';
+
+  @override
+  String get authSwitchToSignIn => 'Уже есть аккаунт? Войдите';
+
+  @override
+  String get authForgotPassword => 'Забыли пароль?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Аккаунт создан! Проверьте почту, чтобы подтвердить свой адрес.';
+
+  @override
+  String get authResetEmailSent => 'Письмо для сброса пароля отправлено.';
+
+  @override
+  String get authAccountSection => 'Аккаунт';
+
+  @override
+  String get authSignOut => 'Выйти';
+
+  @override
+  String get authErrorInvalidCredentials => 'Неверная почта или пароль.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Сначала подтвердите свою почту по полученной ссылке.';
+
+  @override
+  String get authErrorEmailUsed => 'Аккаунт с этой почтой уже существует.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Слишком простой пароль (минимум 6 символов).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Слишком много попыток. Повторите через несколько минут.';
+
+  @override
+  String get authErrorNetwork =>
+      'Не удалось подключиться. Проверьте интернет-соединение.';
+
+  @override
+  String get authErrorGeneric => 'Произошла ошибка. Попробуйте ещё раз.';
+
+  @override
+  String get authContinueWithoutAccount => 'Продолжить без аккаунта';
+
+  @override
+  String get authNotSignedIn => 'Не выполнен вход';
 }

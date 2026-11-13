@@ -1691,6 +1691,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Feature not available yet.'**
   String get unavailable;
+
+  /// No description provided for @authWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Parlami'**
+  String get authWelcomeTitle;
+
+  /// No description provided for @authWelcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to save and sync your progress.'**
+  String get authWelcomeSubtitle;
+
+  /// No description provided for @authEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email address'**
+  String get authEmail;
+
+  /// No description provided for @authPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get authPassword;
+
+  /// No description provided for @authDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (optional)'**
+  String get authDisplayName;
+
+  /// No description provided for @authPasswordRule.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 6 characters'**
+  String get authPasswordRule;
+
+  /// No description provided for @authSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get authSignIn;
+
+  /// No description provided for @authSignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get authSignUp;
+
+  /// No description provided for @authSwitchToSignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'No account yet? Create one'**
+  String get authSwitchToSignUp;
+
+  /// No description provided for @authSwitchToSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Sign in'**
+  String get authSwitchToSignIn;
+
+  /// No description provided for @authForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get authForgotPassword;
+
+  /// No description provided for @authConfirmEmailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Account created! Check your inbox to confirm your email address.'**
+  String get authConfirmEmailSent;
+
+  /// No description provided for @authResetEmailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset email sent.'**
+  String get authResetEmailSent;
+
+  /// No description provided for @authAccountSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get authAccountSection;
+
+  /// No description provided for @authSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get authSignOut;
+
+  /// No description provided for @authErrorInvalidCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect email or password.'**
+  String get authErrorInvalidCredentials;
+
+  /// No description provided for @authErrorEmailNotConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your email address using the link you received.'**
+  String get authErrorEmailNotConfirmed;
+
+  /// No description provided for @authErrorEmailUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already exists with this email.'**
+  String get authErrorEmailUsed;
+
+  /// No description provided for @authErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password too weak (at least 6 characters).'**
+  String get authErrorWeakPassword;
+
+  /// No description provided for @authErrorRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again in a few minutes.'**
+  String get authErrorRateLimited;
+
+  /// No description provided for @authErrorNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection failed. Check your internet connection.'**
+  String get authErrorNetwork;
+
+  /// No description provided for @authErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get authErrorGeneric;
+
+  /// No description provided for @authContinueWithoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue without an account'**
+  String get authContinueWithoutAccount;
+
+  /// No description provided for @authNotSignedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Not signed in'**
+  String get authNotSignedIn;
 }
 
 class _AppLocalizationsDelegate

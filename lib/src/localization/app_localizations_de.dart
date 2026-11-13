@@ -870,4 +870,85 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get unavailable => 'Funktion noch nicht verfügbar.';
+
+  @override
+  String get authWelcomeTitle => 'Willkommen bei Parlami';
+
+  @override
+  String get authWelcomeSubtitle =>
+      'Melde dich an, um deinen Fortschritt zu speichern und zu synchronisieren.';
+
+  @override
+  String get authEmail => 'E-Mail-Adresse';
+
+  @override
+  String get authPassword => 'Passwort';
+
+  @override
+  String get authDisplayName => 'Name (optional)';
+
+  @override
+  String get authPasswordRule => 'Mindestens 6 Zeichen';
+
+  @override
+  String get authSignIn => 'Anmelden';
+
+  @override
+  String get authSignUp => 'Konto erstellen';
+
+  @override
+  String get authSwitchToSignUp => 'Noch kein Konto? Erstelle eines';
+
+  @override
+  String get authSwitchToSignIn => 'Schon ein Konto? Melde dich an';
+
+  @override
+  String get authForgotPassword => 'Passwort vergessen?';
+
+  @override
+  String get authConfirmEmailSent =>
+      'Konto erstellt! Prüfe dein Postfach, um deine E-Mail-Adresse zu bestätigen.';
+
+  @override
+  String get authResetEmailSent =>
+      'E-Mail zum Zurücksetzen des Passworts gesendet.';
+
+  @override
+  String get authAccountSection => 'Konto';
+
+  @override
+  String get authSignOut => 'Abmelden';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-Mail oder Passwort falsch.';
+
+  @override
+  String get authErrorEmailNotConfirmed =>
+      'Bestätige zuerst deine E-Mail-Adresse über den erhaltenen Link.';
+
+  @override
+  String get authErrorEmailUsed =>
+      'Mit dieser E-Mail existiert bereits ein Konto.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Passwort zu schwach (mindestens 6 Zeichen).';
+
+  @override
+  String get authErrorRateLimited =>
+      'Zu viele Versuche. Versuche es in ein paar Minuten erneut.';
+
+  @override
+  String get authErrorNetwork =>
+      'Verbindung fehlgeschlagen. Prüfe deine Internetverbindung.';
+
+  @override
+  String get authErrorGeneric =>
+      'Ein Fehler ist aufgetreten. Versuche es erneut.';
+
+  @override
+  String get authContinueWithoutAccount => 'Ohne Konto fortfahren';
+
+  @override
+  String get authNotSignedIn => 'Nicht angemeldet';
 }
