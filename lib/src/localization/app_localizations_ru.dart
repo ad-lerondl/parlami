@@ -947,4 +947,158 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Не выполнен вход';
+
+  @override
+  String get learnGeo => 'География Италии';
+
+  @override
+  String get learnGeoDescription => 'Города, регионы, специалитеты и клише';
+
+  @override
+  String get learnSongs => 'Незаменимые песни';
+
+  @override
+  String get learnSongsDescription =>
+      'Хиты, которые надо знать наизусть, с их лексикой';
+
+  @override
+  String get learnPasta => 'Названия паст';
+
+  @override
+  String get learnPastaDescription => 'Формы, регионы происхождения и соусы';
+
+  @override
+  String get learnHistory => 'История Италии';
+
+  @override
+  String get learnHistoryDescription => 'Интерактивная хронология и викторина';
+
+  @override
+  String get geoTabRegions => 'Регионы';
+
+  @override
+  String get geoTabCities => 'Города';
+
+  @override
+  String get geoTabQuiz => 'Викторина';
+
+  @override
+  String get geoCapital => 'Административный центр';
+
+  @override
+  String get geoSpecialties => 'Специалитеты';
+
+  @override
+  String get geoSearchCities => 'Найти город...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'К какому региону относится $city?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'Из какого региона происходит « $specialty »?';
+  }
+
+  @override
+  String get quizNext => 'Следующий вопрос';
+
+  @override
+  String get quizGood => 'Правильно!';
+
+  @override
+  String get quizWrong => 'Неправильный ответ';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Счёт: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Знать наизусть';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total выучено наизусть';
+  }
+
+  @override
+  String get songsListen => 'Слушать / смотреть';
+
+  @override
+  String get pastaTabExplore => 'Обзор';
+
+  @override
+  String get pastaTabQuiz => 'Викторина';
+
+  @override
+  String get pastaQuizIntro =>
+      'Угадай регион происхождения каждой формы пасты.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'Откуда происходит « $name »?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Хронология';
+
+  @override
+  String get historyTabQuiz => 'Викторина';
+
+  @override
+  String get scenarioNoisyListening => 'Слушание с шумом';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Аудирование в усложнённых условиях (фоновые шумы) с самооценкой.';
+
+  @override
+  String get noiseTitle => 'Слушание с шумом';
+
+  @override
+  String get noiseIntro =>
+      'Включите итальянскую радиостанцию, добавьте фоновый шум, слушайте около тридцати секунд, затем оцените своё понимание.';
+
+  @override
+  String get noiseStationLabel => 'Станция';
+
+  @override
+  String get noiseTypeLabel => 'Фоновый шум';
+
+  @override
+  String get noiseTypeNone => 'Нет';
+
+  @override
+  String get noiseTypeHiss => 'Шипение';
+
+  @override
+  String get noiseTypeCrowd => 'Гул (кафе)';
+
+  @override
+  String get noiseTypeMusic => 'Музыка';
+
+  @override
+  String get noiseVolumeLabel => 'Громкость шума';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Оцените своё понимание (0 = ничего не понял, 3 = понял всё)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Оценки сессии: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Среднее за сессию: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Настройки';
+
+  @override
+  String get profileSectionSupport => 'Поддержка и информация';
 }

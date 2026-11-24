@@ -918,4 +918,153 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get authNotSignedIn => '未ログイン';
+
+  @override
+  String get learnGeo => 'イタリアの地理';
+
+  @override
+  String get learnGeoDescription => '都市、州、名物、ステレオタイプ';
+
+  @override
+  String get learnSongs => '外せない歌';
+
+  @override
+  String get learnSongsDescription => '歌詞と語彙と一緒に覚えたい定番ヒット曲';
+
+  @override
+  String get learnPasta => 'パスタの名前';
+
+  @override
+  String get learnPastaDescription => '形、発祥の州、ソース';
+
+  @override
+  String get learnHistory => 'イタリアの歴史';
+
+  @override
+  String get learnHistoryDescription => 'インタラクティブな年表とクイズ';
+
+  @override
+  String get geoTabRegions => '州';
+
+  @override
+  String get geoTabCities => '都市';
+
+  @override
+  String get geoTabQuiz => 'クイズ';
+
+  @override
+  String get geoCapital => '州都';
+
+  @override
+  String get geoSpecialties => '名物';
+
+  @override
+  String get geoSearchCities => '都市を検索...';
+
+  @override
+  String geoQuizCity(String city) {
+    return '$city はどの州？';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return '「 $specialty 」はどの州の名物？';
+  }
+
+  @override
+  String get quizNext => '次の問題';
+
+  @override
+  String get quizGood => '正解！';
+
+  @override
+  String get quizWrong => '不正解';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'スコア: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => '暗記済み';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total 曲を暗記';
+  }
+
+  @override
+  String get songsListen => '聴く / 見る';
+
+  @override
+  String get pastaTabExplore => '見る';
+
+  @override
+  String get pastaTabQuiz => 'クイズ';
+
+  @override
+  String get pastaQuizIntro => '各パスタの発祥の州を当ててください。';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return '「 $name 」の発祥は？';
+  }
+
+  @override
+  String get historyTabTimeline => '年表';
+
+  @override
+  String get historyTabQuiz => 'クイズ';
+
+  @override
+  String get scenarioNoisyListening => '騒音の中でのリスニング';
+
+  @override
+  String get scenarioNoisyListeningDetails => 'ノイズ入りの劣悪な条件下での聴解と自己評価。';
+
+  @override
+  String get noiseTitle => '騒音の中でのリスニング';
+
+  @override
+  String get noiseIntro => 'イタリアのラジオ局を再生し、背景ノイズを加え、約30秒聴いてから理解度を評価してください。';
+
+  @override
+  String get noiseStationLabel => '放送局';
+
+  @override
+  String get noiseTypeLabel => '背景ノイズ';
+
+  @override
+  String get noiseTypeNone => 'なし';
+
+  @override
+  String get noiseTypeHiss => 'ノイズ';
+
+  @override
+  String get noiseTypeCrowd => 'ざわめき（カフェ）';
+
+  @override
+  String get noiseTypeMusic => '音楽';
+
+  @override
+  String get noiseVolumeLabel => 'ノイズの音量';
+
+  @override
+  String get noiseSelfRatePrompt => '理解度を評価（0 = 全く分からない、3 = 全部分かった）';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'セッションの評価: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'セッション平均: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => '設定';
+
+  @override
+  String get profileSectionSupport => '支援と情報';
 }

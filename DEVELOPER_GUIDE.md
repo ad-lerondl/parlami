@@ -35,6 +35,11 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 - `lib/src/learn/numdate/`
 - `lib/src/learn/grammar/` (placeholder)
 - `lib/src/learn/spelling/` (placeholder)
+- `lib/src/learn/geo/`: geographie de l'Italie (regions, villes, specialites, cliches, quiz)
+- `lib/src/learn/songs/`: chansons incontournables avec suivi "apprendre par coeur" (SharedPreferences)
+- `lib/src/learn/pasta/`: formes de pates, region d'origine, sauces, quiz
+- `lib/src/learn/history/`: chronologie de l'Italie + quiz (donnes dans `assets/culture/storia_italia.json`)
+- `lib/src/common/quiz_round.dart`: widget de QCM partage par les quiz culture
 
 ### Modules "S'entrainer"
 - `lib/src/train/eo/`: expression orale
@@ -45,6 +50,8 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 ### Module "Se tester"
 - `lib/src/evaluate/evaluate_view.dart`: scenarios de mise en condition reelle
 - Principe: combiner plusieurs competences simultanement (ex: CO + EO, CE + EE)
+- `lib/src/evaluate/noise/noise_listening_view.dart`: scenario "Ecoute dans le bruit" (radio italienne en direct + bruit superpose, auto-evaluation 0-3 enregistree via `PerformanceRepository`, skill `evaluate`, exerciseType `noisyListening`)
+- Bruits generes: `assets/audio/bruit_gresillement.wav`, `bruit_ambiance.wav`, `bruit_musique.wav`, joues par `lib/src/services/noise_player_service.dart` (player `just_audio` separe pour se mixer a la radio)
 
 ### Comptes utilisateurs (Supabase)
 - `lib/src/auth/supabase_config.dart`: URL + cle publishable integrees (surchargables via dart-define)
@@ -92,6 +99,11 @@ vers la version française.
 - `assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json`
 - `assets/train/eo_questions.json`
 - `assets/train/ee_sentences.json`
+- `assets/culture/geo_italia.json` (regions + villes + specialites + cliches)
+- `assets/culture/canzoni.json` (chansons, sans paroles pour eviter tout probleme de droits)
+- `assets/culture/pasta_italia.json` (formes de pates, champ `regional` pour le quiz)
+- `assets/culture/storia_italia.json` (periods + quiz)
+- `assets/audio/bruit_*.wav` (20 s, mono 22050 Hz, bouclables)
 
 ## 4. Etat Fonctionnel Actuel
 
@@ -124,7 +136,9 @@ Les points d'enregistrement actuels sont :
 - conjugaison : verification multi-personnes, avec agregation par mode/temps/personne ;
 - nombres/dates : corrections separees pour nombres, dates et heures ;
 - EE : correction de traduction ;
-- EO : auto-evaluation sur 0-3, niveau, mode et durees de parole/hesitation.
+- EO : auto-evaluation sur 0-3, niveau, mode et durees de parole/hesitation ;
+- geographie / pates / histoire : quiz QCM (skills `geo`, `pasta`, `history`) ;
+- ecoute dans le bruit : auto-evaluation 0-3 avec station et type de bruit en metadata.
 
 Les tentatives de nombres portent aussi une bande de difficulte selon la grandeur (`0-99`,
 `100-999`, `1 000-9 999`, `10 000-999 999`, `1 000 000+`). Les temps de reponse des exercices

@@ -1,0 +1,409 @@
+{
+  "periods": [
+    {
+      "id": "roma-antica",
+      "name": "Rome antique",
+      "years": "753 av. J.-C. – 476",
+      "summary": "Fondation légendaire par Romulus et Rémus, République (509 av. J.-C.), Empire d'Auguste, Pax Romana, puis chute de la partie occidentale en 476. Toute l'Italie moderne se raconte encore face à ces ruines.",
+      "highlights": [
+        "Rome légendaire fondée en 753 av. J.-C. sur le mont Palatin.",
+        "Jules César franchit le Rubicon en 49 av. J.-C. : « Alea iacta est ».",
+        "La Voie Appienne (l'Appia) relie Rome au sud dès 312 av. J.-C."
+      ],
+      "figures": [
+        "Jules César",
+        "Auguste",
+        "Cicéron"
+      ],
+      "vocab": [
+        {
+          "it": "impero",
+          "fr": "empire"
+        },
+        {
+          "it": "senato",
+          "fr": "sénat"
+        },
+        {
+          "it": "strada",
+          "fr": "route"
+        },
+        {
+          "it": "legge",
+          "fr": "loi"
+        }
+      ]
+    },
+    {
+      "id": "moyen-age",
+      "name": "Moyen Age",
+      "years": "476 – 1300 env.",
+      "summary": "L'Italie n'est pas un pays : Byzantins au sud, Lombards au nord, papes à Rome, puis les communes libres et les républiques maritimes (Venise, Gênes, Pise, Amalfi). Marco Polo part de Venise en 1271.",
+      "highlights": [
+        "Les républiques maritimes font parler une langue romane avant un pays.",
+        "La Peste noire (1348) emporte un tiers de la population.",
+        "Dante écrit la Divine Comédie (1308-1321) en toscan, pas en latin."
+      ],
+      "figures": [
+        "Dante",
+        "Marco Polo",
+        "un doge de Venise"
+      ],
+      "vocab": [
+        {
+          "it": "comune",
+          "fr": "commune"
+        },
+        {
+          "it": "doge",
+          "fr": "duc de Venise"
+        },
+        {
+          "it": "peste",
+          "fr": "peste"
+        },
+        {
+          "it": "campanile",
+          "fr": "clocher"
+        }
+      ]
+    },
+    {
+      "id": "renaissance",
+      "name": "La Renaissance",
+      "years": "1400 environ – 1559",
+      "summary": "Florence des Médicis devient le centre du monde artistique : Léonard, Michel-Ange, Raphaël, Botticelli. L'italien académique descend directement du toscan de Dante, Pétrarque et Boccace.",
+      "highlights": [
+        "Le Duomo de Florence est achevé en 1436 (coupole de Brunelleschi).",
+        "Le « Sacco di Roma » (1527) marque la fin de l'insouciance de la Renaissance.",
+        "Le Concile de Trente (1545-1563) répond à la Réforme."
+      ],
+      "figures": [
+        "Léonard de Vinci",
+        "Michel-Ange",
+        "Les Médicis"
+      ],
+      "vocab": [
+        {
+          "it": "rinascimento",
+          "fr": "Renaissance"
+        },
+        {
+          "it": "scuola d'arte",
+          "fr": "école d'art"
+        },
+        {
+          "it": "pittore",
+          "fr": "peintre"
+        },
+        {
+          "it": "aristocrazia",
+          "fr": "aristocratie"
+        }
+      ]
+    },
+    {
+      "id": "dominations",
+      "name": "Les dominations étrangères",
+      "years": "1559 – 1796",
+      "summary": "L'Italie devient un champ de bataille : Espagnols à Milan, Naples et Sicile, Autrichiens au nord, petits duchés partout. Le pays se morcelle, mais la musique, l'opéra et la cuisine continuent.",
+      "highlights": [
+        "Le traité de Cateau-Cambrésis (1559) fige la domination espagnole.",
+        "Le Vénitien Vivaldi écrit les Quatre Saisons (1725).",
+        "Le café arrive plus tôt, mais les cafés à la viennoise se multiplient dans les grandes villes."
+      ],
+      "figures": [
+        "Vivaldi",
+        "les Habsbourg",
+        "les vice-rois espagnols"
+      ],
+      "vocab": [
+        {
+          "it": "dominazione",
+          "fr": "domination"
+        },
+        {
+          "it": "straniero",
+          "fr": "étranger"
+        }
+      ]
+    },
+    {
+      "id": "risorgimento",
+      "name": "Le Risorgimento",
+      "years": "1815 – 1871",
+      "summary": "Le « Resorgimento » : Mazzini rêve, Cavour intrigue, Garibaldi conquiert. Les Mille débarquent en Sicile en 1860 ; le Royaume d'Italie est proclamé le 17 mars 1861 ; Rome devient capitale en 1871.",
+      "highlights": [
+        "L'unification commence avec des révoltes à Naples en 1820, pas à Turin.",
+        "Garibaldi part de Quarto avec mille volontaires en chemises rouges.",
+        "Vittorio Emanuele II de Savoie devient roi d'Italie en 1861 ; Rome ne sera italienne qu'en 1870-1871."
+      ],
+      "figures": [
+        "Mazzini",
+        "Cavour",
+        "Garibaldi",
+        "Vittorio Emanuele II"
+      ],
+      "vocab": [
+        {
+          "it": "il Risorgimento",
+          "fr": "la renaissance nationale (unification)"
+        },
+        {
+          "it": "i Mille",
+          "fr": "les Mille"
+        },
+        {
+          "it": "unità d'Italia",
+          "fr": "unité de l'Italie"
+        },
+        {
+          "it": "straniero",
+          "fr": "étranger"
+        }
+      ]
+    },
+    {
+      "id": "italie-liberale",
+      "name": "L'Italie libérale et la Grande Guerre",
+      "years": "1861 – 1922",
+      "summary": "Émigration massive vers l'Amérique, industrialisation du Nord, entrée en guerre en 1915 après l'alliance (l'Italie a d'abord été « neutre »). Le vainqueur de 1918 ronge son frein : la « victoire mutilée ».",
+      "highlights": [
+        "L'Italie entre dans la guerre en 1915 au côté de la Triple-Entente.",
+        "Trieste et Trento sont italiennes depuis 1918 seulement.",
+        "Gabriele D'Annunzio occupe Fiume en 1919 : prélude au fascisme."
+      ],
+      "figures": [
+        "D'Annunzio",
+        "Vittorio Emanuele III"
+      ],
+      "vocab": [
+        {
+          "it": "emigrare",
+          "fr": "émigrer"
+        },
+        {
+          "it": "trincea",
+          "fr": "tranchée"
+        },
+        {
+          "it": "vittoria mutilata",
+          "fr": "victoire mutilée"
+        }
+      ]
+    },
+    {
+      "id": "fascisme",
+      "name": "Le fascisme",
+      "years": "1922 – 1945",
+      "summary": "La Marche sur Rome (28 octobre 1922) amène Mussolini au pouvoir. Dictature, lois raciales (1938), alliance avec l'Allemagne nazie, guerre 1940-45, puis la Résistance et la libération du 25 avril 1945.",
+      "highlights": [
+        "Le « ventennio » désigne les vingt ans de régime fasciste.",
+        "Mussolini est emprisonné puis fusillé en avril 1945.",
+        "Le 25 avril, jour de la libération, reste férié."
+      ],
+      "figures": [
+        "Mussolini",
+        "la Résistance"
+      ],
+      "vocab": [
+        {
+          "it": "ventennio",
+          "fr": "les vingt ans de fascisme"
+        },
+        {
+          "it": "Resistenza",
+          "fr": "Résistance"
+        },
+        {
+          "it": "dopoguerra",
+          "fr": "après-guerre"
+        }
+      ]
+    },
+    {
+      "id": "repubblica",
+      "name": "La République et le boom économique",
+      "years": "1946 – 1989",
+      "summary": "Référendum du 2 juin 1946 : l'Italie choisit la République. Constitution en vigueur le 1er janvier 1948. Miracle économique des années 50-60 : Fiat 500, TV, urbanisation. Les années 70 sont ternies par le terrorisme (« années de plomb »).",
+      "highlights": [
+        "Les Italiennes votent pour la première fois en 1946.",
+        "La Fiat 500 (1957) motorise le pays.",
+        "Italia 90, puis les Mondiaux : la télé italienne devient un fait social."
+      ],
+      "figures": [
+        "Un référendum",
+        "La Constitution de 1948"
+      ],
+      "vocab": [
+        {
+          "it": "Repubblica",
+          "fr": "République"
+        },
+        {
+          "it": "Costituzione",
+          "fr": "Constitution"
+        },
+        {
+          "it": "boom economico",
+          "fr": "boom économique"
+        },
+        {
+          "it": "anni di piombo",
+          "fr": "années de plomb"
+        }
+      ]
+    },
+    {
+      "id": "contemporain",
+      "name": "L'Italie contemporaine",
+      "years": "1992 – aujourd'hui",
+      "summary": "Tangentopoli (1992-1994) fait tomber partis et notables ; Silvio Berlusconi entre en politique en 1994. L'euro remplace la lire en 2002 ; crises économiques, gouvernements techniques, une instabilité gouvernementale bien connue.",
+      "highlights": [
+        "La lire disparaît en 2002, remplacée par l'euro.",
+        "Tangentopoli (mains sales) éclate à Milan en 1992.",
+        "Les Mondiaux de foot 2006 gagnés par les Italiens tombent la même année que le scandale des matchs truqués."
+      ],
+      "figures": [
+        "Silvio Berlusconi",
+        "les juges de Tangentopoli"
+      ],
+      "vocab": [
+        {
+          "it": "tangentopoli",
+          "fr": "affaire des mains sales"
+        },
+        {
+          "it": "l'euro",
+          "fr": "l'euro"
+        },
+        {
+          "it": "referendum",
+          "fr": "référendum"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "repubblica-1946",
+      "question": "En quelle année la République italienne a-t-elle été proclamée ?",
+      "options": [
+        "1861",
+        "1918",
+        "1946",
+        "1948"
+      ],
+      "correct": 2,
+      "explanation": "Référendum du 2 juin 1946 : les Italiens choisissent la République. La Constitution entre en vigueur le 1er janvier 1948."
+    },
+    {
+      "id": "i-mille",
+      "question": "Qui a conduit l'expédition des Mille en 1860 ?",
+      "options": [
+        "Cavour",
+        "Garibaldi",
+        "Mazzini",
+        "Mussolini"
+      ],
+      "correct": 1,
+      "explanation": "Giuseppe Garibaldi part de Quarto (Ligurie) avec un millier de volontaires en chemises rouges et conquiert le royaume des Deux-Siciles."
+    },
+    {
+      "id": "rome-capitale",
+      "question": "Quand Rome devient-elle capitale de l'Italie ?",
+      "options": [
+        "1861",
+        "1866",
+        "1871",
+        "1890"
+      ],
+      "correct": 2,
+      "explanation": "Rome est prise le 20 septembre 1870 et devient capitale en 1871, après Turin puis Florence."
+    },
+    {
+      "id": "palatin",
+      "question": "Sur quelle colline Rome aurait-elle été fondée ?",
+      "options": [
+        "Le Capitole",
+        "L'Aventin",
+        "Le Palatin",
+        "Le Janicule"
+      ],
+      "correct": 2,
+      "explanation": "Selon la légende, Romulus fonde Rome sur le mont Palatin en 753 av. J.-C."
+    },
+    {
+      "id": "dante",
+      "question": "Qui est considéré comme le père de la langue italienne ?",
+      "options": [
+        "Pétrarque",
+        "Dante",
+        "Boccace",
+        "Machiavel"
+      ],
+      "correct": 1,
+      "explanation": "Dante Alighieri écrit la Divine Comédie en toscan (1308-1321) ; ce toscan deviendra la base de l'italien académique."
+    },
+    {
+      "id": "medicis",
+      "question": "Quelle famille a régné sur Florence à la Renaissance ?",
+      "options": [
+        "Les Borgia",
+        "Les Sforza",
+        "Les Médicis",
+        "Les Este"
+      ],
+      "correct": 2,
+      "explanation": "Les Médicis, banquiers devenus ducs, financent Botticelli, Michel-Ange et Léonard."
+    },
+    {
+      "id": "marche-rome",
+      "question": "Quel événement porte Mussolini au pouvoir en 1922 ?",
+      "options": [
+        "Un référendum",
+        "La Marche sur Rome",
+        "Un coup d'État militaire",
+        "Une grève générale"
+      ],
+      "correct": 1,
+      "explanation": "Les fascistes marchent sur Rome le 28 octobre 1922 ; le roi demande à Mussolini de former un gouvernement."
+    },
+    {
+      "id": "miracolo",
+      "question": "Quelle période est appelée « miracolo economico » ?",
+      "options": [
+        "1880-1890",
+        "1922-1930",
+        "1950-1965",
+        "1990-2000"
+      ],
+      "correct": 2,
+      "explanation": "Après-guerre : l'industrialisation du Nord, la Fiat 500, la télévision, la croissance rapide des années 1950-1960."
+    },
+    {
+      "id": "risorgimento-sens",
+      "question": "Que signifie « Risorgimento » ?",
+      "options": [
+        "Renaissance artistique",
+        "Résurgence, renaissance nationale",
+        "Réforme religieuse",
+        "Révolution industrielle"
+      ],
+      "correct": 1,
+      "explanation": "Mot signifiant « résurgence » : le processus politique et culturel de réunification italienne (1815-1871)."
+    },
+    {
+      "id": "hannibal",
+      "question": "Qui a traversé les Alpes avec des éléphants pour attaquer Rome ?",
+      "options": [
+        "Alexandre le Grand",
+        "Hannibal",
+        "Jules César",
+        "Atila"
+      ],
+      "correct": 1,
+      "explanation": "Hannibal, général carthaginois, traverse les Alpes en 218 av. J.-C. pendant la deuxième guerre punique."
+    }
+  ]
+}

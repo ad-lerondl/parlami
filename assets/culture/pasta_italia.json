@@ -1,0 +1,464 @@
+{
+  "shapes": [
+    {
+      "id": "orecchiette",
+      "it": "orecchiette",
+      "fr": "orecchiette",
+      "region": "puglia",
+      "shape": "petits disques creusés en forme d'oreille",
+      "sauce": "cima di rapa, ragù",
+      "fact": "Faites à la main à Bari, sur le rebord des fenêtres.",
+      "regional": true
+    },
+    {
+      "id": "trofie",
+      "it": "trofie",
+      "fr": "trofie",
+      "region": "liguria",
+      "shape": "petites torsades allongées, bout effilé",
+      "sauce": "pesto alla genovese",
+      "fact": "Façonnées traditionnellement à la main en Ligurie.",
+      "regional": true
+    },
+    {
+      "id": "trenette",
+      "it": "trenette",
+      "fr": "trenette",
+      "region": "liguria",
+      "shape": "longues, plates et ovales, tranche fine",
+      "sauce": "pesto alla genovese",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "testaroli",
+      "it": "testaroli",
+      "fr": "testaroli",
+      "region": "liguria",
+      "shape": "disques très fins pliés en triangle, précuits",
+      "sauce": "pesto",
+      "fact": "Parmi les pâtes les plus anciennes d'Italie.",
+      "regional": true
+    },
+    {
+      "id": "corzetti",
+      "it": "corzetti",
+      "fr": "corzetti",
+      "region": "liguria",
+      "shape": "médaillons plats estampés d'un motif",
+      "sauce": "sauce à la marjolaine et aux noix",
+      "fact": "Le motif se grave avec un moule en bois.",
+      "regional": true
+    },
+    {
+      "id": "bigoli",
+      "it": "bigoli",
+      "fr": "bigoli",
+      "region": "veneto",
+      "shape": "longs et épais, percés comme des bucatini rustiques",
+      "sauce": "salsa, ragù d'anatra",
+      "fact": "Faits traditionnellement à la presse manuelle.",
+      "regional": true
+    },
+    {
+      "id": "tagliatelle",
+      "it": "tagliatelle",
+      "fr": "tagliatelle",
+      "region": "emilia-romagna",
+      "shape": "longues bandes plates d'environ 6 mm",
+      "sauce": "ragù alla bolognese",
+      "fact": "Selon la légende, inspirées par les cheveux de Lucrezia Borgia.",
+      "regional": true
+    },
+    {
+      "id": "pappardelle",
+      "it": "pappardelle",
+      "fr": "pappardelle",
+      "region": "toscana",
+      "shape": "longues bandes plates très larges (2-3 cm)",
+      "sauce": "ragù de lièvre ou de sanglier",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "pici",
+      "it": "pici",
+      "fr": "pici",
+      "region": "toscana",
+      "shape": "gros spaghetti épais roulés à la main",
+      "sauce": "all'aglione, cacio e pepe",
+      "fact": "Chaque pici est roulé entre les paumes, jamais deux identiques.",
+      "regional": true
+    },
+    {
+      "id": "tortellini",
+      "it": "tortellini",
+      "fr": "tortellini",
+      "region": "emilia-romagna",
+      "shape": "petits anneaux farcis",
+      "sauce": "in brodo, panna",
+      "fact": "La légende dit qu'ils imitent le nombril de Vénus.",
+      "regional": true
+    },
+    {
+      "id": "tortelloni",
+      "it": "tortelloni",
+      "fr": "tortelloni",
+      "region": "emilia-romagna",
+      "shape": "grands anneaux farcis (ricotta et épinards)",
+      "sauce": "burro e salvia",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "cappelletti",
+      "it": "cappelletti",
+      "fr": "cappelletti",
+      "region": "emilia-romagna",
+      "shape": "petits chapeaux farcis",
+      "sauce": "in brodo",
+      "fact": "Servis au bouillon de Noël dans la Romagne.",
+      "regional": true
+    },
+    {
+      "id": "lasagne",
+      "it": "lasagne",
+      "fr": "lasagne",
+      "region": "emilia-romagna",
+      "shape": "grandes feuilles plates à superposer",
+      "sauce": "ragù e besciamella",
+      "fact": "La recette la plus codifiée vient de Bologne.",
+      "regional": true
+    },
+    {
+      "id": "passatelli",
+      "it": "passatelli",
+      "fr": "passatelli",
+      "region": "emilia-romagna",
+      "shape": "filaments pressés à partir de pain râpé, oeufs et parmesan",
+      "sauce": "in brodo",
+      "fact": "Pressés à travers un outil spécial (il ferrino).",
+      "regional": true
+    },
+    {
+      "id": "garganelli",
+      "it": "garganelli",
+      "fr": "garganelli",
+      "region": "emilia-romagna",
+      "shape": "tubes roulés à la main avec une rayure diagonale",
+      "sauce": "prosciutto e piselli",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "strozzapreti",
+      "it": "strozzapreti",
+      "fr": "strozzapreti",
+      "region": "emilia-romagna",
+      "shape": "longues torsades roulées",
+      "sauce": "salsiccia e verdure",
+      "fact": "Le nom « étrangle-prêtres » moque la gourmandise des prêtres d'autrefois.",
+      "regional": true
+    },
+    {
+      "id": "paccheri",
+      "it": "paccheri",
+      "fr": "paccheri",
+      "region": "campania",
+      "shape": "gros tubes larges et lisses",
+      "sauce": "ragù, scampi",
+      "fact": "La sauce pénètre au centre quand on les laisse retomber.",
+      "regional": true
+    },
+    {
+      "id": "ziti",
+      "it": "ziti",
+      "fr": "ziti",
+      "region": "campania",
+      "shape": "tubes longs et lisses, à casser en morceaux",
+      "sauce": "alla genovese napoletana, gratin",
+      "fact": "Plat de mariage napolitain traditionnel.",
+      "regional": true
+    },
+    {
+      "id": "cannelloni",
+      "it": "cannelloni",
+      "fr": "cannelloni",
+      "region": "campania",
+      "shape": "gros tubes lisses à farcir",
+      "sauce": "ricotta et épinards, ragù",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "scialatielli",
+      "it": "scialatielli",
+      "fr": "scialatielli",
+      "region": "campania",
+      "shape": "bandes courtes et épaisses",
+      "sauce": "frutti di mare",
+      "fact": "Créées à Amalfi dans les années 1960.",
+      "regional": true
+    },
+    {
+      "id": "mafaldine",
+      "it": "mafaldine",
+      "fr": "mafaldine",
+      "region": "campania",
+      "shape": "bandes longues à bords ondulés",
+      "sauce": "ragù rosé",
+      "fact": "Nommées en l'honneur de la princesse Mafalda de Savoie.",
+      "regional": true
+    },
+    {
+      "id": "maccheroni-chitarra",
+      "it": "maccheroni alla chitarra",
+      "fr": "maccheroni alla chitarra",
+      "region": "abruzzo",
+      "shape": "carrés longs coupés sur une 'guitare' à fils",
+      "sauce": "ragù d'agneau",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "busiate",
+      "it": "busiate",
+      "fr": "busiate",
+      "region": "sicilia",
+      "shape": "longues spirales roulées autour d'une tige",
+      "sauce": "pesto alla trapanese",
+      "fact": "Façonnées autour d'une brindille (la busa).",
+      "regional": true
+    },
+    {
+      "id": "anelletti",
+      "it": "anelletti",
+      "fr": "anelletti",
+      "region": "sicilia",
+      "shape": "petits anneaux courts",
+      "sauce": "pasta al forno sicilienne",
+      "fact": "Le plat du dimanche à Palerme.",
+      "regional": true
+    },
+    {
+      "id": "casarecce",
+      "it": "casarecce",
+      "fr": "casarecce",
+      "region": "sicilia",
+      "shape": "courtes torsades à bord roulé",
+      "sauce": "pesto alla siciliana",
+      "fact": "",
+      "regional": true
+    },
+    {
+      "id": "malloreddus",
+      "it": "malloreddus",
+      "fr": "malloreddus",
+      "region": "sardegna",
+      "shape": "petits coquillages striés",
+      "sauce": "alla campidanese (saucisse)",
+      "fact": "Le nom veut dire « petits taureaux » en sarde.",
+      "regional": true
+    },
+    {
+      "id": "culurgiones",
+      "it": "culurgiones",
+      "fr": "culurgiones",
+      "region": "sardegna",
+      "shape": "demi-lunes farcies à la pomme de terre, couture apparente",
+      "sauce": "tomate e basilico",
+      "fact": "La couture de chaque pièce est faite à la main.",
+      "regional": true
+    },
+    {
+      "id": "fregola",
+      "it": "fregola",
+      "fr": "fregola",
+      "region": "sardegna",
+      "shape": "petites boules de semoule grillée",
+      "sauce": "alle vongole",
+      "fact": "Cousine sarde du couscous, popularisée par les échanges avec l'Afrique du Nord.",
+      "regional": true
+    },
+    {
+      "id": "canederli",
+      "it": "canederli",
+      "fr": "canederli",
+      "region": "trentino-alto-adige",
+      "shape": "boulettes de pain râpé",
+      "sauce": "in brodo, al speck",
+      "fact": "Héritage tyrolien, à moitié autrichien.",
+      "regional": true
+    },
+    {
+      "id": "pizzoccheri",
+      "it": "pizzoccheri",
+      "fr": "pizzoccheri",
+      "region": "lombardia",
+      "shape": "tagliatelles courtes de sarrasin gris",
+      "sauce": "verze, patate e casera",
+      "fact": "De la Valteline, montagne et fromage.",
+      "regional": true
+    },
+    {
+      "id": "agnolotti",
+      "it": "agnolotti",
+      "fr": "agnolotti",
+      "region": "piemonte",
+      "shape": "raviolis carrés farcis à la viande",
+      "sauce": "al sugo d'arrosto",
+      "fact": "Plat du dimanche piémontais.",
+      "regional": true
+    },
+    {
+      "id": "tajarin",
+      "it": "tajarin",
+      "fr": "tajarin",
+      "region": "piemonte",
+      "shape": "fines tagliatelles dorées aux jaunes d'oeuf",
+      "sauce": "burro e tartufo",
+      "fact": "Faits avec beaucoup de jaunes d'oeuf (jusqu'à 40 par kg de farine).",
+      "regional": true
+    },
+    {
+      "id": "cjarsons",
+      "it": "cjarsons",
+      "fr": "cjarsons",
+      "region": "friuli-venezia-giulia",
+      "shape": "petits raviolis sucrés-salés",
+      "sauce": "burro fuso e cannella",
+      "fact": "Douceur des montagnes carniques.",
+      "regional": true
+    },
+    {
+      "id": "strangozzi",
+      "it": "strangozzi",
+      "fr": "strangozzi",
+      "region": "umbria",
+      "shape": "longues bandes épaisses",
+      "sauce": "al tartufo nero",
+      "fact": "Le nom viendrait des « lacets » des cordonniers, et non les prêtres.",
+      "regional": true
+    },
+    {
+      "id": "cavatelli",
+      "it": "cavatelli",
+      "fr": "cavatelli",
+      "region": "puglia",
+      "shape": "coquilles creusées au pouce",
+      "sauce": "cime di rapa",
+      "fact": "Plus épaisses que les orecchiette.",
+      "regional": true
+    },
+    {
+      "id": "spaghetti",
+      "it": "spaghetti",
+      "fr": "spaghetti",
+      "region": "lazio",
+      "shape": "longs fils ronds",
+      "sauce": "",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "bucatini",
+      "it": "bucatini",
+      "fr": "bucatini",
+      "region": "lazio",
+      "shape": "spaghettis percés d'un trou",
+      "sauce": "amatriciana",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "fettuccine",
+      "it": "fettuccine",
+      "fr": "fettuccine",
+      "region": "lazio",
+      "shape": "bandes plates larges",
+      "sauce": "alfredo, funghi",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "linguine",
+      "it": "linguine",
+      "fr": "linguine",
+      "region": "liguria",
+      "shape": "plates et étroites, section ovale",
+      "sauce": "alle vongole",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "penne",
+      "it": "penne",
+      "fr": "penne",
+      "region": "lazio",
+      "shape": "tubes courts coupés en biais",
+      "sauce": "arrabbiata, vodka",
+      "fact": "Le nom vient de la plume d'écrivain.",
+      "regional": false
+    },
+    {
+      "id": "rigatoni",
+      "it": "rigatoni",
+      "fr": "rigatoni",
+      "region": "lazio",
+      "shape": "tubes droits à rayures",
+      "sauce": "ragù, gratin",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "fusilli",
+      "it": "fusilli",
+      "fr": "fusilli",
+      "region": "campania",
+      "shape": "spirales torsadées",
+      "sauce": "pomodorini e basilico",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "farfalle",
+      "it": "farfalle",
+      "fr": "farfalle",
+      "region": "lombardia",
+      "shape": "papillons à bords dentelés",
+      "sauce": "zucchine e pistacchio",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "conchiglie",
+      "it": "conchiglie",
+      "fr": "conchiglie",
+      "region": "campania",
+      "shape": "coquilles creuses",
+      "sauce": "ragù, gratin",
+      "fact": "",
+      "regional": false
+    },
+    {
+      "id": "gnocchi",
+      "it": "gnocchi",
+      "fr": "gnocchi",
+      "region": "lombardia",
+      "shape": "boulettes de pommes de terre striées",
+      "sauce": "gorgonzola, pomodoro",
+      "fact": "À Rome, le jeudi est le jour des gnocchi.",
+      "regional": false
+    },
+    {
+      "id": "ravioli",
+      "it": "ravioli",
+      "fr": "ravioli",
+      "region": "liguria",
+      "shape": "carrés farcis à la ricotta et aux épinards",
+      "sauce": "burro e salvia",
+      "fact": "",
+      "regional": false
+    }
+  ]
+}

@@ -29,9 +29,9 @@ Parlami may contain third-party software, libraries, fonts, data, images, or oth
 
 ## Structure Produit
 
-- Apprendre: Conjugaison, Vocabulaire, Nombres et Dates, Grammaire, Orthographe
+- Apprendre: Conjugaison, Vocabulaire, Nombres et Dates, Grammaire, Orthographe, Geographie, Chansons, Pates, Histoire
 - S'entrainer: EO (expression orale), CO (comprehension orale), CE, EE
-- Se tester: scenarios realistes combinant plusieurs competences en meme temps
+- Se tester: scenarios realistes combinant plusieurs competences en meme temps (dont le scenario "Ecoute dans le bruit" avec auto-evaluation)
 - Resultats
 - Profil
 
@@ -46,6 +46,9 @@ Tri pedagogique:
 - Chargement de donnees depuis JSON assets avec cache
 - Module CO avec radio live integree
 - Nouveau module Se tester pour la mise en conditions reelles
+- Modules culture: geographie de l'Italie (20 regions, villes, specialites, clichees, quiz), chansons incontournables (suivi "apprise par coeur"), noms de pates (formes, regions, sauces, quiz), histoire de l'Italie (chronologie + quiz)
+- Scenario "Ecoute dans le bruit": radio italienne en direct + bruits de fond synthetiques (gresillements, murmures, musique) et auto-evaluation 0-3 enregistree dans les performances
+- Profil reorganise en cartes par section (compte, preferences, soutien)
 - Support lecture audio en arriere-plan avec notification media
 
 ## Radio CO: Etat Actuel
@@ -65,6 +68,8 @@ Comportement UX voulu:
 - Conjugaison: `assets/conjugaison/*.json`
 - Vocabulaire: `assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json`
 - Entrainement EO/EE: `assets/train/*.json`
+- Culture: `assets/culture/*.json` (geographie, chansons, pates, histoire)
+- Bruits pour l'ecoute dans le bruit: `assets/audio/bruit_*.wav`
 
 ## Documentation pour IA/Dev
 

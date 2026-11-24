@@ -4,6 +4,10 @@ import 'vocab/vocab_view.dart';
 import 'numdate/numdate_view.dart';
 import 'grammar/grammar_view.dart';
 import 'spelling/spelling_view.dart';
+import 'geo/geo_view.dart';
+import 'songs/songs_view.dart';
+import 'pasta/pasta_view.dart';
+import 'history/history_view.dart';
 import '../localization/app_localizations.dart';
 
 class LearnView extends StatelessWidget {
@@ -42,6 +46,30 @@ class LearnView extends StatelessWidget {
         subtitle: l10n.learnSpellingDescription,
         builder: (context) => const SpellingView(),
         icon: Icons.spellcheck,
+      ),
+      _ModuleTile(
+        title: l10n.learnGeo,
+        subtitle: l10n.learnGeoDescription,
+        builder: (context) => const GeoView(),
+        icon: Icons.map,
+      ),
+      _ModuleTile(
+        title: l10n.learnSongs,
+        subtitle: l10n.learnSongsDescription,
+        builder: (context) => const SongsView(),
+        icon: Icons.music_note,
+      ),
+      _ModuleTile(
+        title: l10n.learnPasta,
+        subtitle: l10n.learnPastaDescription,
+        builder: (context) => const PastaView(),
+        icon: Icons.ramen_dining,
+      ),
+      _ModuleTile(
+        title: l10n.learnHistory,
+        subtitle: l10n.learnHistoryDescription,
+        builder: (context) => const HistoryView(),
+        icon: Icons.history_edu,
       ),
     ];
 

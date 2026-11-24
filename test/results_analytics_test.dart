@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:parlami/src/data/models/performance_attempt.dart';
 import 'package:parlami/src/data/models/vocab_word.dart';
-import 'package:parlami/src/views/results_analytics.dart';
+import 'package:parlami/src/results/results_analytics.dart';
 
 PerformanceAttempt attempt({
   required String id,

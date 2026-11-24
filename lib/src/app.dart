@@ -9,6 +9,7 @@ import 'results/results_view.dart';
 import 'profile/profile_view.dart';
 import 'auth/auth_gate.dart';
 import 'settings/settings_controller.dart';
+import 'services/noise_player_service.dart';
 import 'services/radio_player_service.dart';
 
 /// The Widget that configures your application.
@@ -106,6 +107,7 @@ class _HomeShellState extends State<_HomeShell> {
     _lifecycleListener = AppLifecycleListener(
       onDetach: () {
         RadioPlayerService().stop();
+        NoisePlayerService().stop();
       },
     );
   }

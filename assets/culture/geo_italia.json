@@ -1,0 +1,712 @@
+{
+  "regions": [
+    {
+      "id": "abruzzo",
+      "name": "Abruzzo",
+      "fr": "Abruzzes",
+      "capital": "L'Aquila",
+      "stereotype": "Le coin du Gran Sasso : montagnes, parcs naturels et brochettes d'agneau. On dit que personne ne repart d'Abruzzes sans avoir mangé des arrosticini.",
+      "specialties": [
+        {
+          "it": "arrosticini",
+          "fr": "petites brochettes d'agneau grillé"
+        },
+        {
+          "it": "maccheroni alla chitarra",
+          "fr": "pâtes carrées coupées sur une 'guitare' à fils"
+        },
+        {
+          "it": "sise delle monache",
+          "fr": "gâteau moelleux de Guardiagrele"
+        }
+      ]
+    },
+    {
+      "id": "basilicata",
+      "name": "Basilicata",
+      "fr": "Basilicate",
+      "capital": "Potenza",
+      "stereotype": "La région la plus discrète de la botte : en Italie on plaisante en disant qu'elle « n'existe pas ». En réalité elle possède Matera, un des sites les plus spectaculaires du pays.",
+      "specialties": [
+        {
+          "it": "peperoni cruschi",
+          "fr": "poivrons séchés et croquants"
+        },
+        {
+          "it": "pane di Matera",
+          "fr": "pain de Matera"
+        },
+        {
+          "it": "lagane e ceci",
+          "fr": "pâtes anciennes aux pois chiches"
+        }
+      ]
+    },
+    {
+      "id": "calabria",
+      "name": "Calabria",
+      "fr": "Calabre",
+      "capital": "Catanzaro",
+      "stereotype": "L'orteil de la botte : plages de rêve, montagnes rudes, hôtes très généreux. Sa cuisine relevée réveille toutes les papilles.",
+      "specialties": [
+        {
+          "it": "'nduja",
+          "fr": "saucisse épicée et tartinable"
+        },
+        {
+          "it": "cipolla rossa di Tropea",
+          "fr": "oignon rouge de Tropea"
+        },
+        {
+          "it": "bergamotto",
+          "fr": "bergamote (l'arôme du thé Earl Grey)"
+        }
+      ]
+    },
+    {
+      "id": "campania",
+      "name": "Campania",
+      "fr": "Campanie",
+      "capital": "Napoli",
+      "stereotype": "L'expression à l'état pur : gestes à n'en plus finir, pizza améliorée chaque jour, chatterie chaleureuse, Vésuve et Pompéi à l'horizon.",
+      "specialties": [
+        {
+          "it": "pizza margherita",
+          "fr": "pizza tomate-mozzarella-basilic (née à Naples en 1889)"
+        },
+        {
+          "it": "mozzarella di bufala",
+          "fr": "mozzarella de bufflonne"
+        },
+        {
+          "it": "sfogliatella",
+          "fr": "pâtisserie feuilletée en coquillage"
+        },
+        {
+          "it": "limoncello",
+          "fr": "liqueur de citron"
+        }
+      ]
+    },
+    {
+      "id": "emilia-romagna",
+      "name": "Emilia-Romagna",
+      "fr": "Émilie-Romagne",
+      "capital": "Bologna",
+      "stereotype": "L'estomac de l'Italie : on y mange le plus et le mieux. C'est aussi le pays des moteurs (Ferrari, Lamborghini) et de l'université la plus ancienne du monde occidental (Bologne, 1088).",
+      "specialties": [
+        {
+          "it": "tagliatelle al ragù",
+          "fr": "tagliatelles à la bolognaise"
+        },
+        {
+          "it": "mortadella",
+          "fr": "grande saucisse rosée aux lardons et pistaches"
+        },
+        {
+          "it": "parmigiano reggiano",
+          "fr": "le parmesan"
+        },
+        {
+          "it": "prosciutto di Parma",
+          "fr": "jambon de Parme"
+        },
+        {
+          "it": "tortellini",
+          "fr": "petites pâtes farcies en anneau"
+        }
+      ]
+    },
+    {
+      "id": "friuli-venezia-giulia",
+      "name": "Friuli-Venezia Giulia",
+      "fr": "Frioul-Vénétie Julienne",
+      "capital": "Trieste",
+      "stereotype": "L'Italie mitteleuropéenne : cafés viennois, port de Trieste, influence autrichienne et slovène. On y boit le café le plus studieux du pays.",
+      "specialties": [
+        {
+          "it": "frico",
+          "fr": "galette croustillante de fromage"
+        },
+        {
+          "it": "prosciutto di San Daniele",
+          "fr": "jambon de San Daniele"
+        },
+        {
+          "it": "gubana",
+          "fr": "gâteau aux noix et fruits secs"
+        }
+      ]
+    },
+    {
+      "id": "lazio",
+      "name": "Lazio",
+      "fr": "Latium",
+      "capital": "Roma",
+      "stereotype": "La région de Rome : ruines antiques entre deux bus, le Vatican à côté (mais il n'est pas italien), et la fourchette levée à chaque discussion historique.",
+      "specialties": [
+        {
+          "it": "carbonara",
+          "fr": "pâtes au jaune d'oeuf, guanciale et pecorino (sans crème !)"
+        },
+        {
+          "it": "cacio e pepe",
+          "fr": "pâtes au pecorino et poivre noir"
+        },
+        {
+          "it": "amatriciana",
+          "fr": "pâtes tomate-guanciale-pecorino"
+        },
+        {
+          "it": "supplì",
+          "fr": "boulettes de riz frites au coeur coulant de mozzarella"
+        },
+        {
+          "it": "carciofi alla giudia",
+          "fr": "artichauts frits à la romaine"
+        }
+      ]
+    },
+    {
+      "id": "liguria",
+      "name": "Liguria",
+      "fr": "Ligurie",
+      "capital": "Genova",
+      "stereotype": "L'arc maritime : caruggi étroites, focaccia au goûter, pesto préparé au mortier et le festival de Sanremo à la télé chaque février.",
+      "specialties": [
+        {
+          "it": "pesto alla genovese",
+          "fr": "sauce basilic-pignons-parmesan"
+        },
+        {
+          "it": "focaccia genovese",
+          "fr": "pain plat huilé et salé"
+        },
+        {
+          "it": "farinata",
+          "fr": "galette de farine de pois chiches"
+        },
+        {
+          "it": "trofie",
+          "fr": "petites pâtes torsadées"
+        }
+      ]
+    },
+    {
+      "id": "lombardia",
+      "name": "Lombardia",
+      "fr": "Lombardie",
+      "capital": "Milano",
+      "stereotype": "Le coin du travail : business, mode, finance. On la dit sérieuse et un peu pressée, mais c'est elle qui a inventé le panettone pendant les fêtes.",
+      "specialties": [
+        {
+          "it": "risotto alla milanese",
+          "fr": "risotto au safran"
+        },
+        {
+          "it": "ossobuco",
+          "fr": "jarret de veau à la milanaise"
+        },
+        {
+          "it": "panettone",
+          "fr": "gâteau de Noël aux raisins et fruits confits"
+        },
+        {
+          "it": "pizzoccheri",
+          "fr": "pâtes de sarrasin de la Valteline"
+        },
+        {
+          "it": "cotoletta",
+          "fr": "escalope panée (alla milanese)"
+        }
+      ]
+    },
+    {
+      "id": "marche",
+      "name": "Marche",
+      "fr": "Marches",
+      "capital": "Ancona",
+      "stereotype": "Coin discret entre les Apennins et l'Adriatique : pays des chaussures, des collines et du poète Leopardi. Chaque port prétend que son brodetto est le seul bon.",
+      "specialties": [
+        {
+          "it": "olive all'ascolana",
+          "fr": "olives farcies et frites"
+        },
+        {
+          "it": "brodetto",
+          "fr": "soupe de poissons locale"
+        },
+        {
+          "it": "vincisgrassi",
+          "fr": "gratin de pâtes et ragù à l'ancienne"
+        }
+      ]
+    },
+    {
+      "id": "molise",
+      "name": "Molise",
+      "fr": "Molise",
+      "capital": "Campobasso",
+      "stereotype": "La région la plus inconnue d'Italie : en Italie même on plaisante sur son existence. Ses villages gardent un rythme d'avant le tourisme.",
+      "specialties": [
+        {
+          "it": "cavatelli",
+          "fr": "petites pâtes creusées au pouce"
+        },
+        {
+          "it": "ventricina",
+          "fr": "saucisse de campagne piquante"
+        },
+        {
+          "it": "bagnetto rosso",
+          "fr": "sauce tomate épaisse traditionnelle"
+        }
+      ]
+    },
+    {
+      "id": "piemonte",
+      "name": "Piemonte",
+      "fr": "Piémont",
+      "capital": "Torino",
+      "stereotype": "L'élégance discrète : chocolat gianduia, vin Barolo, truffe blanche d'Alba, apéro bicerin à Turin. C'est là qu'est née la Nutella et la première capitale de l'Italie.",
+      "specialties": [
+        {
+          "it": "gianduia",
+          "fr": "chocolat aux noisettes"
+        },
+        {
+          "it": "bagna cauda",
+          "fr": "sauce chaude à l'ail et aux anchois"
+        },
+        {
+          "it": "agnolotti",
+          "fr": "raviolis carrés à la viande"
+        },
+        {
+          "it": "tartufo bianco d'Alba",
+          "fr": "truffe blanche d'Alba"
+        },
+        {
+          "it": "barolo",
+          "fr": "grand vin rouge du Piémont"
+        }
+      ]
+    },
+    {
+      "id": "puglia",
+      "name": "Puglia",
+      "fr": "Pouilles",
+      "capital": "Bari",
+      "stereotype": "Le talon de la botte : oliveraies jusqu'à l'horizon, villes aux murs blancs, plages de sable fin. À Bari, on fait les orecchiette à la main sur le rebord des fenêtres.",
+      "specialties": [
+        {
+          "it": "orecchiette",
+          "fr": "pâtes « petites oreilles »"
+        },
+        {
+          "it": "burrata",
+          "fr": "boule de mozzarella au coeur crémeux"
+        },
+        {
+          "it": "focaccia barese",
+          "fr": "focaccia à la pomme de terre et aux tomates cerises"
+        },
+        {
+          "it": "taralli",
+          "fr": "petits biscuits salés à l'huile d'olive"
+        }
+      ]
+    },
+    {
+      "id": "sardegna",
+      "name": "Sardegna",
+      "fr": "Sardaigne",
+      "capital": "Cagliari",
+      "stereotype": "L'île des plages et de la longévité : eaux turquoises, bergeries, et l'une des fameuses « zones bleues » du monde où l'on vit très longtemps.",
+      "specialties": [
+        {
+          "it": "culurgiones",
+          "fr": "raviolis sardes à la pomme de terre et à la menthe"
+        },
+        {
+          "it": "pane carasau",
+          "fr": "pain très fin et croustillant"
+        },
+        {
+          "it": "porceddu",
+          "fr": "porcelet rôti à la broche"
+        },
+        {
+          "it": "seadas",
+          "fr": "beignet de fromage au miel"
+        }
+      ]
+    },
+    {
+      "id": "sicilia",
+      "name": "Sicilia",
+      "fr": "Sicile",
+      "capital": "Palermo",
+      "stereotype": "La région la plus photographiée : Etna fumant, baroque doré de Noto, granita au petit-dé, et le débat éternel arancini ou arancine.",
+      "specialties": [
+        {
+          "it": "arancini",
+          "fr": "boulettes de riz panées et frites, farcies"
+        },
+        {
+          "it": "cannoli",
+          "fr": "tubes de pâte frits remplis de ricotta sucrée"
+        },
+        {
+          "it": "granita con brioche",
+          "fr": "granité servi avec une brioche au petit-dé"
+        },
+        {
+          "it": "pasta alla norma",
+          "fr": "pâtes tomate-aubergines-ricotta salée"
+        },
+        {
+          "it": "caponata",
+          "fr": "salade sucrée-salée d'aubergines"
+        }
+      ]
+    },
+    {
+      "id": "toscana",
+      "name": "Toscana",
+      "fr": "Toscane",
+      "capital": "Firenze",
+      "stereotype": "Les collines et les cyprès : Chianti en fiasque, Renaissance partout, et cette envie d'y partir en vacances. On y dit que l'italien académique y est né (merci Dante).",
+      "specialties": [
+        {
+          "it": "bistecca alla fiorentina",
+          "fr": "grosse entrecôte saignante"
+        },
+        {
+          "it": "pici",
+          "fr": "gros spaghetti maison roulés à la main"
+        },
+        {
+          "it": "ribollita",
+          "fr": "soupe de pain, choux et légumes"
+        },
+        {
+          "it": "cantucci",
+          "fr": "biscuits croquants aux amandes (à tremper dans le vin doux)"
+        },
+        {
+          "it": "lampredotto",
+          "fr": "sandwich de tripes, spécialité de rue florentine"
+        }
+      ]
+    },
+    {
+      "id": "trentino-alto-adige",
+      "name": "Trentino-Alto Adige",
+      "fr": "Trentin-Haut-Adige",
+      "capital": "Trento",
+      "stereotype": "L'Italie alpine : allemand et italien sur tous les panneaux, chalets, randonnée du dimanche. On y mange aussi du strudel comme à Vienne.",
+      "specialties": [
+        {
+          "it": "canederli",
+          "fr": "boulettes de pain nature ou au speck"
+        },
+        {
+          "it": "speck",
+          "fr": "jambon fumé des Dolomites"
+        },
+        {
+          "it": "strudel di mele",
+          "fr": "roulé de pommes"
+        }
+      ]
+    },
+    {
+      "id": "umbria",
+      "name": "Umbria",
+      "fr": "Ombrie",
+      "capital": "Perugia",
+      "stereotype": "L'Italie centrale sans accès à la mer : on la surnomme « il cuore verde », le coeur vert. Truffes, porc de Norcia, chocolat Perugina et l'Assise de Saint François.",
+      "specialties": [
+        {
+          "it": "torta al testo",
+          "fr": "pain plat cuit sur plaque et farci"
+        },
+        {
+          "it": "porchetta",
+          "fr": "porcelet rôti aux herbes (le fameux sandwich)"
+        },
+        {
+          "it": "tartufo nero",
+          "fr": "truffe noire"
+        },
+        {
+          "it": "cioccolato di Perugia",
+          "fr": "chocolat (les Baci Perugina)"
+        }
+      ]
+    },
+    {
+      "id": "valle-daosta",
+      "name": "Valle d'Aosta",
+      "fr": "Vallée d'Aoste",
+      "capital": "Aosta",
+      "stereotype": "L'Italie francophone : plus petite région, montagnes les plus hautes (Mont Blanc), fromage fontina partout. On y goûte le confort d'un chalet après la piste noire.",
+      "specialties": [
+        {
+          "it": "fonduta valdostana",
+          "fr": "fondue au fromage fontina"
+        },
+        {
+          "it": "fontina",
+          "fr": "fromage de vache des Alpes"
+        },
+        {
+          "it": "carbonade valdostana",
+          "fr": "boeuf au vin rouge"
+        }
+      ]
+    },
+    {
+      "id": "veneto",
+      "name": "Veneto",
+      "fr": "Vénétie",
+      "capital": "Venezia",
+      "stereotype": "Le coin des canaux : gondoles à Venise, spritz à l'heure de l'apéro, Roméo et Juliette à Vérone. Le tiramisù y serait né.",
+      "specialties": [
+        {
+          "it": "tiramisù",
+          "fr": "dessert mascarpone-café-cacao"
+        },
+        {
+          "it": "spritz",
+          "fr": "apératif orange (Aperol ou Campari)"
+        },
+        {
+          "it": "risi e bisi",
+          "fr": "risotto aux petits pois"
+        },
+        {
+          "it": "baccalà mantecato",
+          "fr": "morue fouettée, servie sur polenta"
+        },
+        {
+          "it": "prosecco",
+          "fr": "vin pétillant de Valdobbiadene"
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "id": "roma",
+      "it": "Roma",
+      "fr": "Rome",
+      "region": "lazio",
+      "note": "La capitale : Colisée, fontaine de Trevi, Saint-Pierre, Vatican à côté. On y jette une pièce pour y revenir."
+    },
+    {
+      "id": "milano",
+      "it": "Milano",
+      "fr": "Milan",
+      "region": "lombardia",
+      "note": "Duomo, mode, Bourse, La Scala : le business et le style Made in Italy."
+    },
+    {
+      "id": "napoli",
+      "it": "Napoli",
+      "fr": "Naples",
+      "region": "campania",
+      "note": "Le berceau de la pizza, accent reconnaissable entre tous, Pompéi et le Vésuve tout proches."
+    },
+    {
+      "id": "torino",
+      "it": "Torino",
+      "fr": "Turin",
+      "region": "piemonte",
+      "note": "Première capitale de l'Italie (1861), Fiat, chocolat gianduia, Mole Antonelliana."
+    },
+    {
+      "id": "firenze",
+      "it": "Firenze",
+      "fr": "Florence",
+      "region": "toscana",
+      "note": "Le berceau de la Renaissance : Duomo, David de Michel-Ange, familles Médicis."
+    },
+    {
+      "id": "venezia",
+      "it": "Venezia",
+      "fr": "Venise",
+      "region": "veneto",
+      "note": "Canaux, gondoles, carnaval, place San Marco."
+    },
+    {
+      "id": "bologna",
+      "it": "Bologna",
+      "fr": "Bologne",
+      "region": "emilia-romagna",
+      "note": "« La dotta, la grassa, la rossa » : la savante (université 1088), la grasse (cuisine), la rouge (toits et politique)."
+    },
+    {
+      "id": "genova",
+      "it": "Genova",
+      "fr": "Gênes",
+      "region": "liguria",
+      "note": "Grand port, ruelles, maison de Christophe Colomb, aquarium et focaccia."
+    },
+    {
+      "id": "palermo",
+      "it": "Palermo",
+      "fr": "Palerme",
+      "region": "sicilia",
+      "note": "Marchés de rue, arancini, cathédrale arabo-normande."
+    },
+    {
+      "id": "catania",
+      "it": "Catania",
+      "fr": "Catane",
+      "region": "sicilia",
+      "note": "Au pied de l'Etna, baroque noir de basalte, marché de la Pescheria."
+    },
+    {
+      "id": "bari",
+      "it": "Bari",
+      "fr": "Bari",
+      "region": "puglia",
+      "note": "Vieille ville, orecchiette préparées sur les rebords de fenêtre, grand port de ferries vers la Grèce."
+    },
+    {
+      "id": "lecce",
+      "it": "Lecce",
+      "fr": "Lecce",
+      "region": "puglia",
+      "note": "Baroque du Sud (« la Florence du Sud »), pierre dorée, cafés sur les places."
+    },
+    {
+      "id": "verona",
+      "it": "Verona",
+      "fr": "Vérone",
+      "region": "veneto",
+      "note": "Roméo et Juliette, l'arène romaine, l'opéra d'été."
+    },
+    {
+      "id": "pisa",
+      "it": "Pisa",
+      "fr": "Pise",
+      "region": "toscana",
+      "note": "La tour penchée sur la piazza dei Miracoli."
+    },
+    {
+      "id": "siena",
+      "it": "Siena",
+      "fr": "Sienne",
+      "region": "toscana",
+      "note": "Le Palio à cheval sur la place (deux fois par an : juillet et août), gothique rouge."
+    },
+    {
+      "id": "padova",
+      "it": "Padova",
+      "fr": "Padoue",
+      "region": "veneto",
+      "note": "Université ancienne (Galilée), fresques de Giotto à la chapelle des Scrovegni."
+    },
+    {
+      "id": "trieste",
+      "it": "Trieste",
+      "fr": "Trieste",
+      "region": "friuli-venezia-giulia",
+      "note": "Café illy, ambiance Mitteleuropa, James Joyce et Italo Svevo attablés en ville."
+    },
+    {
+      "id": "bergamo",
+      "it": "Bergamo",
+      "fr": "Bergame",
+      "region": "lombardia",
+      "note": "Città Alta fortifiée sur la colline, funiculaire, polenta et politesses."
+    },
+    {
+      "id": "perugia",
+      "it": "Perugia",
+      "fr": "Pérouse",
+      "region": "umbria",
+      "note": "Chocolat Perugina (les Baci), université pour étudiants étrangers, rues médiévales."
+    },
+    {
+      "id": "trento",
+      "it": "Trento",
+      "fr": "Trente",
+      "region": "trentino-alto-adige",
+      "note": "Concile de Trente (1545-1563), maisons peintes, Dolomites autour."
+    },
+    {
+      "id": "salerno",
+      "it": "Salerno",
+      "fr": "Salerne",
+      "region": "campania",
+      "note": "Porte de la côte amalfitaine, promenade de mer, lumières de l'hiver."
+    },
+    {
+      "id": "rimini",
+      "it": "Rimini",
+      "fr": "Rimini",
+      "region": "emilia-romagna",
+      "note": "Plages de la Riviera, ville natale de Fellini, piadina fumante."
+    },
+    {
+      "id": "cagliari",
+      "it": "Cagliari",
+      "fr": "Cagliari",
+      "region": "sardegna",
+      "note": "Capitale sarde, quartier Castello sur la colline, plage Poetto à quelques minutes du centre."
+    },
+    {
+      "id": "matera",
+      "it": "Matera",
+      "fr": "Matera",
+      "region": "basilicata",
+      "note": "Les Sassi, habitat troglodyte unique au monde, site UNESCO et décor de cinéma."
+    },
+    {
+      "id": "aosta",
+      "it": "Aosta",
+      "fr": "Aoste",
+      "region": "valle-daosta",
+      "note": "Vestiges romains, montagnes alentour, on y parle aussi français."
+    },
+    {
+      "id": "ancona",
+      "it": "Ancona",
+      "fr": "Ancône",
+      "region": "marche",
+      "note": "Port adriatique, mont Conero à côté, havres et rue du marché."
+    },
+    {
+      "id": "assisi",
+      "it": "Assisi",
+      "fr": "Assise",
+      "region": "umbria",
+      "note": "La ville de Saint François, plèlerinages continus, pierre pâle."
+    },
+    {
+      "id": "modena",
+      "it": "Modena",
+      "fr": "Modène",
+      "region": "emilia-romagna",
+      "note": "Ferrari et Pagani, vinaigre balsamique, Luciano Pavarotti."
+    },
+    {
+      "id": "olbia",
+      "it": "Olbia",
+      "fr": "Olbia",
+      "region": "sardegna",
+      "note": "Porte de la Costa Smeralda, ferries et plages."
+    },
+    {
+      "id": "campobasso",
+      "it": "Campobasso",
+      "fr": "Campobasse",
+      "region": "molise",
+      "note": "Capitale du Molise, vieux quartier sur la colline, fêtes au son de la cornamusa."
+    }
+  ]
+}
