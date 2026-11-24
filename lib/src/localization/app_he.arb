@@ -441,5 +441,17 @@
   "authErrorNetwork": "ההתחברות נכשלה. בדוק את חיבור האינטרנט שלך.",
   "authErrorGeneric": "אירעה שגיאה. נסה שוב.",
   "authContinueWithoutAccount": "המשך ללא חשבון",
-  "authNotSignedIn": "לא מחובר"
+  "authNotSignedIn": "לא מחובר",
+  "moduleWhyTitle": "Why this module?",
+  "learnSectionIntro": "Build solid foundations: each module lays one stone of spoken and written Italian.",
+  "trainSectionIntro": "Train each skill on its own to turn it into a reflex.",
+  "learnConjugationWhy": "Verbs are the backbone of every sentence. In Italian, forms change with tense and person: automating them frees your mind to focus on what you want to say. It is the first building block of communication.",
+  "learnVocabularyWhy": "Communicating starts with having words. Working theme by theme and level by level builds useful vocabulary from day one, which the other modules then bring to life.",
+  "learnNumbersDatesWhy": "Asking the time, understanding a price, arranging a meeting: numbers and dates appear everywhere in real life. Mastering them early removes stumbling blocks in everyday situations.",
+  "learnGrammarWhy": "Understanding the rules means seeing the logic of the language instead of memorising it blindly. A clear foundation speeds up every other module and keeps mistakes from becoming habits.",
+  "learnSpellingWhy": "Linking sounds to writing, from accents to double consonants, strengthens word memory and makes reading and writing feel natural.",
+  "trainOralExpressionWhy": "Speaking is the end goal of learning a language. Saying sentences out loud, even simple ones, turns passive knowledge into real fluency: here is where the language becomes yours.",
+  "trainOralComprehensionWhy": "Real Italian is fast, continuous and alive. Getting used to authentic voices, including live radio, trains your ear to understand without translating, just like in a real conversation.",
+  "trainWrittenComprehensionWhy": "Reading shows you the language exactly as it is written. It is the gentlest way to anchor vocabulary and structures in context, at your own pace.",
+  "trainWrittenExpressionWhy": "Writing forces precision: grammar, vocabulary and syntax have to work together. It is the exercise that best reveals what you have truly mastered."
 }

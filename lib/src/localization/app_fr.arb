@@ -441,5 +441,17 @@
   "authErrorNetwork": "Connexion impossible. Vérifie ta connexion internet.",
   "authErrorGeneric": "Une erreur est survenue. Réessaie.",
   "authContinueWithoutAccount": "Continuer sans compte",
-  "authNotSignedIn": "Non connecté"
+  "authNotSignedIn": "Non connecté",
+  "moduleWhyTitle": "Pourquoi ce module ?",
+  "learnSectionIntro": "Poser des bases solides : chaque module apporte une pierre de l'italien parlé et écrit.",
+  "trainSectionIntro": "Travailler chaque compétence en particulier pour la transformer en réflexe.",
+  "learnConjugationWhy": "Le verbe est la colonne vertébrale de la phrase. En italien, chaque temps et chaque personne a sa forme : les automatiser libère l'esprit pour se concentrer sur ce que l'on veut dire. C'est la première brique de la communication.",
+  "learnVocabularyWhy": "Communiquer commence par avoir les mots. Travailler par thèmes et par niveaux construit un vocabulaire utile dès le premier jour, que les autres modules viennent ensuite faire vivre.",
+  "learnNumbersDatesWhy": "Demander l'heure, comprendre un prix, prendre rendez-vous : les nombres et les dates sont partout dans la vie réelle. Les maîtriser tôt évite de bloquer dans les situations du quotidien.",
+  "learnGrammarWhy": "Comprendre les règles, c'est voir la logique de la langue au lieu de l'apprendre par cœur. Une base claire accélère tous les autres modules et empêche les erreurs de s'installer.",
+  "learnSpellingWhy": "Relier les sons à l'écrit, des accents aux consonnes doubles, consolide la mémoire des mots et rend la lecture et l'écriture naturelles.",
+  "trainOralExpressionWhy": "Parler est l'objectif final d'une langue. Produire des phrases à voix haute, même simples, transforme le savoir passif en vraie aisance : ici, la langue devient la vôtre.",
+  "trainOralComprehensionWhy": "L'italien réel est rapide, continu et vivant. S'habituer à des voix authentiques, dont la radio en direct, entraîne l'oreille à comprendre sans traduire, comme dans une vraie conversation.",
+  "trainWrittenComprehensionWhy": "Lire, c'est rencontrer la langue telle qu'elle est réellement écrite. C'est la façon la plus douce d'ancrer le vocabulaire et les structures en contexte, à son propre rythme.",
+  "trainWrittenExpressionWhy": "Écrire oblige à la précision : grammaire, vocabulaire et syntaxe doivent coopérer. C'est l'exercice qui révèle le mieux ce qui est réellement acquis."
 }
