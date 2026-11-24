@@ -948,4 +948,40 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Sin sesión iniciada';
+
+  @override
+  String get moduleWhyTitle => '¿Por qué este módulo?';
+
+  @override
+  String get learnSectionIntro => 'Construir bases sólidas: cada módulo aporta una piedra del italiano hablado y escrito.';
+
+  @override
+  String get trainSectionIntro => 'Entrenar cada habilidad por separado para convertirla en un reflejo.';
+
+  @override
+  String get learnConjugationWhy => 'El verbo es la columna vertebral de la frase. En italiano, cada tiempo y cada persona tiene su forma: automatizarlas libera la mente para centrarse en lo que quieres decir. Es el primer ladrillo de la comunicación.';
+
+  @override
+  String get learnVocabularyWhy => 'Comunicarse empieza por tener palabras. Trabajar por temas y niveles construye un vocabulario útil desde el primer día, que los demás módulos se encargan de activar después.';
+
+  @override
+  String get learnNumbersDatesWhy => 'Preguntar la hora, entender un precio, concertar una cita: los números y las fechas están por todas partes en la vida real. Dominarlos pronto evita bloqueos en el día a día.';
+
+  @override
+  String get learnGrammarWhy => 'Entender las reglas es ver la lógica de la lengua en lugar de memorizarla a ciegas. Una base clara acelera todos los demás módulos y evita que los errores se conviertan en costumbre.';
+
+  @override
+  String get learnSpellingWhy => 'Conectar los sonidos con la escritura, de los acentos a las consonantes dobles, refuerza la memoria de las palabras y hace que leer y escribir sea natural.';
+
+  @override
+  String get trainOralExpressionWhy => 'Hablar es la meta final de una lengua. Producir frases en voz alta, aunque sean sencillas, transforma el conocimiento pasivo en una verdadera fluidez: aquí la lengua se vuelve tuya.';
+
+  @override
+  String get trainOralComprehensionWhy => 'El italiano real es rápido, continuo y vivo. Acostumbrarse a voces auténticas, incluida la radio en directo, entrena el oído a comprender sin traducir, como en una conversación real.';
+
+  @override
+  String get trainWrittenComprehensionWhy => 'Leer es encontrarse la lengua tal y como se escribe de verdad. Es la manera más suave de fijar el vocabulario y las estructuras en contexto, a tu propio ritmo.';
+
+  @override
+  String get trainWrittenExpressionWhy => 'Escribir obliga a la precisión: gramática, vocabulario y sintaxis tienen que cooperar. Es el ejercicio que mejor revela lo que de verdad has adquirido.';
 }

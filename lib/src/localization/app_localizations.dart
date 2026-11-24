@@ -264,6 +264,78 @@ abstract class AppLocalizations {
   /// **'Translate sentences'**
   String get trainWrittenExpressionDescription;
 
+  /// No description provided for @moduleWhyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why this module?'**
+  String get moduleWhyTitle;
+
+  /// No description provided for @learnSectionIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Build solid foundations: each module lays one stone of spoken and written Italian.'**
+  String get learnSectionIntro;
+
+  /// No description provided for @trainSectionIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Train each skill on its own to turn it into a reflex.'**
+  String get trainSectionIntro;
+
+  /// No description provided for @learnConjugationWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Verbs are the backbone of every sentence. In Italian, forms change with tense and person: automating them frees your mind to focus on what you want to say. It is the first building block of communication.'**
+  String get learnConjugationWhy;
+
+  /// No description provided for @learnVocabularyWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Communicating starts with having words. Working theme by theme and level by level builds useful vocabulary from day one, which the other modules then bring to life.'**
+  String get learnVocabularyWhy;
+
+  /// No description provided for @learnNumbersDatesWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Asking the time, understanding a price, arranging a meeting: numbers and dates appear everywhere in real life. Mastering them early removes stumbling blocks in everyday situations.'**
+  String get learnNumbersDatesWhy;
+
+  /// No description provided for @learnGrammarWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Understanding the rules means seeing the logic of the language instead of memorising it blindly. A clear foundation speeds up every other module and keeps mistakes from becoming habits.'**
+  String get learnGrammarWhy;
+
+  /// No description provided for @learnSpellingWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Linking sounds to writing, from accents to double consonants, strengthens word memory and makes reading and writing feel natural.'**
+  String get learnSpellingWhy;
+
+  /// No description provided for @trainOralExpressionWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking is the end goal of learning a language. Saying sentences out loud, even simple ones, turns passive knowledge into real fluency: here is where the language becomes yours.'**
+  String get trainOralExpressionWhy;
+
+  /// No description provided for @trainOralComprehensionWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Real Italian is fast, continuous and alive. Getting used to authentic voices, including live radio, trains your ear to understand without translating, just like in a real conversation.'**
+  String get trainOralComprehensionWhy;
+
+  /// No description provided for @trainWrittenComprehensionWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading shows you the language exactly as it is written. It is the gentlest way to anchor vocabulary and structures in context, at your own pace.'**
+  String get trainWrittenComprehensionWhy;
+
+  /// No description provided for @trainWrittenExpressionWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Writing forces precision: grammar, vocabulary and syntax have to work together. It is the exercise that best reveals what you have truly mastered.'**
+  String get trainWrittenExpressionWhy;
+
   /// No description provided for @evaluateTitle.
   ///
   /// In en, this message translates to:

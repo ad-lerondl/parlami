@@ -940,4 +940,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Not signed in';
+
+  @override
+  String get moduleWhyTitle => 'Why this module?';
+
+  @override
+  String get learnSectionIntro => 'Build solid foundations: each module lays one stone of spoken and written Italian.';
+
+  @override
+  String get trainSectionIntro => 'Train each skill on its own to turn it into a reflex.';
+
+  @override
+  String get learnConjugationWhy => 'Verbs are the backbone of every sentence. In Italian, forms change with tense and person: automating them frees your mind to focus on what you want to say. It is the first building block of communication.';
+
+  @override
+  String get learnVocabularyWhy => 'Communicating starts with having words. Working theme by theme and level by level builds useful vocabulary from day one, which the other modules then bring to life.';
+
+  @override
+  String get learnNumbersDatesWhy => 'Asking the time, understanding a price, arranging a meeting: numbers and dates appear everywhere in real life. Mastering them early removes stumbling blocks in everyday situations.';
+
+  @override
+  String get learnGrammarWhy => 'Understanding the rules means seeing the logic of the language instead of memorising it blindly. A clear foundation speeds up every other module and keeps mistakes from becoming habits.';
+
+  @override
+  String get learnSpellingWhy => 'Linking sounds to writing, from accents to double consonants, strengthens word memory and makes reading and writing feel natural.';
+
+  @override
+  String get trainOralExpressionWhy => 'Speaking is the end goal of learning a language. Saying sentences out loud, even simple ones, turns passive knowledge into real fluency: here is where the language becomes yours.';
+
+  @override
+  String get trainOralComprehensionWhy => 'Real Italian is fast, continuous and alive. Getting used to authentic voices, including live radio, trains your ear to understand without translating, just like in a real conversation.';
+
+  @override
+  String get trainWrittenComprehensionWhy => 'Reading shows you the language exactly as it is written. It is the gentlest way to anchor vocabulary and structures in context, at your own pace.';
+
+  @override
+  String get trainWrittenExpressionWhy => 'Writing forces precision: grammar, vocabulary and syntax have to work together. It is the exercise that best reveals what you have truly mastered.';
 }
