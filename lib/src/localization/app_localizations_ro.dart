@@ -48,13 +48,13 @@ class AppLocalizationsRo extends AppLocalizations {
   String get learnGrammar => 'Gramatică';
 
   @override
-  String get learnGrammarDescription => 'Note de curs';
+  String get learnGrammarDescription => 'Quiz de gramatică';
 
   @override
   String get learnSpelling => 'Ortografie';
 
   @override
-  String get learnSpellingDescription => 'În curând';
+  String get learnSpellingDescription => 'Dictare de vocabular';
 
   @override
   String get trainOralExpression => 'EO - Expresie orală';
@@ -127,14 +127,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get grammarTitle => 'Gramatică';
 
   @override
-  String get grammarComingSoon =>
-      'Note de gramatică - conținut în curând.\n\nAdaugă note în acest modul ca pagini sau Markdown randat.';
-
-  @override
   String get spellingTitle => 'Ortografie';
-
-  @override
-  String get spellingComingSoon => 'Modul de ortografie - în curând.';
 
   @override
   String get ceTitle => 'CE - Înțelegere scrisă';
@@ -953,4 +946,134 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Neconectat';
+
+  @override
+  String get grammarIntro =>
+      'Alege răspunsul corect pentru a completa fiecare frază.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'Întrebarea $current din $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'Explicație: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'Întrebarea următoare';
+
+  @override
+  String get grammarFinishedTitle => 'Seria s-a încheiat';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total răspunsuri corecte';
+  }
+
+  @override
+  String get grammarRestart => 'Reia';
+
+  @override
+  String get grammarNoQuestions => 'Nu există întrebări de gramatică.';
+
+  @override
+  String get spellingIntro =>
+      'Scrie cuvântul italian corespunzător. Atenție la accente și consoane duble!';
+
+  @override
+  String get spellingInputLabel => 'Cuvânt italian';
+
+  @override
+  String get spellingHintButton => 'Arată prima literă';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'Prima literă: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'Ortografie perfectă!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'Aproape! Verifică accentele și consoanele duble.';
+
+  @override
+  String get spellingWrongFeedback => 'Ortografie incorectă.';
+
+  @override
+  String get spellingNoWords => 'Nu există cuvinte disponibile pentru dictare.';
+
+  @override
+  String get evaluateStartButton => 'Începe';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'Întrebare $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'Răspunsul tău';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'Cum îți evaluezi răspunsul?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'Foarte bine',
+      two: 'Bine',
+      one: 'Dificil',
+      zero: 'De revizuit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'Autoevaluare înregistrată: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'Continuă';
+
+  @override
+  String get evaluateFinishedTitle => 'Test încheiat';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total răspunsuri corecte';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'Autoevaluare orală: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'Fă un alt test';
+
+  @override
+  String get profileClearDataTitle => 'Șterge datele locale';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'Șterge progresul salvat pe acest dispozitiv (încercări, vocabular, setări de exerciții).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'Ștergi datele locale?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'Performanțele și progresul tău local vor fi șterse definitiv. Acțiunea este ireversibilă.';
+
+  @override
+  String get profileClearDataConfirmAction => 'Șterge tot';
+
+  @override
+  String get profileClearDataDone => 'Datele locale au fost șterse.';
 }

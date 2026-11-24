@@ -48,13 +48,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get learnGrammar => 'Dilbilgisi';
 
   @override
-  String get learnGrammarDescription => 'Ders notları';
+  String get learnGrammarDescription => 'Dilbilgisi testi';
 
   @override
   String get learnSpelling => 'Heceleme';
 
   @override
-  String get learnSpellingDescription => 'Yakında';
+  String get learnSpellingDescription => 'Kelime diktesi';
 
   @override
   String get trainOralExpression => 'EO - Sözlü İfade';
@@ -126,14 +126,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get grammarTitle => 'Dilbilgisi';
 
   @override
-  String get grammarComingSoon =>
-      'Dilbilgisi notları - içerik yakında.\n\nBu modüle sayfalar veya işlenmiş Markdown olarak notlar ekleyin.';
-
-  @override
   String get spellingTitle => 'Heceleme';
-
-  @override
-  String get spellingComingSoon => 'Heceleme modülü - yakında.';
 
   @override
   String get ceTitle => 'CE - Okuduğunu Anlama';
@@ -944,4 +937,134 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Giriş yapılmadı';
+
+  @override
+  String get grammarIntro => 'Her cümleyi tamamlamak için doğru cevabı seç.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'Soru $current / $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'Açıklama: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'Sonraki soru';
+
+  @override
+  String get grammarFinishedTitle => 'Tur tamamlandı';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total doğru cevap';
+  }
+
+  @override
+  String get grammarRestart => 'Yeniden başla';
+
+  @override
+  String get grammarNoQuestions => 'Kullanılabilir dilbilgisi sorusu yok.';
+
+  @override
+  String get spellingIntro =>
+      'Karşılık gelen İtalyanca kelimeyi yazın. Vurgu işaretlerine ve çift ünsüzlere dikkat!';
+
+  @override
+  String get spellingInputLabel => 'İtalyanca kelime';
+
+  @override
+  String get spellingHintButton => 'İlk harfi göster';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'İlk harf: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'Kusursuz yazım!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'Neredeyse! Vurgu işaretlerini ve çift ünsüzleri kontrol et.';
+
+  @override
+  String get spellingWrongFeedback => 'Yazım yanlış.';
+
+  @override
+  String get spellingNoWords => 'Dikte için kullanılabilir kelime yok.';
+
+  @override
+  String get evaluateStartButton => 'Başla';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'Soru $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'Cevabınız';
+
+  @override
+  String get evaluateSelfRatingPrompt =>
+      'Cevabınızı nasıl değerlendiriyorsunuz?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'Çok iyi',
+      two: 'İyi',
+      one: 'Zor',
+      zero: 'Çalışılmalı',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'Öz-değerlendirme kaydedildi: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'Devam et';
+
+  @override
+  String get evaluateFinishedTitle => 'Test tamamlandı';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total doğru cevap';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'Sözlü öz-değerlendirme: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'Başka bir test yap';
+
+  @override
+  String get profileClearDataTitle => 'Yerel verileri sil';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'Bu cihazda kayıtlı ilerlemeyi siler (denemeler, kelime dağarcığı, egzersiz ayarları).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'Yerel veriler silinsin mi?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'Yerel sonuçlarınız ve ilerlemeniz kalıcı olarak silinecek. Bu işlem geri alınamaz.';
+
+  @override
+  String get profileClearDataConfirmAction => 'Hepsini sil';
+
+  @override
+  String get profileClearDataDone => 'Yerel veriler silindi.';
 }

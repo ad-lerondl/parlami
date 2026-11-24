@@ -48,13 +48,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get learnGrammar => 'Grammatik';
 
   @override
-  String get learnGrammarDescription => 'Kursanteckningar';
+  String get learnGrammarDescription => 'Grammatikquiz';
 
   @override
   String get learnSpelling => 'Stavning';
 
   @override
-  String get learnSpellingDescription => 'Kommer snart';
+  String get learnSpellingDescription => 'Glosdiktamen';
 
   @override
   String get trainOralExpression => 'EO - Muntligt uttryck';
@@ -126,14 +126,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get grammarTitle => 'Grammatik';
 
   @override
-  String get grammarComingSoon =>
-      'Grammatikanteckningar - innehåll kommer snart.\n\nLägg till anteckningar till denna modul som sidor eller renderad Markdown.';
-
-  @override
   String get spellingTitle => 'Stavning';
-
-  @override
-  String get spellingComingSoon => 'Stavningsmodul - kommer snart.';
 
   @override
   String get ceTitle => 'CE - Läsförståelse';
@@ -946,4 +939,133 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Ej inloggad';
+
+  @override
+  String get grammarIntro => 'Välj rätt svar för att komplettera varje mening.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'Fråga $current av $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'Förklaring: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'Nästa fråga';
+
+  @override
+  String get grammarFinishedTitle => 'Omgången klar';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total rätta svar';
+  }
+
+  @override
+  String get grammarRestart => 'Börja om';
+
+  @override
+  String get grammarNoQuestions => 'Inga grammatikfrågor tillgängliga.';
+
+  @override
+  String get spellingIntro =>
+      'Skriv motsvarande italienska ord. Se upp med accenttecken och dubbla konsonanter!';
+
+  @override
+  String get spellingInputLabel => 'Italienskt ord';
+
+  @override
+  String get spellingHintButton => 'Visa första bokstaven';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'Första bokstaven: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'Perfekt stavning!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'Nästan! Kontrollera accenttecken och dubbla konsonanter.';
+
+  @override
+  String get spellingWrongFeedback => 'Felaktig stavning.';
+
+  @override
+  String get spellingNoWords => 'Inga ord tillgängliga för diktamen.';
+
+  @override
+  String get evaluateStartButton => 'Börja';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'Fråga $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'Ditt svar';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'Hur bedömer du ditt svar?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'Mycket bra',
+      two: 'Bra',
+      one: 'Svårt',
+      zero: 'Att förbättra',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'Självbedömning sparad: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'Fortsätt';
+
+  @override
+  String get evaluateFinishedTitle => 'Testet klart';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total rätta svar';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'Muntlig självbedömning: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'Gör ett nytt test';
+
+  @override
+  String get profileClearDataTitle => 'Rensa lokal data';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'Tar bort förloppet som sparats på den här enheten (försök, ordförråd, övningsinställningar).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'Rensa lokal data?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'Dina lokala resultat och ditt förlopp tas bort permanent. Detta kan inte ångras.';
+
+  @override
+  String get profileClearDataConfirmAction => 'Rensa allt';
+
+  @override
+  String get profileClearDataDone => 'Lokal data rensad.';
 }

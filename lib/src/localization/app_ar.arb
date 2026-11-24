@@ -12,9 +12,9 @@
   "learnNumbersDates": "الأرقام والتواريخ",
   "learnNumbersDatesDescription": "كتابة الأرقام والتواريخ",
   "learnGrammar": "القواعد",
-  "learnGrammarDescription": "ملاحظات الدورة",
+  "learnGrammarDescription": "اختبار القواعد",
   "learnSpelling": "التهجئة",
-  "learnSpellingDescription": "قريباً",
+  "learnSpellingDescription": "إملاء المفردات",
   "trainOralExpression": "EO - التعبير الشفهي",
   "trainOralExpressionDescription": "أجب بصوت عالٍ",
   "trainOralComprehension": "CO - الفهم الشفوي",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "تفاعل بسرعة في حوار ديناميكي بوقت محدد.",
   "resultsComingSoon": "مخططات الأداء قريباً",
   "grammarTitle": "القواعد",
-  "grammarComingSoon": "ملاحظات القواعد - المحتوى قريباً.\n\nأضف ملاحظات كصفحات أو Markdown.",
   "spellingTitle": "التهجئة",
-  "spellingComingSoon": "وحدة التهجئة - قريباً.",
   "ceTitle": "CE - الفهم الكتابي",
   "ceIntro": "اقرأ مقالات إيطالية لتحسين فهمك الكتابي",
   "ceAdviceTitle": "نصيحة",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "تعذر الاتصال. تحقق من اتصالك بالإنترنت.",
   "authErrorGeneric": "حدث خطأ. أعد المحاولة.",
   "authContinueWithoutAccount": "المتابعة بدون حساب",
-  "authNotSignedIn": "غير مسجل الدخول"
+  "authNotSignedIn": "غير مسجل الدخول",
+  "grammarIntro": "اختر الإجابة الصحيحة لإكمال كل جملة.",
+  "grammarQuestionProgress": "السؤال {current} من {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "الشرح: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "السؤال التالي",
+  "grammarFinishedTitle": "انتهت الجلسة",
+  "grammarScore": "{correct} / {total} إجابات صحيحة",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "إعادة",
+  "grammarNoQuestions": "لا توجد أسئلة قواعد متاحة.",
+  "spellingIntro": "اكتب الكلمة الإيطالية المقابلة. انتبه إلى العلامات والحروف الساكنة المزدوجة!",
+  "spellingInputLabel": "كلمة إيطالية",
+  "spellingHintButton": "إظهار الحرف الأول",
+  "spellingHintShown": "الحرف الأول: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "تهجئة صحيحة تمامًا!",
+  "spellingAccentOnlyFeedback": "تقريبًا! تحقق من العلامات والحروف الساكنة المزدوجة.",
+  "spellingWrongFeedback": "تهجئة غير صحيحة.",
+  "spellingNoWords": "لا توجد كلمات متاحة للإملاء.",
+  "evaluateStartButton": "ابدأ",
+  "evaluateQuestionProgress": "السؤال {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "إجابتك",
+  "evaluateSelfRatingPrompt": "كيف تقيّم إجابتك؟",
+  "evaluateRatingLabel": "{rating, plural, =0{يحتاج تدريبًا} =1{صعب} =2{جيد} other{جيد جدًا}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "تم تسجيل التقييم الذاتي: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "متابعة",
+  "evaluateFinishedTitle": "انتهى الاختبار",
+  "evaluateResultScore": "{correct} / {total} إجابات صحيحة",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "التقييم الذاتي الشفهي: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "أجرِ اختبارًا آخر",
+  "profileClearDataTitle": "حذف البيانات المحلية",
+  "profileClearDataSubtitle": "يحذف التقدم المحفوظ على هذا الجهاز (المحاولات، المفردات، إعدادات التمارين).",
+  "profileClearDataConfirmTitle": "حذف البيانات المحلية؟",
+  "profileClearDataConfirmBody": "سيتم حذف نتائجك وتقدمك المحلي بشكل نهائي. لا يمكن التراجع عن هذا الإجراء.",
+  "profileClearDataConfirmAction": "حذف الكل",
+  "profileClearDataDone": "تم حذف البيانات المحلية."
 }

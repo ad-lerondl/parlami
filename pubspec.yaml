@@ -56,3 +56,5 @@ flutter:
     - assets/conjugaison/BDD_conjugaison.json
     - assets/vocabulaire/
     - assets/train/
+    - assets/grammar/
+    - assets/radio/

@@ -12,9 +12,9 @@
   "learnNumbersDates": "מספרים ותאריכים",
   "learnNumbersDatesDescription": "כתיבת מספרים ותאריכים",
   "learnGrammar": "דקדוק",
-  "learnGrammarDescription": "הערות קורס",
+  "learnGrammarDescription": "חידון דקדוק",
   "learnSpelling": "איות",
-  "learnSpellingDescription": "בקרוב",
+  "learnSpellingDescription": "הכתבת אוצר מילים",
   "trainOralExpression": "EO - הבעה בעל פה",
   "trainOralExpressionDescription": "לענות בקול רם",
   "trainOralComprehension": "CO - הבנת הנשמע",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "להגיב במהירות בשיח דינמי תחת מגבלת זמן.",
   "resultsComingSoon": "תרשימי ביצועים בקרוב",
   "grammarTitle": "דקדוק",
-  "grammarComingSoon": "הערות דקדוק - התוכן בקרוב.\n\nהוסף הערות למודול זה כדפים או כ-Markdown.",
   "spellingTitle": "איות",
-  "spellingComingSoon": "מודול איות - בקרוב.",
   "ceTitle": "CE - הבנת הנקרא",
   "ceIntro": "קרא מאמרים באיטלקית כדי לשפר את הבנת הנקרא שלך",
   "ceAdviceTitle": "עצה",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "ההתחברות נכשלה. בדוק את חיבור האינטרנט שלך.",
   "authErrorGeneric": "אירעה שגיאה. נסה שוב.",
   "authContinueWithoutAccount": "המשך ללא חשבון",
-  "authNotSignedIn": "לא מחובר"
+  "authNotSignedIn": "לא מחובר",
+  "grammarIntro": "בחר את התשובה הנכונה כדי להשלים כל משפט.",
+  "grammarQuestionProgress": "שאלה {current} מתוך {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "הסבר: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "השאלה הבאה",
+  "grammarFinishedTitle": "הסבב הסתיים",
+  "grammarScore": "{correct} / {total} תשובות נכונות",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "התחל מחדש",
+  "grammarNoQuestions": "אין שאלות דקדוק זמינות.",
+  "spellingIntro": "כתוב את המילה האיטלקית המתאימה. שים לב לסימנים ולעיצורים כפולים!",
+  "spellingInputLabel": "מילה איטלקית",
+  "spellingHintButton": "הצג את האות הראשונה",
+  "spellingHintShown": "האות הראשונה: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "איות מושלם!",
+  "spellingAccentOnlyFeedback": "כמעט! בדוק סימנים ועיצורים כפולים.",
+  "spellingWrongFeedback": "איות שגוי.",
+  "spellingNoWords": "אין מילים זמינות להכתבה.",
+  "evaluateStartButton": "התחל",
+  "evaluateQuestionProgress": "שאלה {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "התשובה שלך",
+  "evaluateSelfRatingPrompt": "איך אתה מדרג את התשובה שלך?",
+  "evaluateRatingLabel": "{rating, plural, =0{לשפר} =1{קשה} =2{טוב} other{מצוין}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "דירוג עצמי נשמר: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "המשך",
+  "evaluateFinishedTitle": "המבחן הסתיים",
+  "evaluateResultScore": "{correct} / {total} תשובות נכונות",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "דירוג עצמי בעל פה: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "מבחן נוסף",
+  "profileClearDataTitle": "מחק נתונים מקומיים",
+  "profileClearDataSubtitle": "מוחק את ההתקדמות השמורה במכשיר זה (ניסיונות, אוצר מילים, הגדרות תרגילים).",
+  "profileClearDataConfirmTitle": "למחוק נתונים מקומיים?",
+  "profileClearDataConfirmBody": "התוצאות וההתקדמות המקומיות שלך יימחקו לצמיתות. לא ניתן לבטל פעולה זו.",
+  "profileClearDataConfirmAction": "מחק הכל",
+  "profileClearDataDone": "הנתונים המקומיים נמחקו."
 }

@@ -48,13 +48,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get learnGrammar => 'Грамматика';
 
   @override
-  String get learnGrammarDescription => 'Заметки курса';
+  String get learnGrammarDescription => 'Тест по грамматике';
 
   @override
   String get learnSpelling => 'Орфография';
 
   @override
-  String get learnSpellingDescription => 'Скоро';
+  String get learnSpellingDescription => 'Диктант по словарю';
 
   @override
   String get trainOralExpression => 'EO - Устная речь';
@@ -127,14 +127,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get grammarTitle => 'Грамматика';
 
   @override
-  String get grammarComingSoon =>
-      'Заметки по грамматике - скоро.\n\nДобавляйте заметки в этот модуль как страницы или Markdown.';
-
-  @override
   String get spellingTitle => 'Орфография';
-
-  @override
-  String get spellingComingSoon => 'Модуль орфографии - скоро.';
 
   @override
   String get ceTitle => 'CE - Чтение';
@@ -947,4 +940,134 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Не выполнен вход';
+
+  @override
+  String get grammarIntro =>
+      'Выберите правильный ответ, чтобы завершить каждое предложение.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'Вопрос $current из $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'Объяснение: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'Следующий вопрос';
+
+  @override
+  String get grammarFinishedTitle => 'Серия завершена';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total правильных ответов';
+  }
+
+  @override
+  String get grammarRestart => 'Начать заново';
+
+  @override
+  String get grammarNoQuestions => 'Нет доступных вопросов по грамматике.';
+
+  @override
+  String get spellingIntro =>
+      'Напишите соответствующее итальянское слово. Обратите внимание на ударения и двойные согласные!';
+
+  @override
+  String get spellingInputLabel => 'Итальянское слово';
+
+  @override
+  String get spellingHintButton => 'Показать первую букву';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'Первая буква: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'Идеальное правописание!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'Почти! Проверьте ударения и двойные согласные.';
+
+  @override
+  String get spellingWrongFeedback => 'Неправильное правописание.';
+
+  @override
+  String get spellingNoWords => 'Нет слов для диктанта.';
+
+  @override
+  String get evaluateStartButton => 'Начать';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'Вопрос $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'Твой ответ';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'Как вы оцениваете свой ответ?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'Очень хорошо',
+      two: 'Хорошо',
+      one: 'Сложно',
+      zero: 'Доработать',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'Самооценка сохранена: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'Продолжить';
+
+  @override
+  String get evaluateFinishedTitle => 'Тест завершён';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total правильных ответов';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'Устная самооценка: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'Пройти другой тест';
+
+  @override
+  String get profileClearDataTitle => 'Удалить локальные данные';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'Удаляет прогресс, сохранённый на этом устройстве (попытки, словарь, настройки упражнений).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'Удалить локальные данные?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'Ваши локальные результаты и прогресс будут удалены навсегда. Это действие нельзя отменить.';
+
+  @override
+  String get profileClearDataConfirmAction => 'Удалить всё';
+
+  @override
+  String get profileClearDataDone => 'Локальные данные удалены.';
 }

@@ -12,9 +12,9 @@
   "learnNumbersDates": "Numbers & Dates",
   "learnNumbersDatesDescription": "Write numbers and dates",
   "learnGrammar": "Grammar",
-  "learnGrammarDescription": "Course notes",
+  "learnGrammarDescription": "Grammar quiz",
   "learnSpelling": "Spelling",
-  "learnSpellingDescription": "Coming soon",
+  "learnSpellingDescription": "Vocabulary dictation",
   "trainOralExpression": "EO - Oral expression",
   "trainOralExpressionDescription": "Answer aloud",
   "trainOralComprehension": "CO - Oral comprehension",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "React quickly in a dynamic exchange with time constraints.",
   "resultsComingSoon": "Performance charts coming soon",
   "grammarTitle": "Grammar",
-  "grammarComingSoon": "Grammar notes - content coming soon.\n\nAdd notes to this module as pages or rendered Markdown.",
   "spellingTitle": "Spelling",
-  "spellingComingSoon": "Spelling module - coming soon.",
   "ceTitle": "CE - Written comprehension",
   "ceIntro": "Read Italian articles to improve your written comprehension",
   "ceAdviceTitle": "Advice",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Connection failed. Check your internet connection.",
   "authErrorGeneric": "Something went wrong. Please try again.",
   "authContinueWithoutAccount": "Continue without an account",
-  "authNotSignedIn": "Not signed in"
+  "authNotSignedIn": "Not signed in",
+  "grammarIntro": "Pick the right answer to complete each sentence.",
+  "grammarQuestionProgress": "Question {current} of {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Explanation: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Next question",
+  "grammarFinishedTitle": "Session complete",
+  "grammarScore": "{correct} / {total} correct answers",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Restart",
+  "grammarNoQuestions": "No grammar questions available.",
+  "spellingIntro": "Write the matching Italian word. Watch out for accents and double consonants!",
+  "spellingInputLabel": "Italian word",
+  "spellingHintButton": "Show the first letter",
+  "spellingHintShown": "First letter: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Perfect spelling!",
+  "spellingAccentOnlyFeedback": "Almost! Check accented letters and double consonants.",
+  "spellingWrongFeedback": "Incorrect spelling.",
+  "spellingNoWords": "No words available for dictation.",
+  "evaluateStartButton": "Start",
+  "evaluateQuestionProgress": "Question {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Your answer",
+  "evaluateSelfRatingPrompt": "How do you rate your answer?",
+  "evaluateRatingLabel": "{rating, plural, =0{To rework} =1{Difficult} =2{Good} other{Very good}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Self-rating recorded: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Continue",
+  "evaluateFinishedTitle": "Test completed",
+  "evaluateResultScore": "{correct} / {total} correct answers",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Oral self-rating: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Take another test",
+  "profileClearDataTitle": "Clear local data",
+  "profileClearDataSubtitle": "Deletes the progress stored on this device (attempts, vocabulary, exercise settings).",
+  "profileClearDataConfirmTitle": "Clear local data?",
+  "profileClearDataConfirmBody": "Your local performance and progress will be permanently deleted. This cannot be undone.",
+  "profileClearDataConfirmAction": "Delete everything",
+  "profileClearDataDone": "Local data cleared."
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Radio RAI 1",
+    "streamUrl": "https://icestreaming.rai.it/1.mp3",
+    "descriptionKey": "coRadioGeneral",
+    "region": "National"
+  },
+  {
+    "name": "Radio RAI 2",
+    "streamUrl": "https://icestreaming.rai.it/2.mp3",
+    "descriptionKey": "coMusicEntertainment",
+    "region": "National"
+  },
+  {
+    "name": "Radio RAI 3",
+    "streamUrl": "https://icestreaming.rai.it/3.mp3",
+    "descriptionKey": "coCultureNews",
+    "region": "National"
+  },
+  {
+    "name": "RDS",
+    "streamUrl": "https://icstream.rds.radio/rds",
+    "descriptionKey": "coPopNews",
+    "region": "National"
+  },
+  {
+    "name": "Radio 105",
+    "streamUrl": "https://icy.unitedradio.it/Radio105.mp3",
+    "descriptionKey": "coMusicEntertainment",
+    "region": "National"
+  },
+  {
+    "name": "RTL 102.5",
+    "streamUrl": "https://streamingv2.shoutcast.com/rtl-1025",
+    "descriptionKey": "coRadioNewsMusic",
+    "region": "National"
+  }
+]

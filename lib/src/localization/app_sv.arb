@@ -12,9 +12,9 @@
   "learnNumbersDates": "Siffror och datum",
   "learnNumbersDatesDescription": "Skriv siffror och datum",
   "learnGrammar": "Grammatik",
-  "learnGrammarDescription": "Kursanteckningar",
+  "learnGrammarDescription": "Grammatikquiz",
   "learnSpelling": "Stavning",
-  "learnSpellingDescription": "Kommer snart",
+  "learnSpellingDescription": "Glosdiktamen",
   "trainOralExpression": "EO - Muntligt uttryck",
   "trainOralExpressionDescription": "Svara högt",
   "trainOralComprehension": "CO - Hörförståelse",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Reagera snabbt i ett dynamiskt utbyte med tidsbegränsning.",
   "resultsComingSoon": "Prestationsdiagram kommer snart",
   "grammarTitle": "Grammatik",
-  "grammarComingSoon": "Grammatikanteckningar - innehåll kommer snart.\n\nLägg till anteckningar till denna modul som sidor eller renderad Markdown.",
   "spellingTitle": "Stavning",
-  "spellingComingSoon": "Stavningsmodul - kommer snart.",
   "ceTitle": "CE - Läsförståelse",
   "ceIntro": "Läs italienska artiklar för att förbättra din läsförståelse",
   "ceAdviceTitle": "Råd",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Kunde inte ansluta. Kontrollera din internetanslutning.",
   "authErrorGeneric": "Ett fel uppstod. Försök igen.",
   "authContinueWithoutAccount": "Fortsätt utan konto",
-  "authNotSignedIn": "Ej inloggad"
+  "authNotSignedIn": "Ej inloggad",
+  "grammarIntro": "Välj rätt svar för att komplettera varje mening.",
+  "grammarQuestionProgress": "Fråga {current} av {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Förklaring: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Nästa fråga",
+  "grammarFinishedTitle": "Omgången klar",
+  "grammarScore": "{correct} / {total} rätta svar",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Börja om",
+  "grammarNoQuestions": "Inga grammatikfrågor tillgängliga.",
+  "spellingIntro": "Skriv motsvarande italienska ord. Se upp med accenttecken och dubbla konsonanter!",
+  "spellingInputLabel": "Italienskt ord",
+  "spellingHintButton": "Visa första bokstaven",
+  "spellingHintShown": "Första bokstaven: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Perfekt stavning!",
+  "spellingAccentOnlyFeedback": "Nästan! Kontrollera accenttecken och dubbla konsonanter.",
+  "spellingWrongFeedback": "Felaktig stavning.",
+  "spellingNoWords": "Inga ord tillgängliga för diktamen.",
+  "evaluateStartButton": "Börja",
+  "evaluateQuestionProgress": "Fråga {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Ditt svar",
+  "evaluateSelfRatingPrompt": "Hur bedömer du ditt svar?",
+  "evaluateRatingLabel": "{rating, plural, =0{Att förbättra} =1{Svårt} =2{Bra} other{Mycket bra}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Självbedömning sparad: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Fortsätt",
+  "evaluateFinishedTitle": "Testet klart",
+  "evaluateResultScore": "{correct} / {total} rätta svar",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Muntlig självbedömning: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Gör ett nytt test",
+  "profileClearDataTitle": "Rensa lokal data",
+  "profileClearDataSubtitle": "Tar bort förloppet som sparats på den här enheten (försök, ordförråd, övningsinställningar).",
+  "profileClearDataConfirmTitle": "Rensa lokal data?",
+  "profileClearDataConfirmBody": "Dina lokala resultat och ditt förlopp tas bort permanent. Detta kan inte ångras.",
+  "profileClearDataConfirmAction": "Rensa allt",
+  "profileClearDataDone": "Lokal data rensad."
 }

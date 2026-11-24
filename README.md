@@ -43,9 +43,12 @@ Tri pedagogique:
 ## Points Forts Actuels
 
 - Module Conjugaison deja riche (filtres, quiz multi-pronoms, persistance)
+- Module Grammaire jouable : quiz a choix multiples par theme (articles, prepositions, plurels, present, passato prossimo, pronoms, adjectifs) avec explications
+- Module Orthographe joue : dictee de vocabulaire sensible aux accents et consonnes doubles
+- Module Se tester jouable : scenarios melant plusieurs competences (QCM grammaire, traduction, phrases, auto-evaluation orale)
 - Chargement de donnees depuis JSON assets avec cache
 - Module CO avec radio live integree
-- Nouveau module Se tester pour la mise en conditions reelles
+- Effacement des donnees locales depuis le Profil (progression, vocabulaire utilisateur, reglages d'exercices)
 - Support lecture audio en arriere-plan avec notification media
 
 ## Radio CO: Etat Actuel
@@ -65,6 +68,8 @@ Comportement UX voulu:
 - Conjugaison: `assets/conjugaison/*.json`
 - Vocabulaire: `assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json`
 - Entrainement EO/EE: `assets/train/*.json`
+- Grammaire: `assets/grammar/grammar_questions.json`
+- Stations radio CO: `assets/radio/stations.json`
 
 ## Documentation pour IA/Dev
 

@@ -12,9 +12,9 @@
   "learnNumbersDates": "Numere și date",
   "learnNumbersDatesDescription": "Scrierea numerelor și a datelor",
   "learnGrammar": "Gramatică",
-  "learnGrammarDescription": "Note de curs",
+  "learnGrammarDescription": "Quiz de gramatică",
   "learnSpelling": "Ortografie",
-  "learnSpellingDescription": "În curând",
+  "learnSpellingDescription": "Dictare de vocabular",
   "trainOralExpression": "EO - Expresie orală",
   "trainOralExpressionDescription": "Răspunde cu voce tare",
   "trainOralComprehension": "CO - Înțelegere orală",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Reacționează rapid într-un schimb dinamic cu limită de timp.",
   "resultsComingSoon": "Grafice de performanță în curând",
   "grammarTitle": "Gramatică",
-  "grammarComingSoon": "Note de gramatică - conținut în curând.\n\nAdaugă note în acest modul ca pagini sau Markdown randat.",
   "spellingTitle": "Ortografie",
-  "spellingComingSoon": "Modul de ortografie - în curând.",
   "ceTitle": "CE - Înțelegere scrisă",
   "ceIntro": "Citește articole în italiană pentru a-ți îmbunătăți înțelegerea scrisă",
   "ceAdviceTitle": "Sfat",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Conectare eșuată. Verifică-ți conexiunea la internet.",
   "authErrorGeneric": "A apărut o eroare. Încearcă din nou.",
   "authContinueWithoutAccount": "Continuă fără cont",
-  "authNotSignedIn": "Neconectat"
+  "authNotSignedIn": "Neconectat",
+  "grammarIntro": "Alege răspunsul corect pentru a completa fiecare frază.",
+  "grammarQuestionProgress": "Întrebarea {current} din {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Explicație: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Întrebarea următoare",
+  "grammarFinishedTitle": "Seria s-a încheiat",
+  "grammarScore": "{correct} / {total} răspunsuri corecte",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Reia",
+  "grammarNoQuestions": "Nu există întrebări de gramatică.",
+  "spellingIntro": "Scrie cuvântul italian corespunzător. Atenție la accente și consoane duble!",
+  "spellingInputLabel": "Cuvânt italian",
+  "spellingHintButton": "Arată prima literă",
+  "spellingHintShown": "Prima literă: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Ortografie perfectă!",
+  "spellingAccentOnlyFeedback": "Aproape! Verifică accentele și consoanele duble.",
+  "spellingWrongFeedback": "Ortografie incorectă.",
+  "spellingNoWords": "Nu există cuvinte disponibile pentru dictare.",
+  "evaluateStartButton": "Începe",
+  "evaluateQuestionProgress": "Întrebare {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Răspunsul tău",
+  "evaluateSelfRatingPrompt": "Cum îți evaluezi răspunsul?",
+  "evaluateRatingLabel": "{rating, plural, =0{De revizuit} =1{Dificil} =2{Bine} other{Foarte bine}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Autoevaluare înregistrată: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Continuă",
+  "evaluateFinishedTitle": "Test încheiat",
+  "evaluateResultScore": "{correct} / {total} răspunsuri corecte",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Autoevaluare orală: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Fă un alt test",
+  "profileClearDataTitle": "Șterge datele locale",
+  "profileClearDataSubtitle": "Șterge progresul salvat pe acest dispozitiv (încercări, vocabular, setări de exerciții).",
+  "profileClearDataConfirmTitle": "Ștergi datele locale?",
+  "profileClearDataConfirmBody": "Performanțele și progresul tău local vor fi șterse definitiv. Acțiunea este ireversibilă.",
+  "profileClearDataConfirmAction": "Șterge tot",
+  "profileClearDataDone": "Datele locale au fost șterse."
 }

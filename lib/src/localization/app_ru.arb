@@ -12,9 +12,9 @@
   "learnNumbersDates": "Числа и даты",
   "learnNumbersDatesDescription": "Писать числа и даты",
   "learnGrammar": "Грамматика",
-  "learnGrammarDescription": "Заметки курса",
+  "learnGrammarDescription": "Тест по грамматике",
   "learnSpelling": "Орфография",
-  "learnSpellingDescription": "Скоро",
+  "learnSpellingDescription": "Диктант по словарю",
   "trainOralExpression": "EO - Устная речь",
   "trainOralExpressionDescription": "Отвечать вслух",
   "trainOralComprehension": "CO - Аудирование",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Быстро реагируйте в динамичном обмене репликами.",
   "resultsComingSoon": "Графики производительности скоро",
   "grammarTitle": "Грамматика",
-  "grammarComingSoon": "Заметки по грамматике - скоро.\n\nДобавляйте заметки в этот модуль как страницы или Markdown.",
   "spellingTitle": "Орфография",
-  "spellingComingSoon": "Модуль орфографии - скоро.",
   "ceTitle": "CE - Чтение",
   "ceIntro": "Читайте итальянские статьи для улучшения понимания текста",
   "ceAdviceTitle": "Совет",
@@ -415,20 +413,6 @@
       }
     }
   },
-  "@conjugationGroup": {
-    "placeholders": {
-      "group": {
-        "type": "Object"
-      }
-    }
-  },
-  "@conjugationAuxiliary": {
-    "placeholders": {
-      "auxiliary": {
-        "type": "Object"
-      }
-    }
-  },
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -455,5 +439,113 @@
   "authErrorNetwork": "Не удалось подключиться. Проверьте интернет-соединение.",
   "authErrorGeneric": "Произошла ошибка. Попробуйте ещё раз.",
   "authContinueWithoutAccount": "Продолжить без аккаунта",
-  "authNotSignedIn": "Не выполнен вход"
+  "authNotSignedIn": "Не выполнен вход",
+  "grammarIntro": "Выберите правильный ответ, чтобы завершить каждое предложение.",
+  "grammarQuestionProgress": "Вопрос {current} из {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Объяснение: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Следующий вопрос",
+  "grammarFinishedTitle": "Серия завершена",
+  "grammarScore": "{correct} / {total} правильных ответов",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Начать заново",
+  "grammarNoQuestions": "Нет доступных вопросов по грамматике.",
+  "spellingIntro": "Напишите соответствующее итальянское слово. Обратите внимание на ударения и двойные согласные!",
+  "spellingInputLabel": "Итальянское слово",
+  "spellingHintButton": "Показать первую букву",
+  "spellingHintShown": "Первая буква: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Идеальное правописание!",
+  "spellingAccentOnlyFeedback": "Почти! Проверьте ударения и двойные согласные.",
+  "spellingWrongFeedback": "Неправильное правописание.",
+  "spellingNoWords": "Нет слов для диктанта.",
+  "evaluateStartButton": "Начать",
+  "evaluateQuestionProgress": "Вопрос {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Твой ответ",
+  "evaluateSelfRatingPrompt": "Как вы оцениваете свой ответ?",
+  "evaluateRatingLabel": "{rating, plural, =0{Доработать} =1{Сложно} =2{Хорошо} other{Очень хорошо}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Самооценка сохранена: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Продолжить",
+  "evaluateFinishedTitle": "Тест завершён",
+  "evaluateResultScore": "{correct} / {total} правильных ответов",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Устная самооценка: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Пройти другой тест",
+  "profileClearDataTitle": "Удалить локальные данные",
+  "profileClearDataSubtitle": "Удаляет прогресс, сохранённый на этом устройстве (попытки, словарь, настройки упражнений).",
+  "profileClearDataConfirmTitle": "Удалить локальные данные?",
+  "profileClearDataConfirmBody": "Ваши локальные результаты и прогресс будут удалены навсегда. Это действие нельзя отменить.",
+  "profileClearDataConfirmAction": "Удалить всё",
+  "profileClearDataDone": "Локальные данные удалены."
 }

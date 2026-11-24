@@ -48,13 +48,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get learnGrammar => '文法';
 
   @override
-  String get learnGrammarDescription => 'コースノート';
+  String get learnGrammarDescription => '文法クイズ';
 
   @override
   String get learnSpelling => 'スペル';
 
   @override
-  String get learnSpellingDescription => '近日公開';
+  String get learnSpellingDescription => '語彙のディクテーション';
 
   @override
   String get trainOralExpression => 'EO - 口頭表現';
@@ -121,14 +121,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get grammarTitle => '文法';
 
   @override
-  String get grammarComingSoon =>
-      '文法ノート - 近日公開。\n\nページまたはMarkdownとしてこのモジュールにメモを追加します。';
-
-  @override
   String get spellingTitle => 'スペル';
-
-  @override
-  String get spellingComingSoon => 'スペルモジュール - 近日公開。';
 
   @override
   String get ceTitle => 'CE - 読解力';
@@ -918,4 +911,130 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get authNotSignedIn => '未ログイン';
+
+  @override
+  String get grammarIntro => '各文を完成させるのに正しい答えを選びましょう。';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return '質問 $current / $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return '解説：$explanation';
+  }
+
+  @override
+  String get grammarNext => '次の質問';
+
+  @override
+  String get grammarFinishedTitle => 'セッション終了';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total 問正解';
+  }
+
+  @override
+  String get grammarRestart => '最初から';
+
+  @override
+  String get grammarNoQuestions => '文法の質問がありません。';
+
+  @override
+  String get spellingIntro => '対応するイタリア語を書いてください。アクセント記号と重複子音に注意！';
+
+  @override
+  String get spellingInputLabel => 'イタリア語';
+
+  @override
+  String get spellingHintButton => '最初の文字を見る';
+
+  @override
+  String spellingHintShown(String letter) {
+    return '最初の文字：$letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => '完璧な綴りです！';
+
+  @override
+  String get spellingAccentOnlyFeedback => 'おしい！アクセント記号と重複子音を確認してください。';
+
+  @override
+  String get spellingWrongFeedback => '綴りが正しくありません。';
+
+  @override
+  String get spellingNoWords => 'ディクテーション用の単語がありません。';
+
+  @override
+  String get evaluateStartButton => '開始';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return '質問 $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'あなたの答え';
+
+  @override
+  String get evaluateSelfRatingPrompt => '自分の答えをどう評価しますか？';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'とても良い',
+      two: '良い',
+      one: '難しい',
+      zero: '要練習',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return '自己評価を記録しました：$rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => '続ける';
+
+  @override
+  String get evaluateFinishedTitle => 'テスト完了';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total 問正解';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return '口頭の自己評価：$average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => '別のテストを受ける';
+
+  @override
+  String get profileClearDataTitle => 'ローカルデータを削除';
+
+  @override
+  String get profileClearDataSubtitle => 'この端末に保存された進捗を削除します（記録、単語、練習設定）。';
+
+  @override
+  String get profileClearDataConfirmTitle => 'ローカルデータを削除しますか？';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'ローカルの成績と進捗は完全に削除されます。この操作は元に戻せません。';
+
+  @override
+  String get profileClearDataConfirmAction => 'すべて削除';
+
+  @override
+  String get profileClearDataDone => 'ローカルデータを削除しました。';
 }

@@ -48,13 +48,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String get learnGrammar => 'Gramatyka';
 
   @override
-  String get learnGrammarDescription => 'Notatki z kursu';
+  String get learnGrammarDescription => 'Quiz gramatyczny';
 
   @override
   String get learnSpelling => 'Pisownia';
 
   @override
-  String get learnSpellingDescription => 'Wkrótce';
+  String get learnSpellingDescription => 'Dyktando słownictwa';
 
   @override
   String get trainOralExpression => 'EO - Ekspresja ustna';
@@ -127,14 +127,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get grammarTitle => 'Gramatyka';
 
   @override
-  String get grammarComingSoon =>
-      'Notatki gramatyczne - treść wkrótce.\n\nDodaj notatki do tego modułu jako strony lub wyrenderowany Markdown.';
-
-  @override
   String get spellingTitle => 'Pisownia';
-
-  @override
-  String get spellingComingSoon => 'Moduł pisowni - wkrótce.';
 
   @override
   String get ceTitle => 'CE - Rozumienie tekstu czytanego';
@@ -947,4 +940,134 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Nie zalogowano';
+
+  @override
+  String get grammarIntro =>
+      'Wybierz właściwą odpowiedź, aby uzupełnić każde zdanie.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'Pytanie $current z $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'Wyjaśnienie: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'Następne pytanie';
+
+  @override
+  String get grammarFinishedTitle => 'Seria ukończona';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total poprawnych odpowiedzi';
+  }
+
+  @override
+  String get grammarRestart => 'Zacznij od nowa';
+
+  @override
+  String get grammarNoQuestions => 'Brak dostępnych pytań gramatycznych.';
+
+  @override
+  String get spellingIntro =>
+      'Napisz odpowiadające włoskie słowo. Uważaj na akcenty i podwójne spółgłoski!';
+
+  @override
+  String get spellingInputLabel => 'Włoskie słowo';
+
+  @override
+  String get spellingHintButton => 'Pokaż pierwszą literę';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'Pierwsza litera: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'Idealna ortografia!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'Prawie! Sprawdź akcenty i podwójne spółgłoski.';
+
+  @override
+  String get spellingWrongFeedback => 'Nieprawidłowa ortografia.';
+
+  @override
+  String get spellingNoWords => 'Brak słów do pisania ze słuchu.';
+
+  @override
+  String get evaluateStartButton => 'Zacznij';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'Pytanie $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'Twoja odpowiedź';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'Jak oceniasz swoją odpowiedź?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'Bardzo dobrze',
+      two: 'Dobrze',
+      one: 'Trudne',
+      zero: 'Do poprawy',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'Zapisano samoocenę: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'Kontynuuj';
+
+  @override
+  String get evaluateFinishedTitle => 'Test ukończony';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total poprawnych odpowiedzi';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'Samoocena ustna: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'Zrób kolejny test';
+
+  @override
+  String get profileClearDataTitle => 'Usuń dane lokalne';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'Usuwa postęp zapisany na tym urządzeniu (próby, słownictwo, ustawienia ćwiczeń).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'Usunąć dane lokalne?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'Twoje lokalne wyniki i postępy zostaną trwale usunięte. Tej czynności nie można cofnąć.';
+
+  @override
+  String get profileClearDataConfirmAction => 'Usuń wszystko';
+
+  @override
+  String get profileClearDataDone => 'Dane lokalne usunięte.';
 }

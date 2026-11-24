@@ -201,7 +201,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnGrammarDescription.
   ///
   /// In en, this message translates to:
-  /// **'Course notes'**
+  /// **'Grammar quiz'**
   String get learnGrammarDescription;
 
   /// No description provided for @learnSpelling.
@@ -213,7 +213,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnSpellingDescription.
   ///
   /// In en, this message translates to:
-  /// **'Coming soon'**
+  /// **'Vocabulary dictation'**
   String get learnSpellingDescription;
 
   /// No description provided for @trainOralExpression.
@@ -342,23 +342,11 @@ abstract class AppLocalizations {
   /// **'Grammar'**
   String get grammarTitle;
 
-  /// No description provided for @grammarComingSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Grammar notes - content coming soon.\n\nAdd notes to this module as pages or rendered Markdown.'**
-  String get grammarComingSoon;
-
   /// No description provided for @spellingTitle.
   ///
   /// In en, this message translates to:
   /// **'Spelling'**
   String get spellingTitle;
-
-  /// No description provided for @spellingComingSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Spelling module - coming soon.'**
-  String get spellingComingSoon;
 
   /// No description provided for @ceTitle.
   ///
@@ -1835,6 +1823,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not signed in'**
   String get authNotSignedIn;
+
+  /// No description provided for @grammarIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the right answer to complete each sentence.'**
+  String get grammarIntro;
+
+  /// No description provided for @grammarQuestionProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String grammarQuestionProgress(int current, int total);
+
+  /// No description provided for @grammarExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation: {explanation}'**
+  String grammarExplanation(String explanation);
+
+  /// No description provided for @grammarNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get grammarNext;
+
+  /// No description provided for @grammarFinishedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Session complete'**
+  String get grammarFinishedTitle;
+
+  /// No description provided for @grammarScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} / {total} correct answers'**
+  String grammarScore(int correct, int total);
+
+  /// No description provided for @grammarRestart.
+  ///
+  /// In en, this message translates to:
+  /// **'Restart'**
+  String get grammarRestart;
+
+  /// No description provided for @grammarNoQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'No grammar questions available.'**
+  String get grammarNoQuestions;
+
+  /// No description provided for @spellingIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Write the matching Italian word. Watch out for accents and double consonants!'**
+  String get spellingIntro;
+
+  /// No description provided for @spellingInputLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Italian word'**
+  String get spellingInputLabel;
+
+  /// No description provided for @spellingHintButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the first letter'**
+  String get spellingHintButton;
+
+  /// No description provided for @spellingHintShown.
+  ///
+  /// In en, this message translates to:
+  /// **'First letter: {letter}'**
+  String spellingHintShown(String letter);
+
+  /// No description provided for @spellingCorrectFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect spelling!'**
+  String get spellingCorrectFeedback;
+
+  /// No description provided for @spellingAccentOnlyFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost! Check accented letters and double consonants.'**
+  String get spellingAccentOnlyFeedback;
+
+  /// No description provided for @spellingWrongFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect spelling.'**
+  String get spellingWrongFeedback;
+
+  /// No description provided for @spellingNoWords.
+  ///
+  /// In en, this message translates to:
+  /// **'No words available for dictation.'**
+  String get spellingNoWords;
+
+  /// No description provided for @evaluateStartButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get evaluateStartButton;
+
+  /// No description provided for @evaluateQuestionProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} / {total}'**
+  String evaluateQuestionProgress(int current, int total);
+
+  /// No description provided for @evaluateTypeAnswerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get evaluateTypeAnswerLabel;
+
+  /// No description provided for @evaluateSelfRatingPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you rate your answer?'**
+  String get evaluateSelfRatingPrompt;
+
+  /// No description provided for @evaluateRatingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{rating, plural, =0{To rework} =1{Difficult} =2{Good} other{Very good}}'**
+  String evaluateRatingLabel(int rating);
+
+  /// No description provided for @evaluateRatingRecorded.
+  ///
+  /// In en, this message translates to:
+  /// **'Self-rating recorded: {rating} / 3'**
+  String evaluateRatingRecorded(int rating);
+
+  /// No description provided for @evaluateNextStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get evaluateNextStep;
+
+  /// No description provided for @evaluateFinishedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test completed'**
+  String get evaluateFinishedTitle;
+
+  /// No description provided for @evaluateResultScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} / {total} correct answers'**
+  String evaluateResultScore(int correct, int total);
+
+  /// No description provided for @evaluateResultOral.
+  ///
+  /// In en, this message translates to:
+  /// **'Oral self-rating: {average} / 3'**
+  String evaluateResultOral(String average);
+
+  /// No description provided for @evaluateRetakeButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Take another test'**
+  String get evaluateRetakeButton;
+
+  /// No description provided for @profileClearDataTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear local data'**
+  String get profileClearDataTitle;
+
+  /// No description provided for @profileClearDataSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Deletes the progress stored on this device (attempts, vocabulary, exercise settings).'**
+  String get profileClearDataSubtitle;
+
+  /// No description provided for @profileClearDataConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear local data?'**
+  String get profileClearDataConfirmTitle;
+
+  /// No description provided for @profileClearDataConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your local performance and progress will be permanently deleted. This cannot be undone.'**
+  String get profileClearDataConfirmBody;
+
+  /// No description provided for @profileClearDataConfirmAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete everything'**
+  String get profileClearDataConfirmAction;
+
+  /// No description provided for @profileClearDataDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Local data cleared.'**
+  String get profileClearDataDone;
 }
 
 class _AppLocalizationsDelegate

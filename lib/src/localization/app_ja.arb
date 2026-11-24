@@ -12,9 +12,9 @@
   "learnNumbersDates": "数字と日付",
   "learnNumbersDatesDescription": "数字と日付を書く",
   "learnGrammar": "文法",
-  "learnGrammarDescription": "コースノート",
+  "learnGrammarDescription": "文法クイズ",
   "learnSpelling": "スペル",
-  "learnSpellingDescription": "近日公開",
+  "learnSpellingDescription": "語彙のディクテーション",
   "trainOralExpression": "EO - 口頭表現",
   "trainOralExpressionDescription": "声に出して答える",
   "trainOralComprehension": "CO - 聴解力",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "時間制限のあるダイナミックなやり取りで素早く反応します。",
   "resultsComingSoon": "パフォーマンスチャート（近日公開）",
   "grammarTitle": "文法",
-  "grammarComingSoon": "文法ノート - 近日公開。\n\nページまたはMarkdownとしてこのモジュールにメモを追加します。",
   "spellingTitle": "スペル",
-  "spellingComingSoon": "スペルモジュール - 近日公開。",
   "ceTitle": "CE - 読解力",
   "ceIntro": "イタリア語の記事を読んで読解力を向上させます",
   "ceAdviceTitle": "アドバイス",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "接続できませんでした。インターネット接続を確認してください。",
   "authErrorGeneric": "エラーが発生しました。もう一度お試しください。",
   "authContinueWithoutAccount": "アカウントなしで続ける",
-  "authNotSignedIn": "未ログイン"
+  "authNotSignedIn": "未ログイン",
+  "grammarIntro": "各文を完成させるのに正しい答えを選びましょう。",
+  "grammarQuestionProgress": "質問 {current} / {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "解説：{explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "次の質問",
+  "grammarFinishedTitle": "セッション終了",
+  "grammarScore": "{correct} / {total} 問正解",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "最初から",
+  "grammarNoQuestions": "文法の質問がありません。",
+  "spellingIntro": "対応するイタリア語を書いてください。アクセント記号と重複子音に注意！",
+  "spellingInputLabel": "イタリア語",
+  "spellingHintButton": "最初の文字を見る",
+  "spellingHintShown": "最初の文字：{letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "完璧な綴りです！",
+  "spellingAccentOnlyFeedback": "おしい！アクセント記号と重複子音を確認してください。",
+  "spellingWrongFeedback": "綴りが正しくありません。",
+  "spellingNoWords": "ディクテーション用の単語がありません。",
+  "evaluateStartButton": "開始",
+  "evaluateQuestionProgress": "質問 {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "あなたの答え",
+  "evaluateSelfRatingPrompt": "自分の答えをどう評価しますか？",
+  "evaluateRatingLabel": "{rating, plural, =0{要練習} =1{難しい} =2{良い} other{とても良い}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "自己評価を記録しました：{rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "続ける",
+  "evaluateFinishedTitle": "テスト完了",
+  "evaluateResultScore": "{correct} / {total} 問正解",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "口頭の自己評価：{average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "別のテストを受ける",
+  "profileClearDataTitle": "ローカルデータを削除",
+  "profileClearDataSubtitle": "この端末に保存された進捗を削除します（記録、単語、練習設定）。",
+  "profileClearDataConfirmTitle": "ローカルデータを削除しますか？",
+  "profileClearDataConfirmBody": "ローカルの成績と進捗は完全に削除されます。この操作は元に戻せません。",
+  "profileClearDataConfirmAction": "すべて削除",
+  "profileClearDataDone": "ローカルデータを削除しました。"
 }

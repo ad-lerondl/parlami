@@ -12,9 +12,9 @@
   "learnNumbersDates": "Sayılar ve Tarihler",
   "learnNumbersDatesDescription": "Sayıları ve tarihleri yaz",
   "learnGrammar": "Dilbilgisi",
-  "learnGrammarDescription": "Ders notları",
+  "learnGrammarDescription": "Dilbilgisi testi",
   "learnSpelling": "Heceleme",
-  "learnSpellingDescription": "Yakında",
+  "learnSpellingDescription": "Kelime diktesi",
   "trainOralExpression": "EO - Sözlü İfade",
   "trainOralExpressionDescription": "Yüksek sesle cevapla",
   "trainOralComprehension": "CO - İşitsel Anlama",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Zaman kısıtlamaları olan dinamik bir sohbette hızlı tepki verin.",
   "resultsComingSoon": "Performans grafikleri yakında",
   "grammarTitle": "Dilbilgisi",
-  "grammarComingSoon": "Dilbilgisi notları - içerik yakında.\n\nBu modüle sayfalar veya işlenmiş Markdown olarak notlar ekleyin.",
   "spellingTitle": "Heceleme",
-  "spellingComingSoon": "Heceleme modülü - yakında.",
   "ceTitle": "CE - Okuduğunu Anlama",
   "ceIntro": "Okuduğunu anlamayı geliştirmek için İtalyanca makaleler oku",
   "ceAdviceTitle": "Tavsiye",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Bağlanılamadı. İnternet bağlantını kontrol et.",
   "authErrorGeneric": "Bir hata oluştu. Tekrar dene.",
   "authContinueWithoutAccount": "Hesapsız devam et",
-  "authNotSignedIn": "Giriş yapılmadı"
+  "authNotSignedIn": "Giriş yapılmadı",
+  "grammarIntro": "Her cümleyi tamamlamak için doğru cevabı seç.",
+  "grammarQuestionProgress": "Soru {current} / {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Açıklama: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Sonraki soru",
+  "grammarFinishedTitle": "Tur tamamlandı",
+  "grammarScore": "{correct} / {total} doğru cevap",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Yeniden başla",
+  "grammarNoQuestions": "Kullanılabilir dilbilgisi sorusu yok.",
+  "spellingIntro": "Karşılık gelen İtalyanca kelimeyi yazın. Vurgu işaretlerine ve çift ünsüzlere dikkat!",
+  "spellingInputLabel": "İtalyanca kelime",
+  "spellingHintButton": "İlk harfi göster",
+  "spellingHintShown": "İlk harf: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Kusursuz yazım!",
+  "spellingAccentOnlyFeedback": "Neredeyse! Vurgu işaretlerini ve çift ünsüzleri kontrol et.",
+  "spellingWrongFeedback": "Yazım yanlış.",
+  "spellingNoWords": "Dikte için kullanılabilir kelime yok.",
+  "evaluateStartButton": "Başla",
+  "evaluateQuestionProgress": "Soru {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Cevabınız",
+  "evaluateSelfRatingPrompt": "Cevabınızı nasıl değerlendiriyorsunuz?",
+  "evaluateRatingLabel": "{rating, plural, =0{Çalışılmalı} =1{Zor} =2{İyi} other{Çok iyi}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Öz-değerlendirme kaydedildi: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Devam et",
+  "evaluateFinishedTitle": "Test tamamlandı",
+  "evaluateResultScore": "{correct} / {total} doğru cevap",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Sözlü öz-değerlendirme: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Başka bir test yap",
+  "profileClearDataTitle": "Yerel verileri sil",
+  "profileClearDataSubtitle": "Bu cihazda kayıtlı ilerlemeyi siler (denemeler, kelime dağarcığı, egzersiz ayarları).",
+  "profileClearDataConfirmTitle": "Yerel veriler silinsin mi?",
+  "profileClearDataConfirmBody": "Yerel sonuçlarınız ve ilerlemeniz kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+  "profileClearDataConfirmAction": "Hepsini sil",
+  "profileClearDataDone": "Yerel veriler silindi."
 }

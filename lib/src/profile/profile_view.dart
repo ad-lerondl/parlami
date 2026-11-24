@@ -9,6 +9,7 @@ import 'package:parlami/src/localization/app_localizations.dart';
 import 'package:parlami/src/services/retention_reminder_service.dart';
 import 'package:parlami/src/auth/auth_service.dart';
 import 'package:parlami/src/auth/login_view.dart';
+import 'package:parlami/src/services/local_data_service.dart';
 import 'package:parlami/src/settings/language_names.dart';
 
 class ProfileView extends StatefulWidget {
@@ -91,6 +92,32 @@ class _ProfileViewState extends State<ProfileView> {
     }
   }
 
+  Future<void> _clearLocalData(AppLocalizations l10n) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.profileClearDataConfirmTitle),
+        content: Text(l10n.profileClearDataConfirmBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.vocabCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.profileClearDataConfirmAction),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    await LocalDataService.clearAllLocalData();
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(l10n.profileClearDataDone)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -147,6 +174,12 @@ class _ProfileViewState extends State<ProfileView> {
         trailing: _reminderBusy
             ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2))
             : Switch(value: _remindersEnabled, onChanged: _toggleReminders),
+      ),
+      ListTile(
+        leading: const Icon(Icons.delete_sweep_outlined),
+        title: Text(l10n.profileClearDataTitle),
+        subtitle: Text(l10n.profileClearDataSubtitle),
+        onTap: () => _clearLocalData(l10n),
       ),
       ListTile(
         title: Text(l10n.profileDonate),
