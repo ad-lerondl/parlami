@@ -934,4 +934,156 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'غير مسجل الدخول';
+
+  @override
+  String get learnGeo => 'جغرافيا إيطاليا';
+
+  @override
+  String get learnGeoDescription => 'المدن والأقاليم والتخصصات والصور النمطية';
+
+  @override
+  String get learnSongs => 'الأغاني الضرورية';
+
+  @override
+  String get learnSongsDescription => 'الأغاني التي يجب حفظها مع مفرداتها';
+
+  @override
+  String get learnPasta => 'أسماء المعكرونة';
+
+  @override
+  String get learnPastaDescription => 'الأشكال ومناطق المنشأ والصلصات';
+
+  @override
+  String get learnHistory => 'تاريخ إيطاليا';
+
+  @override
+  String get learnHistoryDescription => 'خط زمني تفاعلي واختبار';
+
+  @override
+  String get geoTabRegions => 'الأقاليم';
+
+  @override
+  String get geoTabCities => 'المدن';
+
+  @override
+  String get geoTabQuiz => 'اختبار';
+
+  @override
+  String get geoCapital => 'العاصمة';
+
+  @override
+  String get geoSpecialties => 'التخصصات';
+
+  @override
+  String get geoSearchCities => 'البحث عن مدينة...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'إلى أي إقليم تنتمي $city؟';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'من أي إقليم تأتي « $specialty »؟';
+  }
+
+  @override
+  String get quizNext => 'السؤال التالي';
+
+  @override
+  String get quizGood => 'إجابة صحيحة!';
+
+  @override
+  String get quizWrong => 'إجابة خاطئة';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'النتيجة: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'محفوظة عن ظهر قلب';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total محفوظة';
+  }
+
+  @override
+  String get songsListen => 'الاستماع / المشاهدة';
+
+  @override
+  String get pastaTabExplore => 'الاستكشاف';
+
+  @override
+  String get pastaTabQuiz => 'اختبار';
+
+  @override
+  String get pastaQuizIntro => 'خمّن إقليم منشأ كل شكل من أشكال المعكرونة.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'من أين تأتي « $name »؟';
+  }
+
+  @override
+  String get historyTabTimeline => 'الخط الزمني';
+
+  @override
+  String get historyTabQuiz => 'اختبار';
+
+  @override
+  String get scenarioNoisyListening => 'الاستماع مع الضوضاء';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'فهم شفوي في ظروف معيقة (ضوضاء خلفية) مع تقييم ذاتي.';
+
+  @override
+  String get noiseTitle => 'الاستماع مع الضوضاء';
+
+  @override
+  String get noiseIntro =>
+      'شغّل محطة إذاعية إيطالية، أضف ضوضاء خلفية، استمع نحو ثلاثين ثانية، ثم قيّم فهمك.';
+
+  @override
+  String get noiseStationLabel => 'المحطة';
+
+  @override
+  String get noiseTypeLabel => 'الضوضاء الخلفية';
+
+  @override
+  String get noiseTypeNone => 'بدون';
+
+  @override
+  String get noiseTypeHiss => 'تشويش';
+
+  @override
+  String get noiseTypeCrowd => ' همهمة (مقهى)';
+
+  @override
+  String get noiseTypeMusic => 'موسيقى';
+
+  @override
+  String get noiseVolumeLabel => 'مستوى الضوضاء';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'قيّم فهمك (0 = لم أفهم شيئا، 3 = فهمت كل شيء)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'تقييمات الجلسة: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'متوسط الجلسة: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'التفضيلات';
+
+  @override
+  String get profileSectionSupport => 'الدعم والمعلومات';
 }

@@ -946,4 +946,158 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Ej inloggad';
+
+  @override
+  String get learnGeo => 'Italiens geografi';
+
+  @override
+  String get learnGeoDescription =>
+      'Städer, regioner, specialiteter och klyschor';
+
+  @override
+  String get learnSongs => 'Oundgängliga sånger';
+
+  @override
+  String get learnSongsDescription =>
+      'Hits att lära sig utantill, med tillhörande ordförråd';
+
+  @override
+  String get learnPasta => 'Pastanamn';
+
+  @override
+  String get learnPastaDescription => 'Former, ursprungsregioner och såser';
+
+  @override
+  String get learnHistory => 'Italiens historia';
+
+  @override
+  String get learnHistoryDescription => 'Interaktiv tidslinje och quiz';
+
+  @override
+  String get geoTabRegions => 'Regioner';
+
+  @override
+  String get geoTabCities => 'Städer';
+
+  @override
+  String get geoTabQuiz => 'Quiz';
+
+  @override
+  String get geoCapital => 'Huvudort';
+
+  @override
+  String get geoSpecialties => 'Specialiteter';
+
+  @override
+  String get geoSearchCities => 'Sök en stad...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'Vilken region hör $city till?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'Från vilken region kommer « $specialty »?';
+  }
+
+  @override
+  String get quizNext => 'Nästa fråga';
+
+  @override
+  String get quizGood => 'Rätt svar!';
+
+  @override
+  String get quizWrong => 'Fel svar';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Poäng: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Kan utantill';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total inlärda utantill';
+  }
+
+  @override
+  String get songsListen => 'Lyssna / se';
+
+  @override
+  String get pastaTabExplore => 'Utforska';
+
+  @override
+  String get pastaTabQuiz => 'Quiz';
+
+  @override
+  String get pastaQuizIntro => 'Gissa ursprungsregionen för varje pastaform.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'Varifrån kommer « $name »?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Tidslinje';
+
+  @override
+  String get historyTabQuiz => 'Quiz';
+
+  @override
+  String get scenarioNoisyListening => 'Lyssna med buller';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Hörförståelse under svåra förhållanden (bakgrundsbrus) med självbedömning.';
+
+  @override
+  String get noiseTitle => 'Lyssna med buller';
+
+  @override
+  String get noiseIntro =>
+      'Starta en italiensk radiokanal, lägg till bakgrundsbrus, lyssna i ungefär trettio sekunder och bedöm din förståelse.';
+
+  @override
+  String get noiseStationLabel => 'Kanal';
+
+  @override
+  String get noiseTypeLabel => 'Bakgrundsbrus';
+
+  @override
+  String get noiseTypeNone => 'Inget';
+
+  @override
+  String get noiseTypeHiss => 'Brus';
+
+  @override
+  String get noiseTypeCrowd => 'Mummel (kafe)';
+
+  @override
+  String get noiseTypeMusic => 'Musik';
+
+  @override
+  String get noiseVolumeLabel => 'Brusvolym';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Bedöm din förståelse (0 = förstod inget, 3 = förstod allt)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Bedömningar under passet: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Medelvärde för passet: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Inställningar';
+
+  @override
+  String get profileSectionSupport => 'Stöd och information';
 }

@@ -953,4 +953,158 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Neconectat';
+
+  @override
+  String get learnGeo => 'Geografia Italiei';
+
+  @override
+  String get learnGeoDescription => 'Orașe, regiuni, specialități și clișee';
+
+  @override
+  String get learnSongs => 'Cântece de neocolit';
+
+  @override
+  String get learnSongsDescription =>
+      'Hit-urile de memorat, cu vocabularul lor';
+
+  @override
+  String get learnPasta => 'Numele pastelor';
+
+  @override
+  String get learnPastaDescription => 'Forme, regiuni de origine și sosuri';
+
+  @override
+  String get learnHistory => 'Istoria Italiei';
+
+  @override
+  String get learnHistoryDescription => 'Cronologie interactivă și test';
+
+  @override
+  String get geoTabRegions => 'Regiuni';
+
+  @override
+  String get geoTabCities => 'Orașe';
+
+  @override
+  String get geoTabQuiz => 'Test';
+
+  @override
+  String get geoCapital => 'Capitală';
+
+  @override
+  String get geoSpecialties => 'Specialități';
+
+  @override
+  String get geoSearchCities => 'Caută un oraș...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'Cărui regiune îi aparține $city?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'Din ce regiune vine « $specialty »?';
+  }
+
+  @override
+  String get quizNext => 'Întrebarea următoare';
+
+  @override
+  String get quizGood => 'Răspuns corect!';
+
+  @override
+  String get quizWrong => 'Răspuns greșit';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Scor: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Știută pe dinafară';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total învățate pe dinafară';
+  }
+
+  @override
+  String get songsListen => 'Ascultă / vizionează';
+
+  @override
+  String get pastaTabExplore => 'Explorează';
+
+  @override
+  String get pastaTabQuiz => 'Test';
+
+  @override
+  String get pastaQuizIntro =>
+      'Ghicește regiunea de origine a fiecărei forme de paste.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'De unde vine « $name »?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Cronologie';
+
+  @override
+  String get historyTabQuiz => 'Test';
+
+  @override
+  String get scenarioNoisyListening => 'Ascultare cu zgomot';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Înțelegere orală în condiții dificile (zgomote de fundal) cu autoevaluare.';
+
+  @override
+  String get noiseTitle => 'Ascultare cu zgomot';
+
+  @override
+  String get noiseIntro =>
+      'Pornește un post de radio italian, adaugă zgomot de fundal, ascultă aproximativ treizeci de secunde, apoi evaluează-ți înțelegerea.';
+
+  @override
+  String get noiseStationLabel => 'Post';
+
+  @override
+  String get noiseTypeLabel => 'Zgomot de fundal';
+
+  @override
+  String get noiseTypeNone => 'Niciunul';
+
+  @override
+  String get noiseTypeHiss => 'Fruniș';
+
+  @override
+  String get noiseTypeCrowd => 'Murmur (cafenea)';
+
+  @override
+  String get noiseTypeMusic => 'Muzică';
+
+  @override
+  String get noiseVolumeLabel => 'Volumul zgomotului';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Evaluează-ți înțelegerea (0 = nu am înțeles nimic, 3 = am înțeles tot)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Notele sesiunii: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Media sesiunii: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Preferințe';
+
+  @override
+  String get profileSectionSupport => 'Susținere și informații';
 }

@@ -441,5 +441,105 @@
   "authErrorNetwork": "Connection failed. Check your internet connection.",
   "authErrorGeneric": "Something went wrong. Please try again.",
   "authContinueWithoutAccount": "Continue without an account",
-  "authNotSignedIn": "Not signed in"
+  "authNotSignedIn": "Not signed in",
+  "learnGeo": "Geography of Italy",
+  "learnGeoDescription": "Cities, regions, specialties and cliches",
+  "learnSongs": "Iconic songs",
+  "learnSongsDescription": "The must-know hits, with their vocabulary",
+  "learnPasta": "Pasta names",
+  "learnPastaDescription": "Shapes, home regions and sauces",
+  "learnHistory": "History of Italy",
+  "learnHistoryDescription": "Interactive timeline and quiz",
+  "geoTabRegions": "Regions",
+  "geoTabCities": "Cities",
+  "geoTabQuiz": "Quiz",
+  "geoCapital": "Capital",
+  "geoSpecialties": "Specialties",
+  "geoSearchCities": "Search a city...",
+  "geoQuizCity": "Which region is {city} in?",
+  "geoQuizSpecialty": "Which region does '{specialty}' come from?",
+  "quizNext": "Next question",
+  "quizGood": "Correct!",
+  "quizWrong": "Wrong answer",
+  "quizScore": "Score: {score}/{total}",
+  "songsMemorized": "Known by heart",
+  "songsProgress": "{done}/{total} learned by heart",
+  "songsListen": "Listen / watch",
+  "pastaTabExplore": "Explore",
+  "pastaTabQuiz": "Quiz",
+  "pastaQuizIntro": "Guess the home region of each pasta shape.",
+  "pastaQuizQuestion": "Where does '{name}' come from?",
+  "historyTabTimeline": "Timeline",
+  "historyTabQuiz": "Quiz",
+  "scenarioNoisyListening": "Listening with noise",
+  "scenarioNoisyListeningDetails": "Oral comprehension under degraded conditions (background noise) with self-rating.",
+  "noiseTitle": "Listening with noise",
+  "noiseIntro": "Start an Italian radio station, add background noise, listen for about 30 seconds, then rate your comprehension.",
+  "noiseStationLabel": "Station",
+  "noiseTypeLabel": "Background noise",
+  "noiseTypeNone": "None",
+  "noiseTypeHiss": "Static",
+  "noiseTypeCrowd": "Crowd murmur",
+  "noiseTypeMusic": "Music",
+  "noiseVolumeLabel": "Noise volume",
+  "noiseSelfRatePrompt": "Rate your comprehension (0 = understood nothing, 3 = understood everything)",
+  "noiseRatings": "Session ratings: {ratings}",
+  "noiseSessionAverage": "Session average: {average}",
+  "profileSectionPreferences": "Preferences",
+  "profileSectionSupport": "Support & information",
+  "@geoQuizCity": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "@geoQuizSpecialty": {
+    "placeholders": {
+      "specialty": {
+        "type": "String"
+      }
+    }
+  },
+  "@quizScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@songsProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@pastaQuizQuestion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@noiseRatings": {
+    "placeholders": {
+      "ratings": {
+        "type": "String"
+      }
+    }
+  },
+  "@noiseSessionAverage": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -944,4 +944,159 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Giriş yapılmadı';
+
+  @override
+  String get learnGeo => 'İtalya coğrafyası';
+
+  @override
+  String get learnGeoDescription =>
+      'Şehirler, bölgeler, yöresel lezzetler ve klişeler';
+
+  @override
+  String get learnSongs => 'Vazgeçilmez şarkılar';
+
+  @override
+  String get learnSongsDescription =>
+      'Ezberlenmesi gereken şarkılar ve söz dağarcıkları';
+
+  @override
+  String get learnPasta => 'Makarna adları';
+
+  @override
+  String get learnPastaDescription => 'Şekiller, köken bölgeleri ve soslar';
+
+  @override
+  String get learnHistory => 'İtalya tarihi';
+
+  @override
+  String get learnHistoryDescription => 'Etkileşimli zaman çizelgesi ve sınav';
+
+  @override
+  String get geoTabRegions => 'Bölgeler';
+
+  @override
+  String get geoTabCities => 'Şehirler';
+
+  @override
+  String get geoTabQuiz => 'Sınav';
+
+  @override
+  String get geoCapital => 'Merkez';
+
+  @override
+  String get geoSpecialties => 'Yöresel lezzetler';
+
+  @override
+  String get geoSearchCities => 'Şehir ara...';
+
+  @override
+  String geoQuizCity(String city) {
+    return '$city hangi bölgededir?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return '« $specialty » hangi bölgeden gelir?';
+  }
+
+  @override
+  String get quizNext => 'Sonraki soru';
+
+  @override
+  String get quizGood => 'Doğru cevap!';
+
+  @override
+  String get quizWrong => 'Yanlış cevap';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Puan: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Ezbere bilinen';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total ezberlendi';
+  }
+
+  @override
+  String get songsListen => 'Dinle / izle';
+
+  @override
+  String get pastaTabExplore => 'Keşfet';
+
+  @override
+  String get pastaTabQuiz => 'Sınav';
+
+  @override
+  String get pastaQuizIntro =>
+      'Her makarna şeklinin köken bölgesini tahmin et.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return '« $name » nereden gelir?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Zaman çizelgesi';
+
+  @override
+  String get historyTabQuiz => 'Sınav';
+
+  @override
+  String get scenarioNoisyListening => 'Gürültüyle dinleme';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Zor koşullarda (arka plan gürültüsü) dinlediğini anlama ve kendini değerlendirme.';
+
+  @override
+  String get noiseTitle => 'Gürültüyle dinleme';
+
+  @override
+  String get noiseIntro =>
+      'İtalyan bir radyo istasyonu başlat, arka plan gürültüsü ekle, yaklaşık otuz saniye dinle ve sonra anlayışını değerlendir.';
+
+  @override
+  String get noiseStationLabel => 'İstasyon';
+
+  @override
+  String get noiseTypeLabel => 'Arka plan gürültüsü';
+
+  @override
+  String get noiseTypeNone => 'Yok';
+
+  @override
+  String get noiseTypeHiss => 'Cızırtı';
+
+  @override
+  String get noiseTypeCrowd => 'Mırıltı (kafé)';
+
+  @override
+  String get noiseTypeMusic => 'Müzik';
+
+  @override
+  String get noiseVolumeLabel => 'Gürültü seviyesi';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Anlayışını değerlendir (0 = hiçbir şey anlamadım, 3 = her şeyi anladım)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Oturum puanları: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Oturum ortalaması: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Tercihler';
+
+  @override
+  String get profileSectionSupport => 'Destek ve bilgi';
 }

@@ -947,4 +947,158 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Nie zalogowano';
+
+  @override
+  String get learnGeo => 'Geografia Włoch';
+
+  @override
+  String get learnGeoDescription => 'Miasta, regiony, specjały i stereotypy';
+
+  @override
+  String get learnSongs => 'Niezastąpione piosenki';
+
+  @override
+  String get learnSongsDescription =>
+      'Przeboje do poznania na pamięć, wraz ze słownictwem';
+
+  @override
+  String get learnPasta => 'Nazwy makaronów';
+
+  @override
+  String get learnPastaDescription => 'Kształty, regiony pochodzenia i sosy';
+
+  @override
+  String get learnHistory => 'Historia Włoch';
+
+  @override
+  String get learnHistoryDescription => 'Interaktywna chronologia i quiz';
+
+  @override
+  String get geoTabRegions => 'Regiony';
+
+  @override
+  String get geoTabCities => 'Miasta';
+
+  @override
+  String get geoTabQuiz => 'Quiz';
+
+  @override
+  String get geoCapital => 'Stolica';
+
+  @override
+  String get geoSpecialties => 'Specjały';
+
+  @override
+  String get geoSearchCities => 'Szukaj miasta...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'Do jakiego regionu należy $city?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'Z jakiego regionu pochodzi « $specialty »?';
+  }
+
+  @override
+  String get quizNext => 'Następne pytanie';
+
+  @override
+  String get quizGood => 'Dobra odpowiedź!';
+
+  @override
+  String get quizWrong => 'Zła odpowiedź';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Wynik: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Znana na pamięć';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total nauczonych na pamięć';
+  }
+
+  @override
+  String get songsListen => 'Posłuchaj / obejrzyj';
+
+  @override
+  String get pastaTabExplore => 'Przegląd';
+
+  @override
+  String get pastaTabQuiz => 'Quiz';
+
+  @override
+  String get pastaQuizIntro =>
+      'Zgadnij region pochodzenia każdego kształtu makaronu.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'Skąd pochodzi « $name »?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Chronologia';
+
+  @override
+  String get historyTabQuiz => 'Quiz';
+
+  @override
+  String get scenarioNoisyListening => 'Słuchanie w hałasie';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Rozumienie ze słuchu w trudnych warunkach (hałas tła) z samooceną.';
+
+  @override
+  String get noiseTitle => 'Słuchanie w hałasie';
+
+  @override
+  String get noiseIntro =>
+      'Włącz włoską stację radiową, dodaj hałas tła, posłuchaj około trzydziestu sekund, a następnie oceń swoje zrozumienie.';
+
+  @override
+  String get noiseStationLabel => 'Stacja';
+
+  @override
+  String get noiseTypeLabel => 'Hałas tła';
+
+  @override
+  String get noiseTypeNone => 'Brak';
+
+  @override
+  String get noiseTypeHiss => 'Syczenie';
+
+  @override
+  String get noiseTypeCrowd => 'Szum (kawiarnia)';
+
+  @override
+  String get noiseTypeMusic => 'Muzyka';
+
+  @override
+  String get noiseVolumeLabel => 'Głośność szumu';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Oceń zrozumienie (0 = nic nie zrozumiałem, 3 = zrozumiałem wszystko)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Oceny sesji: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Średnia sesji: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Preferencje';
+
+  @override
+  String get profileSectionSupport => 'Wsparcie i informacje';
 }

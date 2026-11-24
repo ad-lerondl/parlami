@@ -940,4 +940,157 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'Not signed in';
+
+  @override
+  String get learnGeo => 'Geography of Italy';
+
+  @override
+  String get learnGeoDescription => 'Cities, regions, specialties and cliches';
+
+  @override
+  String get learnSongs => 'Iconic songs';
+
+  @override
+  String get learnSongsDescription =>
+      'The must-know hits, with their vocabulary';
+
+  @override
+  String get learnPasta => 'Pasta names';
+
+  @override
+  String get learnPastaDescription => 'Shapes, home regions and sauces';
+
+  @override
+  String get learnHistory => 'History of Italy';
+
+  @override
+  String get learnHistoryDescription => 'Interactive timeline and quiz';
+
+  @override
+  String get geoTabRegions => 'Regions';
+
+  @override
+  String get geoTabCities => 'Cities';
+
+  @override
+  String get geoTabQuiz => 'Quiz';
+
+  @override
+  String get geoCapital => 'Capital';
+
+  @override
+  String get geoSpecialties => 'Specialties';
+
+  @override
+  String get geoSearchCities => 'Search a city...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'Which region is $city in?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'Which region does \'$specialty\' come from?';
+  }
+
+  @override
+  String get quizNext => 'Next question';
+
+  @override
+  String get quizGood => 'Correct!';
+
+  @override
+  String get quizWrong => 'Wrong answer';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'Score: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'Known by heart';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total learned by heart';
+  }
+
+  @override
+  String get songsListen => 'Listen / watch';
+
+  @override
+  String get pastaTabExplore => 'Explore';
+
+  @override
+  String get pastaTabQuiz => 'Quiz';
+
+  @override
+  String get pastaQuizIntro => 'Guess the home region of each pasta shape.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'Where does \'$name\' come from?';
+  }
+
+  @override
+  String get historyTabTimeline => 'Timeline';
+
+  @override
+  String get historyTabQuiz => 'Quiz';
+
+  @override
+  String get scenarioNoisyListening => 'Listening with noise';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'Oral comprehension under degraded conditions (background noise) with self-rating.';
+
+  @override
+  String get noiseTitle => 'Listening with noise';
+
+  @override
+  String get noiseIntro =>
+      'Start an Italian radio station, add background noise, listen for about 30 seconds, then rate your comprehension.';
+
+  @override
+  String get noiseStationLabel => 'Station';
+
+  @override
+  String get noiseTypeLabel => 'Background noise';
+
+  @override
+  String get noiseTypeNone => 'None';
+
+  @override
+  String get noiseTypeHiss => 'Static';
+
+  @override
+  String get noiseTypeCrowd => 'Crowd murmur';
+
+  @override
+  String get noiseTypeMusic => 'Music';
+
+  @override
+  String get noiseVolumeLabel => 'Noise volume';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'Rate your comprehension (0 = understood nothing, 3 = understood everything)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'Session ratings: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'Session average: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'Preferences';
+
+  @override
+  String get profileSectionSupport => 'Support & information';
 }

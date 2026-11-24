@@ -1835,6 +1835,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not signed in'**
   String get authNotSignedIn;
+
+  /// No description provided for @learnGeo.
+  ///
+  /// In en, this message translates to:
+  /// **'Geography of Italy'**
+  String get learnGeo;
+
+  /// No description provided for @learnGeoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Cities, regions, specialties and cliches'**
+  String get learnGeoDescription;
+
+  /// No description provided for @learnSongs.
+  ///
+  /// In en, this message translates to:
+  /// **'Iconic songs'**
+  String get learnSongs;
+
+  /// No description provided for @learnSongsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The must-know hits, with their vocabulary'**
+  String get learnSongsDescription;
+
+  /// No description provided for @learnPasta.
+  ///
+  /// In en, this message translates to:
+  /// **'Pasta names'**
+  String get learnPasta;
+
+  /// No description provided for @learnPastaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Shapes, home regions and sauces'**
+  String get learnPastaDescription;
+
+  /// No description provided for @learnHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History of Italy'**
+  String get learnHistory;
+
+  /// No description provided for @learnHistoryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive timeline and quiz'**
+  String get learnHistoryDescription;
+
+  /// No description provided for @geoTabRegions.
+  ///
+  /// In en, this message translates to:
+  /// **'Regions'**
+  String get geoTabRegions;
+
+  /// No description provided for @geoTabCities.
+  ///
+  /// In en, this message translates to:
+  /// **'Cities'**
+  String get geoTabCities;
+
+  /// No description provided for @geoTabQuiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get geoTabQuiz;
+
+  /// No description provided for @geoCapital.
+  ///
+  /// In en, this message translates to:
+  /// **'Capital'**
+  String get geoCapital;
+
+  /// No description provided for @geoSpecialties.
+  ///
+  /// In en, this message translates to:
+  /// **'Specialties'**
+  String get geoSpecialties;
+
+  /// No description provided for @geoSearchCities.
+  ///
+  /// In en, this message translates to:
+  /// **'Search a city...'**
+  String get geoSearchCities;
+
+  /// No description provided for @geoQuizCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Which region is {city} in?'**
+  String geoQuizCity(String city);
+
+  /// No description provided for @geoQuizSpecialty.
+  ///
+  /// In en, this message translates to:
+  /// **'Which region does \'{specialty}\' come from?'**
+  String geoQuizSpecialty(String specialty);
+
+  /// No description provided for @quizNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get quizNext;
+
+  /// No description provided for @quizGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get quizGood;
+
+  /// No description provided for @quizWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong answer'**
+  String get quizWrong;
+
+  /// No description provided for @quizScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Score: {score}/{total}'**
+  String quizScore(int score, int total);
+
+  /// No description provided for @songsMemorized.
+  ///
+  /// In en, this message translates to:
+  /// **'Known by heart'**
+  String get songsMemorized;
+
+  /// No description provided for @songsProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} learned by heart'**
+  String songsProgress(int done, int total);
+
+  /// No description provided for @songsListen.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen / watch'**
+  String get songsListen;
+
+  /// No description provided for @pastaTabExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get pastaTabExplore;
+
+  /// No description provided for @pastaTabQuiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get pastaTabQuiz;
+
+  /// No description provided for @pastaQuizIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess the home region of each pasta shape.'**
+  String get pastaQuizIntro;
+
+  /// No description provided for @pastaQuizQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Where does \'{name}\' come from?'**
+  String pastaQuizQuestion(String name);
+
+  /// No description provided for @historyTabTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get historyTabTimeline;
+
+  /// No description provided for @historyTabQuiz.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get historyTabQuiz;
+
+  /// No description provided for @scenarioNoisyListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening with noise'**
+  String get scenarioNoisyListening;
+
+  /// No description provided for @scenarioNoisyListeningDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Oral comprehension under degraded conditions (background noise) with self-rating.'**
+  String get scenarioNoisyListeningDetails;
+
+  /// No description provided for @noiseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening with noise'**
+  String get noiseTitle;
+
+  /// No description provided for @noiseIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Start an Italian radio station, add background noise, listen for about 30 seconds, then rate your comprehension.'**
+  String get noiseIntro;
+
+  /// No description provided for @noiseStationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Station'**
+  String get noiseStationLabel;
+
+  /// No description provided for @noiseTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Background noise'**
+  String get noiseTypeLabel;
+
+  /// No description provided for @noiseTypeNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get noiseTypeNone;
+
+  /// No description provided for @noiseTypeHiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Static'**
+  String get noiseTypeHiss;
+
+  /// No description provided for @noiseTypeCrowd.
+  ///
+  /// In en, this message translates to:
+  /// **'Crowd murmur'**
+  String get noiseTypeCrowd;
+
+  /// No description provided for @noiseTypeMusic.
+  ///
+  /// In en, this message translates to:
+  /// **'Music'**
+  String get noiseTypeMusic;
+
+  /// No description provided for @noiseVolumeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise volume'**
+  String get noiseVolumeLabel;
+
+  /// No description provided for @noiseSelfRatePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate your comprehension (0 = understood nothing, 3 = understood everything)'**
+  String get noiseSelfRatePrompt;
+
+  /// No description provided for @noiseRatings.
+  ///
+  /// In en, this message translates to:
+  /// **'Session ratings: {ratings}'**
+  String noiseRatings(String ratings);
+
+  /// No description provided for @noiseSessionAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Session average: {average}'**
+  String noiseSessionAverage(String average);
+
+  /// No description provided for @profileSectionPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get profileSectionPreferences;
+
+  /// No description provided for @profileSectionSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support & information'**
+  String get profileSectionSupport;
 }
 
 class _AppLocalizationsDelegate

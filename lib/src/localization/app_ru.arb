@@ -415,20 +415,6 @@
       }
     }
   },
-  "@conjugationGroup": {
-    "placeholders": {
-      "group": {
-        "type": "Object"
-      }
-    }
-  },
-  "@conjugationAuxiliary": {
-    "placeholders": {
-      "auxiliary": {
-        "type": "Object"
-      }
-    }
-  },
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -455,5 +441,50 @@
   "authErrorNetwork": "Не удалось подключиться. Проверьте интернет-соединение.",
   "authErrorGeneric": "Произошла ошибка. Попробуйте ещё раз.",
   "authContinueWithoutAccount": "Продолжить без аккаунта",
-  "authNotSignedIn": "Не выполнен вход"
+  "authNotSignedIn": "Не выполнен вход",
+  "learnGeo": "География Италии",
+  "learnGeoDescription": "Города, регионы, специалитеты и клише",
+  "learnSongs": "Незаменимые песни",
+  "learnSongsDescription": "Хиты, которые надо знать наизусть, с их лексикой",
+  "learnPasta": "Названия паст",
+  "learnPastaDescription": "Формы, регионы происхождения и соусы",
+  "learnHistory": "История Италии",
+  "learnHistoryDescription": "Интерактивная хронология и викторина",
+  "geoTabRegions": "Регионы",
+  "geoTabCities": "Города",
+  "geoTabQuiz": "Викторина",
+  "geoCapital": "Административный центр",
+  "geoSpecialties": "Специалитеты",
+  "geoSearchCities": "Найти город...",
+  "geoQuizCity": "К какому региону относится {city}?",
+  "geoQuizSpecialty": "Из какого региона происходит « {specialty} »?",
+  "quizNext": "Следующий вопрос",
+  "quizGood": "Правильно!",
+  "quizWrong": "Неправильный ответ",
+  "quizScore": "Счёт: {score}/{total}",
+  "songsMemorized": "Знать наизусть",
+  "songsProgress": "{done}/{total} выучено наизусть",
+  "songsListen": "Слушать / смотреть",
+  "pastaTabExplore": "Обзор",
+  "pastaTabQuiz": "Викторина",
+  "pastaQuizIntro": "Угадай регион происхождения каждой формы пасты.",
+  "pastaQuizQuestion": "Откуда происходит « {name} »?",
+  "historyTabTimeline": "Хронология",
+  "historyTabQuiz": "Викторина",
+  "scenarioNoisyListening": "Слушание с шумом",
+  "scenarioNoisyListeningDetails": "Аудирование в усложнённых условиях (фоновые шумы) с самооценкой.",
+  "noiseTitle": "Слушание с шумом",
+  "noiseIntro": "Включите итальянскую радиостанцию, добавьте фоновый шум, слушайте около тридцати секунд, затем оцените своё понимание.",
+  "noiseStationLabel": "Станция",
+  "noiseTypeLabel": "Фоновый шум",
+  "noiseTypeNone": "Нет",
+  "noiseTypeHiss": "Шипение",
+  "noiseTypeCrowd": "Гул (кафе)",
+  "noiseTypeMusic": "Музыка",
+  "noiseVolumeLabel": "Громкость шума",
+  "noiseSelfRatePrompt": "Оцените своё понимание (0 = ничего не понял, 3 = понял всё)",
+  "noiseRatings": "Оценки сессии: {ratings}",
+  "noiseSessionAverage": "Среднее за сессию: {average}",
+  "profileSectionPreferences": "Настройки",
+  "profileSectionSupport": "Поддержка и информация"
 }

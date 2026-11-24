@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'noise/noise_listening_view.dart';
 import '../localization/app_localizations.dart';
 
 class EvaluateView extends StatelessWidget {
@@ -32,6 +33,13 @@ class EvaluateView extends StatelessWidget {
         details: l10n.scenarioQuickDiscussionDetails,
         icon: Icons.speed,
       ),
+      _Scenario(
+        title: l10n.scenarioNoisyListening,
+        subtitle: l10n.evaluateScenarioOral,
+        details: l10n.scenarioNoisyListeningDetails,
+        icon: Icons.hearing,
+        builder: (context) => const NoiseListeningView(),
+      ),
     ];
 
     return Scaffold(
@@ -62,12 +70,14 @@ class _Scenario {
     required this.subtitle,
     required this.details,
     required this.icon,
+    this.builder,
   });
 
   final String title;
   final String subtitle;
   final String details;
   final IconData icon;
+  final WidgetBuilder? builder;
 }
 
 class _ScenarioCard extends StatelessWidget {
@@ -90,6 +100,12 @@ class _ScenarioCard extends StatelessWidget {
           child: Text('${scenario.subtitle}\n${scenario.details}'),
         ),
         isThreeLine: true,
+        trailing: (scenario.builder != null) ? const Icon(Icons.chevron_right) : null,
+        onTap: scenario.builder == null
+            ? null
+            : () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: scenario.builder!),
+                ),
       ),
     );
   }

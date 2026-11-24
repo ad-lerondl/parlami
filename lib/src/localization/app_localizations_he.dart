@@ -930,4 +930,157 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'לא מחובר';
+
+  @override
+  String get learnGeo => 'גיאוגרפיה של איטליה';
+
+  @override
+  String get learnGeoDescription => 'ערים, מחוזות, מעדנים סטריאוטיפים';
+
+  @override
+  String get learnSongs => 'שירים בלתי נמנעים';
+
+  @override
+  String get learnSongsDescription =>
+      'הלהיטים שחובה לדעת בעל-פה, עם אוצר המילים שלהם';
+
+  @override
+  String get learnPasta => 'שמות פסטות';
+
+  @override
+  String get learnPastaDescription => 'צורות, אזורי מוצא ורטבים';
+
+  @override
+  String get learnHistory => 'היסטוריה של איטליה';
+
+  @override
+  String get learnHistoryDescription => 'ציר זמן אינטראקטיבי וחידון';
+
+  @override
+  String get geoTabRegions => 'מחוזות';
+
+  @override
+  String get geoTabCities => 'ערים';
+
+  @override
+  String get geoTabQuiz => 'חידון';
+
+  @override
+  String get geoCapital => 'עיר הבירה';
+
+  @override
+  String get geoSpecialties => 'מעדנים';
+
+  @override
+  String get geoSearchCities => 'חיפוש עיר...';
+
+  @override
+  String geoQuizCity(String city) {
+    return 'לאיזה מחוז שייך $city?';
+  }
+
+  @override
+  String geoQuizSpecialty(String specialty) {
+    return 'מאיזה מחוז מגיע « $specialty »?';
+  }
+
+  @override
+  String get quizNext => 'שאלה הבאה';
+
+  @override
+  String get quizGood => 'תשובה נכונה!';
+
+  @override
+  String get quizWrong => 'תשובה שגויה';
+
+  @override
+  String quizScore(int score, int total) {
+    return 'תוצאה: $score/$total';
+  }
+
+  @override
+  String get songsMemorized => 'נלמד בעל-פה';
+
+  @override
+  String songsProgress(int done, int total) {
+    return '$done/$total נלמדו בעל-פה';
+  }
+
+  @override
+  String get songsListen => 'האזנה / צפייה';
+
+  @override
+  String get pastaTabExplore => 'לחקור';
+
+  @override
+  String get pastaTabQuiz => 'חידון';
+
+  @override
+  String get pastaQuizIntro => 'נחש את אזור המוצא של כל סוג פסטה.';
+
+  @override
+  String pastaQuizQuestion(String name) {
+    return 'מאיפה מגיע « $name »?';
+  }
+
+  @override
+  String get historyTabTimeline => 'ציר זמן';
+
+  @override
+  String get historyTabQuiz => 'חידון';
+
+  @override
+  String get scenarioNoisyListening => 'האזנה ברעש';
+
+  @override
+  String get scenarioNoisyListeningDetails =>
+      'הבנת נשמע בתנאים מורכבים (רעשי רקע) עם הערכה עצמית.';
+
+  @override
+  String get noiseTitle => 'האזנה ברעש';
+
+  @override
+  String get noiseIntro =>
+      'הפעל תחנת רדיו איטלקית, הוסף רעש רקע, הקשב כשלושים שניות ואז דרג את ההבנה שלך.';
+
+  @override
+  String get noiseStationLabel => 'תחנה';
+
+  @override
+  String get noiseTypeLabel => 'רעש רקע';
+
+  @override
+  String get noiseTypeNone => 'בלי';
+
+  @override
+  String get noiseTypeHiss => 'היס';
+
+  @override
+  String get noiseTypeCrowd => 'לחש מחיאות (בית קפה)';
+
+  @override
+  String get noiseTypeMusic => 'מוזיקה';
+
+  @override
+  String get noiseVolumeLabel => 'עוצמת הרעש';
+
+  @override
+  String get noiseSelfRatePrompt =>
+      'דרג את ההבנה (0 = לא הבנתי כלום, 3 = הבנתי הכל)';
+
+  @override
+  String noiseRatings(String ratings) {
+    return 'דירוגי ההפעלה: $ratings';
+  }
+
+  @override
+  String noiseSessionAverage(String average) {
+    return 'ממוצע ההפעלה: $average';
+  }
+
+  @override
+  String get profileSectionPreferences => 'העדפות';
+
+  @override
+  String get profileSectionSupport => 'לתמוך ומידע';
 }

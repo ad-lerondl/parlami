@@ -56,3 +56,7 @@ flutter:
     - assets/conjugaison/BDD_conjugaison.json
     - assets/vocabulaire/
     - assets/train/
+    - assets/culture/
+    - assets/audio/bruit_gresillement.wav
+    - assets/audio/bruit_ambiance.wav
+    - assets/audio/bruit_musique.wav

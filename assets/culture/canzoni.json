@@ -1,0 +1,308 @@
+{
+  "songs": [
+    {
+      "id": "o-sole-mio",
+      "title": "'O sole mio",
+      "artist": "Giovanni Capurro & Eduardo di Capua",
+      "year": "1898",
+      "difficulty": 1,
+      "why": "La chanson napolitaine la plus connue au monde, chantée par des millions de voyageurs. Texte en dialecte, énergie du sud garantie.",
+      "vocab": [
+        {
+          "it": "sole",
+          "fr": "soleil"
+        },
+        {
+          "it": "bella",
+          "fr": "belle"
+        },
+        {
+          "it": "finestra",
+          "fr": "fenêtre"
+        },
+        {
+          "it": "aria",
+          "fr": "air, vent"
+        }
+      ]
+    },
+    {
+      "id": "volare",
+      "title": "Volare (Nel blu dipinto di blu)",
+      "artist": "Domenico Modugno",
+      "year": "1958",
+      "difficulty": 1,
+      "why": "Le premier grand tube italien planétaire : voler, rire de soi, rêver. Le refrain est si simple qu'une classe entière peut le chanter dès la première écoute.",
+      "vocab": [
+        {
+          "it": "volare",
+          "fr": "voler"
+        },
+        {
+          "it": "nel blu",
+          "fr": "dans le bleu"
+        },
+        {
+          "it": "dipinto",
+          "fr": "peint"
+        },
+        {
+          "it": "felice",
+          "fr": "heureux"
+        },
+        {
+          "it": "contento",
+          "fr": "content"
+        }
+      ]
+    },
+    {
+      "id": "tu-vo-fa-americano",
+      "title": "Tu vuò fà l'americano",
+      "artist": "Renato Carosone",
+      "year": "1956",
+      "difficulty": 2,
+      "why": "Swing napolitain et ironie : un faux chic américain qui se moque de ceux qui font semblant. Texte en dialecte ; le rythme reste partout (films, pubs, séries).",
+      "vocab": [
+        {
+          "it": "americano",
+          "fr": "américain"
+        },
+        {
+          "it": "whisky",
+          "fr": "whisky"
+        },
+        {
+          "it": "pantaloni",
+          "fr": "pantalon"
+        },
+        {
+          "it": "soldi",
+          "fr": "argent"
+        }
+      ]
+    },
+    {
+      "id": "che-sara",
+      "title": "Che sarà",
+      "artist": "Ricchi e Poveri",
+      "year": "1971",
+      "difficulty": 2,
+      "why": "Une balade de l'italien ordinaire (partir, ce qui sera, sera). Souvent citée par les locuteurs natifs comme « l'hymne des adieux ».",
+      "vocab": [
+        {
+          "it": "che sarà",
+          "fr": "ce qui sera"
+        },
+        {
+          "it": "domani",
+          "fr": "demain"
+        },
+        {
+          "it": "vita",
+          "fr": "vie"
+        }
+      ]
+    },
+    {
+      "id": "felicità",
+      "title": "Felicità",
+      "artist": "Al Bano & Romina Power",
+      "year": "1982",
+      "difficulty": 1,
+      "why": "Le duo vedette de la télé italienne des années 80. Repetitive et joyeuse, parfaite pour retenir le mot bonheur et ce qui l'entoure.",
+      "vocab": [
+        {
+          "it": "felicità",
+          "fr": "bonheur"
+        },
+        {
+          "it": "è",
+          "fr": "c'est"
+        },
+        {
+          "it": "amore",
+          "fr": "amour"
+        },
+        {
+          "it": "cuore",
+          "fr": "coeur"
+        }
+      ]
+    },
+    {
+      "id": "sara-perche-ti-amo",
+      "title": "Sarà perché ti amo",
+      "artist": "Ricchi e Poveri",
+      "year": "1981",
+      "difficulty": 2,
+      "why": "Autre tube des années 80 : des tournures simples pour parler d'amour au quotidien. Le titre seul est une leçon de futur (sarà), de cause (perché) et de pronom (ti amo).",
+      "vocab": [
+        {
+          "it": "sarà",
+          "fr": "ce sera"
+        },
+        {
+          "it": "perché",
+          "fr": "parce que, pourquoi"
+        },
+        {
+          "it": "ti amo",
+          "fr": "je t'aime"
+        },
+        {
+          "it": "accanto",
+          "fr": "à côté"
+        }
+      ]
+    },
+    {
+      "id": "l-italiano",
+      "title": "L'italiano",
+      "artist": "Toto Cutugno",
+      "year": "1983",
+      "difficulty": 1,
+      "why": "« Lasciatemi cantare » et tout le monde tend l'oreille. Le chanteur tient la liste de l'Italie d'autrefois : croissant du matin, café serré, mains qui parlent.",
+      "vocab": [
+        {
+          "it": "lasciatemi",
+          "fr": "laissez-moi"
+        },
+        {
+          "it": "cantare",
+          "fr": "chanter"
+        },
+        {
+          "it": "con l'autobus",
+          "fr": "avec le bus"
+        },
+        {
+          "it": "mano",
+          "fr": "main"
+        }
+      ]
+    },
+    {
+      "id": "caruso",
+      "title": "Caruso",
+      "artist": "Lucio Dalla",
+      "year": "1986",
+      "difficulty": 3,
+      "why": "Un hommage au ténor Enrico Caruso sur la côte de Sorrente. Une poésie chantée, à voix haute, pour l'italien académique d'hier et d'aujourd'hui.",
+      "vocab": [
+        {
+          "it": "te voglio bene",
+          "fr": "je t'aime (napolitain)"
+        },
+        {
+          "it": "stringimi",
+          "fr": "serre-moi"
+        },
+        {
+          "it": "vita",
+          "fr": "vie"
+        }
+      ]
+    },
+    {
+      "id": "il-cielo-in-una-stanza",
+      "title": "Il cielo in una stanza",
+      "artist": "Gino Paoli",
+      "year": "1960",
+      "difficulty": 3,
+      "why": "Une chambre et le ciel : la chanson d'intérieur la plus élégante de la musique italienne. Idéale pour un italien du soir, murmureux.",
+      "vocab": [
+        {
+          "it": "cielo",
+          "fr": "ciel"
+        },
+        {
+          "it": "stanza",
+          "fr": "chambre"
+        },
+        {
+          "it": "qui",
+          "fr": "ici"
+        }
+      ]
+    },
+    {
+      "id": "la-solitudine",
+      "title": "La solitudine",
+      "artist": "Laura Pausini",
+      "year": "1993",
+      "difficulty": 1,
+      "why": "Le tube qui a lancé Laura Pausini à 16 ans : la solitude d'un premier amour expliquée avec des textes simples utiles en classe.",
+      "vocab": [
+        {
+          "it": "solitudine",
+          "fr": "solitude"
+        },
+        {
+          "it": "Marco",
+          "fr": "Marco"
+        },
+        {
+          "it": "perché",
+          "fr": "pourquoi"
+        },
+        {
+          "it": "sempre",
+          "fr": "toujours"
+        }
+      ]
+    },
+    {
+      "id": "con-te-partiro",
+      "title": "Con te partirò",
+      "artist": "Andrea Bocelli",
+      "year": "1995",
+      "difficulty": 3,
+      "why": "La voix la plus connue au monde pour l'italien académique : partir vers des pays jamais visités, avec toi.",
+      "vocab": [
+        {
+          "it": "partirò",
+          "fr": "je partirai"
+        },
+        {
+          "it": "te",
+          "fr": "toi"
+        },
+        {
+          "it": "paesi",
+          "fr": "pays"
+        },
+        {
+          "it": "mai",
+          "fr": "jamais, jamais vu"
+        }
+      ]
+    },
+    {
+      "id": "vivo-per-lei",
+      "title": "Vivo per lei",
+      "artist": "Andrea Bocelli & Giorgia",
+      "year": "1995",
+      "difficulty": 2,
+      "why": "Vivre « pour elle » : la musique personnifiée en femme. Duo parfait pour entendre les pronoms directs et la musicalité italienne.",
+      "vocab": [
+        {
+          "it": "vivo",
+          "fr": "je vis"
+        },
+        {
+          "it": "lei",
+          "fr": "elle"
+        },
+        {
+          "it": "musica",
+          "fr": "musique"
+        },
+        {
+          "it": "incontro",
+          "fr": "rencontre"
+        }
+      ]
+    }
+  ]
+}
