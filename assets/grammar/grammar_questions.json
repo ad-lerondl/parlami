@@ -1,0 +1,677 @@
+[
+  {
+    "id": "art_def_1",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article défini faut-il utiliser ?",
+    "sentence": "___ ragazzo è simpatico.",
+    "options": [
+      "Il",
+      "Lo",
+      "La",
+      "L'"
+    ],
+    "answerIndex": 0,
+    "explanation": "« ragazzo » est un nom masculin qui commence par une consonne simple, donc on utilise « il »."
+  },
+  {
+    "id": "art_def_2",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article défini faut-il utiliser ?",
+    "sentence": "___ studente è italiano.",
+    "options": [
+      "Lo",
+      "Il",
+      "La",
+      "L'"
+    ],
+    "answerIndex": 0,
+    "explanation": "« studente » commence par « st » (s + consonne), donc on utilise « lo »."
+  },
+  {
+    "id": "art_def_3",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article défini faut-il utiliser ?",
+    "sentence": "___ amica di Marco arriva stasera.",
+    "options": [
+      "L'",
+      "La",
+      "Lo",
+      "Il"
+    ],
+    "answerIndex": 0,
+    "explanation": "« amica » est un nom féminin qui commence par une voyelle, donc l'article s'élide : « l'amica »."
+  },
+  {
+    "id": "art_def_4",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article pluriel faut-il utiliser ?",
+    "sentence": "___ libri sono nuovi.",
+    "options": [
+      "I",
+      "Gli",
+      "Le",
+      "Lo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le pluriel de « il » est « i » : i libri, i ragazzi, i giorni."
+  },
+  {
+    "id": "art_def_5",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article pluriel faut-il utiliser ?",
+    "sentence": "___ studenti sono arrivati.",
+    "options": [
+      "Gli",
+      "I",
+      "Le",
+      "Lo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le pluriel de « lo » est « gli » : gli studenti, gli zaini."
+  },
+  {
+    "id": "art_def_6",
+    "topic": "articles",
+    "level": "A1",
+    "prompt": "Quel article pluriel faut-il utiliser ?",
+    "sentence": "___ case sono belle.",
+    "options": [
+      "Le",
+      "I",
+      "Gli",
+      "Lo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le pluriel de « la » est « le » : le case, le ragazze, le porte."
+  },
+  {
+    "id": "art_def_7",
+    "topic": "articles",
+    "level": "A2",
+    "prompt": "Quel article faut-il utiliser ?",
+    "sentence": "Vado in ___ ufficio.",
+    "options": [
+      "l'",
+      "lo",
+      "il",
+      "la"
+    ],
+    "answerIndex": 0,
+    "explanation": "« ufficio » commence par une voyelle, donc l'article s'élide : « l'ufficio »."
+  },
+  {
+    "id": "art_def_8",
+    "topic": "articles",
+    "level": "A2",
+    "prompt": "Quel article faut-il utiliser ?",
+    "sentence": "___ zucchero è dolce.",
+    "options": [
+      "Lo",
+      "Il",
+      "La",
+      "L'"
+    ],
+    "answerIndex": 0,
+    "explanation": "« zucchero » commence par « z », donc on utilise « lo »."
+  },
+  {
+    "id": "prep_1",
+    "topic": "prepositions",
+    "level": "A1",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Vado ___ Roma domani.",
+    "options": [
+      "a",
+      "in",
+      "di",
+      "per"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avec les villes, on utilise « a » : vado a Roma, vivo a Milano."
+  },
+  {
+    "id": "prep_2",
+    "topic": "prepositions",
+    "level": "A1",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Abito ___ Italia.",
+    "options": [
+      "in",
+      "a",
+      "di",
+      "da"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avec les pays, on utilise « in » : abito in Italia, vado in Francia."
+  },
+  {
+    "id": "prep_3",
+    "topic": "prepositions",
+    "level": "A1",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Sono ___ Parigi da due anni.",
+    "options": [
+      "a",
+      "in",
+      "da",
+      "di"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avec les villes on utilise « a » : sono a Parigi da due anni."
+  },
+  {
+    "id": "prep_4",
+    "topic": "prepositions",
+    "level": "A2",
+    "prompt": "Quelle préposition articulée convient ?",
+    "sentence": "Il libro è ___ tavolo.",
+    "options": [
+      "sul",
+      "su lo",
+      "sulla",
+      "nel"
+    ],
+    "answerIndex": 0,
+    "explanation": "« su + il » devient « sul » : il libro è sul tavolo (sur la table)."
+  },
+  {
+    "id": "prep_5",
+    "topic": "prepositions",
+    "level": "A2",
+    "prompt": "Quelle préposition articulée convient ?",
+    "sentence": "Vado ___ medico.",
+    "options": [
+      "dal",
+      "dello",
+      "al",
+      "da il"
+    ],
+    "answerIndex": 0,
+    "explanation": "« da + il » devient « dal » : vado dal medico (je vais chez le médecin)."
+  },
+  {
+    "id": "prep_6",
+    "topic": "prepositions",
+    "level": "A2",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Parto ___ Genova alle otto.",
+    "options": [
+      "da",
+      "di",
+      "a",
+      "in"
+    ],
+    "answerIndex": 0,
+    "explanation": "« da » exprime le point de départ : parto da Genova (je pars de Gênes)."
+  },
+  {
+    "id": "prep_7",
+    "topic": "prepositions",
+    "level": "A2",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Il gatto è ___ casa.",
+    "options": [
+      "in",
+      "a",
+      "sul",
+      "nella"
+    ],
+    "answerIndex": 0,
+    "explanation": "Au sens de « à la maison », on utilise « in » : sono in casa."
+  },
+  {
+    "id": "prep_8",
+    "topic": "prepositions",
+    "level": "A2",
+    "prompt": "Quelle préposition convient ?",
+    "sentence": "Torno ___ lavoro alle sei.",
+    "options": [
+      "dal",
+      "dalla",
+      "al",
+      "dello"
+    ],
+    "answerIndex": 0,
+    "explanation": "« da + il » devient « dal » : torno dal lavoro (je reviens du travail)."
+  },
+  {
+    "id": "plural_1",
+    "topic": "plurals",
+    "level": "A1",
+    "prompt": "Quel est le pluriel de ce nom masculin ?",
+    "sentence": "ragazzo → ___",
+    "options": [
+      "ragazzi",
+      "ragazze",
+      "ragazzo",
+      "ragazza"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms masculins en -o font leur pluriel en -i : ragazzo → ragazzi."
+  },
+  {
+    "id": "plural_2",
+    "topic": "plurals",
+    "level": "A1",
+    "prompt": "Quel est le pluriel de ce nom féminin ?",
+    "sentence": "ragazza → ___",
+    "options": [
+      "ragazze",
+      "ragazzi",
+      "ragazza",
+      "ragaze"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms féminins en -a font leur pluriel en -e : ragazza → ragazze."
+  },
+  {
+    "id": "plural_3",
+    "topic": "plurals",
+    "level": "A1",
+    "prompt": "Quel est le pluriel de ce nom ?",
+    "sentence": "caffè → ___",
+    "options": [
+      "caffè",
+      "caffei",
+      "caffés",
+      "caffi"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms terminés par une voyelle accentuée ne changent pas au pluriel : un caffè → due caffè."
+  },
+  {
+    "id": "plural_4",
+    "topic": "plurals",
+    "level": "A2",
+    "prompt": "Quel est le pluriel de ce nom ?",
+    "sentence": "bar → ___",
+    "options": [
+      "bar",
+      "bari",
+      "bars",
+      "barra"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms terminés par une consonne sont invariables : un bar → due bar."
+  },
+  {
+    "id": "plural_5",
+    "topic": "plurals",
+    "level": "A2",
+    "prompt": "Quel est le pluriel de ce nom masculin en -e ?",
+    "sentence": "pane → ___",
+    "options": [
+      "pani",
+      "pane",
+      "panes",
+      "pana"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms masculins en -e font leur pluriel en -i : pane → pani, cane → cani."
+  },
+  {
+    "id": "plural_6",
+    "topic": "plurals",
+    "level": "A2",
+    "prompt": "Quel est le pluriel de ce nom féminin en -e ?",
+    "sentence": "chiave → ___",
+    "options": [
+      "chiavi",
+      "chiave",
+      "chiaves",
+      "chiavei"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les noms féminins en -e font leur pluriel en -i : chiave → chiavi, madre → madri."
+  },
+  {
+    "id": "pres_1",
+    "topic": "presente",
+    "level": "A1",
+    "prompt": "Complétez avec le verbe « essere » à la bonne personne.",
+    "sentence": "Io ___ italiano.",
+    "options": [
+      "sono",
+      "sei",
+      "è",
+      "siamo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Essere : io sono, tu sei, lui/lei è, noi siamo, voi siete, loro sono."
+  },
+  {
+    "id": "pres_2",
+    "topic": "presente",
+    "level": "A1",
+    "prompt": "Complétez avec le verbe « avere » à la bonne personne.",
+    "sentence": "Noi ___ una macchina.",
+    "options": [
+      "abbiamo",
+      "ho",
+      "hanno",
+      "avete"
+    ],
+    "answerIndex": 0,
+    "explanation": "Avere : io ho, tu hai, lui/lei ha, noi abbiamo, voi avete, loro hanno."
+  },
+  {
+    "id": "pres_3",
+    "topic": "presente",
+    "level": "A1",
+    "prompt": "Complétez avec le verbe « andare » à la bonne personne.",
+    "sentence": "Loro ___ al cinema.",
+    "options": [
+      "vanno",
+      "va",
+      "andiamo",
+      "vado"
+    ],
+    "answerIndex": 0,
+    "explanation": "Andare : io vado, tu vai, lui/lei va, noi andiamo, voi andate, loro vanno."
+  },
+  {
+    "id": "pres_4",
+    "topic": "presente",
+    "level": "A1",
+    "prompt": "Complétez avec le verbe « fare » à la bonne personne.",
+    "sentence": "Tu ___ colazione al bar?",
+    "options": [
+      "fai",
+      "fa",
+      "facciamo",
+      "fanno"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fare : io faccio, tu fai, lui/lei fa, noi facciamo, voi fate, loro fanno."
+  },
+  {
+    "id": "pres_5",
+    "topic": "presente",
+    "level": "A2",
+    "prompt": "Complétez avec le présent du verbe « potere ».",
+    "sentence": "Voi ___ venire stasera?",
+    "options": [
+      "potete",
+      "possiamo",
+      "possono",
+      "puoi"
+    ],
+    "answerIndex": 0,
+    "explanation": "Potere : io posso, tu puoi, lui/lei può, noi possiamo, voi potete, loro possono."
+  },
+  {
+    "id": "pres_6",
+    "topic": "presente",
+    "level": "A2",
+    "prompt": "Complétez avec le présent du verbe « volere ».",
+    "sentence": "Io ___ un caffè.",
+    "options": [
+      "voglio",
+      "vuoi",
+      "vogliono",
+      "volete"
+    ],
+    "answerIndex": 0,
+    "explanation": "Volere : io voglio, tu vuoi, lui/lei vuole, noi vogliamo, voi volete, loro vogliono."
+  },
+  {
+    "id": "pres_7",
+    "topic": "presente",
+    "level": "A2",
+    "prompt": "Complétez avec le présent du verbe « parlare ».",
+    "sentence": "Maria ___ tre lingue.",
+    "options": [
+      "parla",
+      "parli",
+      "parlo",
+      "parlano"
+    ],
+    "answerIndex": 0,
+    "explanation": "Parlare (1re conjugaison) : io parlo, tu parli, lui/lei parla, noi parliamo, voi parlate, loro parlano."
+  },
+  {
+    "id": "pres_8",
+    "topic": "presente",
+    "level": "A2",
+    "prompt": "Complétez avec le présent du verbe « finire ».",
+    "sentence": "Io ___ il lavoro alle cinque.",
+    "options": [
+      "finisco",
+      "finire",
+      "finisci",
+      "finiamo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Finire (3e conjugaison, groupe en -isco) : io finisco, tu finisci, lui/lei finisce."
+  },
+  {
+    "id": "pp_1",
+    "topic": "passato_prossimo",
+    "level": "A2",
+    "prompt": "Complétez au passato prossimo avec l'auxiliaire correct.",
+    "sentence": "Ieri ___ mangiato la pizza.",
+    "options": [
+      "ho",
+      "sono",
+      "è",
+      "hanno"
+    ],
+    "answerIndex": 0,
+    "explanation": "« Mangiare » utilise l'auxiliaire « avere » : ho mangiato."
+  },
+  {
+    "id": "pp_2",
+    "topic": "passato_prossimo",
+    "level": "A2",
+    "prompt": "Complétez au passato prossimo avec l'auxiliaire correct.",
+    "sentence": "Ieri ___ andata al mercato.",
+    "options": [
+      "sono",
+      "ho",
+      "ha",
+      "siamo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les verbes de mouvement comme « andare » utilisent « essere », et le participe s'accorde : lei è andata."
+  },
+  {
+    "id": "pp_3",
+    "topic": "passato_prossimo",
+    "level": "A2",
+    "prompt": "Quel est le participe passé de « prendere » ?",
+    "sentence": "Ho ___ un caffè.",
+    "options": [
+      "preso",
+      "prenduto",
+      "prendo",
+      "presa"
+    ],
+    "answerIndex": 0,
+    "explanation": "Prendere a un participe passé irrégulier : preso. Ho preso un caffè."
+  },
+  {
+    "id": "pp_4",
+    "topic": "passato_prossimo",
+    "level": "A2",
+    "prompt": "Quel est le participe passé de « fare » ?",
+    "sentence": "Abbiamo ___ una passeggiata.",
+    "options": [
+      "fatto",
+      "fecimo",
+      "faccuto",
+      "fatte"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fare a un participe passé irrégulier : fatto. Abbiamo fatto una passeggiata."
+  },
+  {
+    "id": "pp_5",
+    "topic": "passato_prossimo",
+    "level": "B1",
+    "prompt": "Complétez au passato prossimo avec l'auxiliaire correct.",
+    "sentence": "Anna e Luca ___ partiti stamattina.",
+    "options": [
+      "sono",
+      "hanno",
+      "è",
+      "abbiamo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Partire utilise « essere », et le participe s'accorde au masculin pluriel : sono partiti."
+  },
+  {
+    "id": "pp_6",
+    "topic": "passato_prossimo",
+    "level": "B1",
+    "prompt": "Complétez au passato prossimo avec le participe correct.",
+    "sentence": "Ho ___ una lettera. (scrivere)",
+    "options": [
+      "scritto",
+      "scrivuto",
+      "scritta",
+      "scrivo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Scrivere a un participe passé irrégulier : scritto. Ho scritto una lettera."
+  },
+  {
+    "id": "pron_1",
+    "topic": "pronouns",
+    "level": "A2",
+    "prompt": "Quel pronom direct convient ?",
+    "sentence": "Vedi Maria? Sì, ___ vedo.",
+    "options": [
+      "la",
+      "le",
+      "lo",
+      "li"
+    ],
+    "answerIndex": 0,
+    "explanation": "« La » remplace un objet féminin singulier : la vedo (je la vois)."
+  },
+  {
+    "id": "pron_2",
+    "topic": "pronouns",
+    "level": "A2",
+    "prompt": "Quel pronom direct convient ?",
+    "sentence": "Compri i pomodori? Sì, ___ compro.",
+    "options": [
+      "li",
+      "lo",
+      "le",
+      "ne"
+    ],
+    "answerIndex": 0,
+    "explanation": "« Li » remplace un objet masculin pluriel : li compro (je les achète)."
+  },
+  {
+    "id": "pron_3",
+    "topic": "pronouns",
+    "level": "B1",
+    "prompt": "Quel pronom partitif convient ?",
+    "sentence": "Vuoi dello zucchero? Sì, ___ voglio.",
+    "options": [
+      "ne",
+      "lo",
+      "la",
+      "ci"
+    ],
+    "answerIndex": 0,
+    "explanation": "Le pronom partitif « ne » remplace une quantité indéfinie : ne voglio (j'en veux)."
+  },
+  {
+    "id": "pron_4",
+    "topic": "pronouns",
+    "level": "B1",
+    "prompt": "Quel pronom direct convient ?",
+    "sentence": "Conosci Paolo? Sì, ___ conosco bene.",
+    "options": [
+      "lo",
+      "la",
+      "li",
+      "gli"
+    ],
+    "answerIndex": 0,
+    "explanation": "« Lo » remplace un objet masculin singulier : lo conosco (je le connais)."
+  },
+  {
+    "id": "adj_1",
+    "topic": "adjectives",
+    "level": "A1",
+    "prompt": "Quel adjectif convient (accord) ?",
+    "sentence": "La casa è ___.",
+    "options": [
+      "bella",
+      "bello",
+      "belli",
+      "belle"
+    ],
+    "answerIndex": 0,
+    "explanation": "« Casa » est féminin singulier, donc l'adjectif prend la forme « bella »."
+  },
+  {
+    "id": "adj_2",
+    "topic": "adjectives",
+    "level": "A1",
+    "prompt": "Quel adjectif convient (accord) ?",
+    "sentence": "I libri sono ___.",
+    "options": [
+      "interessanti",
+      "interessante",
+      "interessanto",
+      "interessantei"
+    ],
+    "answerIndex": 0,
+    "explanation": "Les adjectifs en -e font leur pluriel en -i, pour les deux genres : interessanti."
+  },
+  {
+    "id": "adj_3",
+    "topic": "adjectives",
+    "level": "A1",
+    "prompt": "Quel adjectif convient (accord) ?",
+    "sentence": "Il gatto è ___.",
+    "options": [
+      "nero",
+      "nera",
+      "neri",
+      "nere"
+    ],
+    "answerIndex": 0,
+    "explanation": "« Gatto » est masculin singulier, donc l'adjectif prend la forme « nero »."
+  },
+  {
+    "id": "adj_4",
+    "topic": "adjectives",
+    "level": "A2",
+    "prompt": "Quel adjectif convient (accord) ?",
+    "sentence": "Le canzoni sono ___.",
+    "options": [
+      "nuove",
+      "nuovi",
+      "nuovo",
+      "nuova"
+    ],
+    "answerIndex": 0,
+    "explanation": "« canzoni » est féminin pluriel : nuove canzoni, le canzoni sono nuove."
+  },
+  {
+    "id": "adj_5",
+    "topic": "adjectives",
+    "level": "A2",
+    "prompt": "Quelle forme de « bello » convient ?",
+    "sentence": "È un ___ palazzo.",
+    "options": [
+      "bel",
+      "bello",
+      "bei",
+      "bell'"
+    ],
+    "answerIndex": 0,
+    "explanation": "Devant un nom masculin singulier commençant par une consonne simple : un bel palazzo."
+  }
+]

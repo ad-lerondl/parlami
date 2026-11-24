@@ -116,4 +116,12 @@ class PerformanceRepository {
     _items.insert(low, attempt);
     revision++;
   }
+
+  /// Wipes every stored attempt and resets the in-memory cache.
+  Future<void> clearAll() async {
+    if (!_initialized) await init();
+    await _store.delete(_database!);
+    _items.clear();
+    revision++;
+  }
 }

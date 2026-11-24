@@ -48,13 +48,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get learnGrammar => 'القواعد';
 
   @override
-  String get learnGrammarDescription => 'ملاحظات الدورة';
+  String get learnGrammarDescription => 'اختبار القواعد';
 
   @override
   String get learnSpelling => 'التهجئة';
 
   @override
-  String get learnSpellingDescription => 'قريباً';
+  String get learnSpellingDescription => 'إملاء المفردات';
 
   @override
   String get trainOralExpression => 'EO - التعبير الشفهي';
@@ -126,14 +126,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get grammarTitle => 'القواعد';
 
   @override
-  String get grammarComingSoon =>
-      'ملاحظات القواعد - المحتوى قريباً.\n\nأضف ملاحظات كصفحات أو Markdown.';
-
-  @override
   String get spellingTitle => 'التهجئة';
-
-  @override
-  String get spellingComingSoon => 'وحدة التهجئة - قريباً.';
 
   @override
   String get ceTitle => 'CE - الفهم الكتابي';
@@ -934,4 +927,133 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'غير مسجل الدخول';
+
+  @override
+  String get grammarIntro => 'اختر الإجابة الصحيحة لإكمال كل جملة.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'السؤال $current من $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'الشرح: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'السؤال التالي';
+
+  @override
+  String get grammarFinishedTitle => 'انتهت الجلسة';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total إجابات صحيحة';
+  }
+
+  @override
+  String get grammarRestart => 'إعادة';
+
+  @override
+  String get grammarNoQuestions => 'لا توجد أسئلة قواعد متاحة.';
+
+  @override
+  String get spellingIntro =>
+      'اكتب الكلمة الإيطالية المقابلة. انتبه إلى العلامات والحروف الساكنة المزدوجة!';
+
+  @override
+  String get spellingInputLabel => 'كلمة إيطالية';
+
+  @override
+  String get spellingHintButton => 'إظهار الحرف الأول';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'الحرف الأول: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'تهجئة صحيحة تمامًا!';
+
+  @override
+  String get spellingAccentOnlyFeedback =>
+      'تقريبًا! تحقق من العلامات والحروف الساكنة المزدوجة.';
+
+  @override
+  String get spellingWrongFeedback => 'تهجئة غير صحيحة.';
+
+  @override
+  String get spellingNoWords => 'لا توجد كلمات متاحة للإملاء.';
+
+  @override
+  String get evaluateStartButton => 'ابدأ';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'السؤال $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'إجابتك';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'كيف تقيّم إجابتك؟';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'جيد جدًا',
+      two: 'جيد',
+      one: 'صعب',
+      zero: 'يحتاج تدريبًا',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'تم تسجيل التقييم الذاتي: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'متابعة';
+
+  @override
+  String get evaluateFinishedTitle => 'انتهى الاختبار';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total إجابات صحيحة';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'التقييم الذاتي الشفهي: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'أجرِ اختبارًا آخر';
+
+  @override
+  String get profileClearDataTitle => 'حذف البيانات المحلية';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'يحذف التقدم المحفوظ على هذا الجهاز (المحاولات، المفردات، إعدادات التمارين).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'حذف البيانات المحلية؟';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'سيتم حذف نتائجك وتقدمك المحلي بشكل نهائي. لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get profileClearDataConfirmAction => 'حذف الكل';
+
+  @override
+  String get profileClearDataDone => 'تم حذف البيانات المحلية.';
 }

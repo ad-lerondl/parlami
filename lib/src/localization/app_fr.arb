@@ -12,9 +12,9 @@
   "learnNumbersDates": "Nombres & Dates",
   "learnNumbersDatesDescription": "Écrire les nombres et dates",
   "learnGrammar": "Grammaire",
-  "learnGrammarDescription": "Fiches de cours",
+  "learnGrammarDescription": "Quiz de grammaire",
   "learnSpelling": "Orthographe",
-  "learnSpellingDescription": "Bientôt disponible",
+  "learnSpellingDescription": "Dictée de vocabulaire",
   "trainOralExpression": "EO - Expression orale",
   "trainOralExpressionDescription": "Répondre à voix haute",
   "trainOralComprehension": "CO - Compréhension orale",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Réagir vite dans un échange dynamique avec contraintes de temps.",
   "resultsComingSoon": "Graphes de performance (à venir)",
   "grammarTitle": "Grammaire",
-  "grammarComingSoon": "Fiches de grammaire - contenu à venir.\n\nAjoutez des fiches dans ce module sous forme de pages ou de markdown rendu.",
   "spellingTitle": "Orthographe",
-  "spellingComingSoon": "Module d'orthographe - à venir.",
   "ceTitle": "CE - Compréhension écrite",
   "ceIntro": "Lisez des articles en italien pour améliorer votre compréhension écrite",
   "ceAdviceTitle": "Conseil",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Connexion impossible. Vérifie ta connexion internet.",
   "authErrorGeneric": "Une erreur est survenue. Réessaie.",
   "authContinueWithoutAccount": "Continuer sans compte",
-  "authNotSignedIn": "Non connecté"
+  "authNotSignedIn": "Non connecté",
+  "grammarIntro": "Choisis la bonne réponse pour compléter chaque phrase.",
+  "grammarQuestionProgress": "Question {current} sur {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Explication : {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Question suivante",
+  "grammarFinishedTitle": "Série terminée",
+  "grammarScore": "{correct} / {total} bonnes réponses",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Recommencer",
+  "grammarNoQuestions": "Aucune question de grammaire disponible.",
+  "spellingIntro": "Écris le mot italien correspondant. Attention aux accents et aux consonnes doubles !",
+  "spellingInputLabel": "Mot italien",
+  "spellingHintButton": "Voir la première lettre",
+  "spellingHintShown": "Première lettre : {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Orthographe exacte !",
+  "spellingAccentOnlyFeedback": "Presque ! Vérifie les accents et les consonnes doubles.",
+  "spellingWrongFeedback": "Orthographe incorrecte.",
+  "spellingNoWords": "Aucun mot disponible pour la dictée.",
+  "evaluateStartButton": "Commencer",
+  "evaluateQuestionProgress": "Question {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Ta réponse",
+  "evaluateSelfRatingPrompt": "Comment évalues-tu ta réponse ?",
+  "evaluateRatingLabel": "{rating, plural, =0{À retravailler} =1{Difficile} =2{Bien} other{Très bien}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Auto-évaluation enregistrée : {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Continuer",
+  "evaluateFinishedTitle": "Test terminé",
+  "evaluateResultScore": "{correct} / {total} réponses correctes",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Auto-évaluation orale : {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Repasser un test",
+  "profileClearDataTitle": "Effacer les données locales",
+  "profileClearDataSubtitle": "Supprime la progression stockée sur cet appareil (tests, vocabulaire, réglages d'exercices).",
+  "profileClearDataConfirmTitle": "Effacer les données locales ?",
+  "profileClearDataConfirmBody": "Vos performances et votre progression locale seront supprimées définitivement. Cette action est irréversible.",
+  "profileClearDataConfirmAction": "Tout effacer",
+  "profileClearDataDone": "Données locales supprimées."
 }

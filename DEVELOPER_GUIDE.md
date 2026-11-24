@@ -33,8 +33,8 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 - `lib/src/learn/conjugation/`: quiz conjugaison (module le plus avance)
 - `lib/src/learn/vocab/`
 - `lib/src/learn/numdate/`
-- `lib/src/learn/grammar/` (placeholder)
-- `lib/src/learn/spelling/` (placeholder)
+- `lib/src/learn/grammar/`: quiz QCM sur asset JSON (articles, prepositions, plurals, presente, passato prossimo, pronoms, adjectifs)
+- `lib/src/learn/spelling/`: dictee de vocabulaire (`spelling_checker.dart` : comparaison exacte puis insensible aux accents)
 
 ### Modules "S'entrainer"
 - `lib/src/train/eo/`: expression orale
@@ -43,7 +43,8 @@ Le projet est mobile-first, avec support Android/iOS/Web/Desktop via Flutter.
 - `lib/src/train/ee/`: expression ecrite
 
 ### Module "Se tester"
-- `lib/src/evaluate/evaluate_view.dart`: scenarios de mise en condition reelle
+- `lib/src/evaluate/evaluate_engine.dart`: moteur pur et testable qui compose des sessions melangees (QCM grammaire, traduction, phrases EE, auto-evaluation EO) selon le scenario
+- `lib/src/evaluate/evaluate_view.dart`: scenarios jouables de bout en bout avec resume et enregistrement des tentatives
 - Principe: combiner plusieurs competences simultanement (ex: CO + EO, CE + EE)
 
 ### Comptes utilisateurs (Supabase)
@@ -92,6 +93,8 @@ vers la version française.
 - `assets/vocabulaire/vocab_apprendreitalien-vocabulaire.json`
 - `assets/train/eo_questions.json`
 - `assets/train/ee_sentences.json`
+- Grammaire (`assets/grammar/grammar_questions.json`): `id, topic, level, prompt, sentence (avec ___), options, answerIndex, explanation`
+- Stations radio (`assets/radio/stations.json`) chargees par `lib/src/repositories/radio_stations_repository.dart`
 
 ## 4. Etat Fonctionnel Actuel
 
@@ -151,18 +154,27 @@ Les nombres/dates, EO et EE peuvent ajouter leurs propres tentatives sans modifi
 - Le snapshot de Resultats est mis en cache pendant la navigation ; un geste de rafraichissement
   force la relecture des donnees.
 - Les reglages de notifications appartiennent a Profil, pas a Resultats.
+- Grammaire : quiz QCM de 10 questions tirees au hasard, tentatives enregistrees avec metadata
+  topic/level. Contenu a enrichir dans `assets/grammar/grammar_questions.json`.
+- Orthographe : dictee fr -> it depuis l'asset vocabulaire, en priorisant les mots sensibles
+  (accents, doubles consonnes, ci/gi/gli). Trois etats de correction : exacte, presqu'exacte
+  (accents/doubles), incorrecte. Tentatives enregistrees avec metadata accentOnlyMismatch.
 - Les rappels Android/iOS utilisent `flutter_local_notifications` avec demande de permission.
   Le Web utilise l'API Notification du navigateur lorsqu'elle est disponible ; un onglet ferme
   ne permet pas de planifier un rappel fiable sans service worker/PWA.
-- Grammaire et orthographe restent en mode placeholder.
+- Profil propose "Effacer les donnees locales" (`lib/src/services/local_data_service.dart`) :
+  vide les stores Sembast (tentatives, stats vocabulaire, mots utilisateur) et les reglages
+  d'exercices, sans toucher a la session auth ni a la langue/theme.
 
 ### 4.4 Se tester (mise en conditions reelles)
-- Scenarios transverses centres vie quotidienne
-- Combinaisons de competences, par exemple:
-  - Conversation: CO + EO
-  - Resume d'article: CE + EE
-  - Debrief de match: EO + culture
-  - Discussion rapide: CO + EO + rapidite
+- Scenarios jouables: chaque carte lance une session generee par `EvaluateEngine`:
+  - Conversation quotidienne: 2 orales + 2 QCM + 1 traduction
+  - Resume d'article: 3 phrases + 2 QCM
+  - Debrief de match: 2 QCM + 2 orales + 1 traduction
+  - Discussion rapide: 3 traductions + 2 QCM + 1 orale
+- Les orales sont auto-evaluees 0-3 ; QCM et reponses tapees donnent une reussite objective ;
+  la session se clot par une carte de score et une moyenne d'auto-evaluation.
+- A faire: brancher la CO (radio) et la CE (sources d'articles) dans les scenarios.
 - Role pedagogique:
   - Apprendre -> bases
   - S'entrainer -> points particuliers
@@ -216,10 +228,11 @@ Les nombres/dates, EO et EE peuvent ajouter leurs propres tentatives sans modifi
 ## 8. Dette Technique Connue
 
 - Service radio base sur singleton + `BehaviorSubject` (pas de couche state management formelle).
-- Station list hardcodee dans la vue CO (pas de repository/source distante).
 - Couverture de tests insuffisante sur train/co et cycle de vie audio.
-- Onglets Resultats/Grammaire/Orthographe incomplets.
-- `supportedLocales` limite a `en` dans `lib/src/app.dart` alors que l'app est majoritairement en francais.
+- Ecran Resultats tres durcode en francais (chaînes non localisees) alors que le reste de l'app
+  supporte 13 langues.
+- Grammaire/orthographe fonctionnels mais au contenu a enrichir (plus de questions, niveaux B2+,
+  fiches de cours lues avant les quiz).
 
 ## 9. Pistes d'Amelioration Prioritaires
 
@@ -229,9 +242,9 @@ Les nombres/dates, EO et EE peuvent ajouter leurs propres tentatives sans modifi
 - Durcir la gestion d'erreurs reseau (timeouts, retry progressif, fallback station).
 
 ### P1 - Produit
-- Externaliser stations radio dans un JSON/versionnement.
-- Ajouter ecran "Resultats" reel (KPIs, progression par module).
-- Completer grammaire/orthographe avec contenu exploitable.
+- Localiser les chaînes durcodees de l'ecran Resultats (`_TodayActionTab`, cartes, sections).
+- Brancher CO (radio) et CE (articles) dans les scenarios "Se tester".
+- Ajouter des fiches de cours de grammaire (lecture) avant les quiz et enrichir la banque de questions.
 
 ### P2 - Performance / Maintenabilite
 - Factoriser les patterns de chargement d'assets et mapping modele.

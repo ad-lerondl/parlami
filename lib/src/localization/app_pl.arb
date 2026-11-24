@@ -12,9 +12,9 @@
   "learnNumbersDates": "Liczby i daty",
   "learnNumbersDatesDescription": "Zapisywanie liczb i dat",
   "learnGrammar": "Gramatyka",
-  "learnGrammarDescription": "Notatki z kursu",
+  "learnGrammarDescription": "Quiz gramatyczny",
   "learnSpelling": "Pisownia",
-  "learnSpellingDescription": "Wkrótce",
+  "learnSpellingDescription": "Dyktando słownictwa",
   "trainOralExpression": "EO - Ekspresja ustna",
   "trainOralExpressionDescription": "Odpowiadaj na głos",
   "trainOralComprehension": "CO - Rozumienie ze słuchu",
@@ -36,9 +36,7 @@
   "scenarioQuickDiscussionDetails": "Reaguj szybko w dynamicznej wymianie zdań pod presją czasu.",
   "resultsComingSoon": "Wykresy wydajności wkrótce",
   "grammarTitle": "Gramatyka",
-  "grammarComingSoon": "Notatki gramatyczne - treść wkrótce.\n\nDodaj notatki do tego modułu jako strony lub wyrenderowany Markdown.",
   "spellingTitle": "Pisownia",
-  "spellingComingSoon": "Moduł pisowni - wkrótce.",
   "ceTitle": "CE - Rozumienie tekstu czytanego",
   "ceIntro": "Czytaj włoskie artykuły, aby poprawić czytanie ze zrozumieniem",
   "ceAdviceTitle": "Porada",
@@ -441,5 +439,113 @@
   "authErrorNetwork": "Nie udało się połączyć. Sprawdź połączenie z internetem.",
   "authErrorGeneric": "Wystąpił błąd. Spróbuj ponownie.",
   "authContinueWithoutAccount": "Kontynuuj bez konta",
-  "authNotSignedIn": "Nie zalogowano"
+  "authNotSignedIn": "Nie zalogowano",
+  "grammarIntro": "Wybierz właściwą odpowiedź, aby uzupełnić każde zdanie.",
+  "grammarQuestionProgress": "Pytanie {current} z {total}",
+  "@grammarQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarExplanation": "Wyjaśnienie: {explanation}",
+  "@grammarExplanation": {
+    "placeholders": {
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "grammarNext": "Następne pytanie",
+  "grammarFinishedTitle": "Seria ukończona",
+  "grammarScore": "{correct} / {total} poprawnych odpowiedzi",
+  "@grammarScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarRestart": "Zacznij od nowa",
+  "grammarNoQuestions": "Brak dostępnych pytań gramatycznych.",
+  "spellingIntro": "Napisz odpowiadające włoskie słowo. Uważaj na akcenty i podwójne spółgłoski!",
+  "spellingInputLabel": "Włoskie słowo",
+  "spellingHintButton": "Pokaż pierwszą literę",
+  "spellingHintShown": "Pierwsza litera: {letter}",
+  "@spellingHintShown": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "spellingCorrectFeedback": "Idealna ortografia!",
+  "spellingAccentOnlyFeedback": "Prawie! Sprawdź akcenty i podwójne spółgłoski.",
+  "spellingWrongFeedback": "Nieprawidłowa ortografia.",
+  "spellingNoWords": "Brak słów do pisania ze słuchu.",
+  "evaluateStartButton": "Zacznij",
+  "evaluateQuestionProgress": "Pytanie {current} / {total}",
+  "@evaluateQuestionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateTypeAnswerLabel": "Twoja odpowiedź",
+  "evaluateSelfRatingPrompt": "Jak oceniasz swoją odpowiedź?",
+  "evaluateRatingLabel": "{rating, plural, =0{Do poprawy} =1{Trudne} =2{Dobrze} other{Bardzo dobrze}}",
+  "@evaluateRatingLabel": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateRatingRecorded": "Zapisano samoocenę: {rating} / 3",
+  "@evaluateRatingRecorded": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateNextStep": "Kontynuuj",
+  "evaluateFinishedTitle": "Test ukończony",
+  "evaluateResultScore": "{correct} / {total} poprawnych odpowiedzi",
+  "@evaluateResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "evaluateResultOral": "Samoocena ustna: {average} / 3",
+  "@evaluateResultOral": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "evaluateRetakeButton": "Zrób kolejny test",
+  "profileClearDataTitle": "Usuń dane lokalne",
+  "profileClearDataSubtitle": "Usuwa postęp zapisany na tym urządzeniu (próby, słownictwo, ustawienia ćwiczeń).",
+  "profileClearDataConfirmTitle": "Usunąć dane lokalne?",
+  "profileClearDataConfirmBody": "Twoje lokalne wyniki i postępy zostaną trwale usunięte. Tej czynności nie można cofnąć.",
+  "profileClearDataConfirmAction": "Usuń wszystko",
+  "profileClearDataDone": "Dane lokalne usunięte."
 }

@@ -3,21 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../localization/app_localizations.dart';
 
+import '../../data/models/radio_station.dart';
+import '../../repositories/radio_stations_repository.dart';
 import '../../services/radio_player_service.dart';
-
-class RadioStation {
-  final String name;
-  final String streamUrl;
-  final String descriptionKey;
-  final String region;
-
-  const RadioStation({
-    required this.name,
-    required this.streamUrl,
-    required this.descriptionKey,
-    required this.region,
-  });
-}
 
 class COView extends StatefulWidget {
   const COView({super.key});
@@ -29,45 +17,7 @@ class COView extends StatefulWidget {
 class _COViewState extends State<COView> {
   late final RadioPlayerService _radioPlayerService;
   StreamSubscription<String?>? _errorSubscription;
-
-  static const stations = [
-    RadioStation(
-      name: 'Radio RAI 1',
-      streamUrl: 'https://icestreaming.rai.it/1.mp3',
-      descriptionKey: 'coRadioGeneral',
-      region: 'National',
-    ),
-    RadioStation(
-      name: 'Radio RAI 2',
-      streamUrl: 'https://icestreaming.rai.it/2.mp3',
-      descriptionKey: 'coMusicEntertainment',
-      region: 'National',
-    ),
-    RadioStation(
-      name: 'Radio RAI 3',
-      streamUrl: 'https://icestreaming.rai.it/3.mp3',
-      descriptionKey: 'coCultureNews',
-      region: 'National',
-    ),
-    RadioStation(
-      name: 'RDS',
-      streamUrl: 'https://icstream.rds.radio/rds',
-      descriptionKey: 'coPopNews',
-      region: 'National',
-    ),
-    RadioStation(
-      name: 'Radio 105',
-      streamUrl: 'https://icy.unitedradio.it/Radio105.mp3',
-      descriptionKey: 'coMusicEntertainment',
-      region: 'National',
-    ),
-    RadioStation(
-      name: 'RTL 102.5',
-      streamUrl: 'https://streamingv2.shoutcast.com/rtl-1025',
-      descriptionKey: 'coRadioNewsMusic',
-      region: 'National',
-    ),
-  ];
+  List<RadioStation> _stations = const [];
 
   @override
   void initState() {
@@ -83,6 +33,12 @@ class _COViewState extends State<COView> {
             duration: const Duration(seconds: 4),
           ),
         );
+      }
+    });
+
+    RadioStationsRepository().init().then((_) {
+      if (mounted) {
+        setState(() => _stations = RadioStationsRepository().all());
       }
     });
   }
@@ -126,7 +82,7 @@ class _COViewState extends State<COView> {
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
-                ...stations.map((station) => _buildStationCard(station)),
+                ..._stations.map((station) => _buildStationCard(station)),
               ],
             ),
           ),

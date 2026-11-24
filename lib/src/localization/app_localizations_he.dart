@@ -48,13 +48,13 @@ class AppLocalizationsHe extends AppLocalizations {
   String get learnGrammar => 'דקדוק';
 
   @override
-  String get learnGrammarDescription => 'הערות קורס';
+  String get learnGrammarDescription => 'חידון דקדוק';
 
   @override
   String get learnSpelling => 'איות';
 
   @override
-  String get learnSpellingDescription => 'בקרוב';
+  String get learnSpellingDescription => 'הכתבת אוצר מילים';
 
   @override
   String get trainOralExpression => 'EO - הבעה בעל פה';
@@ -126,14 +126,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get grammarTitle => 'דקדוק';
 
   @override
-  String get grammarComingSoon =>
-      'הערות דקדוק - התוכן בקרוב.\n\nהוסף הערות למודול זה כדפים או כ-Markdown.';
-
-  @override
   String get spellingTitle => 'איות';
-
-  @override
-  String get spellingComingSoon => 'מודול איות - בקרוב.';
 
   @override
   String get ceTitle => 'CE - הבנת הנקרא';
@@ -930,4 +923,132 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get authNotSignedIn => 'לא מחובר';
+
+  @override
+  String get grammarIntro => 'בחר את התשובה הנכונה כדי להשלים כל משפט.';
+
+  @override
+  String grammarQuestionProgress(int current, int total) {
+    return 'שאלה $current מתוך $total';
+  }
+
+  @override
+  String grammarExplanation(String explanation) {
+    return 'הסבר: $explanation';
+  }
+
+  @override
+  String get grammarNext => 'השאלה הבאה';
+
+  @override
+  String get grammarFinishedTitle => 'הסבב הסתיים';
+
+  @override
+  String grammarScore(int correct, int total) {
+    return '$correct / $total תשובות נכונות';
+  }
+
+  @override
+  String get grammarRestart => 'התחל מחדש';
+
+  @override
+  String get grammarNoQuestions => 'אין שאלות דקדוק זמינות.';
+
+  @override
+  String get spellingIntro =>
+      'כתוב את המילה האיטלקית המתאימה. שים לב לסימנים ולעיצורים כפולים!';
+
+  @override
+  String get spellingInputLabel => 'מילה איטלקית';
+
+  @override
+  String get spellingHintButton => 'הצג את האות הראשונה';
+
+  @override
+  String spellingHintShown(String letter) {
+    return 'האות הראשונה: $letter';
+  }
+
+  @override
+  String get spellingCorrectFeedback => 'איות מושלם!';
+
+  @override
+  String get spellingAccentOnlyFeedback => 'כמעט! בדוק סימנים ועיצורים כפולים.';
+
+  @override
+  String get spellingWrongFeedback => 'איות שגוי.';
+
+  @override
+  String get spellingNoWords => 'אין מילים זמינות להכתבה.';
+
+  @override
+  String get evaluateStartButton => 'התחל';
+
+  @override
+  String evaluateQuestionProgress(int current, int total) {
+    return 'שאלה $current / $total';
+  }
+
+  @override
+  String get evaluateTypeAnswerLabel => 'התשובה שלך';
+
+  @override
+  String get evaluateSelfRatingPrompt => 'איך אתה מדרג את התשובה שלך?';
+
+  @override
+  String evaluateRatingLabel(int rating) {
+    String _temp0 = intl.Intl.pluralLogic(
+      rating,
+      locale: localeName,
+      other: 'מצוין',
+      two: 'טוב',
+      one: 'קשה',
+      zero: 'לשפר',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String evaluateRatingRecorded(int rating) {
+    return 'דירוג עצמי נשמר: $rating / 3';
+  }
+
+  @override
+  String get evaluateNextStep => 'המשך';
+
+  @override
+  String get evaluateFinishedTitle => 'המבחן הסתיים';
+
+  @override
+  String evaluateResultScore(int correct, int total) {
+    return '$correct / $total תשובות נכונות';
+  }
+
+  @override
+  String evaluateResultOral(String average) {
+    return 'דירוג עצמי בעל פה: $average / 3';
+  }
+
+  @override
+  String get evaluateRetakeButton => 'מבחן נוסף';
+
+  @override
+  String get profileClearDataTitle => 'מחק נתונים מקומיים';
+
+  @override
+  String get profileClearDataSubtitle =>
+      'מוחק את ההתקדמות השמורה במכשיר זה (ניסיונות, אוצר מילים, הגדרות תרגילים).';
+
+  @override
+  String get profileClearDataConfirmTitle => 'למחוק נתונים מקומיים?';
+
+  @override
+  String get profileClearDataConfirmBody =>
+      'התוצאות וההתקדמות המקומיות שלך יימחקו לצמיתות. לא ניתן לבטל פעולה זו.';
+
+  @override
+  String get profileClearDataConfirmAction => 'מחק הכל';
+
+  @override
+  String get profileClearDataDone => 'הנתונים המקומיים נמחקו.';
 }
